@@ -1,16 +1,398 @@
-[{
-  "id": "665e3202-ab27-e914-a6ec-953790f8fe95",
-  "name": "blog_menu",
-  "label": "Blog Menu",
-  "required": false,
-  "locked": true,
-  "type": "menu",
-  "default": 37302690329
+[  {
+  "id" : "0ec58b74-4eae-9dc6-b764-970abe541ca5",
+  "name" : "blog_listing",
+  "display_width" : null,
+  "label" : "Blog Listing",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "6c9a5456-e290-71c7-c610-d77f5767757d",
+    "name" : "featured_image",
+    "display_width" : null,
+    "label" : "Featured Image",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "950205d5-6910-b2d5-fab6-162c8f7d3cda",
+    "name" : "tags",
+    "display_width" : null,
+    "label" : "Tags",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "9d3b580e-f35b-dd03-cc61-074cf8c6b461",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "20fc403e-f362-6846-ded8-c4cf1a450e8e",
+    "name" : "read_more",
+    "display_width" : null,
+    "label" : "Read More",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "f080e444-d992-db6e-c37d-9a9cf11c8862",
+    "name" : "read_more_text",
+    "display_width" : null,
+    "label" : "Read More Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "blog_listing.read_more",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "READ MORE  >"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "featured_image" : true,
+    "tags" : true,
+    "title" : true,
+    "read_more" : true,
+    "read_more_text" : "READ MORE  >"
+  }
 }, {
-  "id": "13a57d0f-fe03-f733-b11b-ff2c630e8ce8",
-  "name": "blog_resources_by_topic",
-  "label": "Blog Resources by Topic",
-  "required": false,
-  "locked": true,
-  "type": "hubdbtable"
-}]
+  "id" : "65ab4d09-9d87-4c2a-1f9f-ec4a49ca2e56",
+  "name" : "search",
+  "display_width" : null,
+  "label" : "Search",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "18539379-b5d3-77c5-0896-1067f1437b86",
+    "name" : "input",
+    "display_width" : null,
+    "label" : "Search input field",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "95b7d2f4-01db-bb87-0bf0-efae487b6768",
+      "name" : "placeholder",
+      "display_width" : null,
+      "label" : "Placeholder text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Search by title, author, etc..."
+    }],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "placeholder" : "Search by title, author, etc..."
+    }
+  }, {
+    "id" : "b2f33b44-1d6c-560c-4dbd-a44d13b8f849",
+    "name" : "results",
+    "display_width" : null,
+    "label" : "Results",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "6f2f624c-b21d-50f1-7a3b-a7f1085b872e",
+      "name" : "use_custom_search_results_template",
+      "display_width" : null,
+      "label" : "Use custom search results page",
+      "inline_help_text" : "Turn this setting on to use a custom search results page instead of the default global search results page.",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "7e8a18d6-8925-6e47-17fb-ccf05e4536e7",
+      "name" : "path_id",
+      "display_width" : null,
+      "label" : "Search results page",
+      "required" : false,
+      "locked" : false,
+      "type" : "page"
+    }, {
+      "id" : "6244493d-3db3-595b-3a5c-58953c4e07ae",
+      "name" : "content_types",
+      "display_width" : null,
+      "label" : "Search results include",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "ea8e27aa-6866-4702-7cb8-e19d5bffb3f1",
+        "name" : "website_pages",
+        "display_width" : null,
+        "label" : "Website pages",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "default" : true
+      }, {
+        "id" : "413b1559-023f-4204-61aa-6bf243986cd2",
+        "name" : "landing_pages",
+        "display_width" : null,
+        "label" : "Landing pages",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "default" : true
+      }, {
+        "id" : "c20239aa-8384-c3ec-42d3-3a6464fc35cc",
+        "name" : "blog_posts",
+        "display_width" : null,
+        "label" : "Blog posts",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "default" : true
+      }, {
+        "id" : "31b81560-f373-6531-51d0-3248c42f09ae",
+        "name" : "knowledge_articles",
+        "display_width" : null,
+        "label" : "Knowledge articles",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "default" : false
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "website_pages" : true,
+        "landing_pages" : true,
+        "blog_posts" : true,
+        "knowledge_articles" : false
+      }
+    }, {
+      "id" : "7c894650-b119-cc48-0def-4ac2b4693a85",
+      "name" : "group_id",
+      "display_width" : null,
+      "label" : "Group ID",
+      "required" : false,
+      "locked" : true,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "use_custom_search_results_template" : false,
+      "content_types" : {
+        "website_pages" : true,
+        "landing_pages" : true,
+        "blog_posts" : true,
+        "knowledge_articles" : false
+      }
+    }
+  }, {
+    "id" : "e71cc94b-8629-3a38-f44f-f9bb3345ba88",
+    "name" : "default_text",
+    "display_width" : null,
+    "label" : "Default text",
+    "required" : false,
+    "locked" : true,
+    "children" : [ {
+      "id" : "f5477d43-6ec1-6157-c638-8aaeb3be7d40",
+      "name" : "autosuggest_results_message",
+      "display_width" : null,
+      "label" : "Autosuggest results message",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Results for “[[search_term]]”"
+    }, {
+      "id" : "7086aea0-60ea-0211-7526-8bb5fbfc6245",
+      "name" : "autosuggest_no_results_message",
+      "display_width" : null,
+      "label" : "Autosuggest no results message",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "There are no autosuggest results for “[[search_term]]”"
+    }, {
+      "id" : "9db7a2b7-2323-1c91-9fe3-1b229a37cf50",
+      "name" : "sr_empty_search_field_message",
+      "display_width" : null,
+      "label" : "Screen reader empty search field message",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "There are no suggestions because the search field is empty."
+    }, {
+      "id" : "5901389d-04a2-7878-9c9f-a536639c16f6",
+      "name" : "sr_autosuggest_results_message",
+      "display_width" : null,
+      "label" : "Screen reader autosuggest results message",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "There are currently [[number_of_results]] auto-suggested results for [[search_term]]. Navigate to the results list by pressing the down arrow key, or press return to search for all results."
+    }, {
+      "id" : "62c687ff-0104-5f16-d614-f3430e04d610",
+      "name" : "screen_reader_search_field_aria_label",
+      "display_width" : null,
+      "label" : "Screen reader search field aria-label",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "There are currently [[number_of_results]] auto-suggested results for [[search_term]]. Navigate to the results list by pressing the down arrow key, or press return to search for all results."
+    }, {
+      "id" : "21ad6417-9c77-069f-63fc-19fb9cf5df13",
+      "name" : "sr_search_button_aria_label",
+      "display_width" : null,
+      "label" : "Screen reader search button aria-label",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Search"
+    }, {
+      "id" : "85fb99a3-dfe4-baed-d14e-f2d2aa7872e4",
+      "name" : "as_example_search_results",
+      "display_width" : null,
+      "label" : "Auto suggest results for example search term",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Results for “example search term”"
+    }, {
+      "id" : "5819f095-53aa-c318-578b-7f9eb3ed4e35",
+      "name" : "as_example_line_1",
+      "display_width" : null,
+      "label" : "Auto suggest line 1 for example search term",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "This is where suggested results appear as your visitor types their search term"
+    }, {
+      "id" : "b44412af-5da3-d1e6-edd9-88631aaec51e",
+      "name" : "as_example_line_2",
+      "display_width" : null,
+      "label" : "Auto suggest line 2 for example search term",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Here's another suggested search result"
+    }, {
+      "id" : "a1c8834b-0db2-5f0a-7bfc-1858cea3f425",
+      "name" : "as_example_line_3",
+      "display_width" : null,
+      "label" : "Auto suggest line 3 for example search term",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Configure the type of content that appears in your search results using the “search results include” option"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "autosuggest_results_message" : "Results for “[[search_term]]”",
+      "autosuggest_no_results_message" : "There are no autosuggest results for “[[search_term]]”",
+      "sr_empty_search_field_message" : "There are no suggestions because the search field is empty.",
+      "sr_autosuggest_results_message" : "There are currently [[number_of_results]] auto-suggested results for [[search_term]]. Navigate to the results list by pressing the down arrow key, or press return to search for all results.",
+      "screen_reader_search_field_aria_label" : "There are currently [[number_of_results]] auto-suggested results for [[search_term]]. Navigate to the results list by pressing the down arrow key, or press return to search for all results.",
+      "sr_search_button_aria_label" : "Search",
+      "as_example_search_results" : "Results for “example search term”",
+      "as_example_line_1" : "This is where suggested results appear as your visitor types their search term",
+      "as_example_line_2" : "Here's another suggested search result",
+      "as_example_line_3" : "Configure the type of content that appears in your search results using the “search results include” option"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "input" : {
+      "placeholder" : "Search...",
+      "include_search_button" : true
+    },
+    "results" : {
+      "use_custom_search_results_template" : false,
+      "content_types" : {
+        "website_pages" : true,
+        "landing_pages" : true,
+        "blog_posts" : true,
+        "knowledge_articles" : false
+      }
+    },
+    "default_text" : {
+      "autosuggest_results_message" : "Results for “[[search_term]]”",
+      "autosuggest_no_results_message" : "There are no autosuggest results for “[[search_term]]”",
+      "sr_empty_search_field_message" : "There are no suggestions because the search field is empty.",
+      "sr_autosuggest_results_message" : "There are currently [[number_of_results]] auto-suggested results for [[search_term]]. Navigate to the results list by pressing the down arrow key, or press return to search for all results.",
+      "screen_reader_search_field_aria_label" : "There are currently [[number_of_results]] auto-suggested results for [[search_term]]. Navigate to the results list by pressing the down arrow key, or press return to search for all results.",
+      "sr_search_button_aria_label" : "Search",
+      "as_example_search_results" : "Results for “example search term”",
+      "as_example_line_1" : "This is where suggested results appear as your visitor types their search term",
+      "as_example_line_2" : "Here's another suggested search result",
+      "as_example_line_3" : "Configure the type of content that appears in your search results using the “search results include” option"
+    }
+  }
+} ]
