@@ -1,0 +1,102 @@
+@import "../../css/_module-imports";
+
+section.u4m-top-tabbed {
+    padding-top: 85px;
+    padding-bottom: 110px;
+    .intro_content {
+        max-width: 905px;
+        font-weight: 400;
+        margin-bottom: 110px;
+    }
+    .tabber_nav{
+        border-bottom: 4px solid $Gray2;
+        display: flex;
+        gap: 10px 20px;
+        justify-content: center;
+        margin-bottom: 100px;
+        @include tablet{
+            display: none;
+        }
+        .slick-list{
+            overflow: visible;
+            width: 100%;
+        }
+        .slick-track{
+            transform: none !important;
+            width: 100% !important;
+            align-items: center;
+            display: flex;
+            gap: 10px 55px;
+            justify-content: center;
+        }
+        .tab_nav_item{
+            color: $Gray1;
+            position: relative;
+            &.slick-current{
+                
+                .tab_nav{
+                    color: $dark_text;
+                    border-bottom: 4px solid $sadlier_red;
+                }
+            }
+            .tab_nav{
+                border-bottom: 4px solid transparent;
+                color: $Gray1;
+                cursor: pointer;
+                display: block;
+                font-weight: 700;
+                margin-bottom: -4px;
+                padding: 0 0px 15px;
+                position: relative;
+                text-align: center;
+            }
+        }
+    }
+    .tabber_pannel {
+        max-width: 1100px;
+        margin: 0 auto;
+        .flex_row{
+            align-items: center;
+            @include tablet{
+                flex-direction: column-reverse;
+            }
+        }
+        .content_col,
+        .right_col {
+            width: 50%;
+            @include tablet{
+                width: 100%;
+            }
+        }
+        .content_col{
+            padding-right: 56px;
+            @include tablet{
+                padding-right: 0;
+            }
+            .tab_text{
+                margin-bottom: 40px;
+            }
+            .intro_btn_wrap {
+                justify-content: left;
+                .hs-button{
+                    background: transparent;
+                    border: 0;
+                    padding: 0;
+                    color: $sadlier_red;
+                }
+            }
+        }
+        .right_col {
+            padding-left: 56px;
+            .tab_img{
+                img{
+                    width: 100%;
+                }
+            }
+            @include tablet{
+                padding-left: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
