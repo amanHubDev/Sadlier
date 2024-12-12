@@ -659,6 +659,7 @@ form {
 }
 
 // ========
+
 .sadlierRed_bg {
   background-color: $sadlier_red;
 }
@@ -705,6 +706,7 @@ form {
   background-color: $Gray2;
 }
 
+//
 .cstyle1 {
   @include b1;
 }
@@ -719,4 +721,52 @@ form {
 
 .form-title:empty {
   display: none;
+}
+
+//
+
+.sadlierRed {
+  color: $sadlier_red;
+}
+.sadlierBlue {
+  color: $sadlier_blue;
+}
+.sadlierGreen {
+  color: $religion_green;
+}
+.sadlierLightGreen {
+  color: $religion_green2;
+}
+.dark {
+  color: $dark_background;
+}
+.light {
+  color: $light_background;
+}
+.light2 {
+  color: $light_background2;
+}
+.tone {
+  color: $tone;
+}
+.cyan {
+  color: $cyan;
+}
+.purple {
+  color: $purple;
+}
+.gold {
+  color: $gold;
+}
+.orange {
+  color: $orange;
+}
+.white {
+  color: $White;
+}
+.gray1 {
+  color: $Gray1;
+}
+.gray2 {
+  color: $Gray2;
 }

@@ -41,6 +41,8 @@
 
     .form_box {
       margin-top: -50px;
+
+      @include formWraperStyle;
     }
 
     .form_bottom_text {
