@@ -6,12 +6,9 @@
 {% extends './base.html' %} {% block body %}
 <main id="main-content" class="body-container-wrapper">
   {% set imageMax = 100 %}
-  <div class="u4m-blog-post">
+  <div class="u4m-blog-post dnd_padd">
     <div class="page-center">
-      <div class="post_flex">  
-        <div class="post_left">
-          <div class="post_inrbox">
-            <div class="post_meta">
+      <div class="post_meta">
               <div class="date">{{ content.publish_date_local_time.strftime('%B') }}
                 {% set day = content.publish_date_local_time.strftime('%e') %}
                 {% if day >= 4 and day <= 20 %}
@@ -28,7 +25,7 @@
                 {{ day }},
                 {{ content.publish_date_local_time.strftime('%Y') }}
               </div>
-              <div class="post_ttl">{{ content.name }}</div>
+              <h1 class="post_ttl">{{ content.name }}</h1>
               <div class="author-link">
                 Written by:
                 <a
@@ -37,14 +34,17 @@
                   >
               </div> 
             </div>
+      <div class="post_flex">  
+        <div class="post_left">
+          <div class="post_inrbox">
+            
             <div class="post_image">
               <img src="{{ content.featured_image }}" alt=" {{ content.name|striptags }}" >
             </div>
             <!-- Blog Post Body -->
             <div class="post_body"  >
               <div class="content">{{ content.post_body }}</div>
-              <div class="topics">
-                <span class="label"></span>
+              <div class="topics"> 
                 {% for topic in content.topic_list %}
                 <a class="link" href="{{ blog_tag_url(group.id, topic.slug) }}"
                    >{{ topic.name }}</a>
@@ -54,13 +54,17 @@
             <!-- End Blog Post Body -->
             <!-- Blog Post Author -->
             <div class="author_sec">
+              {% if content.blog_post_author.avatar %}
               <div class="meta">
                 <div class="avatar {% if content.blog_post_author.avatar %}lazy{% endif %}"
                      {% if  content.blog_post_author.avatar  %}
                      data-bg="{{ resize_image_url(content.blog_post_author.avatar, 0,0,imageMax) }}"
-                     {% endif %}
-                     ></div>
+                     {% endif %}  
+                     >
+                <img src="{{ resize_image_url(content.blog_post_author.avatar, 0,0,imageMax) }}" alt="{{ content.blog_post_author.full_name }}" >
+                </div>
               </div>
+              {% endif %}
               <div class="at_bio">
                 <div class="name">Written By: 
                   <a  href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" >{{ content.blog_post_author.full_name }}</a >
@@ -72,8 +76,7 @@
                 {% endif %} {% if content.blog_post_author.linkedin or
         content.blog_post_author.twitter or content.blog_post_author.facebook or
         content.blog_post_author.website %}
-                <div class="social">
-                  <span class="label">Connect with the author</span>
+                <div class="social"> 
                   {% if content.blog_post_author.facebook %}<a
                                                                class="facebook"
                                                                href="{{ content.blog_post_author.facebook }}"
@@ -124,7 +127,7 @@
         </div>
       </div>
     </div>
-
+ 
 
   </div> 
 </main>

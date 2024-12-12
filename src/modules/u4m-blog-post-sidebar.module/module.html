@@ -6,7 +6,7 @@
 
   {% if module.select_image.src %}
   <div class="img">
-    <img src="{{ module.select_image.src }}" alt="{{ module.select_image.alt }}"  >
+    <img src="{{ module.select_image.src }}" alt="{{ module.select_image.alt }}"  style="width:{{ module.select_image.width }}px" >
   </div>
   {% endif %}
   {% if module.content  %}

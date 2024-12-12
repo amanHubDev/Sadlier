@@ -17,17 +17,17 @@
   "label" : "Select Image",
   "required" : false,
   "locked" : false,
-  "responsive" : true,
-  "resizable" : false,
+  "responsive" : false,
+  "resizable" : true,
   "show_loading" : false,
   "type" : "image",
   "default" : {
-    "size_type" : "auto",
+    "size_type" : "exact",
     "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/featured.png",
     "alt" : "featured",
     "loading" : "lazy",
-    "width" : 490,
-    "height" : 382,
+    "width" : 237,
+    "height" : 185,
     "max_width" : 490,
     "max_height" : 382
   }
