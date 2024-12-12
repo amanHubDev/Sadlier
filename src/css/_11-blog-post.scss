@@ -1,5 +1,4 @@
 section.u4m-blog-post {
-
   /*****************************************/
   /* .hero                                 */
   /*****************************************/
@@ -35,7 +34,8 @@ section.u4m-blog-post {
       max-width: 1000rem;
 
       //margin: 50rem auto 50rem auto;
-      span.date {}
+      span.date {
+      }
 
       h1.title {
         @include h1;
@@ -54,7 +54,7 @@ section.u4m-blog-post {
           background-size: cover;
           background-position: 50%;
           margin: 5rem 10rem 0 0;
-          background-image: url('https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/default-avatar.png');
+          background-image: url("https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/default-avatar.png");
         }
 
         div.author-link {
@@ -78,7 +78,6 @@ section.u4m-blog-post {
     max-width: 1000rem;
 
     div.content {
-
       p,
       ul,
       ol {
@@ -126,7 +125,8 @@ section.u4m-blog-post {
       }
     }
 
-    div.topics {}
+    div.topics {
+    }
   }
 
   /*****************************************/
@@ -150,7 +150,7 @@ section.u4m-blog-post {
       div.avatar {
         width: 100rem;
         height: 100rem;
-        background-image: url('https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/default-avatar.png');
+        background-image: url("https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/default-avatar.png");
         background-size: cover;
         background-position: 50%;
         border-radius: 50%;
@@ -219,6 +219,156 @@ section.u4m-blog-post {
         .hs-button {
           @include button;
         }
+      }
+    }
+  }
+}
+
+// Blog Css
+.post_meta {
+  margin-bottom: 45px;
+  .date {
+    @include eyebrow;
+    color: $eyebrows;
+    letter-spacing: 0.1em;
+    margin-bottom: 19px;
+  }
+  .post_ttl {
+    margin-bottom: 26px;
+  }
+  .author-link {
+    font-weight: bold;
+    a {
+      color: inherit;
+      font-weight: normal;
+      text-decoration: underline;
+    }
+  }
+}
+.post_flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 67px;
+  justify-content: center;
+  @include tabletvert {
+    gap: 0;
+    justify-content: flex-start;
+  }
+  .post_left {
+    width: calc(100% - 360px);
+    @include tabletvert {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    .post_image {
+      margin: 0 0 45px;
+      border-radius: 19px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+    .post_body {
+      font-size: 20px;
+      line-height: 1.5;
+      letter-spacing: 0.03em;
+      font-weight: normal;
+      .content * {
+        font: inherit;
+      }
+      .topics {
+        margin: 51px 0 46px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        a {
+          @include size14;
+          letter-spacing: 0.03em;
+          color: inherit;
+          line-height: 1.5;
+          padding: 5px 20px;
+          background: $light_background;
+          border-radius: 20px;
+          text-transform: capitalize;
+        }
+      }
+    }
+    .author_sec {
+      background: $light_background;
+      border-radius: 25px;
+      padding: 50px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      @include phone {
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+        flex-direction: column;
+      }
+      .avatar {
+        width: 100px;
+        height: 100px;
+        img {
+          width: 100%;
+        }
+      }
+
+      .at_bio {
+        & > p {
+          letter-spacing: 0.03em;
+        }
+        .name {
+          font-weight: bold;
+          a {
+            color: inherit;
+            font-weight: normal;
+            text-decoration: underline;
+          }
+        }
+        .social {
+          display: flex;
+          gap: 25px;
+          align-items: center;
+          svg {
+            width: 20px;
+            height: 20px;
+            display: block;
+          }
+        }
+      }
+    }
+    .blog-comments {
+      form {
+        margin-left: 0;
+        .actions {
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+  .post_right {
+    width: 292px;
+    @include tabletvert {
+      width: 100%;
+    }
+    .post_side {
+      h4 {
+        line-height: 1.25;
+      }
+      .img {
+        margin-bottom: 25px;
+      }
+      .cnt {
+        letter-spacing: 0.02em;
+        @include size14;
+        line-height: 1.14;
+        font-weight: 700;
+        margin-bottom: 25px;
+      }
+      .intro_btn_wrap {
+        justify-content: flex-start;
       }
     }
   }

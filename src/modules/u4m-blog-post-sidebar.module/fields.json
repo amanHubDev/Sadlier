@@ -1,0 +1,215 @@
+[ {
+  "id" : "19e963bf-5214-1e25-099c-65d105a9478c",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Featured Download"
+}, {
+  "id" : "b33a219c-9201-749a-2b33-d419f0c435ba",
+  "name" : "select_image",
+  "display_width" : null,
+  "label" : "Select Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/featured.png",
+    "alt" : "featured",
+    "loading" : "lazy",
+    "width" : 490,
+    "height" : 382,
+    "max_width" : 490,
+    "max_height" : 382
+  }
+}, {
+  "id" : "c86c5b0d-9f10-4e83-19b6-067aaf00884e",
+  "name" : "content",
+  "display_width" : null,
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Math Land Fluency Board Game</p>"
+}, {
+  "id" : "388cfa57-ed59-5279-e5d2-b1e5cd0f27f5",
+  "name" : "include_button",
+  "display_width" : null,
+  "label" : "Include Button",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "1fac27b5-5447-abd4-1b71-ebafa2151f79",
+  "name" : "button_group",
+  "display_width" : null,
+  "label" : "Button Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 2,
+    "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
+    "default" : 1
+  },
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "include_button",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "fcd5894a-1f9f-4d2c-a222-abe26bb869f4",
+    "name" : "button_type",
+    "display_width" : null,
+    "label" : "Bottom Button Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "std"
+  }, {
+    "id" : "fa29fd37-f374-68a7-c518-9dcdacdfa388",
+    "name" : "button_style",
+    "display_width" : null,
+    "label" : "Button Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "button_group.button_type",
+      "controlling_value_regex" : "std",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "arrow-link", "Arrow Link" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "hs-button"
+  }, {
+    "id" : "a3465576-6048-3eaf-845f-80dedb4e14b1",
+    "name" : "button_theme",
+    "display_width" : null,
+    "label" : "Button Theme",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "button_group.button_type",
+      "controlling_value_regex" : "std",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme2"
+  }, {
+    "id" : "19520902-7b1e-09bd-9a37-df893bbaf05a",
+    "name" : "button_text",
+    "display_width" : null,
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "button_group.button_type",
+      "controlling_value_regex" : "std",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "DOWNLOAD NOW"
+  }, {
+    "id" : "7d8a3920-4448-9f02-934d-fbaca4ba0bfa",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "button_group.button_type",
+      "controlling_value_regex" : "std",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "d013cfbf-3d29-590c-30a9-c99d060ee82e",
+    "name" : "cta",
+    "display_width" : null,
+    "label" : "CTA",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "button_group.button_type",
+      "controlling_value_regex" : "cta",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "cta"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "button_type" : "std",
+    "button_style" : "hs-button",
+    "button_theme" : "theme2",
+    "button_text" : "DOWNLOAD NOW",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+} ]
