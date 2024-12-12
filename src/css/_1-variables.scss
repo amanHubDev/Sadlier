@@ -5,7 +5,8 @@ $light_background: #edf1ec;
 $eyebrows: #004259;
 // Tone on Tone(used on eyebrows)
 
-$tone: #002835;
+// $tone: #002835;
+$tone: #004259;
 $dark_text: #002835;
 // (main body font)
 
@@ -44,7 +45,7 @@ $gradient1: linear-gradient(-45deg, $black 0%, $action2 50%);
 $font1: "Lexend";
 $baseFontSize: 16rem;
 $baseLineHeight: 1.5; // Golden ratio
-$baseFontWeight: 500;
+$baseFontWeight: 400;
 // Border Radius
 $border1: 4rem;
 $border2: 5rem;

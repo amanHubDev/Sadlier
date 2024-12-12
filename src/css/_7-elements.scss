@@ -716,3 +716,7 @@ form {
 .cstyle3 {
   @include b3;
 }
+
+.form-title:empty {
+  display: none;
+}

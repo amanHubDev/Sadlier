@@ -1,0 +1,153 @@
+
+<div class="u4m-split-form-landing-wraper">
+
+
+
+  {% set moduleName = 'u4m-split-form-landing' %}
+  {% include "../partials/u4-module-includes.html" %}
+
+  <div class="top_content_group">
+
+    <div class="page-center">
+
+      {% if module.intro_content.include_logo %}
+      <div class="form_logo_wrap">
+        {% if module.intro_content.logo.src %}
+        {% set href = module.intro_content.logo_link.url.href %}
+        {% if module.intro_content.logo_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        <a
+           {% if module.intro_content.logo_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}" 
+           {% else %}
+           href="{{ href }}"
+           {% endif %}
+           {% if module.intro_content.logo_link.open_in_new_tab %}
+           target="_blank"
+           {% endif %}
+           {% if module.intro_content.logo_link.rel %}
+           rel="{{ module.intro_content.logo_link.rel }}"
+           {% endif %}
+           ><img src="{{ module.intro_content.logo.src }}" alt="{{ module.intro_content.logo.alt }}">
+        </a>
+
+        {% endif %}
+      </div>
+      {% endif %}
+
+
+      <div class="flex_row">
+        <div class="form_content_column col col6">
+          {{macros.introGroup(module.intro_content)}}
+        </div>
+
+        {% if module.intro_content.include_image %}
+        <div class="form_image_column col col6">
+          {% if module.intro_content.image.src %}
+          <img src="{{ module.intro_content.image.src }}" alt="{{ module.intro_content.image.alt }}">
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+
+
+
+
+<div class="form_bottom_group dnd_padd form_bottom{{name}} bg_{{ module.module_overrides.bottom_background_settings.background_type }} bg_pos_{{ module.module_overrides.bottom_background_settings.select_background_position }}"  >
+  {% if module.module_overrides.bottom_background_settings.background_type == "color"
+  %}
+  <div
+       class="bg_overlay bg_color {{ module.module_overrides.bottom_background_settings.select_color }}"
+       style="opacity:  {{ module.module_overrides.bottom_background_settings.opacity/ 100 }}"
+       ></div>
+  {% if
+  module.module_overrides.bottom_background_settings.include_overlay_image %}
+  <div class="bg_overlay bg_overlay_image"></div>
+  {% endif %} 
+  {% endif %}
+
+  {% if module.module_overrides.bottom_background_settings.background_type == "image"
+  %}
+
+  <div class="bg_overlay bg_image"></div>
+  {% endif %}
+
+  <div class="page-center">
+  <div class="flex_row">
+    <div class="form_box_wrap col col6">
+
+      <div class="form_box">
+        <div calss="form_box_ttile">
+          {{ module.form_group.form_content }}
+        </div>
+        {% form
+            form_to_use="{{ module.form_group.select_form.form_id }}"
+            response_response_type="{{ module.form_group.select_form.response_type }}"
+            response_message="{{ module.form_group.select_form.message }}"
+            response_redirect_id="{{ module.form_group.select_form.redirect_id }}"
+            response_redirect_url="{{module.form_group.select_form.redirect_url}}"
+            gotowebinar_webinar_key="{{ module.form_group.select_form.gotowebinar_webinar_key }}"
+          %}
+      </div>
+    </div>
+
+    <div class="form_bottom_content col col6 {% if module.module_overrides.bottom_group_reverse_text %}reverse-text{% endif %}">
+
+      {% if module.bottom_content_group.select_media_type == "image" %}
+      <div class="image_grid">
+        {% for item in module.bottom_content_group.image_group %}
+        {% if item.image.src %}
+        <div class="img_grid_col img_grid{{loop.index}}" style="background-image: url({{ item.image.src }})">
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <div class="form_bottom_text">
+        {{ module.bottom_content_group.bottom_content }}
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+{% require_js %} 
+<style>
+  {% if module.module_overrides.bottom_background_settings.background_type == "color"%}
+
+  {% if module.module_overrides.bottom_background_settings.include_overlay_image %}
+  .{{ name }} .form_bottom{{name}} .bg_overlay_image{
+    background-image: url({{ module.module_overrides.bottom_background_settings.overlay_image.overlay_image.src }});
+    background-size: {{ module.module_overrides.bottom_background_settings.overlay_image.overlay_image_size }};
+    background-position: 	{{ module.module_overrides.bottom_background_settings.overlay_image.overlay_image_position }};
+  }
+  {% endif %}
+  {% endif %}
+
+
+  {% if module.module_overrides.bottom_background_settings.background_type == "image"  %}
+  .{{ name }} .form_bottom{{name}} .bg_image{
+    background-image: url({{ module.module_overrides.bottom_background_settings.background_image.src }})
+  }  
+  {% endif %}
+
+</style>
+{% end_require_js %} {% endif %}
+
+</div>
+
+
+
+
+
+
+
+
