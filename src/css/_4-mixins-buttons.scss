@@ -5,52 +5,81 @@
   color: $white;
   @include bodyStyle;
   text-align: center;
-  border-radius: $borderRadius;
+  border-radius: $btnborderRadius;
   display: inline-block;
-  padding: 13rem 28rem;
-  background-color: $religion_green;
+  background-color: $sadlier_red;
   border: none;
-
-  padding: 14rem 28rem;
+  border: 2px solid $sadlier_red;
+  padding: 10rem 18rem;
   text-align: center;
   text-decoration: none;
   font-weight: 700;
-  line-height: normal;
+  line-height: 1;
+  letter-spacing: 0.05em;
+
+  transition: 0.2s ease;
 
   &:hover,
   &:focus {
-    background-color: $sadlier_blue;
+    background-color: $White;
+    background-color: transparent;
+    border-color: $sadlier_red;
+    color: $sadlier_red;
+  }
+}
+
+@mixin secondarybutton {
+  cursor: pointer;
+  color: $white;
+  @include bodyStyle;
+  text-align: center;
+  border-radius: $btnborderRadius;
+  display: inline-block;
+
+  border: none;
+  border: 2px solid $sadlier_red;
+  padding: 10rem 18rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.05em;
+
+  background-color: transparent;
+  border-color: $sadlier_red;
+  color: $sadlier_red;
+  transition: 0.2s ease;
+
+  &:hover,
+  &:focus {
+    border-color: $sadlier_red;
+    background-color: $sadlier_red;
     color: $white;
   }
 }
 
 @mixin arrow-link {
   @include bodyStyle;
-  color: $black;
+  color: $sadlier_red;
   background-color: transparent;
   display: inline-flex;
   align-items: center;
   font-weight: 700;
   line-height: normal;
   gap: 8px;
+  transition: 0.2s ease;
   svg {
-    fill: $religion_green;
+    fill: currentColor;
     display: block;
     path {
-      fill: $religion_green;
+      fill: currentColor;
     }
   }
 
   &:focus,
   &:hover {
-    color: $black;
+    color: $dark_text;
     background-color: transparent;
-    svg {
-      fill: $sadlier_blue;
-      path {
-        fill: $sadlier_blue;
-      }
-    }
   }
 }
 

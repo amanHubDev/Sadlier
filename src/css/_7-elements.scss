@@ -321,7 +321,6 @@ strong {
 }
 
 ul {
-  @include b3;
   list-style: disc;
   padding-left: 40rem;
   margin-top: 0;
@@ -329,7 +328,6 @@ ul {
 }
 
 ol {
-  @include b3;
   list-style: decimal;
   padding-left: 40rem;
   margin-top: 0;
@@ -479,6 +477,12 @@ section[class*="u4m-"] {
   scroll-margin-top: 150px;
 }
 
+//
+
+.dnd_padd {
+  position: relative;
+}
+
 .bg_overlay {
   position: absolute;
   top: 0;
@@ -494,9 +498,15 @@ section[class*="u4m-"] {
     z-index: 3;
   }
 
-  &.bg_image {
-    z-index: 2;
+  &.bg_overlay_image {
+    z-index: 1;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &.bg_color {
+    z-index: 2;
   }
 }
 
@@ -512,7 +522,7 @@ section[class*="u4m-"] {
 
   .eyebrow_text {
     @include eyebrow;
-    margin-bottom: 12rem;
+    margin-bottom: 11rem;
   }
 
   .intro_title {
@@ -546,10 +556,88 @@ section[class*="u4m-"] {
 
 .hs-button {
   @include button;
+
+  &.theme2 {
+    background-color: $sadlier_blue;
+    border-color: $sadlier_blue;
+    color: $White;
+
+    &:hover,
+    &:focus {
+      background-color: $White;
+      background-color: transparent;
+      border-color: $sadlier_blue;
+      color: $sadlier_blue;
+    }
+  }
+
+  &.theme3 {
+    background-color: $religion_green;
+    border-color: $religion_green;
+    color: $White;
+
+    &:hover,
+    &:focus {
+      background-color: $White;
+      background-color: transparent;
+      border-color: $religion_green;
+      color: $religion_green;
+    }
+  }
+}
+
+.hs-sec-btn {
+  @include secondarybutton;
+
+  &.theme2 {
+    background-color: transparent;
+    border-color: $sadlier_blue;
+    color: $sadlier_blue;
+    transition: 0.2s ease;
+
+    &:hover,
+    &:focus {
+      border-color: $sadlier_blue;
+      background-color: $sadlier_blue;
+      color: $white;
+    }
+  }
+
+  &.theme2 {
+    background-color: transparent;
+    border-color: $religion_green;
+    color: $religion_green;
+    transition: 0.2s ease;
+
+    &:hover,
+    &:focus {
+      border-color: $religion_green;
+      background-color: $religion_green;
+      color: $white;
+    }
+  }
 }
 
 .arrow-link {
   @include arrow-link;
+
+  &.theme2 {
+    color: $sadlier_blue;
+
+    &:hover,
+    &:focus {
+      color: $dark_text;
+    }
+  }
+
+  &.theme3 {
+    color: $religion_green;
+
+    &:hover,
+    &:focus {
+      color: $dark_text;
+    }
+  }
 }
 
 .reverse-text {
@@ -618,4 +706,16 @@ form {
 }
 .gray2_bg {
   background-color: $Gray2;
+}
+
+.cstyle1 {
+  @include b1;
+}
+
+.cstyle2 {
+  @include b2;
+}
+
+.cstyle3 {
+  @include b3;
 }

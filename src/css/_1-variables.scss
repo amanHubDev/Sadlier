@@ -41,9 +41,9 @@ $gray1: #edf0f2;
 $gray2: #cbd6e2;
 $gray3: #7c98b6;
 $gradient1: linear-gradient(-45deg, $black 0%, $action2 50%);
-$font1: "Montserrat";
+$font1: "Lexend";
 $baseFontSize: 16rem;
-$baseLineHeight: 1.61803398875; // Golden ratio
+$baseLineHeight: 1.5; // Golden ratio
 $baseFontWeight: 500;
 // Border Radius
 $border1: 4rem;
@@ -60,5 +60,9 @@ $animation2: 0.25s ease-in;
 $animation3: 1s ease-in;
 
 $borderRadius: 10rem;
-$containerSize: 1300rem;
-$introContainer: 750rem;
+$containerSize: 1340rem;
+$introContainer: 810rem;
+
+$btnborderRadius: 100rem;
+
+$footerBorderColor: #96a0a9;

@@ -8,7 +8,7 @@ section.u4m-drag-and-drop-area {
 
 .dnd_padd,
 .dnd-section {
-  padding: 72rem 0;
+  padding: 100rem 0;
 
   @include tablet {
     padding: 60rem 0;
@@ -24,22 +24,12 @@ section.u4m-drag-and-drop-area {
 }
 
 .dnd_padd {
-  margin-top: 120rem;
-  margin-bottom: 120rem;
-
   &.bg_pos_inside {
     border-radius: 10px;
     width: calc(100% - 40px);
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
-  }
-  @include tabletvert {
-    padding: 80rem 0;
-  }
-
-  @include phone {
-    padding: 40rem 0;
   }
 }
 
