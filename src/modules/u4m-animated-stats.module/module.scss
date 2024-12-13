@@ -31,6 +31,7 @@
         svg {
           width: 50px;
           height: 50px;
+          fill: currentColor;
         }
 
         text-align: center;
@@ -48,26 +49,32 @@
 
         &.h1 {
           @include h1;
+          margin-bottom: 5px;
         }
 
         &.h2 {
           @include h2;
+          margin-bottom: 5px;
         }
 
         &.h3 {
           @include h3;
+          margin-bottom: 5px;
         }
 
         &.h4 {
           @include h4;
+          margin-bottom: 5px;
         }
 
         &.h5 {
           @include h5;
+          margin-bottom: 5px;
         }
 
         &.h6 {
           @include h6;
+          margin-bottom: 5px;
         }
       }
 

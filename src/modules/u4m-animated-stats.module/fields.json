@@ -431,6 +431,28 @@
         "max_height" : 50
       }
     }, {
+      "id" : "331d9c91-b68b-a1aa-9afa-dcbe377e1259",
+      "name" : "select_color",
+      "display_width" : null,
+      "label" : "Select Icon Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "statistic_group.top_icon_group.select_icon",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "sadlierRed", "Sadlier Red" ], [ "sadlierBlue", "Sadlier Blue" ], [ "sadlierGreen", "Sadlier Green" ], [ "sadlierLightGreen", "Sadlier Light Green" ], [ "dark", "Dark Background" ], [ "light", "Light Background" ], [ "light2", "Light Background 2" ], [ "tone", "Tone-on-tone" ], [ "cyan", "Cyan" ], [ "purple", "Purple" ], [ "gold", "Gold" ], [ "orange", "Orange" ], [ "white", "White" ], [ "gray1", "Gray 1" ], [ "gray2", "Gray 2" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "cyan"
+    }, {
       "id" : "41f72067-5592-3c33-8bb8-b4e240b74df5",
       "name" : "custom_icon",
       "display_width" : null,
@@ -489,6 +511,7 @@
         "max_width" : 50,
         "max_height" : 50
       },
+      "select_color" : "cyan",
       "custom_icon" : "<span class=\"material-symbols-outlined\">home</span>",
       "icon" : {
         "name" : "Bolt Lightning",
@@ -601,6 +624,7 @@
         "max_width" : 50,
         "max_height" : 50
       },
+      "select_color" : "cyan",
       "custom_icon" : "<span class=\"material-symbols-outlined\">home</span>",
       "icon" : {
         "name" : "Bolt Lightning",
@@ -627,6 +651,7 @@
         "max_width" : 50,
         "max_height" : 50
       },
+      "select_color" : "cyan",
       "custom_icon" : "<span class=\"material-symbols-outlined\">home</span>",
       "icon" : {
         "name" : "Bolt Lightning",
@@ -653,6 +678,7 @@
         "max_width" : 50,
         "max_height" : 50
       },
+      "select_color" : "cyan",
       "custom_icon" : "<span class=\"material-symbols-outlined\">home</span>",
       "icon" : {
         "name" : "Bolt Lightning",

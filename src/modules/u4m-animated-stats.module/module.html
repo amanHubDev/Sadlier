@@ -14,7 +14,7 @@
     <div class="item_inrCnt flex_row">
       {% for item in module.statistic_group %}
       <div class="items">
-        <div class="top_img">
+        <div class="top_img {{ item.top_icon_group.select_color }}">
           {% if  item.top_icon_group.select_icon == 'image'%}
           <div class="img">
             {% if item.top_icon_group.image_field.src %}
@@ -114,10 +114,5 @@
 
 </script>
 {% end_require_js %}
-
-
-
-
-
 
 
