@@ -1,102 +1,161 @@
 @import "../../css/_module-imports";
 
 section.u4m-top-tabbed {
-    padding-top: 85px;
-    padding-bottom: 110px;
-    .intro_content {
-        max-width: 905px;
-        font-weight: 400;
-        margin-bottom: 110px;
+  padding-top: 85px;
+  padding-bottom: 110px;
+  &.reverse-text {
+    .tab_title {
+      color: $white;
     }
-    .tabber_nav{
-        border-bottom: 4px solid $Gray2;
-        display: flex;
-        gap: 10px 20px;
-        justify-content: center;
-        margin-bottom: 100px;
-        @include tablet{
-            display: none;
+    .tab_nav_item {
+      &.slick-current {
+        .tab_nav {
+          color: $white;
         }
-        .slick-list{
-            overflow: visible;
-            width: 100%;
-        }
-        .slick-track{
-            transform: none !important;
-            width: 100% !important;
-            align-items: center;
-            display: flex;
-            gap: 10px 55px;
-            justify-content: center;
-        }
-        .tab_nav_item{
-            color: $Gray1;
-            position: relative;
-            &.slick-current{
-                
-                .tab_nav{
-                    color: $dark_text;
-                    border-bottom: 4px solid $sadlier_red;
-                }
-            }
-            .tab_nav{
-                border-bottom: 4px solid transparent;
-                color: $Gray1;
-                cursor: pointer;
-                display: block;
-                font-weight: 700;
-                margin-bottom: -4px;
-                padding: 0 0px 15px;
-                position: relative;
-                text-align: center;
-            }
-        }
+      }
+      .tab_nav {
+        color: $white;
+      }
     }
-    .tabber_pannel {
-        max-width: 1100px;
-        margin: 0 auto;
-        .flex_row{
-            align-items: center;
-            @include tablet{
-                flex-direction: column-reverse;
-            }
-        }
-        .content_col,
-        .right_col {
-            width: 50%;
-            @include tablet{
-                width: 100%;
-            }
-        }
-        .content_col{
-            padding-right: 56px;
-            @include tablet{
-                padding-right: 0;
-            }
-            .tab_text{
-                margin-bottom: 40px;
-            }
-            .intro_btn_wrap {
-                justify-content: left;
-                .hs-button{
-                    background: transparent;
-                    border: 0;
-                    padding: 0;
-                    color: $sadlier_red;
-                }
-            }
-        }
-        .right_col {
-            padding-left: 56px;
-            .tab_img{
-                img{
-                    width: 100%;
-                }
-            }
-            @include tablet{
-                padding-left: 0;
-                margin-bottom: 20px;
-            }
-        }
+  }
+  .theme1_color {
+    .slick-dots .slick-active button {
+      background-color: $sadlier_red;
     }
+  }
+  .theme2_color {
+    .slick-dots .slick-active button {
+      background-color: $sadlier_blue;
+    }
+  }
+  .theme3_color {
+    .slick-dots .slick-active button {
+      background-color: $religion_green;
+    }
+  }
+  .tab_nav_item {
+    .tab_nav {
+      color: $Gray1;
+    }
+    &.slick-current {
+      .tab_nav {
+        color: $dark_text;
+      }
+    }
+  }
+  .tab_nav {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom-width: 4px;
+    border-style: solid;
+  }
+  .intro_content {
+    max-width: 905px;
+    font-weight: 400;
+    margin-bottom: 110px;
+    @include tabletvert {
+      margin-bottom: 50px;
+    }
+  }
+  .tab_main {
+    background: transparent;
+    color: inherit;
+    border: 0;
+  }
+  .tabber_nav {
+    border-bottom: 4px solid $Gray2;
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    margin-bottom: 100px;
+    @include tabletvert {
+      display: none;
+    }
+    .slick-list {
+      overflow: visible;
+      width: 100%;
+    }
+    .slick-track {
+      transform: none !important;
+      width: 100% !important;
+      align-items: center;
+      display: flex;
+      gap: 10px 55px;
+      justify-content: center;
+    }
+    .tab_nav_item {
+      position: relative;
+      &:not(.slick-current) .tab_nav {
+        border-color: transparent;
+      }
+
+      .tab_nav {
+        background: transparent;
+        cursor: pointer;
+        display: block;
+        font-weight: 700;
+        margin-bottom: -4px;
+        padding: 0 0px 15px;
+        position: relative;
+        text-align: center;
+      }
+    }
+  }
+  .tabber_pannel {
+    max-width: 1100px;
+    margin: 0 auto;
+    .flex_row {
+      align-items: center;
+      @include tabletvert {
+        flex-direction: column-reverse;
+      }
+    }
+    .content_col,
+    .right_col {
+      width: 50%;
+      @include tabletvert {
+        width: 100%;
+      }
+    }
+    .content_col {
+      padding-right: 56px;
+      @include tabletvert {
+        padding-right: 0;
+      }
+      .tab_text {
+        margin-bottom: 40px;
+      }
+      .intro_btn_wrap {
+        justify-content: left;
+      }
+    }
+    .right_col {
+      padding-left: 56px;
+      .tab_img {
+        img {
+          width: 100%;
+        }
+      }
+      @include tabletvert {
+        padding-left: 0;
+        margin-bottom: 20px;
+      }
+    }
+    .slick-dots li {
+      height: 15px;
+      width: 15px;
+      button {
+        font-size: 0;
+        border-radius: 100%;
+        padding: 0;
+        background-color: $Gray2;
+        height: 15px;
+        width: 15px;
+        &::before {
+          content: none;
+        }
+      }
+    }
+  }
 }

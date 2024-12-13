@@ -443,17 +443,9 @@
     "locked" : false,
     "occurrence" : {
       "min" : null,
-      "max" : 2,
+      "max" : null,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
       "default" : 1
-    },
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_button",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
     },
     "children" : [ {
       "id" : "e24a98cd-6322-6ff8-b603-4a1d45b7813f",
@@ -490,7 +482,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "hs-button"
+      "default" : "arrow-link"
     }, {
       "id" : "277541ef-8c23-1638-edb3-007312ada1ab",
       "name" : "button_theme",
@@ -512,7 +504,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : ""
+      "default" : "theme1"
     }, {
       "id" : "913a6c1c-8b4b-4d16-418a-b385e0161318",
       "name" : "button_text",
@@ -532,7 +524,7 @@
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
-      "default" : "READ CASE STUDY  >"
+      "default" : "READ CASE STUDY"
     }, {
       "id" : "f10b8c1e-ff91-936d-1610-a25d8cb435d8",
       "name" : "link",
@@ -583,9 +575,9 @@
     "type" : "group",
     "default" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "",
-      "button_text" : "READ CASE STUDY  >",
+      "button_style" : "arrow-link",
+      "button_theme" : "theme1",
+      "button_text" : "READ CASE STUDY",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -617,9 +609,9 @@
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
     "button_group" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "",
-      "button_text" : "READ CASE STUDY  >",
+      "button_style" : "arrow-link",
+      "button_theme" : "theme1",
+      "button_text" : "READ CASE STUDY",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -646,9 +638,9 @@
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
     "button_group" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "",
-      "button_text" : "READ CASE STUDY  >",
+      "button_style" : "arrow-link",
+      "button_theme" : "theme1",
+      "button_text" : "READ CASE STUDY",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -675,9 +667,9 @@
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
     "button_group" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "",
-      "button_text" : "READ CASE STUDY  >",
+      "button_style" : "arrow-link",
+      "button_theme" : "theme1",
+      "button_text" : "READ CASE STUDY",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -704,9 +696,9 @@
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
     "button_group" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "",
-      "button_text" : "READ CASE STUDY  >",
+      "button_style" : "arrow-link",
+      "button_theme" : "theme1",
+      "button_text" : "READ CASE STUDY",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -733,9 +725,9 @@
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
     "button_group" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "",
-      "button_text" : "READ CASE STUDY  >",
+      "button_style" : "arrow-link",
+      "button_theme" : "theme1",
+      "button_text" : "READ CASE STUDY",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -1043,6 +1035,20 @@
     "display" : "checkbox",
     "type" : "boolean",
     "default" : false
+  }, {
+    "id" : "d0bc1244-e420-0a7e-499b-3b87a3da71d6",
+    "name" : "theme",
+    "display_width" : null,
+    "label" : "Theme",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme1_color", "Theme 1" ], [ "theme2_color", "Theme 2" ], [ "theme3_color", "Theme 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme1_color"
   }, {
     "id" : "94e04306-ecc1-4735-09fd-9b66482a8101",
     "name" : "background_settings",
@@ -1357,6 +1363,7 @@
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
     "reverse_text" : false,
+    "theme" : "theme1_color",
     "background_settings" : {
       "background_type" : "color",
       "background_image" : {

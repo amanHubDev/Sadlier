@@ -9,11 +9,11 @@
   </div>
 
   <div class="desktop_tabber">
-    <div class="tab_main">
+    <div class="tab_main {{ module.module_overrides.theme }}">
       <div class="tabber_nav">
         {% for item in module.tabber_group %}
-        <div class="tab_nav_item {% if loop.index == 1 %}active animated{% endif %}">
-          <span class="tab_nav" data-nav="{{name}}_tab{{loop.index}}">{{ item.nav_text }}
+        <div class="tab_nav_item  {% if loop.index == 1 %}active animated{% endif %}">
+          <span class="tab_nav {{ module.module_overrides.theme }}" data-nav="{{name}}_tab{{loop.index}}">{{ item.nav_text }}
           </span>
         </div>
         {% endfor %}
@@ -63,11 +63,19 @@
     slidesToScroll: 1,
     arrows: false,
     fade: false,
-    draggable:false,
+    draggable:true,
     asNavFor: ".{{name}} .desktop_tabber .tabber_nav",
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
-    });
+    responsive: [
+    {
+    breakpoint: 767,
+    settings: {
+    dots: true,
+    }
+  }
+  ]
+  });
   $(".{{name}} .desktop_tabber .tabber_nav").slick({
     slidesToShow: 5,
     slidesToScroll: 1,
