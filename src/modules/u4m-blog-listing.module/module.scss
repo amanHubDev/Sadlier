@@ -1,10 +1,6 @@
 @import "../../css/_module-imports";
 
 $background-color: rgba($dark_background, 0.1);
-$tone15: rgba($tone, 0.15);
-$tone30: rgba($tone, 0.3);
-$tone50: rgba($tone, 0.5);
-$blackColor: #000000;
 /* search */
 /* stylelint-disable declaration-no-important */
 /* stylelint-enable declaration-no-important */
@@ -193,7 +189,7 @@ input[type="search"] {
         width: 100%;
       }
       background-color: $white;
-      border-radius: 25px;
+      border-radius: $borderRadius;
       overflow: hidden;
       .featleft {
         .cardImg {
@@ -260,8 +256,8 @@ input[type="search"] {
           width: calc((100% - 50px) / 2);
         }
         .colTtl {
+          @include eyebrow;
           padding-bottom: 5px;
-          text-transform: uppercase;
         }
         .srchSection {
           form {
@@ -324,7 +320,7 @@ input[type="search"] {
 
           .CardItemIn {
             background: $White;
-            border-radius: 25px;
+            border-radius: $borderRadius;
             overflow: hidden;
             .bIItmimg {
               padding-bottom: 56.66%;

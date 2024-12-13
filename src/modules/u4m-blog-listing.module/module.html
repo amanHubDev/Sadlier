@@ -323,24 +323,6 @@
 			</span></a></li>
 			</ul>
 			{% endif %}
-
-		{# {% if contents.total_page_count > 1 %}
-		<ul  class="pagination">
-			{% set page_list = [-2, -1, 0, 1, 2] %}
-			{% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
-			{% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
-			{% elif current_page_num == 2 %}{% set offset = 1 %}
-			{% elif current_page_num == 1 %}{% set offset = 2 %}
-			{% else %}{% set offset = 0 %}{% endif %}
-
-			{% for page in page_list %}
-			{% set this_page = current_page_num + page + offset %}
-			{% if this_page > 0 and this_page <= contents.total_page_count %}
-			<li><a class="blogPgLink {{ 'blogPgactive' if this_page == current_page_num }}" aria-label="Go to Page {{ this_page }}" {{ 'aria-current="true"' if this_page == current_page_num }} href="{% if this_page == 1 %}{{ group.absolute_url }}{% else %}{{ blog_page_link(this_page) }}{% endif %}">{{ this_page }}</a></li>
-			{% endif %}
-			{% endfor %}
-		</ul> 
-		{% endif %} #}
 	</div>
 </div>
 </section>
