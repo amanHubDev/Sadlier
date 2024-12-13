@@ -807,33 +807,33 @@ form {
 
 //
 
-.theme1_color {
+.dnd_padd .theme1_color {
   color: $sadlier_red;
   border-color: $sadlier_red;
   background-color: $sadlier_red;
 }
 
-.theme2_color {
+.dnd_padd .theme2_color {
   color: $sadlier_blue;
   border-color: $sadlier_blue;
   background-color: $sadlier_blue;
 }
 
-.theme3_color {
+.dnd_padd .theme3_color {
   color: $religion_green;
   border-color: $religion_green;
   background-color: $religion_green;
 }
 
-.theme1_color.playIcon {
+.dnd_padd .theme1_color.playIcon {
   background-color: rgba($sadlier_red, 0.5);
 }
 
-.theme2_color.playIcon {
+.dnd_padd .theme2_color.playIcon {
   background-color: rgba($sadlier_blue, 0.5);
 }
 
-.theme3_color.playIcon {
+.dnd_padd .theme3_color.playIcon {
   background-color: rgba($religion_green, 0.5);
 }
 

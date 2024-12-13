@@ -559,86 +559,26 @@
     "type" : "choice",
     "default" : "image"
   }, {
-    "id" : "f18c64d0-2138-c912-d5a6-ccc871b33a0d",
-    "name" : "image_group",
+    "id" : "e590e67d-ae63-99e8-03be-72edefbf1b9d",
+    "name" : "image",
     "display_width" : null,
-    "label" : "Image Group",
+    "label" : "Image",
     "required" : false,
     "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : 3,
-      "sorting_label_field" : "e590e67d-ae63-99e8-03be-72edefbf1b9d",
-      "default" : 3
-    },
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "bottom_content_group.select_media_type",
-      "controlling_value_regex" : "image",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "e590e67d-ae63-99e8-03be-72edefbf1b9d",
-      "name" : "image",
-      "display_width" : null,
-      "label" : "Image",
-      "required" : false,
-      "locked" : false,
-      "responsive" : true,
-      "resizable" : false,
-      "show_loading" : false,
-      "type" : "image",
-      "default" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "default" : [ {
-      "image" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    }, {
-      "image" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    }, {
-      "image" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    } ]
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/split-form-image.png",
+      "alt" : "split-form-image",
+      "loading" : "lazy",
+      "width" : 555,
+      "height" : 290,
+      "max_width" : 555,
+      "max_height" : 290
+    }
   }, {
     "id" : "db02f182-5ec7-c0bc-c230-f30ca4aaa5fc",
     "name" : "bottom_content",
@@ -655,40 +595,16 @@
   "type" : "group",
   "default" : {
     "select_media_type" : "image",
-    "image_group" : [ {
-      "image" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    }, {
-      "image" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    }, {
-      "image" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    } ],
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/split-form-image.png",
+      "alt" : "split-form-image",
+      "loading" : "lazy",
+      "width" : 555,
+      "height" : 290,
+      "max_width" : 555,
+      "max_height" : 290
+    },
     "bottom_content" : "<p>Building Reading Success with Wiley Blevins, a module-based intervention program, provides systematic and explicit instruction with an embedded review and repetition cycle.</p>\n<h2>Meet students' needs with:</h2>\n<ul>\n<li>Flexible implementation models to address various instructional schedules and strategies</li>\n<li>Innovative digital resources that engage students in active learning</li>\n<li>Interactive assessments to determine placement and measure student progress</li>\n<li>A transition Module to preclude decayed learning</li>\n</ul>"
   }
 }, {
