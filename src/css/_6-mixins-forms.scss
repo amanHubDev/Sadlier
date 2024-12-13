@@ -47,7 +47,7 @@
 
       ul.hs-error-msgs {
         animation: fadeIn2 0.5s ease;
-        margin-bottom: 20rem;
+        margin-bottom: 0;
 
         li {
           margin-bottom: 0;
@@ -153,7 +153,7 @@
         padding-left: 0;
         list-style: none;
         text-align: center;
-        margin: 0rem 0 20rem;
+        margin: 0rem 0 0;
         padding: 0;
         animation: fadeIn1 0.3s ease;
 
@@ -170,6 +170,7 @@
           border-radius: 5rem;
           padding: 5rem 8rem;
           line-height: 1.2;
+          margin-bottom: 0;
 
           &:before {
             border-style: solid;

@@ -639,8 +639,13 @@ section[class*="u4m-"] {
 
 .reverse-text {
   color: $white;
+  .eyebrow_text,
   .intro_desc,
   .intro_title {
+    color: $white;
+  }
+
+  &:not(.arrownotStyle) .arrow-link {
     color: $white;
   }
 }
@@ -769,4 +774,24 @@ form {
 }
 .gray2 {
   color: $Gray2;
+}
+
+//
+
+.theme1_color {
+  color: $sadlier_red;
+  border-color: $sadlier_red;
+  background-color: $sadlier_red;
+}
+
+.theme2_color {
+  color: $sadlier_blue;
+  border-color: $sadlier_blue;
+  background-color: $sadlier_blue;
+}
+
+.theme3_color {
+  color: $religion_green;
+  border-color: $religion_green;
+  background-color: $religion_green;
 }
