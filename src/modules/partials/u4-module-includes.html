@@ -23,7 +23,7 @@ require_css (get_asset_url('../../css/styles.css')) }} {% endif %}
 
   {% if module.module_overrides.background_settings.background_type == "image"
   %}
-  
+
   <div class="bg_overlay bg_image"></div>
   {% endif %}
 
@@ -66,18 +66,21 @@ require_css (get_asset_url('../../css/styles.css')) }} {% endif %}
     }  
     {% endif %}
 
+
+    {% if module.module_overrides.container.size == "full-width"%}
+    .{{name}} .page-center{
+      max-width: 100%;
+    }
+    {% endif %}
+    {% if module.module_overrides.container.size == "custom"%}
+    .{{name}} .page-center{
+      max-width: {{ module.module_overrides.container.custom_size }}px;
+    }
+    {% endif %}
+
+
   </style>
   {% end_require_js %} {% endif %}
-
-
-
-
-
-
-
-
-
-
 
 
 

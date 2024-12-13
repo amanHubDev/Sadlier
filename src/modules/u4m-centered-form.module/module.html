@@ -1,0 +1,49 @@
+{% set moduleName = 'u4m-centerd-form' %}
+{% include "../partials/u4-module-includes.html" %}
+
+{#  check module test#}
+
+<div class="page-center">
+  {% if module.select_form.form_id %}
+  <div class="form_box">
+    <div calss="form_box_ttile">
+      {{ module.form_content }}
+    </div>
+    {% form
+      form_to_use="{{ module.select_form.form_id }}"
+      response_response_type="{{ module.select_form.response_type }}"
+      response_message="{{ module.select_form.message }}"
+      response_redirect_id="{{ module.select_form.redirect_id }}"
+      response_redirect_url="{{module.select_form.redirect_url}}"
+      gotowebinar_webinar_key="{{ module.select_form.gotowebinar_webinar_key }}"
+    %}
+  </div>
+  {% endif %}
+</div>
+</section>
+
+
+
+
+{% require_css %}
+<style>
+  .{{name}} .form_box{
+    {% if module.module_settings.form_width == "full_width" %}
+    max-width : 100%;
+    {% endif %}
+    {% if module.module_settings.form_width == "custom" %}
+    max-width : {{ module.module_settings.custom_width }}px;
+    {% endif %}
+  }
+</style>
+{% end_require_css %}
+
+
+
+
+
+
+
+
+
+
