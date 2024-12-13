@@ -53,10 +53,32 @@ section.u4m-editorial-pillar-page-side-nav {
                 top: -1px;
                 right: -3px;
                 position: relative;
+                @include tabletvert {
+                  top: -3px;
+                }
               }
               .plus-icon {
                 display: none;
               }
+            }
+          }
+        }
+        .accordion-content {
+          .content-items.mobile {
+            display: none;
+            h3 {
+              color: $orange;
+              margin-bottom: 20px;
+            }
+            .eyebrow_text {
+              @include eyebrow;
+            }
+            p a {
+              color: $sadlier_blue;
+              text-decoration: underline;
+            }
+            @include tabletvert {
+              display: block;
             }
           }
         }
@@ -73,6 +95,9 @@ section.u4m-editorial-pillar-page-side-nav {
             position: absolute;
             top: 3px;
             right: 3px;
+            @include tabletvert {
+              top: 0px;
+            }
             .minus-icon {
               display: none;
             }
@@ -87,6 +112,7 @@ section.u4m-editorial-pillar-page-side-nav {
       @include tabletvert {
         width: 100%;
         padding-left: 0;
+        display: none;
       }
     }
   }

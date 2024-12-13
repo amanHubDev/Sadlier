@@ -8,7 +8,7 @@
   <div class="tab-acc-wrap flex_row">
     <div class="accordion-col">
       {% if module.title %}
-      <h4>
+      <h4 class="acctitle">
         {{ module.title }}
       </h4>
       {% endif %}
@@ -29,22 +29,41 @@
               </span>
             </h6>
           </div>
-          {% if item.subtitle %}
+          
           <div class="accordion-content">
+          {% if item.subtitle %}
             <p>
               {{ item.subtitle }}
             </p>
+          {% endif %}
+          <div class='content-items mobile'>
+          <h3>
+            {{ item.content_title }}
+          </h3>
+          {% if item.eyebrow_text %}
+          <div class="eyebrow_text">
+            {{ item.eyebrow_text }}
           </div>
           {% endif %}
+          {% if item.content %}
+          {{ item.content }}
+          {% endif %}
+        </div>
+          </div>
+      
+
+
+        
+
         </div>
         {% endfor %}
       </div>
     </div>
-    <div class="content-column">
+    <div class="content-column desktop">
       {% for item in module.accordion_items %}
       <div class='content-item' id="tab{{loop.index}}">
         <h3>
-          {{ item.title }}
+          {{ item.content_title }}
         </h3>
         {% if item.eyebrow_text %}
         <div class="eyebrow_text">
