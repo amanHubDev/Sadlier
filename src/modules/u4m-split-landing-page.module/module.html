@@ -1,11 +1,15 @@
 
-<div class="u4m-split-form-landing-wraper">
+{% set video = module.bottom_content_group.video_group%}
+{% set botgroup = module.bottom_content_group %} 
 
+
+<div class="u4m-split-form-landing-wraper  {% if module.intro_content.include_image and module.intro_content.image.src %}topColumnimgAdd{% endif %}  {% if botgroup.select_media_type == "image" and botgroup.image.src or botgroup.select_media_type == "video" and (video.select_video_type and video.video_file or video.select_video_type and video.embedded_path) %}bottomMediaAded {% endif %}">
 
 
   {% set moduleName = 'u4m-split-form-landing' %}
   {% include "../partials/u4-module-includes.html" %}
 
+  {# top content group #}
   <div class="top_content_group">
 
     <div class="page-center">
@@ -57,7 +61,7 @@
 
 
 
-
+{# bottom content group #}
 
 <div class="form_bottom_group dnd_padd form_bottom{{name}} bg_{{ module.module_overrides.bottom_background_settings.background_type }} bg_pos_{{ module.module_overrides.bottom_background_settings.select_background_position }}"  >
   {% if module.module_overrides.bottom_background_settings.background_type == "color"
@@ -117,7 +121,30 @@
         </div>
         {% endif %}
 
-        <div class="form_bottom_text">
+
+
+        {% if module.bottom_content_group.select_media_type == "video" %}
+        <div class="video_group_wrap">
+
+          {% if video.select_video_type == "file" and video.video_file  %}
+          <div class="video_group_box">
+            <video width="320" height="240" src="{{ video.video_file }}" controls>
+            </video>
+          </div>
+          {% endif %}
+
+          {% if video.select_video_type == "embed_path" and video.embedded_path  %}
+          <div class="video_group_box">
+            <iframe width="1128" height="635" src="{{ video.embedded_path }}" title="Sample Videos / Dummy Videos For Demo Use" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          {% endif %}
+
+        </div>
+        {% endif %}
+
+        {# video group #}
+
+        <div class="form_bottom_text {% if module.bottom_content_group.check_list_style %}checkListStyle{% endif %}">
           {{ module.bottom_content_group.bottom_content }}
         </div>
       </div>
@@ -126,7 +153,7 @@
   </div>
 </div>
 
-{% require_js %} 
+{% require_css %} 
 <style>
   {% if module.module_overrides.bottom_background_settings.background_type == "color"%}
 
@@ -146,8 +173,45 @@
   }  
   {% endif %}
 
+
+
+
+
+  .form_bottom{{ name }} .form_bottom_text.checkListStyle ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .form_bottom{{ name }} .form_bottom_text.checkListStyle ul > li {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    padding-left: 30px;   
+    margin-bottom: 20px;
+    padding-left: 36px;
+
+  }
+
+  .form_bottom{{ name }} .form_bottom_text.checkListStyle ul > li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    background-image: url({{ module.bottom_content_group.check_list_icon .src}});
+    width: 24px;
+    height: 24px;
+    width: 24px;
+    height: 24px;
+    left: 0;
+    top: 4px;
+  }
+
+
+
+
 </style>
-{% end_require_js %} {% endif %}
+{% end_require_css %} {% endif %}
 
 </div>
 

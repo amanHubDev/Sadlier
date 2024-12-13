@@ -136,10 +136,10 @@
   @include bodyStyle;
   font-size: 20rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.6px;
-
+  letter-spacing: 0.03em;
   @include phone {
     font-size: 18rem;
   }
@@ -148,10 +148,10 @@
 @mixin b2 {
   font-size: 18rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.54px;
-
+  letter-spacing: 0.03em;
   @include phone {
     font-size: 16rem;
   }
@@ -160,10 +160,10 @@
 @mixin b3 {
   font-size: 14rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.42px;
-
+  letter-spacing: 0.03em;
   @include phone {
     font-size: 16rem;
   }
@@ -238,6 +238,7 @@
   line-height: $baseLineHeight;
   text-transform: uppercase;
   color: $eyebrows;
+  letter-spacing: 0.1em;
 }
 
 //
@@ -333,7 +334,6 @@
 @mixin size20 {
   font-size: 20rem;
 }
-
 
 @mixin largeFont {
   font-family: $font1;

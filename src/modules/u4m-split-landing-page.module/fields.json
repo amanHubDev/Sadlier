@@ -565,6 +565,14 @@
     "label" : "Image",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "bottom_content_group.select_media_type",
+      "controlling_value_regex" : "image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "responsive" : true,
     "resizable" : false,
     "show_loading" : false,
@@ -580,6 +588,81 @@
       "max_height" : 290
     }
   }, {
+    "id" : "c48fa2f3-e4b0-b3a2-614b-684e873e7667",
+    "name" : "video_group",
+    "display_width" : null,
+    "label" : "Video Group",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "bottom_content_group.select_media_type",
+      "controlling_value_regex" : "video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "692cd565-93f5-2e5c-4ad9-8491d964e031",
+      "name" : "select_video_type",
+      "display_width" : null,
+      "label" : "Select Video Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "file", "File" ], [ "embed_path", "Embedded Path" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "file"
+    }, {
+      "picker" : "video",
+      "id" : "5bd2c159-652a-cff9-bb31-620e9fdfc97c",
+      "name" : "video_file",
+      "display_width" : null,
+      "label" : "Video File",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "bottom_content_group.video_group.select_video_type",
+        "controlling_value_regex" : "file",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "file"
+    }, {
+      "id" : "ed0b647c-076d-6b82-af65-0bba63eda6fd",
+      "name" : "embedded_path",
+      "display_width" : null,
+      "label" : "Embedded Path",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "bottom_content_group.video_group.select_video_type",
+        "controlling_value_regex" : "embed_path",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : true,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "select_video_type" : "file",
+      "embedded_path" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }
+  }, {
     "id" : "db02f182-5ec7-c0bc-c230-f30ca4aaa5fc",
     "name" : "bottom_content",
     "display_width" : null,
@@ -588,6 +671,45 @@
     "locked" : false,
     "type" : "richtext",
     "default" : "<p>Building Reading Success with Wiley Blevins, a module-based intervention program, provides systematic and explicit instruction with an embedded review and repetition cycle.</p>\n<h2>Meet students' needs with:</h2>\n<ul>\n<li>Flexible implementation models to address various instructional schedules and strategies</li>\n<li>Innovative digital resources that engage students in active learning</li>\n<li>Interactive assessments to determine placement and measure student progress</li>\n<li>A transition Module to preclude decayed learning</li>\n</ul>"
+  }, {
+    "id" : "2e9a2c30-d8c3-5fae-d278-bdb202d9e1bc",
+    "name" : "check_list_style",
+    "display_width" : null,
+    "label" : "Check List Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "95649980-0c2f-6860-030a-35569710f0a9",
+    "name" : "check_list_icon",
+    "display_width" : null,
+    "label" : "Check List Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "bottom_content_group.check_list_style",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Vector.svg",
+      "alt" : "Vector",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -605,7 +727,22 @@
       "max_width" : 555,
       "max_height" : 290
     },
-    "bottom_content" : "<p>Building Reading Success with Wiley Blevins, a module-based intervention program, provides systematic and explicit instruction with an embedded review and repetition cycle.</p>\n<h2>Meet students' needs with:</h2>\n<ul>\n<li>Flexible implementation models to address various instructional schedules and strategies</li>\n<li>Innovative digital resources that engage students in active learning</li>\n<li>Interactive assessments to determine placement and measure student progress</li>\n<li>A transition Module to preclude decayed learning</li>\n</ul>"
+    "video_group" : {
+      "select_video_type" : "file",
+      "embedded_path" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    },
+    "bottom_content" : "<p>Building Reading Success with Wiley Blevins, a module-based intervention program, provides systematic and explicit instruction with an embedded review and repetition cycle.</p>\n<h2>Meet students' needs with:</h2>\n<ul>\n<li>Flexible implementation models to address various instructional schedules and strategies</li>\n<li>Innovative digital resources that engage students in active learning</li>\n<li>Interactive assessments to determine placement and measure student progress</li>\n<li>A transition Module to preclude decayed learning</li>\n</ul>",
+    "check_list_style" : false,
+    "check_list_icon" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Vector.svg",
+      "alt" : "Vector",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    }
   }
 }, {
   "id" : "module_overrides",
