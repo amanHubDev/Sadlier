@@ -5,6 +5,12 @@
   }
 }
 
+@mixin phoneMin {
+  @media (min-width: 581px) {
+    @content;
+  }
+}
+
 @mixin tabletvertmin {
   @media (min-width: 768px) {
     @content;
