@@ -1,265 +1,261 @@
 @import "../../css/_module-imports";
-
 section.u4m-filtered-content {
-  padding: 100rem 0;
-
-  .heading {
-    @include h2;
-    text-align: center;
-  }
-
-  .featured {
-    @include center;
-    margin-bottom: 50rem;
-
-    .card {
-      @include featuredCard;
-    }
-  }
-
-  .filters {
-    @include center;
-
-    form.multi-filter {
-      @include form;
-      max-width: 1240rem;
-
-      fieldset {
-        max-width: none;
-        border: 0;
-        padding: 0;
-        margin: 0 0 20rem;
-        position: relative;
-
-        &:last-child {
-          margin: 0;
-        }
-
-        .icon {
-          width: 15rem;
-          position: absolute;
-          top: 50%;
-          right: 20rem;
-          transform: translateY(-50%);
-        }
-
-        &.buttons {
-          button {
-            @include buttonSmall;
-            margin-right: 20rem;
-            margin-bottom: 0;
-          }
-
-          button.mixitup-control-active {
-            background-color: $black;
-          }
-        }
-
-        &.selects {
-          select {
-            border: 1rem solid rgba(0, 0, 0, 0);
-            border-radius: $border1;
-            margin-top: 2rem;
-            font-size: $baseFontSize;
-            background-color: $white;
-            padding: 10rem 15rem;
-            width: 100%;
-            -moz-appearance: none;
-            appearance: none;
-          }
-        }
-
-        &.checkboxes {
-          label {
-            display: inline-block;
-            margin: 0 10px;
-
-            input {
-              margin: 0 10px 0 0;
-            }
-          }
-        }
-
-        &.search {
-          margin: 20rem 0;
-
-          input {
-            border: 1rem solid rgba(0, 0, 0, 0);
-            border-radius: $border1;
-            margin-top: 2rem;
-            font-size: $baseFontSize;
-            background-color: $white;
-            padding: 10rem 15rem;
-            width: 100%;
-            appearance: none;
-          }
-        }
-      }
-
-      &.mixitup-sorting {
-        display: flex;
-
-        fieldset {
-          flex: auto;
-          margin: 0;
-          display: flex;
-        }
-
-        fieldset.selects {
-          flex-grow: 1;
-          display: flex;
+  .featCardsOuter {
+    padding-bottom: 50px;
+    .featCards {
+      gap: 50px;
+      .left_Sec {
+        width: calc(66.66% - 25px);
+        .flex_row {
+          height: 100%;
+          border-radius: $borderRadius;
+          overflow: hidden;
+          background: $White;
           align-items: center;
-
-          label {
-            white-space: nowrap;
-            margin: 0 10rem 0 0;
-          }
-        }
-
-        fieldset.buttons {
-          display: flex;
-          justify-content: center;
-          flex: 0 0 auto;
-
-          button {
-            margin: 0 0 0 10rem;
-            background-color: $action1;
-
-            svg {
-              filter: invert(1);
-            }
-
-            svg {
-              width: 20rem;
-              height: 20rem;
-            }
-
-            &:hover {
-              &:not(.active) {
-                background-color: $black;
+          .cardImgSec {
+            width: 344px;
+            max-width: 100%;
+            height: 100%;
+            .cardImg {
+              height: 100%;
+              position: relative;
+              a {
+                background-size: cover;
+                background-position: center;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
               }
             }
           }
+          .cardConSec {
+            > * {
+              width: 100%;
+            }
+            width: calc(100% - 344px);
+            padding: 91px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+            .content_type {
+              @include eyebrow;
+              margin-bottom: 20px;
+            }
+            .cardContent {
+              margin-bottom: 30px;
+              line-height: 1.625;
+              letter-spacing: 0.03em;
+            }
+            .restitle {
+              a {
+                color: inherit;
+              }
+            }
+          }
+        }
+      }
+      .right_Sec {
+        width: calc(33.33% - 25px);
+        .cardInr {
+          background: $White;
+          border-radius: $borderRadius;
+          overflow: hidden;
+          height: 100%;
+          .cardImg {
+            padding-bottom: 56.66%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            @include tabletmidmin {
+              padding-bottom: 185px;
+            }
+            .absLink {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .cardCont {
+            padding: 30px 30px 50px;
+            .content_type {
+              @include eyebrow;
+              margin-bottom: 15px;
+              a {
+                color: inherit;
+              }
+            }
+            .restitle {
+              a {
+                color: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .divider {
+    hr {
+      margin: 0;
+      border: none;
+      height: 4px;
+      background-color: $Gray2;
+    }
+  }
+  .featCardsListWrap {
+    .filterWrap {
+      padding: 50px 0;
+      .filters {
+        .flex_row {
+          gap: 50px;
+          .col {
+            width: calc((100% - 100px) / 3);
+            padding: 0;
+            .colTtl {
+              @include eyebrow;
+              padding-bottom: 5px;
+            }
+            .resourceInput {
+              padding: 10px 15px;
+              background: $White;
+              border: 2px solid $tone15;
+              border-radius: 5px;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 27px;
+              letter-spacing: 0.03em;
+              outline: none;
+              &::placeholder {
+                color: $tone30;
+              }
+            }
+            .resourceSelect {
+              padding: 10px 15px;
+              background: $White;
+              border: 2px solid $tone15;
+              border-radius: 5px;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 27px;
+              letter-spacing: 0.03em;
+              outline: none;
+              appearance: none;
+              color: $tone50;
+              background-size: 12px;
+              background-repeat: no-repeat;
+              background-position: calc(100% - 16px) center;
+              padding-right: 34px;
+            }
+          }
+        }
+      }
+    }
 
-          button.active {
-            background-color: $black;
-            box-shadow: unset;
+    .resourceList {
+      gap: 50px;
+      .cardItem {
+        width: 100%;
+        @include tabletvertmin {
+          width: calc((100% - 50px) / 2);
+        }
+        @include tabletmidmin {
+          width: calc((100% - 100px) / 3);
+        }
+
+        .cardInr {
+          padding: 40px 29px;
+          background: $White;
+          border-radius: $borderRadius;
+          overflow: hidden;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          .cardImg {
+            height: 230px;
+            margin-bottom: 15px;
+            a {
+              height: 100%;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              img {
+                height: 100%;
+              }
+            }
+          }
+          .cardCont {
+            text-align: center;
+            .content_type {
+              @include eyebrow;
+              margin-bottom: 15px;
+            }
+            .restitle {
+              a {
+                color: inherit;
+              }
+            }
+          }
+          .cardBtnRow {
+            text-align: center;
+            margin-top: auto;
           }
         }
       }
     }
   }
 
-  #container {
-    @include center;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-
-    .resource-card {
-      @include resourceCard;
-      position: relative;
-      top: 0;
-      transition: top .1s ease-in;
-    }
-
-    .resource-card[data-layout=row] {
-      display: flex;
-      flex: 0 0 calc(100% - 40rem);
-      flex-direction: row;
-      transition: unset;
-
-      .link-wrap {
-        display: flex;
-        flex: 1;
-        height: unset;
-        transition: unset;
-
-        .image {
-          height: unset;
-          min-height: unset;
-          flex: 1 1 auto;
-          max-width: 30%;
-        }
-
-        .content {
-          flex: auto;
-        }
-      }
-    }
-  }
-
-
-  #mix-no-results {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    display: none;
-  }
-
   .pagination {
-    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: 50px;
     align-items: center;
     justify-content: center;
-    margin-top: 50rem;
-    /* Adjust the margin-top value */
-
-    button {
+    nav {
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      border: 0;
-      background-color: $gray1;
-      color: $black;
-      min-height: 55rem;
-      min-width: 55rem;
-      padding: 0;
-      margin: 0 5rem;
-      font-weight: bold;
-      transition: .1s ease-in;
-      text-transform: uppercase;
-      font-size: 14rem;
-      line-height: 1.2;
-      letter-spacing: .25rem;
-      text-decoration: none;
-      cursor: pointer;
-      box-shadow: 0rem 1rem 12rem 0 rgba(51, 71, 91, .1);
-
-      @include phone {
-        min-height: 30rem;
-        min-width: 30rem;
-        font-size: 13rem;
+      gap: 20px;
+      button {
+        align-items: center;
+        border-radius: 100%;
+        color: $tone;
+        display: flex;
+        flex-wrap: wrap;
+        font-weight: 700;
+        height: 50px;
+        justify-content: center;
+        padding: 10px;
+        width: 50px;
+        > * {
+          pointer-events: none;
+        }
+        &.prevnext {
+          background-color: $Gray2;
+          border: none;
+        }
+        &.para {
+          border: 2px solid $tone;
+          &:hover {
+            background-color: $tone;
+            color: $White;
+          }
+        }
+        &.active {
+          background-color: $tone;
+          color: $White;
+        }
+        &.cursor-not-allowed {
+          pointer-events: none;
+        }
       }
-
-      &:hover {
-        background-color: $action1;
-        color: $white;
-      }
-
-      &.mixitup-control-active {
-        background-color: $action1;
-        color: $white;
-      }
-    }
-  }
-
-  .pagination.paginate.mixitup-page-list-disabled {
-    display: none;
-  }
-
-  .pagination.loadmore {
-    text-align: center;
-
-    button {
-      @include button;
-    }
-
-    button.hidden {
-      display: none;
     }
   }
 }
