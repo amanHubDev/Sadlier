@@ -852,3 +852,58 @@ form {
   -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }
+
+// Popup
+
+.cardVideoPopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  height: 100%;
+  overflow-y: auto;
+
+  .small_container {
+    position: relative;
+    padding: 100px 20px;
+    margin: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  video {
+    display: block;
+    width: 100%;
+    outline: none;
+  }
+
+  .cardpopVideo {
+    margin: auto;
+    padding: 35px 0;
+    position: relative;
+
+    .close {
+      align-items: center;
+      border-radius: 100%;
+      cursor: pointer;
+      display: flex;
+      height: 40px;
+      justify-content: space-around;
+      position: absolute;
+      right: 0px;
+      top: -10px;
+      width: 40px;
+      z-index: 99;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: $white;
+      }
+    }
+  }
+}
