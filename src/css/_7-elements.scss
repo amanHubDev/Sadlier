@@ -417,7 +417,7 @@ code {
   border-radius: 0;
 }
 
-pre>code {
+pre > code {
   display: block;
   padding: 1rem 15rem;
   white-space: pre;
@@ -489,8 +489,8 @@ section[class*="u4m-"] {
   z-index: 1;
   pointer-events: none;
 
-  &~.full-width-container,
-  &~.page-center {
+  & ~ .full-width-container,
+  & ~ .page-center {
     position: relative;
     z-index: 3;
   }
@@ -825,9 +825,6 @@ form {
   background-color: $religion_green;
 }
 
-
-
-
 .theme1_color.playIcon {
   background-color: rgba($sadlier_red, 0.5);
 }
@@ -838,4 +835,20 @@ form {
 
 .theme3_color.playIcon {
   background-color: rgba($religion_green, 0.5);
+}
+
+.material-icons-outlined {
+  font-family: "Material Icons Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
 }
