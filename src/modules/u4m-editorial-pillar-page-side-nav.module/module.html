@@ -1,0 +1,98 @@
+{% set moduleName = 'u4m-editorial-pillar-page-side-nav' %}
+{% include "../partials/u4-module-includes.html" %}
+
+<div class="page-center  {{ module.module_settings.theme }}">
+  <div class="intro_wrapp">
+    {{macros.introGroup(module.intro_content)}}
+  </div>
+  <div class="tab-acc-wrap flex_row">
+    <div class="accordion-col">
+      {% if module.title %}
+      <h4>
+        {{ module.title }}
+      </h4>
+      {% endif %}
+      <div class="accordion-col-inner">
+        {% for item in module.accordion_items %}
+        <div class="accordion-item">
+          <div class="accordion_title" dataSet="#tab{{loop.index}}">
+            <h6>
+              {{ item.title }}
+              <span class="accordion_icon">
+                <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M8 14H10V10H14V8H10V4H8V8H4V10H8V14ZM2 18C1.45 18 0.979167 17.8042 0.5875 17.4125C0.195833 17.0208 0 16.55 0 16V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H16C16.55 0 17.0208 0.195833 17.4125 0.5875C17.8042 0.979167 18 1.45 18 2V16C18 16.55 17.8042 17.0208 17.4125 17.4125C17.0208 17.8042 16.55 18 16 18H2ZM2 16H16V2H2V16Z" fill="#002835"/>
+                </svg>
+                <svg class="minus-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 21C4.45 21 3.97917 20.8042 3.5875 20.4125C3.19583 20.0208 3 19.55 3 19V5C3 4.45 3.19583 3.97917 3.5875 3.5875C3.97917 3.19583 4.45 3 5 3H19C19.55 3 20.0208 3.19583 20.4125 3.5875C20.8042 3.97917 21 4.45 21 5V19C21 19.55 20.8042 20.0208 20.4125 20.4125C20.0208 20.8042 19.55 21 19 21H5ZM5 19H19V5H5V19Z" fill="#FF6633"/>
+                  <rect x="7" y="11" width="10" height="2" fill="#FF6633"/>
+                </svg>
+              </span>
+            </h6>
+          </div>
+          {% if item.subtitle %}
+          <div class="accordion-content">
+            <p>
+              {{ item.subtitle }}
+            </p>
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="content-column">
+      {% for item in module.accordion_items %}
+      <div class='content-item' id="tab{{loop.index}}">
+        <h3>
+          {{ item.title }}
+        </h3>
+        {% if item.eyebrow_text %}
+        <div class="eyebrow_text">
+          {{ item.eyebrow_text }}
+        </div>
+        {% endif %}
+        {% if item.content %}
+        {{ item.content }}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
+</section>
+
+{% require_js %}
+<script>
+  $('.{{name}} .accordion-item:first-child').addClass('active');
+    $('.{{name}} .accordion-item:first-child').children('.accordion-content').slideDown(250);
+    $('.accordion_title').click(function(){
+    $(this).parents('.accordion-item').siblings().removeClass('active');
+    $(this).parents().siblings('.accordion-item').children('.accordion-content').slideUp(250);
+    $(this).parent('.accordion-item').toggleClass('active');
+    $(this).next('.accordion-content').slideToggle(250);
+  });
+
+  $('.content-item').first().show();
+  $('.accordion_title').click(function() {
+    var target = $(this).attr('dataSet');
+    $(target).show().siblings('.content-item').hide();
+    return false;
+  });
+</script>
+{% end_require_js %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

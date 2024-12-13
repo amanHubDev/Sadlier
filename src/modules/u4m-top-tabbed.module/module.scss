@@ -18,6 +18,7 @@ section.u4m-top-tabbed {
       }
     }
   }
+
   .theme1_color {
     .slick-dots .slick-active button {
       background-color: $sadlier_red;
@@ -37,9 +38,19 @@ section.u4m-top-tabbed {
     .tab_nav {
       color: $Gray1;
     }
+
     &.slick-current {
       .tab_nav {
         color: $dark_text;
+        &.theme1_color {
+          border-color: $sadlier_red;
+        }
+        &.theme2_color {
+          border-color: $sadlier_blue;
+        }
+        &.theme3_color {
+          border-color: $religion_green;
+        }
       }
     }
   }
