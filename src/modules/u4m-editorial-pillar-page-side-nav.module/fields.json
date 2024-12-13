@@ -86,7 +86,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "How X Subject Supports The Persona/User"
+    "default" : "Headline goes here."
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -332,9 +332,9 @@
     "eyebrow_text" : "OPTIONAL EYEBROW TEXT",
     "include_heading" : true,
     "heading_size" : "h2",
-    "heading" : "How X Subject Supports The Persona/User",
+    "heading" : "Headline goes here.",
     "include_content" : true,
-    "content_style" : "theme",
+    "content_style" : "cstyle1",
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
     "include_button" : false,
     "button_group" : [ {
@@ -368,53 +368,32 @@
     } ]
   }
 }, {
-  "id" : "ac041352-8f6f-fda2-5739-e5ffe0dbe7ad",
-  "name" : "tabber_group",
+  "id" : "1cb88197-a032-4bfb-8b43-247c46323d3d",
+  "name" : "title",
   "display_width" : null,
-  "label" : "Tabber Group",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Table of Contents"
+}, {
+  "id" : "40873d9f-25a3-03bd-a2fa-887011301bfe",
+  "name" : "accordion_items",
+  "display_width" : null,
+  "label" : "Accordion Items",
   "required" : false,
   "locked" : false,
   "occurrence" : {
     "min" : null,
     "max" : null,
-    "sorting_label_field" : "25ae54f1-fc22-179e-dc38-c03aa681bef2",
+    "sorting_label_field" : "00c20de1-3251-f91b-0eb5-2348dfbf6178",
     "default" : 5
   },
   "children" : [ {
-    "id" : "461e2453-d93f-73b1-04db-8510673c0062",
-    "name" : "image",
-    "display_width" : null,
-    "label" : "Image",
-    "required" : false,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/benifit%20here.png",
-      "alt" : "benifit here",
-      "loading" : "lazy",
-      "width" : 473,
-      "height" : 358,
-      "max_width" : 473,
-      "max_height" : 358
-    }
-  }, {
-    "id" : "25ae54f1-fc22-179e-dc38-c03aa681bef2",
-    "name" : "nav_text",
-    "display_width" : null,
-    "label" : "Nav Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "BENEFIT THREE"
-  }, {
-    "id" : "f38456e7-cddf-b1d5-7134-8756bfaaa576",
+    "id" : "00c20de1-3251-f91b-0eb5-2348dfbf6178",
     "name" : "title",
     "display_width" : null,
     "label" : "Title",
@@ -424,321 +403,98 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "Slide headline text here."
+    "default" : "Title of Accordion Slide Here"
   }, {
-    "id" : "1ca7731b-497e-f415-1f4e-0b3cbe001a9b",
+    "id" : "aebdeabb-a663-ed93-0b41-df08b009c3a7",
+    "name" : "subtitle",
+    "display_width" : null,
+    "label" : "SubTitle",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Quisque accumsan sed sapien non blandit. Nunc malesuada urna non malesuada mattis. Donec ut justo felis. Integer posuere aliquet libero id porta. Ut ac interdum leo. Maecenas porttitor urna risus, sed tincidunt dui mollis eu. Duis congue ornare lacus."
+  }, {
+    "id" : "fb835e3b-019c-cf47-25a2-52cd75425959",
+    "name" : "eyebrow_text",
+    "display_width" : null,
+    "label" : "Eyebrow Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "DATE REVISED"
+  }, {
+    "id" : "1e3eeff7-ccec-8724-e2cd-11c870ff246c",
     "name" : "content",
     "display_width" : null,
     "label" : "Content",
     "required" : false,
     "locked" : false,
     "type" : "richtext",
-    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>"
-  }, {
-    "id" : "27bf3fa2-5ef6-6140-95f0-22f6aedd19fd",
-    "name" : "button_group",
-    "display_width" : null,
-    "label" : "Button Group",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "default" : 1
-    },
-    "children" : [ {
-      "id" : "e24a98cd-6322-6ff8-b603-4a1d45b7813f",
-      "name" : "button_type",
-      "display_width" : null,
-      "label" : "Button Type",
-      "required" : false,
-      "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "std"
-    }, {
-      "id" : "cbbda056-eb89-e16d-0c28-95c5ac7a7d5e",
-      "name" : "button_style",
-      "display_width" : null,
-      "label" : "Button Style",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "tabber_group.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "arrow-link", "Arrow Link" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "arrow-link"
-    }, {
-      "id" : "277541ef-8c23-1638-edb3-007312ada1ab",
-      "name" : "button_theme",
-      "display_width" : null,
-      "label" : "Button Theme",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "tabber_group.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "theme1"
-    }, {
-      "id" : "913a6c1c-8b4b-4d16-418a-b385e0161318",
-      "name" : "button_text",
-      "display_width" : null,
-      "label" : "Button Text",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "tabber_group.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "default" : "READ CASE STUDY"
-    }, {
-      "id" : "f10b8c1e-ff91-936d-1610-a25d8cb435d8",
-      "name" : "link",
-      "display_width" : null,
-      "label" : "Link",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "tabber_group.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
-      "show_advanced_rel_options" : false,
-      "type" : "link",
-      "default" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "id" : "7fa6821d-4792-1650-5209-b59951c1a6bb",
-      "name" : "cta",
-      "display_width" : null,
-      "label" : "CTA",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "tabber_group.button_group.button_type",
-        "controlling_value_regex" : "cta",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "type" : "cta"
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "default" : [ {
-      "button_type" : "std",
-      "button_style" : "arrow-link",
-      "button_theme" : "theme1",
-      "button_text" : "READ CASE STUDY",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ]
+    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute sample text link reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
-    "image" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/benifit%20here.png",
-      "alt" : "benifit here",
-      "loading" : "lazy",
-      "width" : 473,
-      "height" : 358,
-      "max_width" : 473,
-      "max_height" : 358
-    },
-    "nav_text" : "BENEFIT THREE",
-    "title" : "Slide headline text here.",
-    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
-    "button_group" : [ {
-      "button_type" : "std",
-      "button_style" : "arrow-link",
-      "button_theme" : "theme1",
-      "button_text" : "READ CASE STUDY",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ]
+    "title" : "Title of Accordion Slide Here",
+    "subtitle" : "Quisque accumsan sed sapien non blandit. Nunc malesuada urna non malesuada mattis. Donec ut justo felis. Integer posuere aliquet libero id porta. Ut ac interdum leo. Maecenas porttitor urna risus, sed tincidunt dui mollis eu. Duis congue ornare lacus.",
+    "eyebrow_text" : "DATE REVISED",
+    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute sample text link reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
   }, {
-    "image" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/benifit%20here.png",
-      "alt" : "benifit here",
-      "loading" : "lazy",
-      "width" : 473,
-      "height" : 358,
-      "max_width" : 473,
-      "max_height" : 358
-    },
-    "nav_text" : "BENEFIT THREE",
-    "title" : "Slide headline text here.",
-    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
-    "button_group" : [ {
-      "button_type" : "std",
-      "button_style" : "arrow-link",
-      "button_theme" : "theme1",
-      "button_text" : "READ CASE STUDY",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ]
+    "title" : "Title of Accordion Slide Here",
+    "subtitle" : "Quisque accumsan sed sapien non blandit. Nunc malesuada urna non malesuada mattis. Donec ut justo felis. Integer posuere aliquet libero id porta. Ut ac interdum leo. Maecenas porttitor urna risus, sed tincidunt dui mollis eu. Duis congue ornare lacus.",
+    "eyebrow_text" : "DATE REVISED",
+    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute sample text link reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
   }, {
-    "image" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/benifit%20here.png",
-      "alt" : "benifit here",
-      "loading" : "lazy",
-      "width" : 473,
-      "height" : 358,
-      "max_width" : 473,
-      "max_height" : 358
-    },
-    "nav_text" : "BENEFIT THREE",
-    "title" : "Slide headline text here.",
-    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
-    "button_group" : [ {
-      "button_type" : "std",
-      "button_style" : "arrow-link",
-      "button_theme" : "theme1",
-      "button_text" : "READ CASE STUDY",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ]
+    "title" : "Title of Accordion Slide Here",
+    "subtitle" : "Quisque accumsan sed sapien non blandit. Nunc malesuada urna non malesuada mattis. Donec ut justo felis. Integer posuere aliquet libero id porta. Ut ac interdum leo. Maecenas porttitor urna risus, sed tincidunt dui mollis eu. Duis congue ornare lacus.",
+    "eyebrow_text" : "DATE REVISED",
+    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute sample text link reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
   }, {
-    "image" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/benifit%20here.png",
-      "alt" : "benifit here",
-      "loading" : "lazy",
-      "width" : 473,
-      "height" : 358,
-      "max_width" : 473,
-      "max_height" : 358
-    },
-    "nav_text" : "BENEFIT THREE",
-    "title" : "Slide headline text here.",
-    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
-    "button_group" : [ {
-      "button_type" : "std",
-      "button_style" : "arrow-link",
-      "button_theme" : "theme1",
-      "button_text" : "READ CASE STUDY",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ]
+    "title" : "Title of Accordion Slide Here",
+    "subtitle" : "Quisque accumsan sed sapien non blandit. Nunc malesuada urna non malesuada mattis. Donec ut justo felis. Integer posuere aliquet libero id porta. Ut ac interdum leo. Maecenas porttitor urna risus, sed tincidunt dui mollis eu. Duis congue ornare lacus.",
+    "eyebrow_text" : "DATE REVISED",
+    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute sample text link reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
   }, {
-    "image" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/benifit%20here.png",
-      "alt" : "benifit here",
-      "loading" : "lazy",
-      "width" : 473,
-      "height" : 358,
-      "max_width" : 473,
-      "max_height" : 358
-    },
-    "nav_text" : "BENEFIT THREE",
-    "title" : "Slide headline text here.",
-    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
-    "button_group" : [ {
-      "button_type" : "std",
-      "button_style" : "arrow-link",
-      "button_theme" : "theme1",
-      "button_text" : "READ CASE STUDY",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ]
+    "title" : "Title of Accordion Slide Here",
+    "subtitle" : "Quisque accumsan sed sapien non blandit. Nunc malesuada urna non malesuada mattis. Donec ut justo felis. Integer posuere aliquet libero id porta. Ut ac interdum leo. Maecenas porttitor urna risus, sed tincidunt dui mollis eu. Duis congue ornare lacus.",
+    "eyebrow_text" : "DATE REVISED",
+    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute sample text link reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
   } ]
+}, {
+  "id" : "d8c99c2f-bcd0-e80c-33f1-6dbe3ca7bf8b",
+  "name" : "module_settings",
+  "display_width" : null,
+  "label" : "Module Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "4f15f267-5be0-f20f-50ca-038d8cc4e509",
+    "name" : "theme",
+    "display_width" : null,
+    "label" : "Theme",
+    "help_text" : "\"Theme\" option will reflect on \"Border/Icon Background (if any)\"",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme1_color", "Theme 1" ], [ "theme2_color", "Theme 2" ], [ "theme3_color", "Theme 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : { }
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
@@ -1036,20 +792,6 @@
     "type" : "boolean",
     "default" : false
   }, {
-    "id" : "d0bc1244-e420-0a7e-499b-3b87a3da71d6",
-    "name" : "theme",
-    "display_width" : null,
-    "label" : "Theme",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "theme1_color", "Theme 1" ], [ "theme2_color", "Theme 2" ], [ "theme3_color", "Theme 3" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "theme1_color"
-  }, {
     "id" : "94e04306-ecc1-4735-09fd-9b66482a8101",
     "name" : "background_settings",
     "display_width" : null,
@@ -1124,7 +866,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "light2_bg"
+      "default" : "white_bg"
     }, {
       "id" : "6a1736ef-8211-436a-9aee-797310e60c0f",
       "name" : "opacity",
@@ -1154,6 +896,14 @@
       "label" : "Include Overlay Image",
       "required" : false,
       "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "color",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
       "display" : "checkbox",
       "type" : "boolean",
       "default" : false
@@ -1269,7 +1019,7 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "select_color" : "light2_bg",
+      "select_color" : "white_bg",
       "opacity" : 100,
       "include_overlay_image" : false,
       "overlay_image" : {
@@ -1363,7 +1113,6 @@
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
     "reverse_text" : false,
-    "theme" : "theme1_color",
     "background_settings" : {
       "background_type" : "color",
       "background_image" : {
@@ -1372,7 +1121,7 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "select_color" : "light2_bg",
+      "select_color" : "white_bg",
       "opacity" : 100,
       "include_overlay_image" : false,
       "overlay_image" : {
