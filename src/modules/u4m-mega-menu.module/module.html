@@ -1,0 +1,84 @@
+<div class="mega-menu">
+  <ul class="level1">
+    {% for item in module.mega_menu %}
+    <li class="menuItem {% if item.enable_child_menu %}has-submenu{% endif %}">
+      {% set href = item.menu_link.url.href %}
+      {% if item.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a
+         {% if item.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
+         href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+         {% else %}
+         href="{{ href|escape_url }}"
+         {% endif %}
+         {% if item.menu_link.open_in_new_tab %}
+         target="_blank"
+         {% endif %}
+         {% if item.menu_link.rel %}
+         rel="{{ item.menu_link.rel|escape_attr }}"
+         {% endif %}
+         >
+        {{ item.menu_text }}
+      </a>
+      {% if item.enable_child_menu %}
+      <div class="mega_menu_wrapper {{ item.child_menu_section.column_count_in_row }}">
+        <div class="page-center">
+          <div class="row">
+            <ul class="level2">
+              {% for item2 in item.child_menu_section.child_menu %}
+              <li class="childItem">
+                {% if item2.title %}
+                <h6>
+                  {{ item2.title }}
+                </h6>
+                {% endif %}
+                <ul class="level3">
+                  {% for item3 in item2.child_menu_items %}
+                  <li class="child-menu-item">
+                    {% set href = item3.child_menu_link.url.href %}
+                    {% if item3.child_menu_link.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                    {% endif %}
+                    <a
+                       {% if item3.child_menu_link.url.type is equalto "CALL_TO_ACTION"  %}
+                       href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                       {% else %}
+                       href="{{ href|escape_url }}"
+                       {% endif %}
+                       {% if item3.child_menu_link.open_in_new_tab %}
+                       target="_blank"
+                       {% endif %}
+                       {% if item3.child_menu_link.rel %}
+                       rel="{{ item3.child_menu_link.rel|escape_attr }}"
+                       {% endif %}
+                       >
+                      {{ item3.child_menu_text }}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </li>
+              {% endfor %}
+              <li class="media_section">
+                {% if item.child_menu_section.media_section.image_field.src %}
+                {% set sizeAttrs = 'width="{{ item.child_menu_section.media_section.image_field.width|escape_attr }}" height="{{ item.child_menu_section.media_section.image_field.height|escape_attr }}"' %}
+                {% if item.child_menu_section.media_section.image_field.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.child_menu_section.media_section.image_field.width|escape_attr }}" height="{{ item.child_menu_section.media_section.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.child_menu_section.media_section.image_field.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.child_menu_section.media_section.image_field.max_width|escape_attr }}" height="{{ item.child_menu_section.media_section.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.child_menu_section.media_section.image_field.loading != 'disabled' ? 'loading="{{ item.child_menu_section.media_section.image_field.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.child_menu_section.media_section.image_field.src|escape_url }}" alt="{{ item.child_menu_section.media_section.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+                {{ item.child_menu_section.media_section.content }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</div>

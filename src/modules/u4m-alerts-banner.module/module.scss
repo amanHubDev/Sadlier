@@ -1,0 +1,95 @@
+@import "../../css/_module-imports";
+
+.alerts_banner {
+  padding: 0;
+  .information-banner {
+    background-color: $tone;
+    color: $White;
+    display: flex;
+    justify-content: center;
+    line-height: 130%;
+    padding: 10px 50px;
+    position: relative;
+    text-align: center;
+    font-weight: 400;
+    .row {
+      align-items: center;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 24px;
+    }
+    .container {
+      width: 100%;
+      position: relative;
+    }
+    .closeTrigger {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      height: 20px;
+      justify-content: center;
+      position: absolute;
+      right: 0;
+      width: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      svg {
+        * {
+          stroke: $White;
+        }
+      }
+    }
+    p {
+      margin: 0;
+      a {
+        text-decoration: underline;
+        margin-left: 5px;
+      }
+    }
+    .btn-wrap {
+      a.hs-button {
+        padding: 12.5px 20px;
+      }
+    }
+  }
+  .information-banner.reverse_text {
+    a.hs-button {
+      color: $White;
+    }
+  }
+}
+body.anncmnt_hide {
+  .information-banner {
+    display: none;
+  }
+}
+.corporate {
+  .header-wrapper {
+    .header-top {
+      background: #e2173f;
+    }
+  }
+}
+.religion {
+  .header-wrapper {
+    .header-top {
+      background: #047b47;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .alerts_banner {
+    .information-banner {
+      .row {
+        gap: 15px;
+        padding: 0 10px;
+      }
+      padding: 10px 20px;
+      .closeTrigger {
+        right: -17px;
+      }
+    }
+  }
+}

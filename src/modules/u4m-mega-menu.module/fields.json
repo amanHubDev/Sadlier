@@ -1,0 +1,1132 @@
+[ {
+  "id" : "2e52f244-2ded-e7e0-e5b0-eb16487cd77c",
+  "name" : "mega_menu",
+  "display_width" : null,
+  "label" : "Mega Menu",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "6fcb2677-65b1-c84f-0595-5d346eeade41",
+    "default" : 7
+  },
+  "children" : [ {
+    "id" : "6fcb2677-65b1-c84f-0595-5d346eeade41",
+    "name" : "menu_text",
+    "display_width" : null,
+    "label" : "Menu Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Mathematics"
+  }, {
+    "id" : "318db2ae-7e2b-d971-21e9-c278446061fb",
+    "name" : "menu_link",
+    "display_width" : null,
+    "label" : "Menu Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "e2f151fb-1d3f-b535-6140-0ec2d0990073",
+    "name" : "enable_child_menu",
+    "display_width" : null,
+    "label" : "Enable Child Menu",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "9d2c1b56-0e76-738a-9fbc-0c97cb75e5bd",
+    "name" : "child_menu_section",
+    "display_width" : null,
+    "label" : "Child Menu Section",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "mega_menu.enable_child_menu",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "ee1a6c3f-c259-7d78-3d76-a9b433145e0c",
+      "name" : "column_count_in_row",
+      "display_width" : null,
+      "label" : "Column Count In Row",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "full_width", "1" ], [ "two_col", "2" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "two_col"
+    }, {
+      "id" : "f5bf8e80-9ae8-8113-a316-bc46450be220",
+      "name" : "child_menu",
+      "display_width" : null,
+      "label" : "Child Menu",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : "15da5a3a-6f5d-989a-6d8b-6db0ea0b115d",
+        "default" : 2
+      },
+      "children" : [ {
+        "id" : "15da5a3a-6f5d-989a-6d8b-6db0ea0b115d",
+        "name" : "title",
+        "display_width" : null,
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Core"
+      }, {
+        "id" : "8e149596-6624-527f-1df4-d5a3e0a9081c",
+        "name" : "child_menu_items",
+        "display_width" : null,
+        "label" : "Child Menu Items",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : "583b1f9c-9f91-bc0b-1231-7c2816c54fd8",
+          "default" : 3
+        },
+        "children" : [ {
+          "id" : "583b1f9c-9f91-bc0b-1231-7c2816c54fd8",
+          "name" : "child_menu_text",
+          "display_width" : null,
+          "label" : "Child Menu Text",
+          "required" : false,
+          "locked" : false,
+          "validation_regex" : "",
+          "allow_new_line" : false,
+          "show_emoji_picker" : false,
+          "type" : "text",
+          "default" : "Sadlier Math Grades K-6"
+        }, {
+          "id" : "c84a68cf-9008-5758-b2a2-09dcb3595faa",
+          "name" : "child_menu_link",
+          "display_width" : null,
+          "label" : "Child Menu Link",
+          "required" : false,
+          "locked" : false,
+          "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+          "show_advanced_rel_options" : false,
+          "type" : "link",
+          "default" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "group_occurrence_meta" : null,
+        "type" : "group",
+        "default" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : [ {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }, {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      } ]
+    }, {
+      "id" : "e14a3993-9873-77bb-8a80-575ccaddef3c",
+      "name" : "media_section",
+      "display_width" : null,
+      "label" : "Media Section",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "3d77cb16-5185-41d9-dcec-7fe4b652e533",
+        "name" : "image_field",
+        "display_width" : null,
+        "label" : "Image",
+        "required" : false,
+        "locked" : false,
+        "responsive" : true,
+        "resizable" : false,
+        "show_loading" : false,
+        "type" : "image",
+        "default" : {
+          "size_type" : "auto",
+          "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/menu-image.png",
+          "alt" : "Tech Learning",
+          "loading" : "lazy",
+          "width" : 317,
+          "height" : 317,
+          "max_width" : 317,
+          "max_height" : 317
+        }
+      }, {
+        "id" : "0bf49abf-5c93-335c-e122-48bc6c740c75",
+        "name" : "content",
+        "display_width" : null,
+        "label" : "Content",
+        "required" : false,
+        "locked" : false,
+        "type" : "richtext",
+        "default" : "<p>Optional caption here <br>which can go two lines</p>"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/menu-image.png",
+          "alt" : "Tech Learning",
+          "loading" : "lazy",
+          "width" : 317,
+          "height" : 317,
+          "max_width" : 317,
+          "max_height" : 317
+        },
+        "content" : "<p>Optional caption here <br>which can go two lines</p>"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "column_count_in_row" : "two_col",
+      "child_menu" : [ {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }, {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      } ],
+      "media_section" : {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/menu-image.png",
+          "alt" : "Tech Learning",
+          "loading" : "lazy",
+          "width" : 317,
+          "height" : 317,
+          "max_width" : 317,
+          "max_height" : 317
+        },
+        "content" : "<p>Optional caption here <br>which can go two lines</p>"
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "menu_text" : "Mathematics",
+    "menu_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "enable_child_menu" : false,
+    "child_menu_section" : {
+      "column_count_in_row" : "two_col",
+      "child_menu" : [ {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }, {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      } ],
+      "media_section" : {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/menu-image.png",
+          "alt" : "Tech Learning",
+          "loading" : "lazy",
+          "width" : 317,
+          "height" : 317,
+          "max_width" : 317,
+          "max_height" : 317
+        },
+        "content" : "<p>Optional caption here <br>which can go two lines</p>"
+      }
+    }
+  }, {
+    "menu_text" : "Mathematics",
+    "menu_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "enable_child_menu" : false,
+    "child_menu_section" : {
+      "column_count_in_row" : "two_col",
+      "child_menu" : [ {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }, {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      } ],
+      "media_section" : {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/menu-image.png",
+          "alt" : "Tech Learning",
+          "loading" : "lazy",
+          "width" : 317,
+          "height" : 317,
+          "max_width" : 317,
+          "max_height" : 317
+        },
+        "content" : "<p>Optional caption here <br>which can go two lines</p>"
+      }
+    }
+  }, {
+    "menu_text" : "Mathematics",
+    "menu_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "enable_child_menu" : false,
+    "child_menu_section" : {
+      "column_count_in_row" : "two_col",
+      "child_menu" : [ {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }, {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      } ],
+      "media_section" : {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/menu-image.png",
+          "alt" : "Tech Learning",
+          "loading" : "lazy",
+          "width" : 317,
+          "height" : 317,
+          "max_width" : 317,
+          "max_height" : 317
+        },
+        "content" : "<p>Optional caption here <br>which can go two lines</p>"
+      }
+    }
+  }, {
+    "menu_text" : "Mathematics",
+    "menu_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "enable_child_menu" : false,
+    "child_menu_section" : {
+      "column_count_in_row" : "two_col",
+      "child_menu" : [ {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }, {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      } ],
+      "media_section" : {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/menu-image.png",
+          "alt" : "Tech Learning",
+          "loading" : "lazy",
+          "width" : 317,
+          "height" : 317,
+          "max_width" : 317,
+          "max_height" : 317
+        },
+        "content" : "<p>Optional caption here <br>which can go two lines</p>"
+      }
+    }
+  }, {
+    "menu_text" : "Mathematics",
+    "menu_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "enable_child_menu" : false,
+    "child_menu_section" : {
+      "column_count_in_row" : "two_col",
+      "child_menu" : [ {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }, {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      } ],
+      "media_section" : {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/menu-image.png",
+          "alt" : "Tech Learning",
+          "loading" : "lazy",
+          "width" : 317,
+          "height" : 317,
+          "max_width" : 317,
+          "max_height" : 317
+        },
+        "content" : "<p>Optional caption here <br>which can go two lines</p>"
+      }
+    }
+  }, {
+    "menu_text" : "Mathematics",
+    "menu_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "enable_child_menu" : false,
+    "child_menu_section" : {
+      "column_count_in_row" : "two_col",
+      "child_menu" : [ {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }, {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      } ],
+      "media_section" : {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/menu-image.png",
+          "alt" : "Tech Learning",
+          "loading" : "lazy",
+          "width" : 317,
+          "height" : 317,
+          "max_width" : 317,
+          "max_height" : 317
+        },
+        "content" : "<p>Optional caption here <br>which can go two lines</p>"
+      }
+    }
+  }, {
+    "menu_text" : "Mathematics",
+    "menu_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "enable_child_menu" : false,
+    "child_menu_section" : {
+      "column_count_in_row" : "two_col",
+      "child_menu" : [ {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }, {
+        "title" : "Core",
+        "child_menu_items" : [ {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "child_menu_text" : "Sadlier Math Grades K-6",
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      } ],
+      "media_section" : {
+        "image_field" : {
+          "size_type" : "auto",
+          "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/menu-image.png",
+          "alt" : "Tech Learning",
+          "loading" : "lazy",
+          "width" : 317,
+          "height" : 317,
+          "max_width" : 317,
+          "max_height" : 317
+        },
+        "content" : "<p>Optional caption here <br>which can go two lines</p>"
+      }
+    }
+  } ]
+} ]

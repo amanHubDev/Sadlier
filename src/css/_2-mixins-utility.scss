@@ -27,6 +27,12 @@
   }
 }
 
+@mixin tabletMinlarge {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
 @mixin navbreakMin {
   @media (max-width: 1070px) {
     @content;
