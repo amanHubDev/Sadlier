@@ -1,0 +1,92 @@
+@import "../../css/_module-imports";
+
+.u4m-quotes {
+  position: relative;
+  overflow: hidden;
+  .quotes_grid_row {
+    row-gap: 30px;
+    justify-content: center;
+    margin-left: -25px;
+    margin-right: -25px;
+    width: auto;
+    @include tabbreakpoint(768px, 1024px) {
+      .quotes_item {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 50%;
+      }
+      margin-left: -15px;
+      margin-right: -15px;
+      row-gap: 60px;
+    }
+    @include tabletvert {
+      row-gap: 60px;
+    }
+    .quotes_item {
+      padding-left: 25px;
+      padding-right: 25px;
+      color: $dark_text;
+      &.theme_text {
+        .member_position {
+          color: $dark_text;
+        }
+      }
+      .quotes_item_inn {
+        border-radius: 25px;
+        padding: 30px;
+        .quotes_content_inn {
+          padding-bottom: 35px;
+        }
+        .quotes_img_inn {
+          max-width: 150px;
+          width: 100%;
+          padding-bottom: 24px;
+          margin: 0 auto;
+          margin-top: -50px;
+        }
+        .quotes_name {
+          margin-bottom: 23px;
+        }
+        .member_position {
+          font-weight: 700;
+          font-size: $baseFontSize;
+          line-height: $baseLineHeight;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: $Gray1;
+          margin-bottom: 20px;
+        }
+        .member_name {
+          color: $dark_text;
+        }
+        .eyebrow_text {
+          font-weight: 700;
+          font-size: $baseFontSize;
+          line-height: $baseLineHeight;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+        .member_quotes {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: $baseLineHeight;
+          letter-spacing: 0.03em;
+          color: $dark_text;
+          margin-bottom: 34px;
+        }
+      }
+      &.card_reverse_text {
+        * {
+          color: $White;
+          fill: $White;
+        }
+        .member_name {
+          color: $White;
+        }
+        .member_position {
+          color: $White;
+        }
+      }
+    }
+  }
+}
