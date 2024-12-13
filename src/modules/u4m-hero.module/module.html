@@ -11,7 +11,7 @@
         {{macros.introGroup(module.left_column_content)}}
       </div>
       <div class="mediaCol {{ module.media.type }}">
-        <div class="bdr {{ module.module_settings.theme }}_color" {% if module.media.include_border %} style="border: 5px solid currentColor;" {% endif %}>
+        <div class="bdr {{ module.module_settings.theme }}_color" {% if module.media.include_border %} style="border: 5px solid;" {% endif %}>
           {% if module.media.type == 'image' %}
           <div class="mediaItem" style="background-image:url({{ module.media.image.src }});"></div>
           {% elif module.media.type == 'video' %}

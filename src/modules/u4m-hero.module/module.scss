@@ -50,6 +50,18 @@
       max-height: 413px;
       height: 100%;
 
+      &.theme1_color {
+        border-color: $sadlier_red !important;
+      }
+
+      &.theme2_color {
+        border-color: $sadlier_blue !important;
+      }
+
+      &.theme3_color {
+        border-color: $religion_green !important;
+      }
+
       .mediaItem {
         background-repeat: no-repeat;
         background-size: cover;
@@ -154,6 +166,7 @@
   z-index: 99999;
   height: 100%;
   overflow-y: auto;
+  background-color: $tone50;
 
   .small_container {
     position: relative;
@@ -187,6 +200,19 @@
       top: -10px;
       width: 40px;
       z-index: 99;
+
+      &.theme1_color {
+        background-color: $sadlier_red !important;
+      }
+
+      &.theme2_color {
+        background-color: $sadlier_blue !important;
+      }
+
+      &.theme3_color {
+        background-color: $religion_green !important;
+      }
+
 
       svg {
         width: 20px;

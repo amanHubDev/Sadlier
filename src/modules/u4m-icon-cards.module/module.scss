@@ -1,0 +1,174 @@
+@import "../../css/_module-imports";
+
+
+.u4m-icon-cards {
+    &.reverse-text {
+
+        .top_title {
+            * {
+                color: $white;
+            }
+        }
+
+
+    }
+
+    .intro_content {
+        margin-bottom: 49rem;
+    }
+
+    .item_inrCnt {
+        margin: 0 -35.5px;
+        row-gap: 50px;
+
+        .items {
+            padding: 0 35.5px;
+
+            .img {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                overflow: hidden;
+
+                img {
+                    object-fit: cover;
+                    height: 100% !important;
+                }
+
+                @include tabletmid {
+                    height: 120px;
+                    width: 120px;
+                }
+            }
+
+            .top_img {
+                margin-bottom: 31px;
+
+                @include phone {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            .top_title {
+                * {
+                    margin-bottom: 24px;
+                    word-wrap: break-word;
+                }
+            }
+
+            .custom {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                span.material-symbols-outlined {
+                    font-size: 50px;
+                    line-height: 1;
+
+                    @include tabletmid {
+                        font-size: 40px;
+                        line-height: 40px;
+                    }
+
+                    @include tabletvert {
+                        font-size: 30px;
+                        line-height: 30px;
+                    }
+                }
+
+                @include tabletmid {
+                    height: 80px;
+                    width: 80px;
+                }
+
+                @include tabletvert {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+
+            .icon {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    width: 50px;
+                    height: 50px;
+                    fill: currentColor;
+                    vertical-align: middle;
+
+                    @include tabletmid {
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    @include tabletvert {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                @include tabletmid {
+                    height: 80px;
+                    width: 80px;
+                }
+
+                @include tabletvert {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+
+            @include midlaptop {
+                &.col3 {
+                    width: 33.3%;
+                }
+            }
+
+            @include tabletmid {
+                &.col3 {
+                    width: 50%;
+                }
+
+                &.col4 {
+                    width: 50%;
+                }
+
+                &.col6 {
+                    width: 50%;
+                }
+            }
+
+            @include phone {
+                &.col3 {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                &.col4 {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                &.col6 {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+
+        @include tabletmid {
+            row-gap: 20px;
+        }
+    }
+
+    overflow: hidden;
+}
