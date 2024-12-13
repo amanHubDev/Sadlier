@@ -8,8 +8,20 @@
 {% block body %}
 <main id="main-content" class="body-container-wrapper">
 
-{% module 'u4m-blog-listing' path='../modules/u4m-blog-listing' %}
-{% module 'u4m-subscribe' path='../modules/u4m-subscribe' %}
+{# Blog listing section #}
+     	{% dnd_area 'dnd_area__blog'
+						label='Main Content'
+					%}
+		      {% dnd_section full_width=true %}
+							{% dnd_column %}
+								{% dnd_row %}
+									{% dnd_module path='../modules/u4m-blog-listing' %}
+									{% end_dnd_module %}
+								{% end_dnd_row %}
+							{% end_dnd_column %}
+						{% end_dnd_section %}
+					{% end_dnd_area %}
+      {# End blog listing section #}
   
 </main>
 {% endblock body %}

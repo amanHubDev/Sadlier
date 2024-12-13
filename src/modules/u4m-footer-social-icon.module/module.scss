@@ -1,0 +1,31 @@
+@import "../../css/_module-imports";
+
+
+.social-icon{
+  ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    li{
+      margin: 0;
+      letter-spacing: 0;
+      margin-right: 27px;
+      &:last-child{
+        margin-right: 0;
+      }
+      a{
+        svg{
+          width: 20px;
+          height: 20px;
+          fill:$white;
+          vertical-align: middle;
+        }
+
+      }
+    }
+  }
+}
+

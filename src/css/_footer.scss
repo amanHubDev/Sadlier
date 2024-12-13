@@ -1,0 +1,133 @@
+// Footer css
+.footer-wrapper {
+  padding-top: 100px;
+  padding-bottom: 110px;
+  background-color: $basecolor;
+  @include tabletvert {
+    padding-bottom: 50px;
+    padding-top: 50px;
+  }
+  .footer-menu {
+    padding: 0 50px 45px;
+    border-bottom: 1px solid rgba($footerBorderColor, 0.25);
+    margin-bottom: 30px;
+    @include tabletmid {
+      padding: 0 0px 30px;
+    }
+    .hs-menu-wrapper > ul {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 20px;
+      ::after,
+      ::before {
+        content: none;
+      }
+      > li {
+        margin-bottom: 13px;
+        width: 20%;
+        padding: 0 5px;
+        @include tabletmid {
+          width: 33.333%;
+        }
+        @include tabletvert {
+          width: 100%;
+        }
+      }
+      li {
+        margin: 0;
+        letter-spacing: 0;
+        a {
+          color: $white;
+          font-weight: bold;
+          max-width: inherit;
+          padding: 0;
+          text-overflow: inherit !important;
+          white-space: normal !important;
+          width: 100% !important;
+        }
+        > ul {
+          margin: 0;
+          position: static !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          > li {
+            margin-bottom: 10px;
+            a {
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 20px;
+    .footer-bottom-col {
+      width: 30%;
+      @include tabletvert {
+        width: 100%;
+      }
+      &.logo-col {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        column-gap: 24px;
+        row-gap: 10px;
+        @include tabletvert {
+          justify-content: center;
+        }
+        .copyright {
+          color: $white;
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+      &.social-icon-col {
+        width: 40%;
+        @include tabletvert {
+          width: 100%;
+        }
+      }
+      &.privacy-col {
+        ul {
+          margin: 0;
+          display: flex;
+          justify-content: right;
+          align-items: center;
+          @include tabletvert {
+            justify-content: center;
+            flex-wrap: wrap;
+            row-gap: 5px;
+          }
+          li {
+            margin: 0;
+            width: auto;
+            &:not(:last-child) {
+              margin-right: 30px;
+              @include tabletvert {
+                margin-right: 10px;
+              }
+            }
+            @include tabletvert {
+              margin: 0 10px;
+            }
+            a {
+              padding: 0;
+              text-overflow: inherit !important;
+              white-space: normal !important;
+              width: 100% !important;
+              color: $white;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Footer css
