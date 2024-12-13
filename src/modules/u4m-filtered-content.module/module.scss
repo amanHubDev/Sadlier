@@ -5,28 +5,46 @@ section.u4m-filtered-content {
     .featCards {
       gap: 50px;
       .left_Sec {
-        width: calc(66.66% - 25px);
+        width: 100%;
+        @include tabletvertmin {
+          width: calc(50% - 25px);
+        }
+        @include tabletMin {
+          width: calc(66.66% - 25px);
+        }
         .flex_row {
-          height: 100%;
+          @include tablet {
+            flex-direction: column-reverse;
+          }
+          @include tabletMin {
+            height: 100%;
+          }
           border-radius: $borderRadius;
           overflow: hidden;
           background: $White;
           align-items: center;
           .cardImgSec {
-            width: 344px;
+            @include tabletMin {
+              width: 344px;
+            }
+            width: 100%;
             max-width: 100%;
             height: 100%;
             .cardImg {
-              height: 100%;
+              @include tabletMin {
+                height: 100%;
+                padding-bottom: 0;
+              }
+              padding-bottom: 56.66%;
               position: relative;
               a {
                 background-size: cover;
                 background-position: center;
                 position: absolute;
-                width: 100%;
                 height: 100%;
                 left: 0;
                 top: 0;
+                width: 100%;
               }
             }
           }
@@ -34,12 +52,20 @@ section.u4m-filtered-content {
             > * {
               width: 100%;
             }
-            width: calc(100% - 344px);
-            padding: 91px 30px;
+            @include tabletMin {
+              width: calc(100% - 344px);
+            }
+            width: 100%;
+            padding: 30px 30px 50px;
             display: flex;
             align-items: center;
             justify-content: start;
             flex-direction: column;
+            text-align: center;
+            @include tabletMin {
+              padding: 91px 30px;
+              text-align: left;
+            }
             .content_type {
               @include eyebrow;
               margin-bottom: 20px;
@@ -50,6 +76,12 @@ section.u4m-filtered-content {
               letter-spacing: 0.03em;
             }
             .restitle {
+              @include tabletMinlargeTotabletMin {
+                font-size: 30px;
+              }
+              @include tablet {
+                @include h4;
+              }
               a {
                 color: inherit;
               }
@@ -58,7 +90,14 @@ section.u4m-filtered-content {
         }
       }
       .right_Sec {
-        width: calc(33.33% - 25px);
+        width: 100%;
+        @include tabletvertmin {
+          width: calc(50% - 25px);
+        }
+        @include tabletMin {
+          width: calc(33.33% - 25px);
+        }
+
         .cardInr {
           background: $White;
           border-radius: $borderRadius;
@@ -83,6 +122,7 @@ section.u4m-filtered-content {
           }
           .cardCont {
             padding: 30px 30px 50px;
+            text-align: center;
             .content_type {
               @include eyebrow;
               margin-bottom: 15px;
@@ -113,9 +153,18 @@ section.u4m-filtered-content {
       padding: 50px 0;
       .filters {
         .flex_row {
-          gap: 50px;
+          gap: 20px;
+          @include tabletMin {
+            gap: 50px;
+          }
           .col {
-            width: calc((100% - 100px) / 3);
+            @include tabletvertmin {
+              width: calc((100% - 40px) / 3);
+            }
+            @include tabletMin {
+              width: calc((100% - 100px) / 3);
+            }
+            width: 100%;
             padding: 0;
             .colTtl {
               @include eyebrow;
@@ -177,7 +226,9 @@ section.u4m-filtered-content {
           display: flex;
           flex-direction: column;
           .cardImg {
-            height: 230px;
+            @include phoneMin {
+              height: 230px;
+            }
             margin-bottom: 15px;
             a {
               height: 100%;
@@ -222,6 +273,7 @@ section.u4m-filtered-content {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 20px;
       button {
         align-items: center;

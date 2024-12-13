@@ -1,0 +1,182 @@
+@import "../../css/_module-imports";
+section.u4m-filtered-content {
+    .featCardsListWrap {
+        .filterWrap {
+            padding: 0 0 50px;
+            .filters {
+                .flex_row {
+                    gap: 20px;
+                    @include tabletMin {
+                        gap: 50px;
+                    }
+                    .col {
+                        @include tabletvertmin {
+                            width: calc((100% - 40px) / 3);
+                        }
+                        @include tabletMin {
+                            width: calc((100% - 100px) / 3);
+                        }
+                        width: 100%;
+                        padding: 0;
+                        .colTtl {
+                            @include eyebrow;
+                            padding-bottom: 5px;
+                        }
+                        .resourceInput {
+                            padding: 10px 15px;
+                            background: $White;
+                            border: 2px solid $tone15;
+                            border-radius: 5px;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 27px;
+                            letter-spacing: 0.03em;
+                            outline: none;
+                            &::placeholder {
+                                color: $tone30;
+                            }
+                        }
+                        .resourceSelect {
+                            padding: 10px 15px;
+                            background: $White;
+                            border: 2px solid $tone15;
+                            border-radius: 5px;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 27px;
+                            letter-spacing: 0.03em;
+                            outline: none;
+                            appearance: none;
+                            color: $tone50;
+                            background-size: 12px;
+                            background-repeat: no-repeat;
+                            background-position: calc(100% - 16px) center;
+                            padding-right: 34px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .resourceList {
+            gap: 50px;
+            .cardItem {
+                width: 100%;
+                @include tabletvertmin {
+                    width: calc((100% - 50px) / 2);
+                }
+                @include tabletmidmin {
+                    width: calc((100% - 100px) / 3);
+                }
+
+                .cardInr {
+                    padding: 30px;
+                    background: $White;
+                    border-radius: $borderRadius;
+                    overflow: hidden;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .cardLocation {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        margin-bottom: 24px;
+                        span{
+                            color: $sadlier_red;color: $sadlier_red;color: $sadlier_red;
+                        }
+                    }
+
+                    .cardCont {
+                        .content_type {
+                            @include eyebrow;
+                            margin-bottom: 15px;
+                        }
+                        .restitle {
+                            margin-bottom: 0;
+                        }
+                        .cardCont {
+                            @include bodyStyle;
+                            line-height: 1.625;
+                            letter-spacing: 0.03em;
+                        }
+                        .cardMail {
+                            a {
+                                color: $sadlier_red;
+                                &:hover {
+                                    color: $tone;
+                                }
+                            }
+                        }
+                        .content_topic {
+                            margin-top: 20px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 17px 15px;
+                            margin-bottom: 30px;
+                            span {
+                                @include b3;
+                                background: $light_background;
+                                border-radius: 20px;
+                                display: inline-block;
+                                padding: 4px 15px;
+                            }
+                        }
+                    }
+                    .cardBtnRow {
+                        margin-top: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .pagination {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        margin-top: 50px;
+        align-items: center;
+        justify-content: center;
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            button {
+                align-items: center;
+                border-radius: 100%;
+                color: $tone;
+                display: flex;
+                flex-wrap: wrap;
+                font-weight: 700;
+                height: 50px;
+                justify-content: center;
+                padding: 10px;
+                width: 50px;
+                > * {
+                    pointer-events: none;
+                }
+                &.prevnext {
+                    background-color: $Gray2;
+                    border: none;
+                }
+                &.para {
+                    border: 2px solid $tone;
+                    &:hover {
+                        background-color: $tone;
+                        color: $White;
+                    }
+                }
+                &.active {
+                    background-color: $tone;
+                    color: $White;
+                }
+                &.cursor-not-allowed {
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
