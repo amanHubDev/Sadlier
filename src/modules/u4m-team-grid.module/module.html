@@ -228,6 +228,7 @@
 
   $('.{{name}} .popup_close').click(function(){
     $('.team_popup').removeClass('team_open')
+    $('body').removeClass('overflow-hidden');
   });
 
   $(document).ready(function() {
@@ -238,6 +239,7 @@
           var popup = $(this).attr('id');
           if (index === popup){
           $(this).addClass('team_open');
+          $('body').addClass('overflow-hidden');
         }
       })
     });
