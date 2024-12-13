@@ -1,75 +1,123 @@
 {% set moduleName = 'u4m-animated-stats' %}
-  {% set bgImageMax = 1920 %}
-  
-  {% include "../partials/u4-module-includes.html" %}
-  <h2 class="heading">{{ module.animated_stats_heading }}</h2>
-  {% if module.include_intro %}
-  <div class="intro">{{ module.intro_text }}</div>
-  {% endif %}
-  <div class="statistics items-{{module.items_per_row}}">
-    {% for item in module.statistic_group %}
-    <div class="statistics__item">
-      {% if item.include_image %}
-      <div class="image">
-        <img loading="lazy" src="{{ item.image_field.src }}" width="80" alt="{{ item.image_field.alt }}">
-      </div>
-      {% endif %}
-      {% if item.show_top_caption %}<span class="caption ">{{ item.top_caption }}</span>{% endif %}
-      {% if item.show_currency_label %}<span class="currency">{{ item.currency_label }}</span>{% endif %}        
-      <span class="number {% unless item.disable_animation %}count{% endunless %}">{{ item.numeric_stat }}</span>
-      {% if item.show_stat_unit %}<span class="unit">{{ item.stat_unit }}</span>{% endif %}
-      {% if item.show_bottom_caption %}<span class="caption ">{{ item.bottom_caption }}</span>{% endif %}
-    </div>
-    {% endfor %}
+{% include "../partials/u4-module-includes.html" %}
+
+
+
+<div class="page-center  {{ module.module_settings.theme }}">
+
+
+  <div class="intro_wrapp">
+    {{macros.introGroup(module.intro_content)}}
   </div>
-  </section>
-  
-  
-  
-  
-  {% require_js %}
-  <script>
-    {
-      const onScroll = (entries, obs) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) entry.target.classList.remove('is-in-viewport');
-          else {
-            entry.target.classList.add('is-in-viewport');
-  
-            $('.count').each(function () {
-              $(this).prop('Counter',0).animate({
-                Counter: $(this).text()
-              }, {
-                duration: 4000,
-                easing: 'swing',
-                step: function (now) {
-                  // $(this).text(Math.ceil(now));
-                  $(this).text(Math.ceil(now).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
-                  $(this).removeClass( "count" )
-                }
-              });
+
+  <div class="btm_Cnt">
+    <div class="item_inrCnt flex_row">
+      {% for item in module.statistic_group %}
+      <div class="items">
+        <div class="top_img">
+          {% if  item.top_icon_group.select_icon == 'image'%}
+          <div class="img">
+            {% if item.top_icon_group.image_field.src %}
+            {% set sizeAttrs = 'width="{{ item.top_icon_group.image_field.width|escape_attr }}" height="{{ item.top_icon_group.image_field.height|escape_attr }}"' %}
+            {% if item.top_icon_group.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.top_icon_group.image_field.width|escape_attr }}" height="{{ item.top_icon_group.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.top_icon_group.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.top_icon_group.image_field.max_width|escape_attr }}" height="{{ item.top_icon_group.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.top_icon_group.image_field.loading != 'disabled' ? 'loading="{{ item.top_icon_group.image_field.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.top_icon_group.image_field.src|escape_url }}" alt="{{ item.top_icon_group.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+          {% elif  item.top_icon_group.select_icon == 'material_icon'%}
+          <div class="custom">
+            {{ item.top_icon_group.custom_icon }}
+          </div>
+          {% elif  item.top_icon_group.select_icon == 'icon'%}
+          <div class="icon">
+            {% icon
+		name="{{ item.top_icon_group.icon.name }}"
+		style="{{ item.top_icon_group.icon.type }}"
+		unicode="{{ item.top_icon_group.icon.unicode }}"
+		icon_set="{{ item.top_icon_group.icon.icon_set }}"
+	%}
+          </div>
+          {% endif %}
+        </div>
+        <div class="btm_cnt">
+          <div class="start_cnt 	{{ item.heading_size }}">
+            <span class="number {% unless item.disable_animation %}count{% endunless %}">{{ item.numeric_stat }}</span>
+            {% if item.show_stat_unit %}<span class="unit">{{ item.stat_unit }}</span>{% endif %}
+          </div>
+          <div class="intro_desc 	{{ item.content_style }}">
+            {{ item.content }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% require_js %}
+<script>
+  {
+    const onScroll = (entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) entry.target.classList.remove('is-in-viewport');
+        else {
+          entry.target.classList.add('is-in-viewport');
+
+          $('.count').each(function () {
+            $(this).prop('Counter',0).animate({
+              Counter: $(this).text()
+            }, {
+              duration: 4000,
+              easing: 'swing',
+              step: function (now) {
+                // $(this).text(Math.ceil(now));
+                $(this).text(Math.ceil(now).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+                $(this).removeClass( "count" )
+              }
             });
-  
-          }
-        });
-      };
-  
-      const options = {
-        threshold: .75 // 50% of element in view
-      }
-  
-      const observer = new IntersectionObserver(onScroll, options);
-      document.querySelectorAll("section.{{moduleName}}.{{name}}").forEach(section => observer.observe(section));
-  
-                                }
-  
-  
-  </script>
-  {% end_require_js %}
-  
-  
-  
-  
-  
-  
-  
+          });
+
+        }
+      });
+    };
+
+    const options = {
+      threshold: .75 // 50% of element in view
+    }
+
+    const observer = new IntersectionObserver(onScroll, options);
+    document.querySelectorAll("section.{{moduleName}}.{{name}}").forEach(section => observer.observe(section));
+
+                              }
+
+
+</script>
+{% end_require_js %}
+
+
+
+
+
+
+

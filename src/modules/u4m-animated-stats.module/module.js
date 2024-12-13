@@ -11,11 +11,11 @@
 
   function numberRoller(a) {
     var b = $(".roller-title-number-" + a).attr("data-min"),
-      c = $(".roller-title-number-" + a).attr("data-max"),
-      d = $(".roller-title-number-" + a).attr("data-delay"),
-      e = $(".roller-title-number-" + a).attr("data-increment"),
-      f = c - b,
-      g = 1e3 * d / f;
+        c = $(".roller-title-number-" + a).attr("data-max"),
+        d = $(".roller-title-number-" + a).attr("data-delay"),
+        e = $(".roller-title-number-" + a).attr("data-increment"),
+        f = c - b,
+        g = 1e3 * d / f;
     numberRoll(a, b, c, e, g)
   }
 

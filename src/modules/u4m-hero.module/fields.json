@@ -874,6 +874,35 @@
     "video" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/videos/big_buck_bunny_720p_1mb.mp4"
   }
 }, {
+  "id" : "597d247c-f3a0-1ead-36ea-502f483104e4",
+  "name" : "module_settings",
+  "display_width" : null,
+  "label" : "Module Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "133766f9-cd6b-0c42-7e02-0db1e47c4702",
+    "name" : "theme",
+    "display_width" : null,
+    "label" : "Theme",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme2"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "theme" : "theme2"
+  }
+}, {
   "id" : "module_overrides",
   "name" : "module_overrides",
   "display_width" : null,
@@ -1169,20 +1198,6 @@
     "display" : "checkbox",
     "type" : "boolean",
     "default" : false
-  }, {
-    "id" : "133766f9-cd6b-0c42-7e02-0db1e47c4702",
-    "name" : "theme",
-    "display_width" : null,
-    "label" : "Theme",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "theme2"
   }, {
     "id" : "94e04306-ecc1-4735-09fd-9b66482a8101",
     "name" : "background_settings",
@@ -1497,7 +1512,6 @@
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
     "reverse_text" : false,
-    "theme" : "theme2",
     "background_settings" : {
       "background_type" : "color",
       "background_image" : {
