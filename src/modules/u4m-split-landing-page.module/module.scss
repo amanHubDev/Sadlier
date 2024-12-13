@@ -161,6 +161,31 @@
     img {
       width: 150px;
     }
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &.logoAdded:not(.topColumnimgAdd) {
+    .intro_content {
+      padding-top: 53px;
+    }
+
+    .image_grid,
+    .video_group_wrap {
+      margin-top: -30%;
+
+      @include tablet {
+        margin-top: 0;
+      }
+    }
+
+    .form_bottom_content {
+      @include tablet {
+        padding-top: 50px;
+      }
+    }
   }
 
   @include tablet {

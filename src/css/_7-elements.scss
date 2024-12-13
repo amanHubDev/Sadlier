@@ -907,3 +907,7 @@ form {
     }
   }
 }
+
+.sb_form {
+  @include subscribeForm;
+}
