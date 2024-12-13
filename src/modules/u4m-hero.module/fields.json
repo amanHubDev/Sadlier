@@ -768,28 +768,6 @@
     "type" : "boolean",
     "default" : true
   }, {
-    "id" : "133766f9-cd6b-0c42-7e02-0db1e47c4702",
-    "name" : "border_theme",
-    "display_width" : null,
-    "label" : "Border Theme",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "media.include_border",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "theme1"
-  }, {
     "id" : "a70fc181-17b7-206c-9dc6-b1cdc9b43351",
     "name" : "image",
     "display_width" : null,
@@ -863,205 +841,8 @@
       "operator" : "EQUAL",
       "access" : null
     },
-    "type" : "file"
-  }, {
-    "id" : "182fc8d3-e96a-29f9-e57e-e7b027c5e3b0",
-    "name" : "video_play_icon_group",
-    "display_width" : null,
-    "label" : "Video Icon Group",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "media.type",
-      "controlling_value_regex" : "video",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "f4cabdb9-9063-eed7-b1a7-5256f8497c6f",
-      "name" : "play_icon_group",
-      "display_width" : null,
-      "label" : "Play Icon Group",
-      "required" : false,
-      "locked" : false,
-      "children" : [ {
-        "id" : "4778e124-f2cb-8d89-f7e0-b6d4082a0ea6",
-        "name" : "select_icon",
-        "display_width" : null,
-        "label" : "Select Icon",
-        "required" : false,
-        "locked" : false,
-        "display" : "select",
-        "choices" : [ [ "image", "Image " ], [ "material_icon", "Material Icon " ] ],
-        "multiple" : false,
-        "reordering_enabled" : true,
-        "preset" : null,
-        "type" : "choice",
-        "default" : "image"
-      }, {
-        "id" : "137c57dc-a800-3fc7-75bb-04d55bcbbded",
-        "name" : "image_field",
-        "display_width" : null,
-        "label" : "Image",
-        "required" : false,
-        "locked" : false,
-        "visibility" : {
-          "controlling_field" : null,
-          "controlling_field_path" : "media.video_play_icon_group.play_icon_group.select_icon",
-          "controlling_value_regex" : "image",
-          "property" : null,
-          "operator" : "EQUAL",
-          "access" : null
-        },
-        "responsive" : true,
-        "resizable" : false,
-        "show_loading" : false,
-        "type" : "image",
-        "default" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      }, {
-        "id" : "4e7b0155-88c2-0187-31e7-41f8ff45e666",
-        "name" : "custom_icon",
-        "display_width" : null,
-        "label" : "Custom Icon",
-        "required" : false,
-        "locked" : false,
-        "validation_regex" : "",
-        "visibility" : {
-          "controlling_field" : null,
-          "controlling_field_path" : "media.video_play_icon_group.play_icon_group.select_icon",
-          "controlling_value_regex" : "material_icon",
-          "property" : null,
-          "operator" : "EQUAL",
-          "access" : null
-        },
-        "allow_new_line" : false,
-        "show_emoji_picker" : false,
-        "type" : "text"
-      } ],
-      "tab" : "CONTENT",
-      "expanded" : false,
-      "group_occurrence_meta" : null,
-      "type" : "group",
-      "default" : {
-        "select_icon" : "image",
-        "image_field" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      }
-    }, {
-      "id" : "67357192-2998-1b3d-1a01-e18b6cd2d019",
-      "name" : "cross_icon_group_copy",
-      "display_width" : null,
-      "label" : "Cross Icon Group copy",
-      "required" : false,
-      "locked" : false,
-      "children" : [ {
-        "id" : "fed4b92f-edef-bef0-b94d-e1b9ff91cd69",
-        "name" : "select_icon",
-        "display_width" : null,
-        "label" : "Select Icon",
-        "required" : false,
-        "locked" : false,
-        "display" : "select",
-        "choices" : [ [ "image", "Image " ], [ "material_icon", "Material Icon " ] ],
-        "multiple" : false,
-        "reordering_enabled" : true,
-        "preset" : null,
-        "type" : "choice",
-        "default" : "image"
-      }, {
-        "id" : "9bb86221-f835-f04f-efc0-80ec2d067f03",
-        "name" : "image_field",
-        "display_width" : null,
-        "label" : "Image",
-        "required" : false,
-        "locked" : false,
-        "visibility" : {
-          "controlling_field" : null,
-          "controlling_field_path" : "media.video_play_icon_group.play_icon_group.select_icon",
-          "controlling_value_regex" : "image",
-          "property" : null,
-          "operator" : "EQUAL",
-          "access" : null
-        },
-        "responsive" : true,
-        "resizable" : false,
-        "show_loading" : false,
-        "type" : "image",
-        "default" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      }, {
-        "id" : "9c24f08d-971e-a6ee-5e7d-08e76393ec08",
-        "name" : "custom_icon",
-        "display_width" : null,
-        "label" : "Custom Icon",
-        "required" : false,
-        "locked" : false,
-        "validation_regex" : "",
-        "visibility" : {
-          "controlling_field" : null,
-          "controlling_field_path" : "media.video_play_icon_group.play_icon_group.select_icon",
-          "controlling_value_regex" : "material_icon",
-          "property" : null,
-          "operator" : "EQUAL",
-          "access" : null
-        },
-        "allow_new_line" : false,
-        "show_emoji_picker" : false,
-        "type" : "text"
-      } ],
-      "tab" : "CONTENT",
-      "expanded" : false,
-      "group_occurrence_meta" : null,
-      "type" : "group",
-      "default" : {
-        "select_icon" : "image",
-        "image_field" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      }
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "default" : {
-      "play_icon_group" : {
-        "select_icon" : "image",
-        "image_field" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      },
-      "cross_icon_group_copy" : {
-        "select_icon" : "image",
-        "image_field" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      }
-    }
+    "type" : "file",
+    "default" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/videos/big_buck_bunny_720p_1mb.mp4"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -1070,7 +851,6 @@
   "default" : {
     "type" : "image",
     "include_border" : true,
-    "border_theme" : "theme1",
     "image" : {
       "size_type" : "auto",
       "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/image%20(1).png",
@@ -1091,26 +871,7 @@
       "max_width" : 991,
       "max_height" : 620
     },
-    "video_play_icon_group" : {
-      "play_icon_group" : {
-        "select_icon" : "image",
-        "image_field" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      },
-      "cross_icon_group_copy" : {
-        "select_icon" : "image",
-        "image_field" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      }
-    }
+    "video" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/videos/big_buck_bunny_720p_1mb.mp4"
   }
 }, {
   "id" : "module_overrides",
@@ -1408,6 +1169,20 @@
     "display" : "checkbox",
     "type" : "boolean",
     "default" : false
+  }, {
+    "id" : "133766f9-cd6b-0c42-7e02-0db1e47c4702",
+    "name" : "theme",
+    "display_width" : null,
+    "label" : "Theme",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme2"
   }, {
     "id" : "94e04306-ecc1-4735-09fd-9b66482a8101",
     "name" : "background_settings",
@@ -1722,6 +1497,7 @@
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
     "reverse_text" : false,
+    "theme" : "theme2",
     "background_settings" : {
       "background_type" : "color",
       "background_image" : {

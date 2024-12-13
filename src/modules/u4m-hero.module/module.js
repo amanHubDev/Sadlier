@@ -26,4 +26,3 @@ document.querySelectorAll('.cardpopVideo .close').forEach(function(closeButton) 
 }); 
 
 
-

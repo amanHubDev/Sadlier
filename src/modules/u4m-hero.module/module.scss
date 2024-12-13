@@ -67,130 +67,132 @@
     }
   }
 
-  .cardVideo {
-    width: 100%;
-    height: 100%;
-  }
 
-  .cardVideoPoster {
-    cursor: pointer;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-bottom: 59.8%;
-    height: 100%;
-
-    .playIcon {
-      opacity: .5;
-      position: absolute;
-      z-index: 99;
-      margin: auto;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s all ease;
-      width: 111rem;
-      height: 111rem;
-
-      svg {
-        fill: $white;
-
-        @include tabletmid {
-          width: 35px;
-          height: 35px;
-        }
-
-        @include tabletvert {
-          width: 30px;
-          height: 30px;
-        }
-      }
-
-      @include tabletmid {
-        width: 80rem;
-        height: 80rem;
-      }
-
-      @include tabletvert {
-        width: 70rem;
-        height: 70rem;
-      }
-    }
-
-    &:hover {
-      .playIcon {
-        opacity: .7;
-        transform: scale(1.1);
-      }
-    }
-
-    img {
-      height: 100%;
-      object-fit: cover;
-      width: 100%;
-    }
-  }
-
-  .cardVideoPopup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 99999;
-    height: 100%;
-    overflow-y: auto;
-
-    .small_container {
-      position: relative;
-      padding: 100px 20px;
-      margin: auto;
-      height: auto;
-      display: flex;
-      align-items: center;
-    }
-
-    video {
-      display: block;
-      width: 100%;
-      outline: none;
-    }
-
-    .cardpopVideo {
-      margin: auto;
-      padding: 35px 0;
-      position: relative;
-
-      .close {
-        align-items: center;
-        border-radius: 100%;
-        cursor: pointer;
-        display: flex;
-        height: 40px;
-        justify-content: space-around;
-        position: absolute;
-        right: 0px;
-        top: -10px;
-        width: 40px;
-        z-index: 99;
-
-        svg {
-          width: 20px;
-          height: 20px;
-          fill: $white;
-        }
-      }
-    }
-  }
 
   .intro_btn_wrap {
     justify-content: flex-start;
     gap: 20px 24px;
+  }
+}
+
+.cardVideo {
+  width: 100%;
+  height: 100%;
+}
+
+.cardVideoPoster {
+  cursor: pointer;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 59.8%;
+  height: 100%;
+
+  .playIcon {
+    opacity: 1;
+    position: absolute;
+    z-index: 99;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all ease;
+    width: 111rem;
+    height: 111rem;
+
+    svg {
+      fill: $white;
+
+      @include tabletmid {
+        width: 35px;
+        height: 35px;
+      }
+
+      @include tabletvert {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @include tabletmid {
+      width: 80rem;
+      height: 80rem;
+    }
+
+    @include tabletvert {
+      width: 70rem;
+      height: 70rem;
+    }
+  }
+
+  &:hover {
+    .playIcon {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.cardVideoPopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  height: 100%;
+  overflow-y: auto;
+
+  .small_container {
+    position: relative;
+    padding: 100px 20px;
+    margin: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  video {
+    display: block;
+    width: 100%;
+    outline: none;
+  }
+
+  .cardpopVideo {
+    margin: auto;
+    padding: 35px 0;
+    position: relative;
+
+    .close {
+      align-items: center;
+      border-radius: 100%;
+      cursor: pointer;
+      display: flex;
+      height: 40px;
+      justify-content: space-around;
+      position: absolute;
+      right: 0px;
+      top: -10px;
+      width: 40px;
+      z-index: 99;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: $white;
+      }
+    }
   }
 }
