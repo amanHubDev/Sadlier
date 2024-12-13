@@ -60,10 +60,10 @@
 
     @include tabletmid {
       gap: 40px;
+    }
 
-      @include tabletvert {
-        gap: 30px;
-      }
+    @include tabletvert {
+      gap: 30px;
     }
   }
 
@@ -81,11 +81,9 @@
     height: 100%;
 
     .playIcon {
-      opacity: .9;
+      opacity: .5;
       position: absolute;
       z-index: 99;
-      width: 80px;
-      height: 80px;
       margin: auto;
       top: 0;
       left: 0;
@@ -96,18 +94,37 @@
       align-items: center;
       justify-content: center;
       transition: 0.3s all ease;
-      width: 106px;
-      height: 106px;
+      width: 111rem;
+      height: 111rem;
 
-      i {
-        font-size: 50px;
-        margin-left: 10px;
+      svg {
+        fill: $white;
+
+        @include tabletmid {
+          width: 35px;
+          height: 35px;
+        }
+
+        @include tabletvert {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      @include tabletmid {
+        width: 80rem;
+        height: 80rem;
+      }
+
+      @include tabletvert {
+        width: 70rem;
+        height: 70rem;
       }
     }
 
     &:hover {
       .playIcon {
-        opacity: 1;
+        opacity: .7;
         transform: scale(1.1);
       }
     }
@@ -156,15 +173,17 @@
         cursor: pointer;
         display: flex;
         height: 40px;
-        justify-content: flex-end;
+        justify-content: space-around;
         position: absolute;
         right: 0px;
         top: -10px;
         width: 40px;
         z-index: 99;
 
-        i {
-          font-size: 30px;
+        svg {
+          width: 20px;
+          height: 20px;
+          fill: $white;
         }
       }
     }

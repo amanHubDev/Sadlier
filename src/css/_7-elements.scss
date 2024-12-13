@@ -417,7 +417,7 @@ code {
   border-radius: 0;
 }
 
-pre > code {
+pre>code {
   display: block;
   padding: 1rem 15rem;
   white-space: pre;
@@ -489,8 +489,8 @@ section[class*="u4m-"] {
   z-index: 1;
   pointer-events: none;
 
-  & ~ .full-width-container,
-  & ~ .page-center {
+  &~.full-width-container,
+  &~.page-center {
     position: relative;
     z-index: 3;
   }
@@ -639,6 +639,7 @@ section[class*="u4m-"] {
 
 .reverse-text {
   color: $white;
+
   .eyebrow_text,
   .intro_desc,
   .intro_title {
@@ -668,45 +669,59 @@ form {
 .sadlierRed_bg {
   background-color: $sadlier_red;
 }
+
 .sadlierBlue_bg {
   background-color: $sadlier_blue;
 }
+
 .sadlierGreen_bg {
   background-color: $religion_green;
 }
+
 .sadlierLightGreen_bg {
   background-color: $religion_green2;
 }
+
 .dark_bg {
   background-color: $dark_background;
 }
+
 .light_bg {
   background-color: $light_background;
 }
+
 .light2_bg {
   background-color: $light_background2;
 }
+
 .tone_bg {
   background-color: $tone;
 }
+
 .cyan_bg {
   background-color: $cyan;
 }
+
 .purple_bg {
   background-color: $purple;
 }
+
 .gold_bg {
   background-color: $gold;
 }
+
 .orange_bg {
   background-color: $orange;
 }
+
 .white_bg {
   background-color: $White;
 }
+
 .gray1_bg {
   background-color: $Gray1;
 }
+
 .gray2_bg {
   background-color: $Gray2;
 }
@@ -733,45 +748,59 @@ form {
 .sadlierRed {
   color: $sadlier_red;
 }
+
 .sadlierBlue {
   color: $sadlier_blue;
 }
+
 .sadlierGreen {
   color: $religion_green;
 }
+
 .sadlierLightGreen {
   color: $religion_green2;
 }
+
 .dark {
   color: $dark_background;
 }
+
 .light {
   color: $light_background;
 }
+
 .light2 {
   color: $light_background2;
 }
+
 .tone {
   color: $tone;
 }
+
 .cyan {
   color: $cyan;
 }
+
 .purple {
   color: $purple;
 }
+
 .gold {
   color: $gold;
 }
+
 .orange {
   color: $orange;
 }
+
 .white {
   color: $White;
 }
+
 .gray1 {
   color: $Gray1;
 }
+
 .gray2 {
   color: $Gray2;
 }
@@ -794,4 +823,19 @@ form {
   color: $religion_green;
   border-color: $religion_green;
   background-color: $religion_green;
+}
+
+
+
+
+.theme1_color.playIcon {
+  background-color: rgba($sadlier_red, 0.5);
+}
+
+.theme2_color.playIcon {
+  background-color: rgba($sadlier_blue, 0.5);
+}
+
+.theme3_color.playIcon {
+  background-color: rgba($religion_green, 0.5);
 }
