@@ -1,73 +1,138 @@
 @import "../../css/_module-imports";
-section.u4m-subscribe {
-  background-color: $black;
-  color: $white;
-  padding: 50px 0;
-  margin: 0 20px 20px;
-  border-radius: 5px;
-  overflow: hidden;
-  div.inner {
-    @include center;
-    display: flex;
-    align-items: center;
-    .left,
-    .right {
-      flex: 1;
-      form {
-        @include form;
-        margin: 0;
-        padding: 0;
-        max-width: unset;
-        overflow: unset;
-        background: transparent;
-        display: flex;
-        margin-left: 50px;
-        // Email Input
-        .hs-email {
-          flex: 1;
-          position: relative;
-          >label {
-            position: absolute;
-            z-index: 2;
-            top: -20px;
-          }
-          input[type='email'].hs-input {
-            margin-bottom: 0;
-            margin-top: 0;
-            line-height: 1;
+.u4m-subscribe {
+  @include center;
+  border-radius: $borderRadius;
+  padding: 70rem 100rem;
+  margin-top: 40px;
+  position: relative;
+  width: calc(100% - 40px);
+  @include tablet {
+    padding: 40px;
+  }
+  @include phone {
+    padding: 40px 20px;
+  }
+  .bg_overlay {
+    border-radius: $borderRadius;
+  }
+  .page-center {
+    padding: 0;
+    max-width: 100%;
+    .subscribe_inr {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 50px;
+      @include midlaptop {
+        gap: 20px;
+      }
+      .sb_left {
+        width: 50%;
+        @include tablet {
+          width: 100%;
+        }
+        .intro_content {
+          margin-bottom: 0;
+          .intro__inner {
+            text-align: left;
+            .intro_desc {
+              margin: 0;
+              p {
+                font-weight: normal;
+              }
+            }
           }
         }
-        // Submit Button
-        input[type='submit'].hs-button {
-          flex: auto;
-          margin: 0 0 0 5px;
-          line-height: 1.65;
-          &:hover {
-            opacity: .95;
-            background-color: $action1;
-          }
-          @include tablet {
-            width: 100%;
-            margin: 10px 0 0;
-          }
+      }
+      .sb_right {
+        width: calc(50% - 50px);
+        @include midlaptop {
+          width: calc(50% - 20px);
         }
         @include tablet {
-          flex-direction: column;
+          width: 100%;
         }
-        @include tabletvert {
-          margin: 50px 0 0;
-          padding: 0;
+        .sb_img {
+          position: relative;
+          width: 251px;
+          margin: -110px auto 0;
+          display: block;
+          overflow: hidden;
+          position: relative;
+          width: 251px;
+          height: 184px;
+          @include tablet {
+            margin: 0 0 30px;
+            display: block;
+            height: auto;
+            width: 100%;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
         }
       }
-      @include tabletvert {
-        width: 100%;
-      }
-    }
-    @include tabletvert {
-      flex-direction: column;
     }
   }
-  @include tabletvert {
-    padding: 20px 0;
+}
+
+.sb_form form {
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  .hs-form-field {
+    width: calc(100% - 192px);
+    @include phone {
+      width: 100%;
+    }
+    & > label {
+      color: inherit !important;
+      letter-spacing: 0.1em !important;
+    }
+    input.hs-input {
+      background-color: rgba($white, 0.25) !important;
+      color: inherit !important;
+    }
+  }
+  .hs_error_rollup {
+    width: calc(100% - 192px);
+    flex: 0 0 auto !important;
+
+    @include phone {
+      width: 100%;
+      margin-bottom: 20px !important;
+    }
+    label.hs-main-font-element {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
+  .hs_submit {
+    min-width: 192px;
+    text-align: right;
+    @include phone {
+      min-width: 100%;
+      text-align: left;
+    }
+    .hs-button.primary {
+      padding: 10rem 17rem;
+      text-transform: uppercase;
+      top: 30px;
+      position: absolute;
+      right: 0;
+      @include phone {
+        position: static;
+      }
+    }
+  }
+  li {
+    margin-top: 10px;
   }
 }
