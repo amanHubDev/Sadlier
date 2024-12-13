@@ -9,13 +9,17 @@
   overflow: auto;
   background-color: $light_background;
   border-radius: $borderRadius;
+
+  @include tablet {
+    padding: 30rem;
+  }
 }
 
 @mixin form {
   @include formWraperStyle;
 
   @include tablet {
-    padding: 20rem;
+    padding: 30rem;
   }
 
   h3 {
