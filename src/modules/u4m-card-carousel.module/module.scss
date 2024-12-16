@@ -1,0 +1,28 @@
+@import "../../css/_module-imports";
+
+section.u4m-card-carousel {
+  .two-col-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .intro_wrapp {
+      width: 30%;
+      padding-right: 35px;
+    }
+    .intro_content {
+      margin: 0;
+      text-align: left;
+    }
+    .intro_btn_wrap {
+      justify-content: left;
+    }
+    .slider-column {
+      width: 65%;
+      padding-left: 35px;
+    }
+    .slide-item {
+      width: 50%;
+      padding: 0 25px;
+    }
+  }
+}

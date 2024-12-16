@@ -3,6 +3,28 @@
 section.u4m-editorial-pillar-page-side-nav {
   padding-top: 50px;
   padding-bottom: 60px;
+  &.reverse-text {
+    .acctitle {
+      color: $white;
+    }
+    .tab-acc-wrap {
+      .accordion-col {
+        border-color: rgba($white, 0.25);
+      }
+      .accordion-col .accordion-item {
+        border-color: rgba($white, 0.25);
+      }
+      .accordion_title h6 svg path,
+      .accordion_title h6 svg rect {
+        fill: $white;
+      }
+    }
+    .content-item {
+      .eyebrow_text {
+        color: $white;
+      }
+    }
+  }
   .desktop_nav_list .accordion-content {
     display: none;
   }

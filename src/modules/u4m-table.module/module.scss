@@ -45,6 +45,7 @@ section.u4m-table {
           line-height: 1;
           @include size16;
           font-weight: bold;
+          color: $dark_text;
           @include tabletvert {
             padding: 15px;
           }
