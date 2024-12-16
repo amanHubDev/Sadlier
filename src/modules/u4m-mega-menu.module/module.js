@@ -2,20 +2,20 @@ $(".header-wrapper .menu-trigger").click(function () {
   $("body").toggleClass("menu-open");
 });
 
-// $(window).scroll(function() {
-//   var headerSpacer = $('.header-wrapper .header-spacer'); // Target the element to check the scroll position
-//   var scrollPosition = $(window).scrollTop(); // Get the current scroll position
-//   var headerSpacerOffset = headerSpacer.offset().top; // Get the offset position of the element
+$(window).scroll(function () {
+  var headerSpacer = $(".header-wrapper .header-spacer"); // Target the element to check the scroll position
+  var scrollPosition = $(window).scrollTop(); // Get the current scroll position
+  var headerSpacerOffset = headerSpacer.offset().top; // Get the offset position of the element
 
-//   // Check if scroll position has passed the target element's position
-//   if (scrollPosition > headerSpacerOffset) {
-//     $("body").addClass("darkHeader");
-//     console.log('reached');
-//   } else {
-//     $("body").removeClass("darkHeader");
-//     console.log('not reached');
-//   }
-// });
+  // Check if scroll position has passed the target element's position
+  if (scrollPosition > headerSpacerOffset) {
+    $("body").addClass("darkHeader");
+    console.log("reached");
+  } else {
+    $("body").removeClass("darkHeader");
+    console.log("not reached");
+  }
+});
 
 $(".header-wrapper .nav .mega-menu>ul>li.menuItem.has-submenu>a").click(
   function (e) {
