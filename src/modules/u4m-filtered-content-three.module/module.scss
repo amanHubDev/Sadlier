@@ -1,5 +1,20 @@
 @import "../../css/_module-imports";
 section.u4m-filtered-content-three {
+    &.reverse-text {
+        .featCardsListWrap {
+            .filterWrap {
+                .filters {
+                    .flex_row {
+                        .col {
+                            .colTtl {
+                                color: $White;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .featCardsOuter {
         .featCards {
             gap: 50px;

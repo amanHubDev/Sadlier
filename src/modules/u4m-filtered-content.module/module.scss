@@ -1,5 +1,20 @@
 @import "../../css/_module-imports";
 section.u4m-filtered-content {
+  &.reverse-text {
+    .featCardsListWrap {
+      .filterWrap {
+        .filters {
+          .flex_row {
+            .col {
+              .colTtl {
+                color: $White;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   .featCardsListWrap {
     .filterWrap {
       padding: 0 0 50px;
@@ -78,6 +93,7 @@ section.u4m-filtered-content {
           height: 100%;
           display: flex;
           flex-direction: column;
+          color: $dark_text;
           .cardLocation {
             display: flex;
             align-items: center;
@@ -85,12 +101,11 @@ section.u4m-filtered-content {
             margin-bottom: 24px;
             span {
               color: $sadlier_red;
-              color: $sadlier_red;
-              color: $sadlier_red;
             }
           }
 
           .cardCont {
+            color: $dark_text;
             .content_type {
               @include eyebrow;
               margin-bottom: 15px;
@@ -128,6 +143,12 @@ section.u4m-filtered-content {
           .cardBtnRow {
             margin-top: auto;
             padding-top: 30px;
+            .arrow-link {
+              color: $sadlier_red;
+              &:hover {
+                color: $tone;
+              }
+            }
           }
         }
       }

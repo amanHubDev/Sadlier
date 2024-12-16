@@ -1,5 +1,21 @@
 @import "../../css/_module-imports";
 section.u4m-filtered-content-two {
+    &.reverse-text {
+        .featCardsListWrap {
+            .filterWrap {
+                .filters {
+                    .flex_row {
+                        .col {
+                            .colTtl {
+                                color: $White;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .featCardsListWrap {
         .filterWrap {
             padding: 0 0 50px;
@@ -59,7 +75,6 @@ section.u4m-filtered-content-two {
                 .cardInr {
                     background: $White;
                     border-radius: 0 0 $borderRadius $borderRadius;
-                    overflow: hidden;
                     height: 100%;
                     display: flex;
                     flex-direction: column;
@@ -93,9 +108,6 @@ section.u4m-filtered-content-two {
                             }
                         }
                         .cardBtnContent {
-                            ul {
-                                display: none;
-                            }
                             .tinynav {
                                 background-color: $sadlier_blue;
                                 border-radius: 5px;
@@ -106,10 +118,51 @@ section.u4m-filtered-content-two {
                                 padding: 6px 41px 7px 13px;
                                 background-position: calc(100% - 10px) center;
                                 background-repeat: no-repeat;
+                                position: relative;
+                                cursor: pointer;
+                            }
+
+                            ul {
+                                transition: 0.3s;
+                                position: absolute;
+                                top: 100%;
+                                right: 0;
+                                left: 0;
+                                margin: 0;
+                                padding: 13px;
+                                list-style: none;
+                                z-index: 99;
+                                box-shadow: inherit;
+                                background-color: inherit;
+                                -webkit-transform-origin: top;
+                                -moz-transform-origin: top;
+                                -ms-transform-origin: top;
+                                transform-origin: top;
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                user-select: none;
+                                opacity: 0;
+                                visibility: hidden;
+                                display: block;
+                                margin-top: -4px;
+                                border-bottom-left-radius: 5px;
+                                border-bottom-right-radius: 5px;
+                                a {
+                                    color: $White;
+                                }
+                                &.rotated {
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
                             }
                         }
                     }
                 }
+            }
+            .statusCnt {
+                width: 100%;
+                text-align: center;
             }
         }
     }

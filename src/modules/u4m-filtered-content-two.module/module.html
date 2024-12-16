@@ -60,10 +60,14 @@
                 <h4 class="restitle">{{ row.name }}</h4> 
               </div>
 
-              <div class="cardBtnContent"> 
-                <ul>
-                   {{ row.rich }}
-                </ul>
+              <div class="cardBtnContent">
+                <div class="wrapper-dropdown tinynav" id="dropdown">
+                  <span class="selected-display" id="destination">Select Grade / Level</span>
+                  <ul class="dropdown">
+                    {{ row.rich }}
+                  </ul>
+                </div>
+               
                
               </div>
             </div>

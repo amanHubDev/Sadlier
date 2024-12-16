@@ -1,3 +1,6 @@
+
+
+
 const wrapper = document.querySelector(".resourceList");
 const pagination = document.querySelector(".pagination");
 const items = Array.from(document.querySelectorAll(".resourceCard"));
@@ -16,6 +19,67 @@ function filterItems(el, type, category) {
 
   return isOfType && isOfcategory;
 }
+
+const selectedAll = document.querySelectorAll(".wrapper-dropdown");
+
+selectedAll.forEach((selected) => {
+  const optionsContainer = selected.children[2];
+  const optionsList = selected.querySelectorAll("div.wrapper-dropdown a");
+
+  selected.addEventListener("click", () => {
+    let arrow = selected.children[1];
+
+    if (selected.classList.contains("active")) {
+      handleDropdown(selected, arrow, false);
+    } else {
+      let currentActive = document.querySelector(".wrapper-dropdown.active");
+
+      if (currentActive) {
+        let anotherArrow = currentActive.children[1];
+        handleDropdown(currentActive, anotherArrow, false);
+      }
+
+      handleDropdown(selected, arrow, true);
+    }
+  });
+
+  // update the display of the dropdown
+  for (let o of optionsList) {
+    o.addEventListener("click", () => {
+      selected.querySelector(".selected-display").innerHTML = o.innerHTML;
+    });
+  }
+});
+
+// check if anything else ofther than the dropdown is clicked
+window.addEventListener("click", function (e) {
+  if (e.target.closest(".wrapper-dropdown") === null) {
+    closeAllDropdowns();
+  }
+});
+
+// close all the dropdowns
+function closeAllDropdowns() {
+  const selectedAll = document.querySelectorAll(".wrapper-dropdown");
+  selectedAll.forEach((selected) => {
+    const optionsContainer = selected.children[2];
+    let arrow = selected.children[1];
+
+    handleDropdown(selected, arrow, false);
+  });
+}
+
+// open all the dropdowns
+function handleDropdown(dropdown, arrow, open) {
+  if (open) {
+    arrow.classList.add("rotated");
+    dropdown.classList.add("active");
+  } else {
+    arrow.classList.remove("rotated");
+    dropdown.classList.remove("active");
+  }
+}
+
 
 function MainLogic() {
   const type = TagSelect.value;
@@ -140,13 +204,11 @@ function setHTML(items) {
 TagSelect.addEventListener("change", (f) => {
   f.preventDefault();
   MainLogic();
-  clickFunctionLoad();
 });
 
 TopicSelect.addEventListener("change", (f) => {
   f.preventDefault();
   MainLogic();
-  clickFunctionLoad();
 });
 
 document.addEventListener("click", (e) => {
@@ -166,76 +228,11 @@ document.addEventListener("click", (e) => {
     currPage -= 1;
     setHTML(filteredItems);
   }
-  // clickFunctionLoad();
 });
 
 setHTML(filteredItems);
 
-function clickFunctionLoad() {
-  (function (e, t, n) {
-    e.fn.tinyNav = function (r) {
-      var s = e.extend({ active: "selected", header: "", label: "" }, r);
-      return this.each(function () {
-        n++;
-        var r = e(this),
-          o = "tinynav",
-          u = o + n,
-          a = ".l_" + u,
-          f = e("<select/>")
-            .attr({ id: u })
-            .addClass(o + " " + u);
-        if (r.is("ul,ol")) {
-          if (s.header !== "") {
-            f.append(e('<option value="select-header"/>').text(s.header));
-          }
-          var l = "";
-          r.addClass("l_" + u)
-            .find("a")
-            .each(function () {
-              l += '<option value="' + e(this).attr("href") + '">';
-              var t;
-              for (t = 0; t < e(this).parents("ul, ol").length - 1; t++) {
-                l += "- ";
-              }
-              l += e(this).text() + "</option>";
-            });
-          f.append(l);
-          if (!s.header) {
-            f.find(
-              ":eq(" + e(a + " li").index(e(a + " li." + s.active)) + ")"
-            ).attr("selected", true);
-          } else {
-            f.find(":eq(" + e(a + " li").index(e(a + " li." + s.active)) + ")")
-              .next()
-              .attr("selected", true);
-          }
-          f.change(function () {
-            if (e(this).val() != "select-header") {
-              t.location.href = e(this).val();
-            }
-          });
-          e(a).after(f);
-          if (s.label) {
-            f.before(
-              e("<label/>")
-                .attr("for", u)
-                .addClass(o + "_label " + u + "_label")
-                .append(s.label)
-            );
-          }
-        }
-      });
-    };
-  })(jQuery, this, 0);
 
-  // Configuration
-  $(function () {
-    $("html").addClass("js-enabled");
-    $(".cardBtnContent > ul").tinyNav({
-      active: "active", // The class for the active item in menu (don't change)
-      header: "Select Grade / Level", // Default value if there is no active item in menu (optional for COS)
-      // label: '' // Add a label (optional)
-    });
-  });
-}
-clickFunctionLoad();
+
+
+

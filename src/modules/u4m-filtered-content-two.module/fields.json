@@ -392,33 +392,6 @@
     "select_hubdb_table" : 2664770
   }
 }, {
-  "id" : "d8c99c2f-bcd0-e80c-33f1-6dbe3ca7bf8b",
-  "name" : "module_settings",
-  "display_width" : null,
-  "label" : "Module Settings",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "4f15f267-5be0-f20f-50ca-038d8cc4e509",
-    "name" : "theme",
-    "display_width" : null,
-    "label" : "Theme",
-    "help_text" : "\"Theme\" option will reflect on \"Border/Icon Background (if any)\"",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "theme1_color", "Theme 1" ], [ "theme2_color", "Theme 2" ], [ "theme3_color", "Theme 3" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "default" : { }
-}, {
   "id" : "module_overrides",
   "name" : "module_overrides",
   "display_width" : null,
