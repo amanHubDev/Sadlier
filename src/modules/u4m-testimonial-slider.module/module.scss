@@ -131,6 +131,9 @@
     .row {
       display: flex;
       gap: 15px;
+      @include tabletmid {
+        display: block;
+      }
       > div {
         flex: 1;
         display: flex;
@@ -152,6 +155,10 @@
     }
     .bio {
       padding-left: 40px;
+      @include tabletmid {
+        padding-left: 0;
+        padding-top: 40px;
+      }
       p {
         text-align: right;
         margin: 0;
@@ -240,7 +247,7 @@
               border-radius: $borderRadius;
             }
           }
-          margin-bottom: 20px;
+          margin-bottom: 0;
         }
       }
     }
