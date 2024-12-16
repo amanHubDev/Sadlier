@@ -40,9 +40,12 @@
         .quotes_img_inn {
           max-width: 150px;
           width: 100%;
-          padding-bottom: 24px;
           margin: 0 auto;
           margin-top: -50px;
+          overflow: hidden;
+          max-height: 150px;
+          margin-bottom: 24px;
+          border-radius: 50%;
         }
         .quotes_name {
           margin-bottom: 23px;
@@ -54,7 +57,7 @@
           letter-spacing: 0.1em;
           text-transform: uppercase;
           color: $Gray1;
-          margin-bottom: 20px;
+          margin-bottom: 0;
         }
         .member_name {
           color: $dark_text;

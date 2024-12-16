@@ -1,15 +1,83 @@
 {% set moduleName = 'u4m-anchor-nav' %}
-{% if module.make_sticky %} 
-  {% set moduleName = 'u4m-anchor-nav has-sticky' %}
+{% if module.make_sticky %}
+{% set moduleName = 'u4m-anchor-nav has-sticky' %}
 {% endif %}
 {% set imageMax = 300 %}
-
 {% include "../partials/u4-module-includes.html" %}
-    <div class="wrapper">
-      <div class="anchor-nav">
-      {% for item in module.anchor_link %}
-        <a class="single-anchor hs-skip-lang-url-rewrite" href="#{{ item.anchor_link|replace('#', '') }}">{{ item.text }}</a>
-      {% endfor %}
-      </div>
-    </div>
+<div class="nav-spacer"></div>
+<div class="anchor-nav-inner">
+<div class="page-center  {{ module.module_settings.theme }}">
+  <div class="anchor-nav">
+
+    {% for item in module.anchor_link %}
+
+    {% set href = item.anchor_link.url.href %}
+    {% if item.anchor_link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+    {% endif %}
+    {% if item.anchor_link.url.type is equalto "CONTENT" %}
+      {% if item.bookmark_id %}
+        {% set newId = item.bookmark_id|replace(' ','-')|replace(',','')|replace('_','-')|replace('&','')%}
+        {% set href = href + '#'+ newId %}
+      {% else %}
+        {% set href = item.anchor_link.url.href %}
+      {% endif %}
+    {% endif %}
+
+    <a class="single-anchor" 
+       {% if item.anchor_link.url.type is equalto "CALL_TO_ACTION"  %}
+       href="{{ href }}"
+       {% else %}
+       href="{{ href|escape_url }}"
+       {% endif %}
+       {% if item.anchor_link.open_in_new_tab %}
+       target="_blank"
+       {% endif %}
+       {% if item.anchor_link.rel %}
+       rel="{{ item.anchor_link.rel|escape_attr }}"
+       {% endif %}
+       >{{ item.text }}</a>
+    {% endfor %}
+  </div>
+  <hr class="nav-border">
+</div>
+</div>
+
 </section>
+
+
+
+
+{% if module.make_sticky %} 
+{% require_js %}
+
+  <script>
+    $(window).scroll(function () {
+      var header = $(".header-wrapper .header-spacer");
+      var headerSpacer = $(".{{name}} .nav-spacer");
+      var scrollPosition = $(window).scrollTop();
+      var headerSpacerOffset = headerSpacer.offset().top;
+      if (scrollPosition > headerSpacerOffset) {
+        $(".has-sticky").addClass("sticky");
+        console.log("reached");
+      } else {
+        $(".has-sticky").removeClass("sticky");
+        console.log("not reached");
+      }
+    });
+  </script>
+
+{% end_require_js %}
+{% endif %}
+
+{% require_js %}
+
+
+{% end_require_js %}
+
+
+
+
+
+
+
