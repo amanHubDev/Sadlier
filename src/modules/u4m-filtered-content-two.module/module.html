@@ -8,76 +8,74 @@
 
 <div class="page-center  {{ module.module_settings.theme }}">
 
-<div class="intro_wrapp">
-  {{macros.introGroup(module.intro_content)}}
-</div>
+  <div class="intro_wrapp">
+    {{macros.introGroup(module.intro_content)}}
+  </div>
 
-<div class="featCardsListWrap">
-  <div class="filterWrap">
+  <div class="featCardsListWrap">
+    <div class="filterWrap">
       <div class="filters">
         <div id="filters" class="flex_row"> 
           <div class="col selctArrow">   
-          <div class="colTtl">SELECT A STATE</div>
+            <div class="colTtl">SELECT A STATE</div>
             <select name="type" id="type" class="resourceSelect" style="background-image: url({{ get_asset_url('../../templates/images/Downarrow.png') }});">
               <option value="" selected>Select a State</option> 
-              {% for content_topic in hubdb_table_column(table, 'content_topic').options %}
-              <option value="{{ content_topic.name|lower|replace(' ','-') }}">{{ content_topic.name }}</option>
+              {% for state in hubdb_table_column(table, 'state').options %}
+              <option value="{{ state.name|lower|replace(' ','-') }}">{{ state.name }}</option>
               {% endfor %}
             </select> 
           </div>   
           <div class="col selctArrow">  
-          <div class="colTtl">SELECT A PRODUCT</div> 
+            <div class="colTtl">SELECT A PRODUCT</div> 
             <select name="topic" id="topic" class="topicSelect resourceSelect" style="background-image: url({{ get_asset_url('../../templates/images/Downarrow.png') }});">
               <option value="" selected>Select a Product</option> 
-              {% for content_type in hubdb_table_column(table, 'content_type').options %}
-              <option value="{{ content_type.name|lower|replace(' ','-') }}">{{ content_type.name }}</option>
+              {% for subject in hubdb_table_column(table, 'subject').options %}
+              <option value="{{ subject.name|lower|replace(' ','-') }}">{{ subject.name }}</option>
               {% endfor %}
             </select> 
           </div>  
 
         </div> 
       </div>	
-  </div>
+    </div>
 
 
-  <div class="cardSctn row-fluid">
-    <div class="flex_row resourceList"> 
+    <div class="cardSctn row-fluid">
+      <div class="flex_row resourceList"> 
 
-      {% for row in resouces %}
+        {% for row in resouces %}
 
 
-      <div class="resourceCard cardItem {% for topic in row.content_topic %}{{ topic.name|lower|replace(' ','-') }}{% endfor %} {{ row.content_type.name|lower|replace(' ','-') }}">
-     
-      <div class="cardInr">  
-      <div class="cardLocation">New York</div> 
-      <div class="cardInrwrap"> 
-          <div class="cardCont"> 
-            {% if row.content_type.name %}
-            <div class="content_type eyebrow"> 
-              <span class="text">{{ row.content_type.name }}</span>
+        <div class="resourceCard cardItem {{ row.state.name|lower|replace(' ','-') }} {{ row.subject.name|lower|replace(' ','-') }}">
+
+          <div class="cardInr">  
+            <div class="cardLocation">{{ row.state.name }}</div> 
+            <div class="cardInrwrap"> 
+              <div class="cardCont"> 
+                {% if row.subject.name %}
+                <div class="content_type"> 
+                  <span class="text">{{ row.subject.name }}</span>
+                </div>
+                {% endif %}
+                <h4 class="restitle">{{ row.name }}</h4> 
+              </div>
+
+              <div class="cardBtnContent"> 
+                <ul>
+                   {{ row.rich }}
+                </ul>
+               
+              </div>
             </div>
-            {% endif %}
-            <h4 class="restitle heading_color">
-              <a href="{{ row.page_url }}">{{ row.title|striptags }}</a>
-            </h4> 
           </div>
-          {% if row.button_text %}
-          <div class="cardBtnRow"> 
-            <a href="{{ row.page_url }}" class="arrow-link theme2">
-              <span>{{ row.button_text }}</span> >
-            </a> 
-          </div>
-          {% endif %}
-</div>
         </div>
-      </div>
-      {% endfor %} 
-    </div> 
-  </div>   
+        {% endfor %} 
+      </div> 
+    </div>   
 
-  <ul id="pagination{{ title|replace('widget_','')|replace('module_','') }}" class="pagination"></ul> 
+    <ul id="pagination{{ name|replace('widget_','')|replace('module_','') }}" class="pagination"></ul> 
 
-</div>
+  </div>
 
 
 </div>
@@ -93,16 +91,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% require_css %}
+<style>
+.cardBtnContent .tinynav{
+background-image:url({{ get_asset_url('../../templates/images/downArrowWhite.png') }});
+}
+</style>
+  {% end_require_css %}

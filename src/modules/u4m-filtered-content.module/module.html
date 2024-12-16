@@ -5,115 +5,34 @@
 {% set query = '-hs_created_at' %}
 {% set resouces = hubdb_table_rows(table,query) %}
 
-{% set ft_query = '-hs_created_at&limit=2' %}
-{% set ft_resouces = hubdb_table_rows(table,ft_query) %}
-
 <div class="page-center  {{ module.module_settings.theme }}">
 
-<div class="intro_wrapp">
-  {{macros.introGroup(module.intro_content)}}
-</div>
-
-
-{% if ft_resouces|length > 0 %}
-<div class="featCardsOuter">
-  <div class="featCards flex_row">  
-    {% for row in ft_resouces %} 
-    {% if loop.first %}
-    <div class="left_Sec {% if not row.featured_image.url %}noImage{% endif%}">
-      <div class="flex_row">  
-      <div class="cardConSec">  
-      <div class="cardCont"> 
-        {% if row.content_type.name %}
-        <div class="content_type eyebrow"> 
-          <span class="text">{{ row.content_type.name }}</span>
-        </div>
-        {% endif %}
-        <h2 class="restitle">
-          <a href="{{ row.page_url }}">{{ row.title|striptags }}</a>
-        </h2> 
-        {% if row.description %}
-        <div class="cardContent"> 
-          {{ row.description }}
-        </div>
-        {% endif %}
-      </div>
-      {% if row.button_text %}
-      <div class="cardBtnRow"> 
-        <a href="{{ row.page_url }}" class="arrow-link theme2">
-          <span>{{ row.button_text }}</span> >
-        </a> 
-      </div>
-      {% endif %}
-    </div>
-        <div class="cardImgSec">  
-          {% if row.featured_image.url %}
-          <div class="cardImg">
-            <a href="{{ row.page_url }}" style="background-image:url({{ row.featured_image.url }});"></a>
-          </div>
-          {% endif %}
-        </div>
-      
-      </div>
-    </div>
-    {% endif%}
-    {% if loop.last %}
-    <div class="right_Sec {% if not row.featured_image.url %}noImage{% endif%}">
-    <div class="cardInr">  
-    {% if row.featured_image.url %}
-    <div class="cardImg" style="background-image:url({{ row.featured_image.url }});">
-      <a href="{{ row.page_url }}" class="absLink"></a>
-    </div>
-    {% endif %} 
-    <div class="cardCont"> 
-      {% if row.content_type.name %}
-      <div class="content_type eyebrow"> 
-        <span class="text">{{ row.content_type.name }}</span>
-      </div>
-      {% endif %}
-      <h4 class="restitle heading_color">
-        <a href="{{ row.page_url }}">{{ row.title|striptags }}</a>
-      </h4> 
-      {% if row.button_text %}
-        <div class="cardBtnRow"> 
-          <a href="{{ row.page_url }}" class="arrow-link theme2">
-            <span>{{ row.button_text }}</span> >
-          </a> 
-        </div>
-        {% endif %}
-    </div>
+  <div class="intro_wrapp">
+    {{macros.introGroup(module.intro_content)}}
   </div>
-    </div>
-    {% endif%}
-    {% endfor %} 
-  </div> 
-</div>
-<div class="divider">
-<hr>
-</div>
-{% endif %}
-<div class="featCardsListWrap">
-  <div class="filterWrap">
+
+  <div class="featCardsListWrap">
+    <div class="filterWrap">
       <div class="filters">
         <div id="filters" class="flex_row"> 
 
           <div class="col SearchBtn">
-          <div class="colTtl">SEARCH</div>
+            <div class="colTtl">SEARCH FOR A SALES REP</div>
             <div class="srchSection">
-              <input type="text" id="filterTitle{{ name|replace('widget_','')|replace('module_','') }}" placeholder="Search by presenter, title, etc." class="resourceInput">
+              <input type="text" id="filterTitle{{ name|replace('widget_','')|replace('module_','') }}" placeholder="Search.." class="resourceInput">
             </div>
           </div> 
           <div class="col selctArrow">   
-          <div class="colTtl">SELECT A TOPIC</div>
+            <div class="colTtl">SELECT A LOCATION</div>
             <select name="type" id="type" class="resourceSelect" style="background-image: url({{ get_asset_url('../../templates/images/Downarrow.png') }});">
-              <option value="" selected>Select a Topic</option> 
-              {% for content_topic in hubdb_table_column(table, 'content_topic').options %}
-              <option value="{{ content_topic.name|lower|replace(' ','-') }}">{{ content_topic.name }}</option>
+              <option value="" selected>Select a Location</option> 
+              {% for state_select in hubdb_table_column(table, 'state_select').options %}
+              <option value="{{ state_select.name|lower|replace(' ','-') }}">{{ state_select.name }}</option>
               {% endfor %}
             </select> 
           </div>   
-          <div class="col selctArrow">  
-          <div class="colTtl">SELECT A TYPE</div> 
+          {#<div class="col selctArrow">  
+            <div class="colTtl">SELECT A TYPE</div> 
             <select name="topic" id="topic" class="topicSelect resourceSelect" style="background-image: url({{ get_asset_url('../../templates/images/Downarrow.png') }});">
               <option value="" selected>Select a Type</option> 
               {% for content_type in hubdb_table_column(table, 'content_type').options %}
@@ -121,79 +40,62 @@
               {% endfor %}
             </select> 
           </div>  
-
+          #}  
         </div> 
       </div>	
+    </div>
+
+
+    <div class="cardSctn row-fluid">
+      <div class="flex_row resourceList"> 
+
+        {% for row in resouces %}
+
+
+        <div class="resourceCard cardItem {% for topic in row.content_topic %}{{ topic.name|lower|replace(' ','-') }}{% endfor %} {{ row.state_select.name|lower|replace(' ','-') }}">
+          <div class="cardInr">  
+            {% if row.state_select.name %}
+            <div class="cardLocation">  
+              <span class="material-symbols-outlined">location_on</span> {{ row.state_select.name }}
+            </div>
+            {% endif %}
+            <div class="cardCont"> 
+              {% if row.rep_name %}
+              <h4 class="restitle">{{ row.rep_name|striptags }}</h4> 
+              {% endif %}
+              {% if row.rep_title %}
+              <div class="cardSubCon">{{ row.rep_title }}</div>
+              {% endif %}
+              {% if row.rep_phone_number %}
+              <div class="cardNumber">{{ row.rep_phone_number }}</div>
+              {% endif %}
+              {% if row.rep_email_address %}
+              <div class="cardMail"><a href="mailto:{{ row.rep_email_address }}">{{ row.rep_email_address }}</a></div>
+              {% endif %}
+
+              <!--               <div class="content_topic"> 
+                <span>Public</span> <span>Private</span> <span>Catholic</span> <span>Charter</span>
+              </div> -->
+            </div>
+            {% if row.rep_email_address %}
+            <div class="cardBtnRow"> 
+              <a href="mailto:{{ row.rep_email_address }}" class="arrow-link theme1">EMAIL REP  ></a> 
+            </div>
+            {% endif %}
+
+          </div>
+        </div>
+        {% endfor %} 
+      </div> 
+    </div>   
+
+    <ul id="pagination{{ title|replace('widget_','')|replace('module_','') }}" class="pagination"></ul> 
+
   </div>
 
 
-  <div class="cardSctn row-fluid">
-    <div class="flex_row resourceList"> 
-
-      {% for row in resouces %}
-
-
-      <div class="resourceCard cardItem {% for topic in row.content_topic %}{{ topic.name|lower|replace(' ','-') }}{% endfor %} {{ row.content_type.name|lower|replace(' ','-') }}">
-        <div class="cardInr">  
-          {% if row.featured_image.url %}
-          <div class="cardImg">
-            <a href="{{ row.page_url }}">
-            <img src="{{ row.featured_image.url }}" alt="{{ row.title|striptags }}">
-            </a>
-          </div>
-          {% endif %} 
-          <div class="cardCont"> 
-            {% if row.content_type.name %}
-            <div class="content_type eyebrow"> 
-              <span class="text">{{ row.content_type.name }}</span>
-            </div>
-            {% endif %}
-            <h4 class="restitle heading_color">
-              <a href="{{ row.page_url }}">{{ row.title|striptags }}</a>
-            </h4> 
-          </div>
-          {% if row.button_text %}
-          <div class="cardBtnRow"> 
-            <a href="{{ row.page_url }}" class="arrow-link theme2">
-              <span>{{ row.button_text }}</span> >
-            </a> 
-          </div>
-          {% endif %}
-
-        </div>
-      </div>
-      {% endfor %} 
-    </div> 
-  </div>   
-
-  <ul id="pagination{{ title|replace('widget_','')|replace('module_','') }}" class="pagination"></ul> 
-
 </div>
-
-
-</div>
-
-
-
-
-
 
 
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

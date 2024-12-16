@@ -382,14 +382,14 @@
     "required" : false,
     "locked" : false,
     "type" : "hubdbtable",
-    "default" : 1043876
+    "default" : 5359880
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
-    "select_hubdb_table" : 1043876
+    "select_hubdb_table" : 5359880
   }
 }, {
   "id" : "d8c99c2f-bcd0-e80c-33f1-6dbe3ca7bf8b",

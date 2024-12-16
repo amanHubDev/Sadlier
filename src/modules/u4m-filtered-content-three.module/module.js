@@ -8,6 +8,8 @@ const TagSelect = document.querySelector(".resourceSelect");
 const TopicSelect = document.querySelector(".topicSelect");
 const searchField = document.querySelector(".resourceInput"); 
 
+const featuredPost = document.querySelector(".featCardsOuter");
+const filteredContntTopBnr = document.querySelector(".filteredContnt .topBnr");
 
 
 

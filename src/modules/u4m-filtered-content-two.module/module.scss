@@ -92,6 +92,22 @@ section.u4m-filtered-content-two {
                                 }
                             }
                         }
+                        .cardBtnContent {
+                            ul {
+                                display: none;
+                            }
+                            .tinynav {
+                                background-color: $sadlier_blue;
+                                border-radius: 5px;
+                                @include b2;
+                                color: $White;
+                                border: none;
+                                appearance: none;
+                                padding: 6px 41px 7px 13px;
+                                background-position: calc(100% - 10px) center;
+                                background-repeat: no-repeat;
+                            }
+                        }
                     }
                 }
             }

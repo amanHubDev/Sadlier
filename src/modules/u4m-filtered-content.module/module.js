@@ -5,11 +5,9 @@ const items = Array.from(document.querySelectorAll(".resourceCard"));
 let filteredItems = items;
 let currPage = 1;
 const TagSelect = document.querySelector(".resourceSelect");
-const TopicSelect = document.querySelector(".topicSelect");
+// const TopicSelect = document.querySelector(".topicSelect");
 const searchField = document.querySelector(".resourceInput"); 
 
-const featuredPost = document.querySelector(".featCardsOuter");
-const filteredContntTopBnr = document.querySelector(".filteredContnt .topBnr");
 
 
 
@@ -26,9 +24,9 @@ function filterItems(el, keyword, type, category) {
 function MainLogic() {
 	const keyword = searchField.value;
 	const type = TagSelect.value;
-	const topic = TopicSelect.value;
+// 	const topic = TopicSelect.value;
 
-	filteredItems = items.filter(el => filterItems(el, keyword, type,topic));
+	filteredItems = items.filter(el => filterItems(el, keyword, type));
 	currPage = 1;
 
 	if (filteredItems.length !== 0) {
@@ -130,10 +128,10 @@ TagSelect.addEventListener("change", f => {
 	MainLogic(); 
 }); 
 
-TopicSelect.addEventListener("change", f => {
-	f.preventDefault();
-	MainLogic(); 
-}); 
+// TopicSelect.addEventListener("change", f => {
+// 	f.preventDefault();
+// 	MainLogic(); 
+// }); 
 
 searchField.addEventListener("keyup", g => {
 	g.preventDefault();
