@@ -186,14 +186,29 @@
     outline: none;
   }
 
+  .videowrap {
+    padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .cardVideoPopup .videowrap * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
   iframe {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
-    height: 488px;
     border: 0;
   }
 

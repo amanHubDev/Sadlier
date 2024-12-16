@@ -50,8 +50,14 @@
       <video id="video-videopop-{{ name }}" poster="{{ module.media.video_group.poster_image.src }}" src="{{ module.media.video_group.video }}" controls></video>
       {% endif %}
       {% if module.media.video_group.video_type == "embed" and module.media.video_group.embedded_path %}
+      
+      <div class="videowrap ">
+        
+
       <iframe src="{{ module.media.video_group.embedded_path }}"  frameborder="0" allowfullscreen allow="autoplay; encrypted-media">
       </iframe>
+        
+              </div>
       {% endif %}
 
     </div>

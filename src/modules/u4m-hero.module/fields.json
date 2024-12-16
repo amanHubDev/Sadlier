@@ -2,7 +2,7 @@
   "id" : "89a59353-4671-dbce-ed03-432937fc8fee",
   "name" : "left_column_content",
   "display_width" : null,
-  "label" : "Intro Content",
+  "label" : "Content Column Group",
   "required" : false,
   "locked" : false,
   "children" : [ {
