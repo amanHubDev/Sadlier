@@ -11,7 +11,7 @@
   </div>
 
   <div class="slider_wrpp">
-    <div class="inner_wrpp slick-slider">
+    <div class="inner_wrpp slick_slider">
       {% for item in module.items_group %}
       <div class="items">
         <div class="top_img">
@@ -49,12 +49,36 @@
 
 </section>
 
-
-
-
-
-
-
-
+{% require_js %}
+<script>
+  $(document).ready(function () {
+    $('.{{name}} .slick_slider').slick({
+      slidesToShow: {{ module.module_settings.slider_options.slides_per_view|default(1) }}, // Default to 1 if not defined
+      slidesToScroll: {{ module.module_settings.slider_options.slides_per_scroll|default(1) }}, // Default to 1 if not defined
+      autoplay: true, // Enable autoplay
+      autoplaySpeed: 2000, // Time interval between slides in ms
+      infinite: true, // Enable infinite looping to restart the carousel
+      arrows: false, // Hide navigation arrows
+      dots: false, // Enable dots navigation
+      responsive: [ // Correct responsive settings
+        {
+          breakpoint: 1024, // For screens <= 1024px
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3
+          }
+        },
+        {
+          breakpoint: 767, // For screens <= 767px
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  });
+</script>
+{% end_require_js %}
 
 

@@ -163,10 +163,18 @@
                     text-align: center;
                 }
             }
+
+            @include phone {
+                padding: 0;
+            }
         }
 
         @include tabletmid {
             row-gap: 20px;
+        }
+
+        @include phone {
+            margin: 0;
         }
     }
 

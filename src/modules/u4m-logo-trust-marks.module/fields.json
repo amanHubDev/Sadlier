@@ -368,6 +368,155 @@
     } ]
   }
 }, {
+  "id" : "8380216a-3a49-4888-d30c-b57dcc796a2f",
+  "name" : "items_group",
+  "display_width" : null,
+  "label" : "Items Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "73a0707b-cb76-0429-6de1-4aab1ecfd6f5",
+    "default" : 6
+  },
+  "children" : [ {
+    "id" : "cc714b41-1f34-cd11-da54-08e8170b0395",
+    "name" : "image_field",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/image-3.png",
+      "alt" : "UsBank",
+      "loading" : "lazy",
+      "width" : 161,
+      "height" : 90,
+      "max_width" : 161,
+      "max_height" : 90
+    }
+  }, {
+    "id" : "3362a459-ba8f-62cb-1dce-a15d84921588",
+    "name" : "content_style",
+    "display_width" : null,
+    "label" : "Content Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "theme", "Theme" ], [ "cstyle1", "Style 1" ], [ "cstyle2", "Style 2" ], [ "cstyle3", "Style 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme"
+  }, {
+    "id" : "73a0707b-cb76-0429-6de1-4aab1ecfd6f5",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p>Optional caption here with two lines</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/image-3.png",
+      "alt" : "UsBank",
+      "loading" : "lazy",
+      "width" : 161,
+      "height" : 90,
+      "max_width" : 161,
+      "max_height" : 90
+    },
+    "content_style" : "theme",
+    "content" : "<p>Optional caption here with two lines</p>"
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/image-3.png",
+      "alt" : "UsBank",
+      "loading" : "lazy",
+      "width" : 161,
+      "height" : 90,
+      "max_width" : 161,
+      "max_height" : 90
+    },
+    "content_style" : "theme",
+    "content" : "<p>Optional caption here with two lines</p>"
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/image-3.png",
+      "alt" : "UsBank",
+      "loading" : "lazy",
+      "width" : 161,
+      "height" : 90,
+      "max_width" : 161,
+      "max_height" : 90
+    },
+    "content_style" : "theme",
+    "content" : "<p>Optional caption here with two lines</p>"
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/image-3.png",
+      "alt" : "UsBank",
+      "loading" : "lazy",
+      "width" : 161,
+      "height" : 90,
+      "max_width" : 161,
+      "max_height" : 90
+    },
+    "content_style" : "theme",
+    "content" : "<p>Optional caption here with two lines</p>"
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/image-3.png",
+      "alt" : "UsBank",
+      "loading" : "lazy",
+      "width" : 161,
+      "height" : 90,
+      "max_width" : 161,
+      "max_height" : 90
+    },
+    "content_style" : "theme",
+    "content" : "<p>Optional caption here with two lines</p>"
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/image-3.png",
+      "alt" : "UsBank",
+      "loading" : "lazy",
+      "width" : 161,
+      "height" : 90,
+      "max_width" : 161,
+      "max_height" : 90
+    },
+    "content_style" : "theme",
+    "content" : "<p>Optional caption here with two lines</p>"
+  } ]
+}, {
   "id" : "388cfa57-ed59-5279-e5d2-b1e5cd0f27f5",
   "name" : "include_button",
   "display_width" : null,
@@ -538,155 +687,6 @@
       "open_in_new_tab" : false,
       "no_follow" : false
     }
-  } ]
-}, {
-  "id" : "8380216a-3a49-4888-d30c-b57dcc796a2f",
-  "name" : "items_group",
-  "display_width" : null,
-  "label" : "Items Group",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : "73a0707b-cb76-0429-6de1-4aab1ecfd6f5",
-    "default" : 6
-  },
-  "children" : [ {
-    "id" : "cc714b41-1f34-cd11-da54-08e8170b0395",
-    "name" : "image_field",
-    "display_width" : null,
-    "label" : "Image",
-    "required" : false,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Logo.png",
-      "alt" : "Logo",
-      "loading" : "lazy",
-      "width" : 450,
-      "height" : 147,
-      "max_width" : 450,
-      "max_height" : 147
-    }
-  }, {
-    "id" : "3362a459-ba8f-62cb-1dce-a15d84921588",
-    "name" : "content_style",
-    "display_width" : null,
-    "label" : "Content Style",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_content",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "theme", "Theme" ], [ "cstyle1", "Style 1" ], [ "cstyle2", "Style 2" ], [ "cstyle3", "Style 3" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "theme"
-  }, {
-    "id" : "73a0707b-cb76-0429-6de1-4aab1ecfd6f5",
-    "name" : "content",
-    "display_width" : null,
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "default" : "<p>Optional caption here</p>"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "default" : [ {
-    "image_field" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Logo.png",
-      "alt" : "Logo",
-      "loading" : "lazy",
-      "width" : 450,
-      "height" : 147,
-      "max_width" : 450,
-      "max_height" : 147
-    },
-    "content_style" : "theme",
-    "content" : "<p>Optional caption here</p>"
-  }, {
-    "image_field" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Logo.png",
-      "alt" : "Logo",
-      "loading" : "lazy",
-      "width" : 450,
-      "height" : 147,
-      "max_width" : 450,
-      "max_height" : 147
-    },
-    "content_style" : "theme",
-    "content" : "<p>Optional caption here</p>"
-  }, {
-    "image_field" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Logo.png",
-      "alt" : "Logo",
-      "loading" : "lazy",
-      "width" : 450,
-      "height" : 147,
-      "max_width" : 450,
-      "max_height" : 147
-    },
-    "content_style" : "theme",
-    "content" : "<p>Optional caption here</p>"
-  }, {
-    "image_field" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Logo.png",
-      "alt" : "Logo",
-      "loading" : "lazy",
-      "width" : 450,
-      "height" : 147,
-      "max_width" : 450,
-      "max_height" : 147
-    },
-    "content_style" : "theme",
-    "content" : "<p>Optional caption here</p>"
-  }, {
-    "image_field" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Logo.png",
-      "alt" : "Logo",
-      "loading" : "lazy",
-      "width" : 450,
-      "height" : 147,
-      "max_width" : 450,
-      "max_height" : 147
-    },
-    "content_style" : "theme",
-    "content" : "<p>Optional caption here</p>"
-  }, {
-    "image_field" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Logo.png",
-      "alt" : "Logo",
-      "loading" : "lazy",
-      "width" : 450,
-      "height" : 147,
-      "max_width" : 450,
-      "max_height" : 147
-    },
-    "content_style" : "theme",
-    "content" : "<p>Optional caption here</p>"
   } ]
 }, {
   "id" : "module_overrides",
@@ -1059,7 +1059,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "light_bg"
+      "default" : "white_bg"
     }, {
       "id" : "6a1736ef-8211-436a-9aee-797310e60c0f",
       "name" : "opacity",
@@ -1212,7 +1212,7 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "select_color" : "light_bg",
+      "select_color" : "white_bg",
       "opacity" : 100,
       "include_overlay_image" : false,
       "overlay_image" : {
@@ -1314,7 +1314,7 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "select_color" : "light_bg",
+      "select_color" : "white_bg",
       "opacity" : 100,
       "include_overlay_image" : false,
       "overlay_image" : {
@@ -1331,6 +1331,62 @@
     "container" : {
       "size" : "theme",
       "custom_size" : 1296
+    }
+  }
+}, {
+  "id" : "d35ea511-002b-bed0-24a8-d47b429ff0ed",
+  "name" : "module_settings",
+  "display_width" : null,
+  "label" : "Module Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "18bb7af0-fd64-417f-b88d-a6bb9acb5e16",
+    "name" : "slider_options",
+    "display_width" : null,
+    "label" : "Slider Options",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "f34cb2c1-6a2f-3802-2eee-917ee116be93",
+      "name" : "slides_per_view",
+      "display_width" : null,
+      "label" : "Slides Per View",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "default" : 5
+    }, {
+      "id" : "980ec49c-1980-3b13-a969-32b09dbc4a12",
+      "name" : "slides_per_scroll",
+      "display_width" : null,
+      "label" : "Slides Per Scroll",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "default" : 1
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "slides_per_view" : 5,
+      "slides_per_scroll" : 1
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "slider_options" : {
+      "slides_per_view" : 5,
+      "slides_per_scroll" : 1
     }
   }
 } ]
