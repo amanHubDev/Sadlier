@@ -18,7 +18,7 @@ isAvailableForNewContent: false
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  
+
     <link href="//fonts.googleapis.com/css2?family=Material+Icons+Outlined&amp;v=1734068843659" rel="stylesheet">
   </head>
 
@@ -40,7 +40,13 @@ isAvailableForNewContent: false
     {% endblock body %}
 
     {% block footer %} 
+    {% if widget_data.page_settings.select_header_theme == "corporate" %}
+    {% global_partial path='../templates/partials/u4m-footer-corporate.html' %} 
+    {% elif widget_data.page_settings.select_header_theme == "religion" %}
+    {% global_partial path='../templates/partials/u4m-footer-religion.html' %} 
+    {% else %}
     {% global_partial path='../templates/partials/u4m-footer.html' %} 
+    {% endif %}
     {% endblock footer %}
     {{ require_js(get_asset_url('../js/jquery.js')) }} 
     {{ require_js(get_asset_url('../js/aos.js')) }} 

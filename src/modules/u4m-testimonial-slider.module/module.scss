@@ -1,0 +1,212 @@
+@import "../../css/_module-imports";
+.u4m-testimonial-slider {
+  .top-cntnt-wrap {
+    position: relative;
+    z-index: 9;
+  }
+  .testimonial-slider-wrapper {
+    &.theme1_color {
+      ul.tab_sec {
+        li.active {
+          a {
+            &:after {
+              background: $sadlier_red;
+            }
+          }
+        }
+      }
+    }
+    &.theme2_color {
+      ul.tab_sec {
+        li.active {
+          a {
+            &:after {
+              background: $sadlier_blue;
+            }
+          }
+        }
+      }
+    }
+    &.theme3_color {
+      ul.tab_sec {
+        li.active {
+          a {
+            &:after {
+              background: $religion_green;
+            }
+          }
+        }
+      }
+    }
+    position: relative;
+    z-index: 9;
+    ul.tab_sec {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+        padding: 0 48px;
+        margin: 0;
+        a {
+          display: inline-block;
+          padding-bottom: 18px;
+          position: relative;
+          color: $Gray1;
+          font-weight: 700;
+        }
+      }
+      li.active {
+        a {
+          &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            bottom: -4px;
+          }
+          color: $tone;
+        }
+      }
+    }
+    .slider_tab_wrapper {
+      border-bottom: 4px solid rgba(0, 66, 89, 0.1);
+    }
+  }
+  .testimonial-slider-wrapper {
+    &.theme1_color {
+      .slick-arrow {
+        color: $sadlier_red;
+      }
+    }
+    &.theme2_color {
+      .slick-arrow {
+        color: $sadlier_blue;
+      }
+    }
+    &.theme3_color {
+      .slick-arrow {
+        color: $religion_green;
+      }
+    }
+  }
+  .tab_content_wrapper {
+    .tab_content {
+      display: none;
+    }
+    .tab_content.active {
+      display: block;
+    }
+    .row {
+      display: flex;
+      gap: 15px;
+      > div {
+        flex: 1;
+        h5 {
+          margin-bottom: 26px;
+        }
+      }
+    }
+    .bio {
+      padding-left: 40px;
+      p {
+        text-align: right;
+        margin: 0;
+      }
+    }
+    .intro_btn_wrap {
+      margin-top: 65px;
+      justify-content: flex-start;
+    }
+    padding: 70px 0;
+    .slick-arrow {
+      width: auto;
+      height: auto;
+      font-size: 60px;
+    }
+  }
+  .intro_content {
+    margin-bottom: 114px;
+  }
+  .bio_inner {
+    h3 {
+      font-weight: 400;
+    }
+  }
+  .tab_sldier_inner {
+    padding: 0 108px;
+  }
+  .slick-arrow {
+    &:before {
+      display: none;
+    }
+  }
+  .slick-arrow.pull-left {
+    left: -18px;
+  }
+  .slick-next.pull-right.slick-arrow {
+    right: -18px;
+  }
+}
+@include tabletvert {
+  .u4m-testimonial-slider {
+    .tab_sldier_inner {
+      padding: 0 18px;
+    }
+    .slick-arrow.pull-left {
+      left: -15px;
+    }
+    .slick-next.pull-right.slick-arrow {
+      right: -15px;
+    }
+    .testimonial-slider-wrapper {
+      .slider_tab_wrapper {
+        border-bottom: 0;
+      }
+      ul.tab_sec {
+        li {
+          margin: 0;
+          padding: 0 15px;
+          a {
+            font-size: 14px;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+          }
+        }
+        flex-wrap: wrap;
+      }
+    }
+    .tab_content_wrapper {
+      padding: 20px 0;
+      .intro_btn_wrap {
+        justify-content: flex-start;
+        margin-top: 15px;
+      }
+      .slick-arrow {
+        font-size: 40px;
+      }
+      .bio {
+        padding-left: 0;
+      }
+      .row {
+        display: block;
+        gap: 0;
+        .img_section {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .bio_inner {
+      h3 {
+        margin-bottom: 10px;
+        font-size: 22rem;
+      }
+    }
+    .intro_content {
+      margin-bottom: 54px;
+    }
+  }
+}

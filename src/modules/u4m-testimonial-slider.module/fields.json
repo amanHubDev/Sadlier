@@ -14,7 +14,7 @@
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
-    "default" : false
+    "default" : true
   }, {
     "id" : "5baff6ad-02e1-6b84-3429-260a0ded7ef6",
     "name" : "eyebrow_text",
@@ -34,7 +34,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "Eyebrow Text"
+    "default" : "OPTIONAL EYEBROW TEXT"
   }, {
     "id" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
     "name" : "include_heading",
@@ -44,7 +44,7 @@
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
-    "default" : false
+    "default" : true
   }, {
     "id" : "aef5e961-e297-2654-68e0-6128687770bf",
     "name" : "heading_size",
@@ -86,7 +86,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : ""
+    "default" : "Testimonial module headline."
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -135,7 +135,7 @@
       "access" : null
     },
     "type" : "richtext",
-    "default" : "<h2>The latest from the <strong>Sadlier School blog.</strong></h2>"
+    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>"
   }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
@@ -328,14 +328,14 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
-    "include_eyebrow_text" : false,
-    "eyebrow_text" : "Eyebrow Text",
-    "include_heading" : false,
+    "include_eyebrow_text" : true,
+    "eyebrow_text" : "OPTIONAL EYEBROW TEXT",
+    "include_heading" : true,
     "heading_size" : "h2",
-    "heading" : "",
+    "heading" : "Testimonial module headline.",
     "include_content" : true,
     "content_style" : "theme",
-    "content" : "<h2>The latest from the <strong>Sadlier School blog.</strong></h2>",
+    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
     "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
@@ -368,381 +368,365 @@
     } ]
   }
 }, {
-  "id" : "abfbcf44-85ae-6c66-9ad0-0fa3f110d9d7",
-  "name" : "blog_feed",
+  "id" : "b1dd7904-7f66-db2d-2ea5-2cb33124ed36",
+  "name" : "tabber_items",
   "display_width" : null,
-  "label" : "Blog Feed",
+  "label" : "Tabber Items",
   "required" : false,
   "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "df14176d-a485-f1c4-a4c4-fdb5d3ab1bef",
+    "default" : 3
+  },
   "children" : [ {
-    "id" : "ba204429-cc40-fddc-0f22-4270d3d1d32a",
-    "name" : "blog_post_type",
+    "id" : "df14176d-a485-f1c4-a4c4-fdb5d3ab1bef",
+    "name" : "tab_title",
     "display_width" : null,
-    "label" : "Blog Post Type",
+    "label" : "Tab Title",
     "required" : false,
     "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "recent", "Recent Posts" ], [ "tag", "Posts by Tag" ], [ "title", "Posts by Title" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice"
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "NAME OF COMPANY"
   }, {
-    "id" : "295a4bb2-4237-8715-1b5f-592485a0b782",
-    "name" : "select_blog",
+    "id" : "218f9bda-fe44-1fee-17f5-b7db06069186",
+    "name" : "slider_items",
     "display_width" : null,
-    "label" : "Select Blog",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "blog_feed.blog_post_type",
-      "controlling_value_regex" : "recent|tag",
-      "property" : null,
-      "operator" : "MATCHES_REGEX",
-      "access" : null
-    },
-    "type" : "blog",
-    "default" : 183796945534
-  }, {
-    "id" : "63f48b10-9873-b3a2-af69-c07449090c6b",
-    "name" : "select_tag",
-    "display_width" : null,
-    "label" : "Select Tag",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "blog_feed.blog_post_type",
-      "controlling_value_regex" : "tag",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "tag_value" : "SLUG",
-    "type" : "tag"
-  }, {
-    "id" : "784bf749-4729-6231-9904-1dfb01c8be42",
-    "name" : "post_items",
-    "display_width" : null,
-    "label" : "Post Items",
+    "label" : "Slider Items",
     "required" : false,
     "locked" : false,
     "occurrence" : {
       "min" : null,
       "max" : null,
-      "sorting_label_field" : "59bbf2a0-c2be-ec95-be28-c208b4c9e143",
+      "sorting_label_field" : "a4ffbd83-db8a-a7d2-8179-41dd11b2836e",
       "default" : 1
     },
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "blog_feed.blog_post_type",
-      "controlling_value_regex" : "title",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
     "children" : [ {
-      "id" : "59bbf2a0-c2be-ec95-be28-c208b4c9e143",
-      "name" : "select_post",
+      "id" : "42293396-c343-9db7-2b85-390153af5e64",
+      "name" : "image_field",
       "display_width" : null,
-      "label" : "Select Post",
+      "label" : "Image",
       "required" : false,
       "locked" : false,
-      "type" : "page",
-      "default" : 183797014794
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
+      }
+    }, {
+      "id" : "a4ffbd83-db8a-a7d2-8179-41dd11b2836e",
+      "name" : "content",
+      "display_width" : null,
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "default" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>"
+    }, {
+      "id" : "c492bebe-c54d-6baf-fcc4-49ca9410310a",
+      "name" : "author_name",
+      "display_width" : null,
+      "label" : "Author Name",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "— Dennis Smith, Title Goes Here"
+    }, {
+      "id" : "1fac27b5-5447-abd4-1b71-ebafa2151f79",
+      "name" : "button_group",
+      "display_width" : null,
+      "label" : "Button Group",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "fcd5894a-1f9f-4d2c-a222-abe26bb869f4",
+        "name" : "button_type",
+        "display_width" : null,
+        "label" : "Bottom Button Type",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "std"
+      }, {
+        "id" : "fa29fd37-f374-68a7-c518-9dcdacdfa388",
+        "name" : "button_style",
+        "display_width" : null,
+        "label" : "Button Style",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "tabber_items.slider_items.button_group.button_type",
+          "controlling_value_regex" : "std",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "arrow-link", "Arrow Link" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "hs-button"
+      }, {
+        "id" : "a3465576-6048-3eaf-845f-80dedb4e14b1",
+        "name" : "button_theme",
+        "display_width" : null,
+        "label" : "Button Theme",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "tabber_items.slider_items.button_group.button_type",
+          "controlling_value_regex" : "std",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "theme1"
+      }, {
+        "id" : "19520902-7b1e-09bd-9a37-df893bbaf05a",
+        "name" : "button_text",
+        "display_width" : null,
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "tabber_items.slider_items.button_group.button_type",
+          "controlling_value_regex" : "std",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Button"
+      }, {
+        "id" : "7d8a3920-4448-9f02-934d-fbaca4ba0bfa",
+        "name" : "link",
+        "display_width" : null,
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "tabber_items.slider_items.button_group.button_type",
+          "controlling_value_regex" : "std",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "d013cfbf-3d29-590c-30a9-c99d060ee82e",
+        "name" : "cta",
+        "display_width" : null,
+        "label" : "CTA",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "tabber_items.slider_items.button_group.button_type",
+          "controlling_value_regex" : "cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "cta"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
     "default" : [ {
-      "select_post" : 183797014794
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
+      },
+      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "author_name" : "— Dennis Smith, Title Goes Here",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     } ]
-  }, {
-    "id" : "2224964a-6db1-5883-4740-fc76bc116923",
-    "name" : "number_of_posts",
-    "display_width" : null,
-    "label" : "Number of Posts",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "blog_feed.blog_post_type",
-      "controlling_value_regex" : "recent|tag",
-      "property" : null,
-      "operator" : "MATCHES_REGEX",
-      "access" : null
-    },
-    "display" : "text",
-    "step" : 1,
-    "type" : "number",
-    "default" : 4
-  }, {
-    "id" : "7ffa764b-ac68-adf1-97c2-7039c929a716",
-    "name" : "include_all_posts_link",
-    "display_width" : null,
-    "label" : "Include All Posts Link",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "default" : true
-  }, {
-    "id" : "f0297752-fcbf-1b57-774d-8da4c46c7535",
-    "name" : "blog_link_text",
-    "display_width" : null,
-    "label" : "Blog Link Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "blog_feed.include_all_posts_link",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "VIEW ALL RESOURCES  >"
-  }, {
-    "id" : "3b772f9e-bba7-2213-0d69-bb8864f104a4",
-    "name" : "blog_link",
-    "display_width" : null,
-    "label" : "Blog Link",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "blog_feed.include_all_posts_link",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
-    "show_advanced_rel_options" : false,
-    "type" : "link",
-    "default" : {
-      "url" : {
-        "content_id" : null,
-        "href" : "",
-        "type" : "BLOG"
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "default" : {
-    "select_blog" : 183796945534,
-    "post_items" : [ {
-      "select_post" : 183797014794
-    } ],
-    "number_of_posts" : 4,
-    "include_all_posts_link" : true,
-    "blog_link_text" : "VIEW ALL RESOURCES  >",
-    "blog_link" : {
-      "url" : {
-        "content_id" : null,
-        "href" : "",
-        "type" : "BLOG"
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }
-}, {
-  "id" : "388cfa57-ed59-5279-e5d2-b1e5cd0f27f5",
-  "name" : "include_button",
-  "display_width" : null,
-  "label" : "Include Button",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "default" : false
-}, {
-  "id" : "1fac27b5-5447-abd4-1b71-ebafa2151f79",
-  "name" : "button_group",
-  "display_width" : null,
-  "label" : "Button Group",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : 2,
-    "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-    "default" : 2
-  },
-  "visibility" : {
-    "controlling_field" : null,
-    "controlling_field_path" : "include_button",
-    "controlling_value_regex" : "true",
-    "property" : null,
-    "operator" : "EQUAL",
-    "access" : null
-  },
-  "children" : [ {
-    "id" : "fcd5894a-1f9f-4d2c-a222-abe26bb869f4",
-    "name" : "button_type",
-    "display_width" : null,
-    "label" : "Bottom Button Type",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "std"
-  }, {
-    "id" : "fa29fd37-f374-68a7-c518-9dcdacdfa388",
-    "name" : "button_style",
-    "display_width" : null,
-    "label" : "Button Style",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "button_group.button_type",
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "arrow-link", "Arrow Link" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "hs-button"
-  }, {
-    "id" : "a3465576-6048-3eaf-845f-80dedb4e14b1",
-    "name" : "button_theme",
-    "display_width" : null,
-    "label" : "Button Theme",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "button_group.button_type",
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "theme1"
-  }, {
-    "id" : "19520902-7b1e-09bd-9a37-df893bbaf05a",
-    "name" : "button_text",
-    "display_width" : null,
-    "label" : "Button Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "button_group.button_type",
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Button"
-  }, {
-    "id" : "7d8a3920-4448-9f02-934d-fbaca4ba0bfa",
-    "name" : "link",
-    "display_width" : null,
-    "label" : "Link",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "button_group.button_type",
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
-    "show_advanced_rel_options" : false,
-    "type" : "link",
-    "default" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }, {
-    "id" : "d013cfbf-3d29-590c-30a9-c99d060ee82e",
-    "name" : "cta",
-    "display_width" : null,
-    "label" : "CTA",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "button_group.button_type",
-      "controlling_value_regex" : "cta",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "type" : "cta"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
-    "button_type" : "std",
-    "button_style" : "hs-button",
-    "button_theme" : "theme1",
-    "button_text" : "Button",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
+    "tab_title" : "NAME OF COMPANY",
+    "slider_items" : [ {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
+      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "author_name" : "— Dennis Smith, Title Goes Here",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    } ]
   }, {
-    "button_type" : "std",
-    "button_style" : "hs-button",
-    "button_theme" : "theme1",
-    "button_text" : "Button",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
+    "tab_title" : "NAME OF COMPANY",
+    "slider_items" : [ {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
+      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "author_name" : "— Dennis Smith, Title Goes Here",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    } ]
+  }, {
+    "tab_title" : "NAME OF COMPANY",
+    "slider_items" : [ {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
+      },
+      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "author_name" : "— Dennis Smith, Title Goes Here",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    } ]
   } ]
 }, {
   "id" : "d8c99c2f-bcd0-e80c-33f1-6dbe3ca7bf8b",
@@ -752,54 +736,25 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
-    "id" : "9efe5990-1858-3e06-c160-4373bf2d4e41",
-    "name" : "slider_options",
+    "id" : "4f15f267-5be0-f20f-50ca-038d8cc4e509",
+    "name" : "theme",
     "display_width" : null,
-    "label" : "Slider Options",
+    "label" : "Theme",
+    "help_text" : "\"Theme\" option will reflect on \"Border/Icon Background (if any)\"",
     "required" : false,
     "locked" : false,
-    "children" : [ {
-      "id" : "d7b19b3f-6e21-a1dc-53ef-3a44f71f93e9",
-      "name" : "slides_per_view",
-      "display_width" : null,
-      "label" : "Slides Per View",
-      "required" : true,
-      "locked" : false,
-      "display" : "text",
-      "step" : 1,
-      "type" : "number",
-      "default" : 3
-    }, {
-      "id" : "fa2df06d-4616-543e-7b6c-9a1297d204a0",
-      "name" : "slides_per_scroll",
-      "display_width" : null,
-      "label" : "Slides Per Scroll",
-      "required" : true,
-      "locked" : false,
-      "display" : "text",
-      "step" : 1,
-      "type" : "number",
-      "default" : 1
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "default" : {
-      "slides_per_view" : 3,
-      "slides_per_scroll" : 1
-    }
+    "display" : "select",
+    "choices" : [ [ "theme1_color", "Theme 1" ], [ "theme2_color", "Theme 2" ], [ "theme3_color", "Theme 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
-  "default" : {
-    "slider_options" : {
-      "slides_per_view" : 3,
-      "slides_per_scroll" : 1
-    }
-  }
+  "default" : { }
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",

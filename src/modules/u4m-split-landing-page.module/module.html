@@ -5,6 +5,7 @@
 
 <div class="u4m-split-form-landing-wraper {% if module.intro_content.include_logo and module.intro_content.logo.src %}logoAdded{% endif %}  {% if module.intro_content.include_image and module.intro_content.image.src %}topColumnimgAdd{% endif %}  {% if botgroup.select_media_type == "image" and botgroup.image.src or botgroup.select_media_type == "video" and (video.select_video_type and video.video_file or video.select_video_type and video.embedded_path) %}bottomMediaAded {% endif %}">
 
+{# check module test #}
 
   {% set moduleName = 'u4m-split-form-landing' %}
   {% include "../partials/u4-module-includes.html" %}
