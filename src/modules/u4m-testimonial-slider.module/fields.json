@@ -403,7 +403,7 @@
       "min" : null,
       "max" : null,
       "sorting_label_field" : "a4ffbd83-db8a-a7d2-8179-41dd11b2836e",
-      "default" : 1
+      "default" : 3
     },
     "children" : [ {
       "id" : "42293396-c343-9db7-2b85-390153af5e64",
@@ -628,6 +628,62 @@
           "no_follow" : false
         }
       }
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
+      },
+      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "author_name" : "— Dennis Smith, Title Goes Here",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
+      },
+      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "author_name" : "— Dennis Smith, Title Goes Here",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
     } ]
   } ],
   "tab" : "CONTENT",
@@ -664,10 +720,35 @@
           "no_follow" : false
         }
       }
-    } ]
-  }, {
-    "tab_title" : "NAME OF COMPANY",
-    "slider_items" : [ {
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
+      },
+      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "author_name" : "— Dennis Smith, Title Goes Here",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
       "image_field" : {
         "size_type" : "auto",
         "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
@@ -699,6 +780,149 @@
   }, {
     "tab_title" : "NAME OF COMPANY",
     "slider_items" : [ {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
+      },
+      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "author_name" : "— Dennis Smith, Title Goes Here",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
+      },
+      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "author_name" : "— Dennis Smith, Title Goes Here",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
+      },
+      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "author_name" : "— Dennis Smith, Title Goes Here",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    } ]
+  }, {
+    "tab_title" : "NAME OF COMPANY",
+    "slider_items" : [ {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
+      },
+      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "author_name" : "— Dennis Smith, Title Goes Here",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
+        "alt" : "Company Quote",
+        "loading" : "lazy",
+        "width" : 943,
+        "height" : 708,
+        "max_width" : 943,
+        "max_height" : 708
+      },
+      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "author_name" : "— Dennis Smith, Title Goes Here",
+      "button_group" : {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_theme" : "theme1",
+        "button_text" : "Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
       "image_field" : {
         "size_type" : "auto",
         "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
