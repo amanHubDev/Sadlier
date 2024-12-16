@@ -99,6 +99,7 @@
           }
         }
         &:not(:last-child) {
+          padding-bottom: 172px;
           @include tabletmid {
             padding-bottom: 50px;
           }
