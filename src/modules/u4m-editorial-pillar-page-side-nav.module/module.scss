@@ -3,7 +3,7 @@
 section.u4m-editorial-pillar-page-side-nav {
   padding-top: 50px;
   padding-bottom: 60px;
-  .accordion-content {
+  .desktop_nav_list .accordion-content {
     display: none;
   }
   .content-item {
@@ -82,6 +82,19 @@ section.u4m-editorial-pillar-page-side-nav {
             }
           }
         }
+
+        @include tabletvertmin {
+          &.active {
+            .accordion-content {
+              display: block;
+            }
+          }
+          // &:not(.active) {
+          //   .accordion-content {
+          //     display: none !important;
+          //   }
+          // }
+        }
       }
       .accordion_title {
         cursor: pointer;
@@ -112,6 +125,44 @@ section.u4m-editorial-pillar-page-side-nav {
       @include tabletvert {
         width: 100%;
         padding-left: 0;
+        display: none;
+      }
+    }
+  }
+
+  .accordion_trigger,
+  .desktop_trigger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: none;
+    @include tabletvertmin {
+      display: block;
+    }
+  }
+
+  .accordion_trigger {
+    @include tabletvert {
+      display: block;
+    }
+  }
+
+  .desktop_nav_list {
+    display: none;
+    @include tabletvertmin {
+      display: block;
+    }
+  }
+
+  .mobile_nav_list {
+    display: none;
+    @include tabletvert {
+      display: block;
+
+      .accordion-content {
         display: none;
       }
     }
