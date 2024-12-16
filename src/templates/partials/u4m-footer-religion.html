@@ -1,12 +1,16 @@
 <!--
 templateType: global_partial
-label: Footer
+label: Footer religion
 -->
 
-<div class="footer-wrapper main-footer">
+<div class="footer-wrapper religion-footer">
   <div class='page-center'>
     <div class="footer-menu">
-      {% menu "footer-siteMap" id=183846667930, flyouts='false', max_levels='2', label='Footer menu' %}
+      {% menu "footer-siteMap" id=183846771803, flyouts='false', max_levels='2', label='Footer menu' %}
+      <div class='footer-btn'>
+        {% module "button_school_products" path="@hubspot/button", button_text="School Products", link={ "url": { "type": "EXTERNAL", "href": "", "content_id": null }, "open_in_new_tab": false, "no_follow": false } %}
+      </div>
+      
     </div>
     <div class="footer-bottom">
       <div class="footer-bottom-col logo-col">
