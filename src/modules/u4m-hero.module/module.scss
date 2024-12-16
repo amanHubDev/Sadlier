@@ -44,7 +44,6 @@
     }
 
     .bdr {
-      border-radius: 25px;
       overflow: hidden;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       max-height: 413px;
@@ -91,6 +90,8 @@
   width: 100%;
   height: 100%;
 }
+
+.video_container {}
 
 .cardVideoPoster {
   cursor: pointer;
@@ -164,7 +165,7 @@
   right: 0;
   bottom: 0;
   z-index: 99999;
-  height: 100%;
+  height: auto;
   overflow-y: auto;
   background-color: $tone50;
 
@@ -172,9 +173,11 @@
     position: relative;
     padding: 100px 20px;
     margin: auto;
-    height: auto;
+    height: 100%;
     display: flex;
     align-items: center;
+    margin: auto;
+    width: 100%;
   }
 
   video {
@@ -183,10 +186,24 @@
     outline: none;
   }
 
+  iframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 488px;
+    border: 0;
+  }
+
   .cardpopVideo {
     margin: auto;
     padding: 35px 0;
     position: relative;
+    margin: 0;
+    width: 100%;
+
 
     .close {
       align-items: center;

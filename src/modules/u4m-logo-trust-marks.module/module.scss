@@ -19,14 +19,13 @@
       margin: 0 -35.5px;
 
       .top_img {
-        width: 161px;
-        height: 90px;
-        margin-bottom: 5px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-bottom: 10px;
       }
 
       img {
+        max-width: 161px !important;
+        max-height: 90px;
+        -o-object-fit: cover;
         object-fit: cover;
         height: inherit !important;
         margin: 0 auto;
