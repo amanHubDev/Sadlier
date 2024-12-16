@@ -1,5 +1,5 @@
 @import "../../css/_module-imports";
-.u4m-subscribe {
+.u4m-subscribe.dnd_padd {
   @include center;
   border-radius: $borderRadius;
   padding: 70rem 100rem;

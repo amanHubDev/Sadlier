@@ -919,6 +919,7 @@
     "name" : "theme",
     "display_width" : null,
     "label" : "Theme",
+    "help_text" : "\"Theme\" option will reflect on \"Border/Icon Background (if any)\"",
     "required" : false,
     "locked" : false,
     "display" : "select",
