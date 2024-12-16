@@ -34,6 +34,10 @@
       @include tabletvert {
         width: 100%;
       }
+      &.raduis {
+        border-radius: $borderRadius;
+        overflow: hidden;
+      }
     }
 
     .bdr {

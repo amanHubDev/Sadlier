@@ -853,7 +853,7 @@
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
-      "default" : "https://app.hubspot.com/design-previewer/95641/modules/183846978574"
+      "default" : "https://www.youtube.com/embed/9xwazD5SyVg"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -872,7 +872,7 @@
         "max_height" : 620
       },
       "video" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/videos/big_buck_bunny_720p_1mb.mp4",
-      "embed_url" : "https://app.hubspot.com/design-previewer/95641/modules/183846978574"
+      "embed_url" : "https://www.youtube.com/embed/9xwazD5SyVg"
     }
   } ],
   "tab" : "CONTENT",
@@ -904,7 +904,7 @@
         "max_height" : 620
       },
       "video" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/videos/big_buck_bunny_720p_1mb.mp4",
-      "embed_url" : "https://app.hubspot.com/design-previewer/95641/modules/183846978574"
+      "embed_url" : "https://www.youtube.com/embed/9xwazD5SyVg"
     }
   }
 }, {
