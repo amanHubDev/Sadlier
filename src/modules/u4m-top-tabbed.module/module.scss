@@ -41,6 +41,7 @@ section.u4m-top-tabbed {
 
     &.slick-current {
       .tab_nav {
+        @include size18;
         color: $dark_text;
         &.theme1_color {
           border-color: $sadlier_red;
@@ -136,6 +137,7 @@ section.u4m-top-tabbed {
       }
       .tab_text {
         margin-bottom: 40px;
+        @include size18;
       }
       .intro_btn_wrap {
         justify-content: left;

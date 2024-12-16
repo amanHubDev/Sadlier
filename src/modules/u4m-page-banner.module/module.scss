@@ -54,5 +54,13 @@ section.u4m-page-banner {
 
   .form-col {
     @include subscribeForm;
+    form .hs-form-field > label {
+      @include size14;
+      font-weight: normal;
+    }
+    .hs-input {
+      outline: none !important;
+      @include size16;
+    }
   }
 }
