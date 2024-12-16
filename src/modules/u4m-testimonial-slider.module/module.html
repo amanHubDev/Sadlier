@@ -34,7 +34,7 @@
           <div class="tab_sldier_item">
             <div class="tab_sldier_inner">
               <div class="row">
-                <div class="img_section">
+                <div class="img_section {% if module.module_settings.image_border_radius %}bdr-radius{% endif %}">
                   {% if item2.image_field.src %}
                   {% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}"' %}
                   {% if item2.image_field.size_type == 'auto' %}

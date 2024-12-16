@@ -748,13 +748,27 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice"
+    "type" : "choice",
+    "default" : "theme1_color"
+  }, {
+    "id" : "4be50f0f-a818-aaa5-527e-4ccbb090b563",
+    "name" : "image_border_radius",
+    "display_width" : null,
+    "label" : "Image Border Radius",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
-  "default" : { }
+  "default" : {
+    "theme" : "theme1_color",
+    "image_border_radius" : true
+  }
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",

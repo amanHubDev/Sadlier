@@ -1,6 +1,33 @@
 @import "../../css/_module-imports";
 
 .u4m-testimonial-slider {
+  &.reverse-text {
+    .testimonial-slider-wrapper {
+      ul.tab_sec {
+        li {
+          &.active {
+            a {
+              color: $White;
+              opacity: 1;
+            }
+          }
+          a {
+            color: $White;
+            opacity: 0.8;
+          }
+        }
+      }
+      .tab_content {
+        .tab_sldier_inner {
+          .bio {
+            h3 {
+              color: $White;
+            }
+          }
+        }
+      }
+    }
+  }
   .top-cntnt-wrap {
     position: relative;
     z-index: 9;
@@ -106,8 +133,20 @@
       gap: 15px;
       > div {
         flex: 1;
+        display: flex;
+        align-items: center;
+        .bio_inner {
+          width: 100%;
+        }
         h5 {
           margin-bottom: 26px;
+        }
+      }
+      .img_section {
+        &.bdr-radius {
+          img {
+            border-radius: $borderRadius;
+          }
         }
       }
     }
@@ -196,6 +235,11 @@
         display: block;
         gap: 0;
         .img_section {
+          &.bdr-radius {
+            img {
+              border-radius: $borderRadius;
+            }
+          }
           margin-bottom: 20px;
         }
       }
