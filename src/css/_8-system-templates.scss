@@ -32,11 +32,12 @@ section.u4m-backup-unsubscribe {
     a#hs_login_reset {
       margin-bottom: 20px;
     }
-    .hs-form-field > label + a {
+
+    .hs-form-field>label+a {
       float: right;
     }
 
-    .hs-form-field > label {
+    .hs-form-field>label {
       display: inline-block;
       float: left;
     }
@@ -52,7 +53,7 @@ section.u4m-backup-unsubscribe {
     }
 
     .hs-form-field {
-      input + label {
+      input+label {
         display: inline;
         float: none;
       }
@@ -103,11 +104,12 @@ section.u4m-password-prompt {
     a#hs_login_reset {
       margin-bottom: 20px;
     }
-    .hs-form-field > label + a {
+
+    .hs-form-field>label+a {
       float: right;
     }
 
-    .hs-form-field > label {
+    .hs-form-field>label {
       display: inline-block;
       float: left;
     }
@@ -135,7 +137,7 @@ section.u4m-password-prompt {
 
     [type="checkbox"],
     [type="radio"] {
-      width: auto !important ;
+      width: auto !important;
     }
 
     input#hs-login-widget-remember {
@@ -152,7 +154,7 @@ section.u4m-password-prompt {
     padding-bottom: 50rem;
 
     .hs-form-field {
-      input + label {
+      input+label {
         display: inline;
         float: none;
       }
@@ -186,6 +188,12 @@ section.u4m-search-results {
   }
 }
 
+section.u4m-membership-reset-password {
+  .form-container {
+    margin-bottom: 20px;
+  }
+}
+
 section.u4m-subscription-preferences {
   @include center;
   margin: 100rem auto;
@@ -198,11 +206,12 @@ section.u4m-subscription-preferences {
     a#hs_login_reset {
       margin-bottom: 20px;
     }
-    .hs-form-field > label + a {
+
+    .hs-form-field>label+a {
       float: right;
     }
 
-    .hs-form-field > label {
+    .hs-form-field>label {
       display: inline-block;
       float: left;
     }
@@ -218,7 +227,7 @@ section.u4m-subscription-preferences {
     }
 
     .hs-form-field {
-      input + label {
+      input+label {
         display: inline-block;
         display: inline;
         float: none;
@@ -270,24 +279,14 @@ section.u4m-subscriptions-confirmation {
   flex-wrap: wrap;
 }
 
-section.u4m-subscription-preferences form {
-  color: $white !important;
-  p,
-  h1,
-  h2 {
-    color: $white !important;
-  }
-}
+
 
 section.u4m-password-prompt form input {
   height: 48px !important;
   margin-top: 0 !important;
 }
 
-.systems-page
-  .hs_cos_wrapper_type_password_reset_request
-  ul.no-list
-  li:has(> label:only-child:empty) {
+.systems-page .hs_cos_wrapper_type_password_reset_request ul.no-list li:has(> label:only-child:empty) {
   list-style: none;
 }
 
@@ -296,6 +295,7 @@ section.u4m-password-prompt form input {
     h1 {
       font-size: 33rem;
     }
+
     h2 {
       font-size: 24rem;
     }
