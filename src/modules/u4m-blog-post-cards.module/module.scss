@@ -16,22 +16,28 @@
     .slick-list {
       overflow: visible;
     }
+    .slick-arrow {
+      opacity: 0;
+    }
     .blog_posts_item {
       padding-left: 26px;
       padding-right: 26px;
+      &.image_corner_radius {
+        .feature_img {
+          border-radius: $borderRadius;
+        }
+      }
       .feature_img {
         padding-top: 63.64%;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        border-radius: $borderRadius;
         margin-bottom: 19px;
       }
       .post_meta {
         margin-bottom: 14px;
         display: flex;
         align-items: center;
-        column-gap: 10px;
         flex-wrap: wrap;
         a {
           font-weight: 700;
@@ -45,17 +51,20 @@
       .post_title {
         h4 {
           margin-bottom: 20px;
-        }
-        .post_description {
-          font-style: normal;
-          font-weight: 400;
-          font-size: $baseFontSize;
-          line-height: 1.625;
-          letter-spacing: 0.03em;
-          color: $dark_text;
-          p.item_descr {
-            margin-bottom: 0;
+          a {
+            color: $dark_text;
           }
+        }
+      }
+      .post_description {
+        font-style: normal;
+        font-weight: 400;
+        font-size: $baseFontSize;
+        line-height: 1.625;
+        letter-spacing: 0.03em;
+        color: $dark_text;
+        p.item_descr {
+          margin-bottom: 0;
         }
       }
     }

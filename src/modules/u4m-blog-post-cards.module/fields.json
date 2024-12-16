@@ -386,7 +386,8 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice"
+    "type" : "choice",
+    "default" : "recent"
   }, {
     "id" : "295a4bb2-4237-8715-1b5f-592485a0b782",
     "name" : "select_blog",
@@ -541,6 +542,7 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
+    "blog_post_type" : "recent",
     "select_blog" : 183796945534,
     "post_items" : [ {
       "select_post" : 183797014794
@@ -789,6 +791,16 @@
       "slides_per_view" : 3,
       "slides_per_scroll" : 1
     }
+  }, {
+    "id" : "aa92982a-dad6-778b-05f8-0c17b44ecc97",
+    "name" : "image_corner_radius",
+    "display_width" : null,
+    "label" : "Image Corner Radius",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -798,7 +810,8 @@
     "slider_options" : {
       "slides_per_view" : 3,
       "slides_per_scroll" : 1
-    }
+    },
+    "image_corner_radius" : true
   }
 }, {
   "id" : "module_overrides",
@@ -1171,7 +1184,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "light_bg"
+      "default" : "white_bg"
     }, {
       "id" : "6a1736ef-8211-436a-9aee-797310e60c0f",
       "name" : "opacity",
@@ -1324,7 +1337,7 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "select_color" : "light_bg",
+      "select_color" : "white_bg",
       "opacity" : 100,
       "include_overlay_image" : false,
       "overlay_image" : {
@@ -1426,7 +1439,7 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "select_color" : "light_bg",
+      "select_color" : "white_bg",
       "opacity" : 100,
       "include_overlay_image" : false,
       "overlay_image" : {
