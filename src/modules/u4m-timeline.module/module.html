@@ -1,27 +1,61 @@
 {% set moduleName = 'u4m-timeline' %}
-{% set imageMax = 1000 %}
-{% set bgImageMax = 1920 %}
- 
 {% include "../partials/u4-module-includes.html" %}
-  <div  class='inner'>
-    <div class='timeline'>
-      {% if module.include_heading %}
-      <h2>{{ module.heading }}</h2>
-      {% endif %}
-      {% for item in module.timeline_entries %}
-      <div class='timeline-entry' data-aos="fade-up">
-        <div class='timeline-entry-info'>
-          <h3>{{ item.year }}</h3>
-          <p>{{ item.description }}</p>
-          {% if item.include_image %}
-          <div class='timeline-image'>
-            <img src="{{ item.image.src }}" width="467" alt="{{ item.image.alt }}" loading="lazy">
+<div class="page-center">
+  <div class="intro_wrapp">
+    {{macros.introGroup(module.intro_content)}}
+  </div>
+</div>
+<div class="timeline_wrapper {{ module.module_settings.theme }}">
+  <div class="page-center">
+    <div class="timeline">
+      {% for item in module.timeline_items %}
+      <div class="timeline-item">
+        <div class="timeline-inner">
+
+          {% if item.timeline_year %}
+          <div class="year">
+            <h3>
+              {{ item.timeline_year }}
+            </h3>
+          </div>
+          {% endif %}
+          {% if item.content %}
+          <div class="content">
+            {{ item.content }}
+          </div>
+          {% endif %}
+          {% if item.image_field.src %}
+          <div class="image">
+            {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+            {% if item.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
           </div>
           {% endif %}
         </div>
-        <div></div>
       </div>
       {% endfor %}
     </div>
   </div>
+</div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

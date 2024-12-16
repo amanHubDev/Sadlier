@@ -1,108 +1,149 @@
 @import "../../css/_module-imports";
-section.u4m-timeline {
-  padding: 100rem 0;
-  .inner {
-    @include center;
+
+.u4m-timeline {
+  .timeline_wrapper {
+    position: relative;
+    z-index: 9;
     .timeline {
-      width: 100%;
-      max-width: 1024rem;
-      margin: 0 auto;
-      h2 {
-        @include h2;
-        text-align: center;
+      position: relative;
+      @include tabletmid {
+        overflow: visible;
       }
-      .timeline-entry {
-        display: flex;
-        @include tabletvert {
-          display: block;
+      overflow: hidden;
+      .timeline-item {
+        @include tabletmid {
+          padding-left: 25px;
         }
-        div {
-          flex-basis: calc(50% - 5rem);
-          flex-shrink: 0;
-          flex-grow: 0;
-          &.timeline-entry-info {
-            padding: 50rem 20rem;
-            flex-basis: 50%;
-            flex-shrink: 0;
-            flex-grow: 0;
-            position: relative;
-            @include ie {
-              flex-basis: calc(50% - 45rem);
+        &:last-child {
+          &:after {
+            display: none;
+            display: none;
+          }
+        }
+        &:after {
+          content: "";
+          display: block;
+          height: 100%;
+          width: 2px;
+          background: $tone;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          opacity: 0.25;
+          @include tabletmid {
+            transform: unset;
+            left: 0px;
+          }
+        }
+        position: relative;
+        .timeline-inner {
+          @include tabletmid {
+            max-width: 100%;
+          }
+          max-width: 373px;
+          display: block;
+          position: relative;
+          &:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 40px;
+            top: 0;
+            position: absolute;
+            @include tabletmid {
+              width: 20px;
+              height: 20px;
             }
+          }
+          .content {
+            p {
+              margin-bottom: 31px;
+            }
+          }
+          .year {
             h3 {
-              @include h3;
+              margin-bottom: 16px;
             }
-            &:before {
-              content: '';
-              display: block;
-              width: 30rem;
-              height: 30rem;
-              background: $action2;
-              border-radius: 100%;
-              position: absolute;
-              top: 0;
-            }
-            @include tabletvert {
-              padding: 0rem 20rem 50rem 40rem;
-              width: 100%;
-              display: block;
-              &:before {
-                top: 10rem;
+          }
+        }
+        &:nth-child(odd) {
+          .timeline-inner {
+            margin-left: auto;
+            &:after {
+              left: -82px;
+              z-index: 1;
+              @include tabletmid {
+                left: -34px;
               }
             }
           }
         }
         &:nth-child(even) {
-          .timeline-entry-info {
-            order: 2;
-            border-left: 5rem solid $action2;
-            &:before {
-              left: -17rem;
+          .timeline-inner {
+            text-align: right;
+            &:after {
+              z-index: 1;
+              right: -82px;
+              @include tabletmid {
+                right: auto;
+                z-index: 1;
+                left: -34px;
+              }
+            }
+            @include tabletmid {
+              text-align: left;
+              margin-left: auto;
             }
           }
         }
-        &:nth-child(odd) {
-          .timeline-entry-info {
-            border-right: 5rem solid $action2;
-            &:before {
-              right: -17rem;
-            }
-            @include tabletvert {
-              border-right: none;
-              border-left: 5rem solid $action2;
-              &:before {
-                right: 0;
-                left: -17rem;
-              }
-            }
+        &:not(:last-child) {
+          @include tabletmid {
+            padding-bottom: 50px;
           }
         }
-        // Down Arrow Business
-        &:last-child {
-          .timeline-entry-info:after {
-            content: '';
-            display: block;
-            border: 20rem solid $action2;
-            position: absolute;
-            bottom: -5rem;
-            border-color: $action2 transparent transparent transparent;
-            border-width: 30rem 20rem 0;
-          }
-          &:nth-child(even) {
-            .timeline-entry-info:after {
-              left: -23rem;
-            }
-          }
-          &:nth-child(odd) {
-            .timeline-entry-info:after {
-              right: -23rem;
-              @include phone {
-                right: calc(100% - 18rem);
-              }
+      }
+    }
+    &.theme1_color {
+      .timeline {
+        .timeline-item {
+          .timeline-inner {
+            &:after {
+              background-color: $sadlier_red;
             }
           }
         }
       }
     }
+    &.theme2_color {
+      .timeline {
+        .timeline-item {
+          .timeline-inner {
+            &:after {
+              background-color: $sadlier_blue;
+            }
+          }
+        }
+      }
+    }
+    &.theme3_color {
+      .timeline {
+        .timeline-item {
+          .timeline-inner {
+            &:after {
+              background-color: $religion_green;
+            }
+          }
+        }
+      }
+    }
+
+    .page-center {
+      max-width: 920px;
+    }
+  }
+  .intro_content {
+    margin-bottom: 48px;
   }
 }
