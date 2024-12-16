@@ -1,0 +1,67 @@
+@import "../../css/_module-imports";
+
+section.u4m-table {
+  padding-top: 40px;
+  padding-bottom: 50px;
+  .table-wrap {
+    max-width: 1015px;
+    margin: 0 auto;
+    overflow-y: auto;
+    table {
+      margin: 0;
+      width: 100%;
+      border-collapse: collapse;
+      -webkit-box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.2);
+      tbody {
+        tr:nth-child(odd) {
+          td {
+            background-color: $white;
+          }
+        }
+        tr:nth-child(even) {
+          td {
+            background-color: $light_background;
+          }
+        }
+      }
+      tr {
+        th {
+          color: $white;
+          padding: 17px 42px;
+          background-color: $tone;
+          border: 0;
+          text-transform: none;
+          line-height: 1;
+          font-weight: bold;
+          @include tabletvert {
+            padding: 15px;
+          }
+        }
+        td {
+          border: 0;
+          padding: 17px 42px;
+          line-height: 1;
+          @include size16;
+          font-weight: bold;
+          @include tabletvert {
+            padding: 15px;
+          }
+          a {
+            text-decoration: underline;
+            &.theme1_color {
+              color: $sadlier_red;
+            }
+            &.theme2_color {
+              color: $sadlier_blue;
+            }
+            &.theme3_color {
+              color: $religion_green;
+            }
+          }
+        }
+      }
+    }
+  }
+}

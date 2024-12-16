@@ -7,10 +7,15 @@ section.u4m-page-banner {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    &.no-right-col .left-content-col {
+      width: 100%;
+      padding-right: 0;
+    }
   }
   .intro_content {
     margin: 0;
     text-align: left;
+    max-width: 100%;
     .intro_desc {
       margin-bottom: 0px;
     }

@@ -34,7 +34,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : ""
+    "default" : "Eyebrow Text"
   }, {
     "id" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
     "name" : "include_heading",
@@ -86,7 +86,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : ""
+    "default" : "Intro Heading Add Here"
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -96,7 +96,7 @@
     "locked" : false,
     "display" : "checkbox",
     "type" : "boolean",
-    "default" : true
+    "default" : false
   }, {
     "id" : "50e79c36-b6a5-5ab0-1502-e7248fc5b7ed",
     "name" : "content_style",
@@ -135,7 +135,7 @@
       "access" : null
     },
     "type" : "richtext",
-    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur adipiscing elit ut labore et dolore consectetur adipiscing elit magna aliqua.</p>"
+    "default" : ""
   }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
@@ -329,13 +329,13 @@
   "type" : "group",
   "default" : {
     "include_eyebrow_text" : false,
-    "eyebrow_text" : "",
+    "eyebrow_text" : "Eyebrow Text",
     "include_heading" : false,
     "heading_size" : "h2",
-    "heading" : "",
-    "include_content" : true,
+    "heading" : "Intro Heading Add Here",
+    "include_content" : false,
     "content_style" : "theme",
-    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur adipiscing elit ut labore et dolore consectetur adipiscing elit magna aliqua.</p>",
+    "content" : "",
     "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
@@ -368,211 +368,266 @@
     } ]
   }
 }, {
-  "id" : "b8125143-8ab3-b632-096e-db97ad0ff654",
-  "name" : "right_content",
+  "id" : "241d4f76-2bab-4bc5-e1c8-e62b615f019f",
+  "name" : "table_content",
   "display_width" : null,
-  "label" : "Right Content",
+  "label" : "Table Content",
   "required" : false,
   "locked" : false,
   "children" : [ {
-    "id" : "19fec99d-dd36-fc8a-e5c3-59d593d00398",
-    "name" : "form",
+    "id" : "4d7b0236-d499-5c5a-206d-6eab644d91f7",
+    "name" : "column1_title",
     "display_width" : null,
-    "label" : "Form",
+    "label" : "Column1 Title",
     "required" : false,
     "locked" : false,
-    "type" : "form",
-    "default" : {
-      "response_type" : "inline",
-      "message" : "Thanks for submitting the form.",
-      "gotowebinar_webinar_key" : null,
-      "webinar_id" : null,
-      "webinar_source" : null
-    }
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Job Title"
   }, {
-    "id" : "388cfa57-ed59-5279-e5d2-b1e5cd0f27f5",
-    "name" : "include_button",
+    "id" : "329ced7f-3988-0445-9265-8465134f606a",
+    "name" : "column2_title",
     "display_width" : null,
-    "label" : "Include Button",
+    "label" : "Column2 Title",
     "required" : false,
     "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "default" : true
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Location"
   }, {
-    "id" : "1fac27b5-5447-abd4-1b71-ebafa2151f79",
-    "name" : "button_group",
+    "id" : "19107485-7e8b-7141-71dd-1b80a9a6fe78",
+    "name" : "column3_title",
     "display_width" : null,
-    "label" : "Button Group",
+    "label" : "Column3 Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Job Description"
+  }, {
+    "id" : "9f9d1f3e-f19c-8d01-1501-8c949362b429",
+    "name" : "row_items",
+    "display_width" : null,
+    "label" : "Row Items",
     "required" : false,
     "locked" : false,
     "occurrence" : {
       "min" : null,
-      "max" : 2,
-      "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "default" : 2
-    },
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "right_content.include_button",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
+      "max" : null,
+      "sorting_label_field" : "b1a7c17a-5f7c-cfc2-995f-4aebab880d0d",
+      "default" : 8
     },
     "children" : [ {
-      "id" : "fcd5894a-1f9f-4d2c-a222-abe26bb869f4",
-      "name" : "button_type",
+      "id" : "b1a7c17a-5f7c-cfc2-995f-4aebab880d0d",
+      "name" : "row_content",
       "display_width" : null,
-      "label" : "Button Type",
+      "label" : "Row Content",
       "required" : false,
       "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "std"
-    }, {
-      "id" : "fa29fd37-f374-68a7-c518-9dcdacdfa388",
-      "name" : "button_style",
-      "display_width" : null,
-      "label" : "Button Style",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "right_content.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "arrow-link", "Arrow Link" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "hs-button"
-    }, {
-      "id" : "a3465576-6048-3eaf-845f-80dedb4e14b1",
-      "name" : "button_theme",
-      "display_width" : null,
-      "label" : "Button Theme",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "right_content.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "theme1"
-    }, {
-      "id" : "19520902-7b1e-09bd-9a37-df893bbaf05a",
-      "name" : "button_text",
-      "display_width" : null,
-      "label" : "Button Text",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "right_content.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "default" : "Button"
-    }, {
-      "id" : "7d8a3920-4448-9f02-934d-fbaca4ba0bfa",
-      "name" : "link",
-      "display_width" : null,
-      "label" : "Link",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "right_content.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
-      "show_advanced_rel_options" : false,
-      "type" : "link",
+      "children" : [ {
+        "id" : "c5495afa-bfb3-4f39-1353-e2b36c7c02a7",
+        "name" : "column1_text",
+        "display_width" : null,
+        "label" : "Column1 Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Brand Director"
+      }, {
+        "id" : "ccfde915-8319-b688-41ea-d90d1f9f8139",
+        "name" : "column2_text",
+        "display_width" : null,
+        "label" : "Column2 Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Denver, Colorado"
+      }, {
+        "id" : "0167c060-b1bf-5c63-ab2b-fbf668c6344e",
+        "name" : "column3_text",
+        "display_width" : null,
+        "label" : "Column3 Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Download PDF"
+      }, {
+        "id" : "b03b988f-f753-2f46-a791-8e7a21191f50",
+        "name" : "pdf",
+        "display_width" : null,
+        "label" : "Pdf",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
       "default" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
       }
-    }, {
-      "id" : "d013cfbf-3d29-590c-30a9-c99d060ee82e",
-      "name" : "cta",
-      "display_width" : null,
-      "label" : "CTA",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "right_content.button_group.button_type",
-        "controlling_value_regex" : "cta",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "type" : "cta"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
     "default" : [ {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "theme1",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
       }
     }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "theme1",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
       }
     } ]
   } ],
@@ -581,41 +636,128 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
-    "form" : {
-      "response_type" : "inline",
-      "message" : "Thanks for submitting the form.",
-      "gotowebinar_webinar_key" : null,
-      "webinar_id" : null,
-      "webinar_source" : null
-    },
-    "include_button" : true,
-    "button_group" : [ {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "theme1",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
+    "column1_title" : "Job Title",
+    "column2_title" : "Location",
+    "column3_title" : "Job Description",
+    "row_items" : [ {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
       }
     }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "theme1",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "row_content" : {
+        "column1_text" : "Brand Director",
+        "column2_text" : "Denver, Colorado",
+        "column3_text" : "Download PDF",
+        "pdf" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/00_Redesign_2019/School_2019/04_Sch_Additionnal_Resources/Research/2024-04-24_Sadlier_Building_Reading_Success_Final_ESSA_Level_4_Report.pdf",
+            "type" : "FILE"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
       }
     } ]
   }
@@ -639,13 +781,16 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice"
+    "type" : "choice",
+    "default" : "theme1_color"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
-  "default" : { }
+  "default" : {
+    "theme" : "theme1_color"
+  }
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",
@@ -941,7 +1086,7 @@
     },
     "display" : "checkbox",
     "type" : "boolean",
-    "default" : true
+    "default" : false
   }, {
     "id" : "94e04306-ecc1-4735-09fd-9b66482a8101",
     "name" : "background_settings",
@@ -1017,7 +1162,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "tone_bg"
+      "default" : "white_bg"
     }, {
       "id" : "6a1736ef-8211-436a-9aee-797310e60c0f",
       "name" : "opacity",
@@ -1170,7 +1315,7 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "select_color" : "tone_bg",
+      "select_color" : "white_bg",
       "opacity" : 100,
       "include_overlay_image" : false,
       "overlay_image" : {
@@ -1263,7 +1408,7 @@
     "bottom_padding" : "bottom-padding-default",
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
-    "reverse_text" : true,
+    "reverse_text" : false,
     "background_settings" : {
       "background_type" : "color",
       "background_image" : {
@@ -1272,7 +1417,7 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "select_color" : "tone_bg",
+      "select_color" : "white_bg",
       "opacity" : 100,
       "include_overlay_image" : false,
       "overlay_image" : {
