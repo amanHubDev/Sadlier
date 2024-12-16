@@ -11,21 +11,23 @@
       <div class="slider-wrap ">
         {% for item in module.card_item %}
         <div class="slide-item">
-          {% if item.image.src %}
-          <div class="img-col">
-            <img src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}">
-          </div>
-          {% endif %}
-          <div class="content-col">
-            <h3>
-              {{ item.heading }}
-            </h3>
-            {{ item.content }}
-
-            <div class="bottom_button">
-              {{macros.buttonGroup(item.button_group)}}
+          <div class="slide-item-inner {{ module.module_settings.select_card_text_color }} {{ module.module_settings.card_bg_color }}">
+            {% if item.image.src %}
+            <div class="img-col">
+              <img src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}">
             </div>
+            {% endif %}
+            <div class="content-col">
+              <h3>
+                {{ item.heading }}
+              </h3>
+              {{ item.content }}
 
+              <div class="bottom_button">
+                {{macros.buttonGroup(item.button_group)}}
+              </div>
+
+            </div>
           </div>
         </div>
         {% endfor %}
@@ -35,29 +37,39 @@
 </div>
 </section>
 
+{% require_css %}
 
+<style>
+  {% if module.module_settings.image_corner_radius %}
+  .{{name}} .slide-item-inner{
+    border-radius: 25rem;
+  }
+  {% endif %}
+</style>
 
-{% if require_js %}
+{% end_require_css %}
+{% require_js %}
 <script>
   $('.{{name}} .slider-wrap').slick({
     dots: false,
-    infinite: false,
+    infinite: true,
     arrows: false,
     slidesToShow: 2,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 2000,
     responsive: [
     {
     breakpoint: 767,
     settings: {
     slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true
-    }
+    slidesToScroll: 1
+        }
   }
   ]
   });
 </script>
-{% endif end_require_js %}
+{% end_require_js %}
 
 
 
