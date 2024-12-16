@@ -1,0 +1,15 @@
+[ {
+  "id" : "009dd830-74cd-783e-cfa6-8dde263d87ea",
+  "name" : "select_header_theme",
+  "display_width" : null,
+  "label" : "Select Header Theme",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "corporate", "Corporate" ], [ "school", "School" ], [ "religion", "Religion" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "school"
+} ]
