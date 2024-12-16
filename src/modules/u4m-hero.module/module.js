@@ -1,98 +1,52 @@
-
+// Handling click event to open the video popup
 document.querySelectorAll('.cardVideo').forEach(function(cardVideo) {
-	cardVideo.addEventListener('click', function() {
-		var dtPopup = cardVideo.getAttribute('data-popup-id'); 
-		var popupVideoTag = document.getElementById('video-'+dtPopup); 
-		var popupElement = document.getElementById(dtPopup);
-		if (popupElement) {
-			popupElement.style.display = 'flex';
-			popupVideoTag.setAttribute('autoplay',"autoplay");
-			popupVideoTag.play(); 
-		}
-	});
+  cardVideo.addEventListener('click', function() {
+    var dtPopup = cardVideo.getAttribute('data-popup-id');
+    var popupElement = document.getElementById(dtPopup);
+
+    if (popupElement) {
+      // Show the popup
+      popupElement.style.display = 'flex';
+
+      // Find the video element inside the popup
+      var video = popupElement.querySelector('video');
+      var iframe = popupElement.querySelector('iframe');
+
+      // Handle regular video autoplay
+      if (video) {
+        video.setAttribute('autoplay', "autoplay");
+        video.play();
+      }
+
+      // Handle iframe autoplay (YouTube video)
+      if (iframe) {
+        // Set the iframe source to autoplay the YouTube video
+        var iframeSrc = iframe.getAttribute('data-src');
+        iframe.setAttribute('src', iframeSrc + '&autoplay=1');
+      }
+    }
+  });
 });
 
+// Handling close button to stop videos or iframes
 document.querySelectorAll('.cardpopVideo .close').forEach(function(closeButton) {
-	var popVideo = document.querySelectorAll('.cardpopVideo video');
-	closeButton.addEventListener('click', function() {
-		document.querySelectorAll('.cardVideoPopup').forEach(function(cardVideoPopup) {
-			cardVideoPopup.style.display = 'none';
-			popVideo.forEach(function(popVideoo) {
-				popVideoo.setAttribute('autoplay',"");
-				popVideoo.pause(); 
-			});
-		});
-	});
-}); 
+  closeButton.addEventListener('click', function() {
+    document.querySelectorAll('.cardVideoPopup').forEach(function(cardVideoPopup) {
+      cardVideoPopup.style.display = 'none';
 
+      // Find and stop regular video
+      var video = cardVideoPopup.querySelector('video');
+      if (video) {
+        video.setAttribute('autoplay', "");
+        video.pause();
+      }
 
-
-
-
-var getVideoTrigger = document.querySelectorAll(".video_pop_trigger");
-var getVideoModal = document.querySelectorAll(".cardVideoPopup");
-
-Array.prototype.slice.call(getVideoTrigger).forEach(function (ele, index) {
-  ele.addEventListener("click", function (el) {
-    var getId = this.getAttribute("data-trigger-id");
-
-    document
-      .querySelector('[data-video-id="' + getId + '"]')
-      .classList.add("open");
-
-    console.log(getId);
-
-    var getIframe = document.querySelector(
-      '[data-video-id="' + getId + '"] iframe'
-    );
-    if (getIframe) {
-      var getSrc = getIframe.getAttribute("data-src");
-      console.log(getSrc, "getSrc");
-      document
-        .querySelector('[data-video-id="' + getId + '"] iframe')
-        .setAttribute("src", getSrc);
-    }
-
-    document.querySelector("body").classList.add("modal_popup_open");
-
-    setTimeout(function () {
-      document
-        .querySelector('[data-video-id="' + getId + '"]')
-        .classList.add("anim");
-      var checkVideo = document.querySelector(
-        '[data-video-id="' + getId + '"] video'
-      );
-      if (checkVideo) {
-        checkVideo.play();
-        checkVideo.muted = false;
+      // Find and stop iframe video (YouTube)
+      var iframe = cardVideoPopup.querySelector('iframe');
+      if (iframe) {
+        // Remove the iframe src to stop the video
+        iframe.setAttribute('src', '');
       }
     });
   });
 });
-
-var getVideoClose = document.querySelectorAll(".cardVideoPopup .close");
-
-Array.prototype.slice.call(getVideoClose).forEach(function (ele, index) {
-  ele.addEventListener("click", function (el) {
-    this.parentNode.parentNode.parentNode.classList.remove("open");
-    this.parentNode.parentNode.parentNode.classList.remove("anim");
-    document.querySelector("body").classList.remove("modal_popup_open");
-
-    // var checkChildren = this.nextElementSibling.children[0];
-
-    var checkChildren = this.nextElementSibling.querySelector("video");
-    var checkChildren2 = this.nextElementSibling.querySelector("iframe");
-
-    if (checkChildren) {
-      checkChildren.pause();
-      checkVideo.muted = true;
-    }
-
-    if (checkChildren2) {
-      checkChildren2.setAttribute("src", "");
-    }
-  });
-});
-
-
-
