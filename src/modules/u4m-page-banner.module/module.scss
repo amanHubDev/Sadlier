@@ -1,0 +1,49 @@
+@import "../../css/_module-imports";
+
+section.u4m-page-banner {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .page-center {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .intro_content {
+    margin: 0;
+    text-align: left;
+    .intro_desc {
+      margin-bottom: 0px;
+    }
+  }
+  .left-content-col {
+    width: 60%;
+    padding-right: 25px;
+    @include tabletmid {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+
+  .right-content-col {
+    width: 40%;
+    padding-left: 25px;
+    @include tabletmid {
+      width: 100%;
+      padding-left: 0;
+      margin-top: 20px;
+    }
+    .form-col + .bottom_button {
+      margin-top: 20px;
+    }
+    .hs-button,
+    form .hs-button,
+    form.hs-form .hs-button,
+    form.hs-form.hs-form .hs-button {
+      padding: 10rem 25rem;
+    }
+  }
+
+  .form-col {
+    @include subscribeForm;
+  }
+}
