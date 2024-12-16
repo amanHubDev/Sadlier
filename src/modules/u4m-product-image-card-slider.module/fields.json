@@ -447,7 +447,7 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
-    "default" : 3
+    "default" : 6
   }, {
     "id" : "86dd2aa0-8cb2-d328-ac38-fcd607563894",
     "name" : "hubdb_listing_button_text",
@@ -579,7 +579,7 @@
         "id" : null
       }
     } ],
-    "count" : 3,
+    "count" : 6,
     "hubdb_listing_button_text" : "VIEW ALL FEATURED PRODUCTS  >",
     "button_link" : {
       "url" : {

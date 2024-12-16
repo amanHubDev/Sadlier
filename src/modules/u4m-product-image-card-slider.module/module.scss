@@ -17,7 +17,7 @@
       flex-wrap: wrap;
     }
     .slick-arrow {
-      display: none !important;
+      opacity: 0;
     }
     .hubdb_posts_item {
       padding-left: 26px;
@@ -56,20 +56,18 @@
         }
       }
       .feature_img {
-        // padding-top: 63.64%;
         min-height: 200px;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         margin: -30px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
       }
 
       .post_meta {
         margin-bottom: 14px;
         display: flex;
         align-items: center;
-        column-gap: 10px;
         flex-wrap: wrap;
         .card_tag {
           font-weight: 700;
@@ -84,16 +82,17 @@
         h4 {
           margin-bottom: 18px;
         }
-        .post_description {
-          font-style: normal;
-          font-weight: 400;
-          font-size: $baseFontSize;
-          line-height: 1.625;
-          letter-spacing: 0.03em;
-          color: $dark_text;
-          p.item_descr {
-            margin-bottom: 0;
-          }
+      }
+      .post_description {
+        font-style: normal;
+        font-weight: 400;
+        font-size: $baseFontSize;
+        line-height: 1.625;
+        letter-spacing: 0.03em;
+        color: $dark_text;
+        margin-bottom: 41px;
+        p.item_descr {
+          margin-bottom: 0;
         }
       }
       .post_link {
@@ -103,7 +102,7 @@
     }
   }
   .slider-bottom {
-    margin-top: 50px;
+    margin-top: 53px;
     display: flex;
     flex-wrap: wrap;
     column-gap: 30px;

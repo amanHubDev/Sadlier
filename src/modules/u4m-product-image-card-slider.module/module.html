@@ -30,17 +30,17 @@
             {% endif %}
             {% if module.resources.settings.include_tag %}
             <div class="post_meta eyebrow_text">
-                {% for topics in topics %}
+                {% for topics in item.content_topic %}
                 <span class="card_tag">
                   {{ topics.name }}
-                </span>
+                </span>{% if not loop.last %},&nbsp;{% endif %}
                 {% endfor %}
             </div>
             {% endif %}
             <div class="post_title">
-              <h4>
+              <h3>
                 {{ item.title }}
-              </h4>
+              </h3>
             </div>
             {% if module.resources.settings.include_description %}
             <div class="post_description">
@@ -106,28 +106,30 @@
             {% endif %}
             {% if module.resources.settings.include_tag %}
             <div class="post_meta eyebrow_text">
-                {% for topics in topics %}
+                {% for topics in item.select_resource.columns.content_topic %}
                 <span class="card_tag">
                   {{ topics.name }}
-                </span>
+                </span>{% if not loop.last %},&nbsp;{% endif %}
                 {% endfor %}
             </div>
             {% endif %}
             <div class="post_title">
-              <h4>
+              <h3>
                 {{  item.select_resource.columns.title }}
-              </h4>
+              </h3>
             </div>
             {% if module.resources.settings.include_description %}
             <div class="post_description">
               <p class="item_descr">{{  item.select_resource.columns.description|striptags|truncatehtml(120, '')}}</p>
             </div>
             {% endif %}
-            <div class="post_link">
-              <a href="{{ request.full_url }}/{{ item.select_resource.columns.hs_path }}" >
-                LEARN MORE  >
-              </a>
-            </div>
+            {% if module.resources.settings.include_read_more %}
+              <div class="post_link">
+                <a href="{{ request.full_url }}/{{ item.select_resource.columns.hs_path }}" >
+                  {{ module.resources.settings.read_more_text }}
+                </a>
+              </div>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -196,15 +198,16 @@
   }
   ]
   });
-  $(".{{name}} .prev-btn").click(function () {
-    $(".hubdb_posts_items").slick("slickPrev");
+
+  $(".{{name}} .hubdb_posts_row .prev-btn").click(function () {
+    $(".{{name}} .hubdb_posts_items").slick("slickPrev");
   });
 
-  $(".{{name}} .next-btn").click(function () {
-    $(".hubdb_posts_items").slick("slickNext");
+  $(".{{name}} .hubdb_posts_row .next-btn").click(function () {
+    $(".{{name}} .hubdb_posts_items").slick("slickNext");
   });
   $(".{{name}} .prev-btn").addClass("slick-disabled");
-  $(".{{name}} .hubdb_posts_items").on("afterChange", function () {
+  $(".{{name}} .hubdb_posts_row .hubdb_posts_items").on("afterChange", function () {
     if ($(".{{name}} .slick-prev").hasClass("slick-disabled")) {
       $(".{{name}} .prev-btn").addClass("slick-disabled");
     } else {
