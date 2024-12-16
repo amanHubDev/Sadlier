@@ -52,6 +52,14 @@
     "label" : "Custom Width",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.form_width",
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "display" : "slider",
     "min" : 500,
     "max" : 900,
