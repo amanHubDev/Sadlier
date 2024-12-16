@@ -25,7 +25,7 @@
           </div>
           {% endif %}
           {% if item.image_field.src %}
-          <div class="image">
+          <div class="image {% if module.module_settings.image_border_radius %}border-radius {% endif %}">
             {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
             {% if item.image_field.size_type == 'auto' %}
             {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
