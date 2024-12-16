@@ -52,6 +52,7 @@
             border-radius: 40px;
             top: 0;
             position: absolute;
+            background-color: $sadlier_red;
             @include tabletmid {
               width: 20px;
               height: 20px;
