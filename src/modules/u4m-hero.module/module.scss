@@ -2,6 +2,17 @@
 
 .u4m-hero {
   .flex_row {
+    &.no-img {
+      .left_cols {
+        width: 100%;
+        .intro_content {
+          text-align: center;
+          .intro_btn_wrap {
+            justify-content: center;
+          }
+        }
+      }
+    }
     gap: 64px;
 
     .left_cols {
@@ -78,8 +89,6 @@
     }
   }
 
-
-
   .intro_btn_wrap {
     justify-content: flex-start;
     gap: 20px 24px;
@@ -91,7 +100,8 @@
   height: 100%;
 }
 
-.video_container {}
+.video_container {
+}
 
 .cardVideoPoster {
   cursor: pointer;
@@ -219,7 +229,6 @@
     margin: 0;
     width: 100%;
 
-
     .close {
       align-items: center;
       border-radius: 100%;
@@ -244,7 +253,6 @@
       &.theme3_color {
         background-color: $religion_green !important;
       }
-
 
       svg {
         width: 20px;
