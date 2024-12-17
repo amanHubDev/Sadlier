@@ -231,6 +231,11 @@
     $('body').removeClass('overflow-hidden');
   });
 
+  $('.{{name}} .team_popup_overlay').click(function(){
+    $('.team_popup').removeClass('team_open')
+    $('body').removeClass('overflow-hidden');
+  });
+
   $(document).ready(function() {
     $('.{{name}} a.bio_popup').on('click', function(event) {
       event.preventDefault();

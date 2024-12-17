@@ -38,7 +38,10 @@
         .team_img_inn {
           max-width: 150px;
           width: 100%;
-          padding-bottom: 19px;
+          max-height: 150px;
+          overflow: hidden;
+          border-radius: 50%;
+          margin-bottom: 19px;
         }
         .member_name {
           margin-bottom: 23px;
@@ -138,12 +141,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 9;
     display: flex;
     align-items: center;
     display: none;
     color: $dark_text;
-    z-index: 999;
+    z-index: 9999;
     padding: 30px;
     overflow-y: auto;
     &.team_open {
@@ -169,19 +171,33 @@
       .team_popup_row {
         border-radius: 25px;
         padding: 86px 50px;
+        @include tabletvert {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
         .team_popup_inn {
           margin-left: -25px;
           margin-right: -25px;
           width: auto;
+          @include tabletvert {
+            margin-left: 0;
+            margin-right: 0;
+          }
           .popup_img_col {
             padding-left: 25px;
             padding-right: 25px;
+            @include tabletvert {
+              padding-left: 0;
+              padding-right: 0;
+            }
           }
           .popup_cnt {
             padding-left: 25px;
             padding-right: 25px;
             @include tabletvert {
               padding-top: 30px;
+              padding-left: 0;
+              padding-right: 0;
             }
           }
         }
@@ -201,6 +217,7 @@
           .popup_img_inn {
             img {
               max-width: 288px;
+              width: 100%;
             }
           }
         }
