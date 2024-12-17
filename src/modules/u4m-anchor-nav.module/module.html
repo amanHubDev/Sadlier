@@ -55,22 +55,54 @@
 
 <script>
 
+function setSectionHeight(classNm) {
+var section = document.querySelector(classNm);
+if (section) {
+  var sectionHeight = section.offsetHeight;
+  section.parentElement.style.minHeight = sectionHeight + 'px';
+}
+}
 
-$(window).scroll(function () {
-  var headerSpacer = $(".u4m-anchor-nav .nav-spacer");  // Reference the nav-spacer
-  var scrollPosition = $(window).scrollTop();
-  var headerSpacerOffset = headerSpacer.offset().top;
-
-  // Add sticky class if scroll position passes the nav-spacer
-  if (scrollPosition > headerSpacerOffset) {
-    $(".u4m-anchor-nav").addClass("sticky");  // Make the nav sticky
-    console.log("reached");
-  } else {
-    $(".u4m-anchor-nav").removeClass("sticky");  // Remove sticky class when not scrolled past
-    console.log("not reached");
-  }
+window.addEventListener('resize', function() {
+setTimeout(function() {
+  setSectionHeight('.{{name}}.u4m-anchor-nav');
+              }, 100);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+
+setSectionHeight('.{{name}}.u4m-anchor-nav');
+
+                 var headerStickySection = document.querySelector('.header-main');
+  var bodyStickySection = document.querySelector('body');
+var navbarSection = document.querySelector('.{{name}}.u4m-anchor-nav');
+
+                             if (headerStickySection && navbarSection) {      
+  var navbarOffset = navbarSection.offsetTop;
+
+  window.addEventListener('scroll', function() {
+    var topOffset = parseInt(navbarOffset);
+    if (bodyStickySection.classList.contains('darkHeader')) {
+    var headerHeight = headerStickySection.offsetHeight;
+    topOffset = parseInt(navbarOffset - headerHeight);
+  }
+
+  if (document.body.scrollTop >= topOffset || document.documentElement.scrollTop >= topOffset) {
+  navbarSection.classList.add('sticky');
+  if (bodyStickySection.classList.contains('darkHeader')) {
+    navbarSection.style.top = headerStickySection.offsetHeight + 'px';
+  }
+} else {
+  navbarSection.classList.remove('sticky');
+  if (bodyStickySection.classList.contains('darkHeader')) {
+    navbarSection.style.top = '0px';
+  } else {
+     navbarSection.style.top = '0px';
+  }
+}
+  });
+}
+});
 
 </script>
 

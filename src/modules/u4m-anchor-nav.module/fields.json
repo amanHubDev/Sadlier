@@ -153,13 +153,16 @@
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
-    "type" : "choice"
+    "type" : "choice",
+    "default" : "theme2_color"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
-  "default" : { }
+  "default" : {
+    "theme" : "theme2_color"
+  }
 }, {
   "id" : "module_overrides",
   "name" : "module_overrides",

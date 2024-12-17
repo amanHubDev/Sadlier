@@ -23,14 +23,23 @@ section.u4m-top-tabbed {
     .slick-dots .slick-active button {
       background-color: $sadlier_red;
     }
+    .wrapper-dropdown {
+      background-color: $sadlier_red;
+    }
   }
   .theme2_color {
     .slick-dots .slick-active button {
       background-color: $sadlier_blue;
     }
+    .wrapper-dropdown {
+      background-color: $sadlier_blue;
+    }
   }
   .theme3_color {
     .slick-dots .slick-active button {
+      background-color: $religion_green;
+    }
+    .wrapper-dropdown {
       background-color: $religion_green;
     }
   }
@@ -117,6 +126,65 @@ section.u4m-top-tabbed {
   .tabber_pannel {
     max-width: 1100px;
     margin: 0 auto;
+    .cardBtnContent {
+      margin-top: 20px;
+      .tinynav {
+        border-radius: 5px;
+        @include b2;
+        color: $White;
+        border: none;
+        appearance: none;
+        padding: 6px 41px 7px 13px;
+        background-position: calc(100% - 10px) 9px;
+        background-repeat: no-repeat;
+        position: relative;
+        cursor: pointer;
+      }
+
+      ul {
+        transition: 0.3s;
+        position: static;
+        top: 100%;
+        right: 0;
+        left: 0;
+        margin: 0;
+        padding: 13px;
+        list-style: none;
+        z-index: 99;
+        box-shadow: inherit;
+        background-color: inherit;
+        -webkit-transform-origin: top;
+        -moz-transform-origin: top;
+        -ms-transform-origin: top;
+        transform-origin: top;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        opacity: 0;
+        visibility: hidden;
+        display: block;
+        margin-top: -4px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 0;
+        display: none;
+        padding-top: 13px;
+        padding-bottom: 5px;
+        li {
+          margin: 0;
+          letter-spacing: normal;
+        }
+        a {
+          color: $White;
+        }
+        &.rotated {
+          opacity: 1;
+          visibility: visible;
+          display: block;
+        }
+      }
+    }
     .flex_row {
       align-items: center;
       @include tabletvert {
