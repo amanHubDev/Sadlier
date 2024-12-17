@@ -63,7 +63,7 @@
         {% if module.blog_feed.blog_link.url.type is equalto "EMAIL_ADDRESS" %}
         {% set href = "mailto:" + href %}
         {% endif %}
-        <a
+        <a class="{{ module.blog_feed.button_style }} {{ module.blog_feed.button_theme }}" 
            {% if module.blog_feed.blog_link.url.type is equalto "CALL_TO_ACTION"  %}
            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
            {% else %}
@@ -76,7 +76,10 @@
            rel="{{ module.blog_feed.blog_link.rel|escape_attr }}"
            {% endif %}
            >
-          {{ module.blog_feed.blog_link_text }}
+          <span>{{ module.blog_feed.blog_link_text }}</span>
+          {% if module.blog_feed.button_style == "arrow-link" %}
+          >
+          {% endif %}
         </a>
       </div>
       {% endif %}

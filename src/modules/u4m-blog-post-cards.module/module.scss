@@ -70,8 +70,10 @@
 
       .post_title {
         h4 {
+          em {
+            font-style: normal;
+          }
           margin-bottom: 20px;
-
           a {
             color: $dark_text;
           }
@@ -107,9 +109,7 @@
       line-height: 1;
       text-align: center;
       letter-spacing: 0.05em;
-      color: $sadlier_red;
     }
-
     .btn-wrap {
       display: flex;
       flex-wrap: wrap;

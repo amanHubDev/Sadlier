@@ -376,7 +376,7 @@
       "access" : null
     },
     "type" : "hubdbtable",
-    "default" : 5359880
+    "default" : 1035741
   }, {
     "id" : "9493d750-5d6d-c7af-0e65-1e47acdcf90c",
     "name" : "resources_by_title",
@@ -405,8 +405,8 @@
       "label" : "Select Resource",
       "required" : false,
       "locked" : false,
-      "table_name_or_id" : "5359880",
-      "columns_to_fetch" : [ "description", "title", "content_topic", "featured_image" ],
+      "table_name_or_id" : "1035741",
+      "columns_to_fetch" : [ "short_description", "preview_link", "product_image", "grades", "product_name" ],
       "type" : "hubdbrow",
       "default" : {
         "id" : null
@@ -449,6 +449,34 @@
     "type" : "number",
     "default" : 6
   }, {
+    "id" : "3573d856-004a-52a0-e9ed-12d3dd0e597b",
+    "name" : "button_style",
+    "display_width" : null,
+    "label" : "Button Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "arrow-link", "Arrow Link" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "arrow-link"
+  }, {
+    "id" : "ee72bffc-700a-ec6f-b6a6-e8ffca6c18cc",
+    "name" : "button_theme",
+    "display_width" : null,
+    "label" : "Button Theme",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme1", "Sadlier Red" ], [ "theme2", "Sadlier Blue" ], [ "theme3", "Religion Green" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme3"
+  }, {
     "id" : "86dd2aa0-8cb2-d328-ac38-fcd607563894",
     "name" : "hubdb_listing_button_text",
     "display_width" : null,
@@ -459,7 +487,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "VIEW ALL FEATURED PRODUCTS  >"
+    "default" : "VIEW ALL FEATURED PRODUCTS"
   }, {
     "id" : "2294cd5e-f727-6a5a-76ce-543c3d0d8ef9",
     "name" : "button_link",
@@ -565,7 +593,7 @@
   "type" : "group",
   "default" : {
     "resource_type" : "recent",
-    "resource_table" : 5359880,
+    "resource_table" : 1035741,
     "resources_by_title" : [ {
       "select_resource" : {
         "id" : null
@@ -580,7 +608,9 @@
       }
     } ],
     "count" : 6,
-    "hubdb_listing_button_text" : "VIEW ALL FEATURED PRODUCTS  >",
+    "button_style" : "arrow-link",
+    "button_theme" : "theme3",
+    "hubdb_listing_button_text" : "VIEW ALL FEATURED PRODUCTS",
     "button_link" : {
       "url" : {
         "content_id" : null,

@@ -490,6 +490,50 @@
     "type" : "boolean",
     "default" : true
   }, {
+    "id" : "464e46aa-adcf-4343-59ba-85d55544fec5",
+    "name" : "button_style",
+    "display_width" : null,
+    "label" : "Button Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "blog_feed.include_all_posts_link",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "arrow-link", "Arrow Link" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "arrow-link"
+  }, {
+    "id" : "145e683e-f680-2628-efbb-bf8d34896a0c",
+    "name" : "button_theme",
+    "display_width" : null,
+    "label" : "Button Theme",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "blog_feed.include_all_posts_link",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "theme1", "Sadlier Red" ], [ "theme2", "Sadlier Blue" ], [ "theme3", "Religion Green" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme1"
+  }, {
     "id" : "f0297752-fcbf-1b57-774d-8da4c46c7535",
     "name" : "blog_link_text",
     "display_width" : null,
@@ -508,7 +552,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "VIEW ALL RESOURCES  >"
+    "default" : "VIEW ALL RESOURCES"
   }, {
     "id" : "3b772f9e-bba7-2213-0d69-bb8864f104a4",
     "name" : "blog_link",
@@ -549,7 +593,9 @@
     } ],
     "number_of_posts" : 4,
     "include_all_posts_link" : true,
-    "blog_link_text" : "VIEW ALL RESOURCES  >",
+    "button_style" : "arrow-link",
+    "button_theme" : "theme1",
+    "blog_link_text" : "VIEW ALL RESOURCES",
     "blog_link" : {
       "url" : {
         "content_id" : null,

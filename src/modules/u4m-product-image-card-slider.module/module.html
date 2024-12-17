@@ -8,8 +8,6 @@
 {% set data = hubdb_table_rows(table,recent_query) %}
 {% endif %}
 
-{% set topics = hubdb_table_column(table,"content_topic").options %}
-
 <div class="page-center  {{ module.module_settings.theme }}">
   <div class="intro_wrapp">
     {{macros.introGroup(module.intro_content)}}
@@ -23,33 +21,31 @@
         <div class="hubdb_item_inn {{ module.module_settings.select_card_bg_color }} {{ module.module_settings.select_card_text_color }}">
           <div class="post_body">
           {% if module.resources.settings.include_featured_image %}
-            {% if item.featured_image.url %}
-            <div class="feature_img" style="background-image: url({{ item.featured_image.url }});">
+            {% if item.product_image.url %}
+            <div class="feature_img" style="background-image: url({{ item.product_image.url }});">
             </div>
             {% endif %}
             {% endif %}
             {% if module.resources.settings.include_tag %}
             <div class="post_meta eyebrow_text">
-                {% for topics in item.content_topic %}
                 <span class="card_tag">
-                  {{ topics.name }}
-                </span>{% if not loop.last %},&nbsp;{% endif %}
-                {% endfor %}
+                  {{ item.grades }}
+                </span>
             </div>
             {% endif %}
             <div class="post_title">
               <h3>
-                {{ item.title }}
+                {{ item.product_name }}
               </h3>
             </div>
             {% if module.resources.settings.include_description %}
             <div class="post_description">
-              <p class="item_descr">{{ item.description|striptags|truncatehtml(120, '')}}</p>
+              <p class="item_descr">{{ item.short_description|striptags|truncatehtml(120, '')}}</p>
             </div>
             {% endif %}
             {% if module.resources.settings.include_read_more %}
               <div class="post_link">
-                <a href="{{ request.full_url }}/{{ item.select_resource.columns.hs_path }}" >
+                <a href="{{ item.preview_link}}" >
                   {{ module.resources.settings.read_more_text }}
                 </a>
               </div>
@@ -69,7 +65,7 @@
           {% if module.resources.button_link.url.type is equalto "EMAIL_ADDRESS" %}
           {% set href = "mailto:" + href %}
           {% endif %}
-          <a
+          <a class="{{ module.resources.button_style }} {{ module.resources.button_theme }}" 
              {% if module.resources.button_link.url.type is equalto "CALL_TO_ACTION"  %}
              href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
              {% else %}
@@ -82,7 +78,10 @@
              rel="{{ module.resources.button_link.rel|escape_attr }}"
              {% endif %}
              >
-          {{ module.resources.hubdb_listing_button_text }}
+          <span>{{ module.resources.hubdb_listing_button_text }}</span>
+            {% if module.resources.button_style == "arrow-link" %}
+            >
+            {% endif %}
         </a>
       </div>
     </div>
@@ -99,33 +98,31 @@
         <div class="hubdb_item_inn {{ module.module_settings.select_card_bg_color }} {{ module.module_settings.select_card_text_color }}">
           <div class="post_body">
           {% if module.resources.settings.include_featured_image %}
-            {% if  item.select_resource.columns.featured_image.url %}
-            <div class="feature_img" style="background-image: url({{  item.select_resource.columns.featured_image.url }});">
+            {% if  item.select_resource.columns.product_image.url %}
+            <div class="feature_img" style="background-image: url({{  item.select_resource.columns.product_image.url }});">
             </div>
             {% endif %}
             {% endif %}
             {% if module.resources.settings.include_tag %}
             <div class="post_meta eyebrow_text">
-                {% for topics in item.select_resource.columns.content_topic %}
                 <span class="card_tag">
-                  {{ topics.name }}
-                </span>{% if not loop.last %},&nbsp;{% endif %}
-                {% endfor %}
+                  {{ item.select_resource.columns.grades }}
+                </span>
             </div>
             {% endif %}
             <div class="post_title">
               <h3>
-                {{  item.select_resource.columns.title }}
+                {{  item.select_resource.columns.product_name }}
               </h3>
             </div>
             {% if module.resources.settings.include_description %}
             <div class="post_description">
-              <p class="item_descr">{{  item.select_resource.columns.description|striptags|truncatehtml(120, '')}}</p>
+              <p class="item_descr">{{  item.select_resource.columns.short_description|striptags|truncatehtml(120, '')}}</p>
             </div>
             {% endif %}
             {% if module.resources.settings.include_read_more %}
               <div class="post_link">
-                <a href="{{ request.full_url }}/{{ item.select_resource.columns.hs_path }}" >
+                <a href="{{ item.select_resource.columns.preview_link }}" >
                   {{ module.resources.settings.read_more_text }}
                 </a>
               </div>
@@ -145,7 +142,7 @@
           {% if module.resources.button_link.url.type is equalto "EMAIL_ADDRESS" %}
           {% set href = "mailto:" + href %}
           {% endif %}
-          <a
+          <a class="{{ module.resources.button_style }} {{ module.resources.button_theme }}" 
              {% if module.resources.button_link.url.type is equalto "CALL_TO_ACTION"  %}
              href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
              {% else %}
@@ -158,7 +155,10 @@
              rel="{{ module.resources.button_link.rel|escape_attr }}"
              {% endif %}
              >
-          {{ module.resources.hubdb_listing_button_text }}
+            <span>{{ module.resources.hubdb_listing_button_text }}</span>
+            {% if module.resources.button_style == "arrow-link" %}
+            >
+            {% endif %}
         </a>
       </div>
     </div>

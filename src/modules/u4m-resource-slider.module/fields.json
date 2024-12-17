@@ -477,6 +477,65 @@
     "type" : "number",
     "default" : 6
   }, {
+    "id" : "58ff1b76-733f-3254-a5dc-51aacfffc589",
+    "name" : "button_style",
+    "display_width" : null,
+    "label" : "Button Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "arrow-link", "Arrow Link" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "arrow-link"
+  }, {
+    "id" : "29d1b7d6-631b-fe35-c1de-1d71ee3e3d9c",
+    "name" : "button_theme",
+    "display_width" : null,
+    "label" : "Button Theme",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme1", "Sadlier Red" ], [ "theme2", "Sadlier Blue" ], [ "theme3", "Religion Green" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme3"
+  }, {
+    "id" : "86dd2aa0-8cb2-d328-ac38-fcd607563894",
+    "name" : "hubdb_listing_button_text",
+    "display_width" : null,
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "VIEW ALL RESOURCES"
+  }, {
+    "id" : "2294cd5e-f727-6a5a-76ce-543c3d0d8ef9",
+    "name" : "button_link",
+    "display_width" : null,
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
     "id" : "91935ad8-626c-595c-8519-ccda6c4b412d",
     "name" : "settings",
     "display_width" : null,
@@ -523,37 +582,6 @@
       "include_tag" : true,
       "include_description" : true
     }
-  }, {
-    "id" : "86dd2aa0-8cb2-d328-ac38-fcd607563894",
-    "name" : "hubdb_listing_button_text",
-    "display_width" : null,
-    "label" : "Button Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "VIEW ALL RESOURCES  >"
-  }, {
-    "id" : "2294cd5e-f727-6a5a-76ce-543c3d0d8ef9",
-    "name" : "button_link",
-    "display_width" : null,
-    "label" : "Button Link",
-    "required" : false,
-    "locked" : false,
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
-    "show_advanced_rel_options" : false,
-    "type" : "link",
-    "default" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -576,12 +604,9 @@
       }
     } ],
     "count" : 6,
-    "settings" : {
-      "include_featured_image" : true,
-      "include_tag" : true,
-      "include_description" : true
-    },
-    "hubdb_listing_button_text" : "VIEW ALL RESOURCES  >",
+    "button_style" : "arrow-link",
+    "button_theme" : "theme3",
+    "hubdb_listing_button_text" : "VIEW ALL RESOURCES",
     "button_link" : {
       "url" : {
         "content_id" : null,
@@ -590,6 +615,11 @@
       },
       "open_in_new_tab" : false,
       "no_follow" : false
+    },
+    "settings" : {
+      "include_featured_image" : true,
+      "include_tag" : true,
+      "include_description" : true
     }
   }
 }, {

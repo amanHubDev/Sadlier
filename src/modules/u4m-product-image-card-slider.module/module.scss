@@ -79,7 +79,10 @@
         }
       }
       .post_title {
-        h4 {
+        h3 {
+          em {
+            font-style: normal;
+          }
           margin-bottom: 18px;
         }
       }
@@ -114,7 +117,6 @@
       line-height: 1;
       text-align: center;
       letter-spacing: 0.05em;
-      color: $religion_green;
     }
     .btn-wrap {
       display: flex;

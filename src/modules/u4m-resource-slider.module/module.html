@@ -62,7 +62,7 @@
           {% if module.resources.button_link.url.type is equalto "EMAIL_ADDRESS" %}
           {% set href = "mailto:" + href %}
           {% endif %}
-          <a
+          <a class="{{ module.resources.button_style }} {{ module.resources.button_theme }}" 
              {% if module.resources.button_link.url.type is equalto "CALL_TO_ACTION"  %}
              href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
              {% else %}
@@ -75,7 +75,10 @@
              rel="{{ module.resources.button_link.rel|escape_attr }}"
              {% endif %}
              >
-          {{ module.resources.hubdb_listing_button_text }}
+          <span>{{ module.resources.hubdb_listing_button_text }}</span>
+            {% if module.resources.button_style == "arrow-link" %}
+            >
+            {% endif %}
         </a>
       </div>
     </div>
@@ -131,7 +134,7 @@
           {% if module.resources.button_link.url.type is equalto "EMAIL_ADDRESS" %}
           {% set href = "mailto:" + href %}
           {% endif %}
-          <a
+          <a class="{{ module.resources.button_style }} {{ module.resources.button_theme }}" 
              {% if module.resources.button_link.url.type is equalto "CALL_TO_ACTION"  %}
              href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
              {% else %}
@@ -144,7 +147,10 @@
              rel="{{ module.resources.button_link.rel|escape_attr }}"
              {% endif %}
              >
-          {{ module.resources.hubdb_listing_button_text }}
+          <span>{{ module.resources.hubdb_listing_button_text }}</span>
+            {% if module.resources.button_style == "arrow-link" %}
+            >
+            {% endif %}
         </a>
       </div>
     </div>
