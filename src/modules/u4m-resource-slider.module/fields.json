@@ -475,7 +475,7 @@
     "display" : "text",
     "step" : 1,
     "type" : "number",
-    "default" : 3
+    "default" : 6
   }, {
     "id" : "91935ad8-626c-595c-8519-ccda6c4b412d",
     "name" : "settings",
@@ -575,7 +575,7 @@
         "id" : null
       }
     } ],
-    "count" : 3,
+    "count" : 6,
     "settings" : {
       "include_featured_image" : true,
       "include_tag" : true,
