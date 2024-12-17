@@ -424,7 +424,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "sadlierRed_bg", "Sadlier Red" ], [ "sadlierBlue_bg", "Sadlier Blue" ], [ "sadlierGreen_bg", "Sadlier Green" ], [ "sadlierLightGreen_bg", "Sadlier Light Green" ], [ "dark_bg", "Dark Background" ], [ "light_bg", "Light Background" ], [ "light2_bg", "Light Background 2" ], [ "tone_bg", "Tone-on-tone" ], [ "cyan_bg", "Cyan" ], [ "purple_bg", "Purple" ], [ "gold_bg", "Gold" ], [ "orange_bg", "Orange" ], [ "white_bg", "White" ], [ "gray1_bg", "Gray 1" ], [ "gray2_bg", "Gray 2" ] ],
+      "choices" : [ [ "sadlierRed_bg", "Sadlier Red" ], [ "sadlierBlue_bg", "Sadlier Blue" ], [ "sadlierGreen_bg", "Religion Green" ], [ "sadlierLightGreen_bg", "Sadlier Light Green" ], [ "dark_bg", "Dark Background" ], [ "light_bg", "Light Background" ], [ "light2_bg", "Light Background 2" ], [ "tone_bg", "Tone-on-tone" ], [ "cyan_bg", "Cyan" ], [ "purple_bg", "Purple" ], [ "gold_bg", "Gold" ], [ "orange_bg", "Orange" ], [ "white_bg", "White" ], [ "gray1_bg", "Gray 1" ], [ "gray2_bg", "Gray 2" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

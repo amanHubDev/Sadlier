@@ -60,7 +60,7 @@
     "required" : false,
     "locked" : false,
     "display" : "select",
-    "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
+    "choices" : [ [ "theme1", "Sadlier Red" ], [ "theme2", "Sadlier Blue" ], [ "theme3", "Religion Green" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
