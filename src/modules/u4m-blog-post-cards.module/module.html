@@ -156,13 +156,6 @@
   </div>
   {% endif %}
 
-
-
-  {% if module.include_button %}
-  <div class="bottom_button">
-    {{macros.buttonGroup(module.button_group)}}
-  </div>
-  {% endif %}
 </div>
 </section>
 
@@ -194,11 +187,11 @@
   ]
   });
   $(".{{name}} .prev-btn").click(function () {
-    $(".blog_posts_items").slick("slickPrev");
+    $(".{{name}} .blog_posts_items").slick("slickPrev");
   });
 
   $(".{{name}} .next-btn").click(function () {
-    $(".blog_posts_items").slick("slickNext");
+    $(".{{name}} .blog_posts_items").slick("slickNext");
   });
   $(".{{name}} .prev-btn").addClass("slick-disabled");
   $(".{{name}} .blog_posts_items").on("afterChange", function () {
@@ -219,7 +212,6 @@
 </script>
 
 {% end_require_js %}
-
 
 
 

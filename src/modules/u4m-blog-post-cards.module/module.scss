@@ -6,18 +6,19 @@
       a {
         color: $white !important;
       }
-
     }
   }
-
   overflow-x: hidden;
-
   .intro_content {
     max-width: 100%;
     text-align: left;
-
-    h2 {
-      font-weight: 300;
+    .intro_desc {
+      h2 {
+        font-weight: 300;
+      }
+    }
+    .intro_btn_wrap {
+      justify-content: unset;
     }
   }
 

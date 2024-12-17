@@ -86,7 +86,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : ""
+    "default" : "Intro Heading Add Here"
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -332,7 +332,7 @@
     "eyebrow_text" : "Eyebrow Text",
     "include_heading" : false,
     "heading_size" : "h2",
-    "heading" : "",
+    "heading" : "Intro Heading Add Here",
     "include_content" : true,
     "content_style" : "theme",
     "content" : "<h2>The latest from the <strong>Sadlier School blog.</strong></h2>",
@@ -560,192 +560,6 @@
       "no_follow" : false
     }
   }
-}, {
-  "id" : "388cfa57-ed59-5279-e5d2-b1e5cd0f27f5",
-  "name" : "include_button",
-  "display_width" : null,
-  "label" : "Include Button",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "default" : false
-}, {
-  "id" : "1fac27b5-5447-abd4-1b71-ebafa2151f79",
-  "name" : "button_group",
-  "display_width" : null,
-  "label" : "Button Group",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : 2,
-    "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-    "default" : 2
-  },
-  "visibility" : {
-    "controlling_field" : null,
-    "controlling_field_path" : "include_button",
-    "controlling_value_regex" : "true",
-    "property" : null,
-    "operator" : "EQUAL",
-    "access" : null
-  },
-  "children" : [ {
-    "id" : "fcd5894a-1f9f-4d2c-a222-abe26bb869f4",
-    "name" : "button_type",
-    "display_width" : null,
-    "label" : "Bottom Button Type",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "std"
-  }, {
-    "id" : "fa29fd37-f374-68a7-c518-9dcdacdfa388",
-    "name" : "button_style",
-    "display_width" : null,
-    "label" : "Button Style",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "button_group.button_type",
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "arrow-link", "Arrow Link" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "hs-button"
-  }, {
-    "id" : "a3465576-6048-3eaf-845f-80dedb4e14b1",
-    "name" : "button_theme",
-    "display_width" : null,
-    "label" : "Button Theme",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "button_group.button_type",
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "theme1", "Sadlier Red" ], [ "theme2", "Sadlier Blue" ], [ "theme3", "Religion Green" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "theme1"
-  }, {
-    "id" : "19520902-7b1e-09bd-9a37-df893bbaf05a",
-    "name" : "button_text",
-    "display_width" : null,
-    "label" : "Button Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "button_group.button_type",
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Button"
-  }, {
-    "id" : "7d8a3920-4448-9f02-934d-fbaca4ba0bfa",
-    "name" : "link",
-    "display_width" : null,
-    "label" : "Link",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "button_group.button_type",
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
-    "show_advanced_rel_options" : false,
-    "type" : "link",
-    "default" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }, {
-    "id" : "d013cfbf-3d29-590c-30a9-c99d060ee82e",
-    "name" : "cta",
-    "display_width" : null,
-    "label" : "CTA",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "button_group.button_type",
-      "controlling_value_regex" : "cta",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "type" : "cta"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "default" : [ {
-    "button_type" : "std",
-    "button_style" : "hs-button",
-    "button_theme" : "theme1",
-    "button_text" : "Button",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }, {
-    "button_type" : "std",
-    "button_style" : "hs-button",
-    "button_theme" : "theme1",
-    "button_text" : "Button",
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  } ]
 }, {
   "id" : "d8c99c2f-bcd0-e80c-33f1-6dbe3ca7bf8b",
   "name" : "module_settings",
