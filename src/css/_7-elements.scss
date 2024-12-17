@@ -646,8 +646,35 @@ section[class*="u4m-"] {
     color: $white;
   }
 
-  &:not(.arrownotStyle) .arrow-link {
-    color: $white;
+  // &:not(.arrownotStyle) .arrow-link {
+  //   color: $white;
+  // }
+  .arrow-link {
+    &.theme1 {
+      color: $sadlier_red;
+
+      &:hover,
+      &:focus {
+        color: $sadlier_red;
+      }
+    }
+    &.theme2 {
+      color: $sadlier_blue;
+
+      &:hover,
+      &:focus {
+        color: $sadlier_blue;
+      }
+    }
+
+    &.theme3 {
+      color: $religion_green;
+
+      &:hover,
+      &:focus {
+        color: $religion_green;
+      }
+    }
   }
 }
 
@@ -861,7 +888,7 @@ form {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; 
+  bottom: 0;
   z-index: 99999;
   height: 100%;
   overflow-y: auto;
