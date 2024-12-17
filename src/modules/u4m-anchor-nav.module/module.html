@@ -6,41 +6,43 @@
 {% include "../partials/u4-module-includes.html" %}
 <div class="nav-spacer"></div>
 <div class="anchor-nav-inner">
-<div class="page-center  {{ module.module_settings.theme }}">
-  <div class="anchor-nav">
+  <div class="page-center  {{ module.module_settings.theme }}">
+    <div class="anchor-nav">
 
-    {% for item in module.anchor_link %}
-
-    {% set href = item.anchor_link.url.href %}
-    {% if item.anchor_link.url.type is equalto "EMAIL_ADDRESS" %}
-      {% set href = "mailto:" + href %}
-    {% endif %}
-    {% if item.anchor_link.url.type is equalto "CONTENT" %}
-      {% if item.bookmark_id %}
+      {% for item in module.anchor_link %}
+      <li>
+        {% set href = item.anchor_link.url.href %}
+        {% if item.anchor_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        {% if item.anchor_link.url.type is equalto "CONTENT" %}
+        {% if item.bookmark_id %}
         {% set newId = item.bookmark_id|replace(' ','-')|replace(',','')|replace('_','-')|replace('&','')%}
         {% set href = href + '#'+ newId %}
-      {% else %}
+        {% else %}
         {% set href = item.anchor_link.url.href %}
-      {% endif %}
-    {% endif %}
+        {% endif %}
+        {% endif %}
 
-    <a class="single-anchor" 
-       {% if item.anchor_link.url.type is equalto "CALL_TO_ACTION"  %}
-       href="{{ href }}"
-       {% else %}
-       href="{{ href|escape_url }}"
-       {% endif %}
-       {% if item.anchor_link.open_in_new_tab %}
-       target="_blank"
-       {% endif %}
-       {% if item.anchor_link.rel %}
-       rel="{{ item.anchor_link.rel|escape_attr }}"
-       {% endif %}
-       >{{ item.text }}</a>
-    {% endfor %}
+        <a class="single-anchor" 
+           {% if item.anchor_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}"
+           {% else %}
+           href="{{ href|escape_url }}"
+           {% endif %}
+           
+           {% if item.anchor_link.open_in_new_tab %}
+           target="_blank"
+           {% endif %}
+           {% if item.anchor_link.rel %}
+           rel="{{ item.anchor_link.rel|escape_attr }}"
+           {% endif %}
+           >{{ item.text }}</a>
+      </li>
+      {% endfor %}
+    </div>
+    <hr class="nav-border">
   </div>
-  <hr class="nav-border">
-</div>
 </div>
 
 </section>
@@ -51,26 +53,50 @@
 {% if module.make_sticky %} 
 {% require_js %}
 
-  <script>
-    $(window).scroll(function () {
-      var header = $(".header-wrapper .header-spacer");
-      var headerSpacer = $(".{{name}} .nav-spacer");
-      var scrollPosition = $(window).scrollTop();
-      var headerSpacerOffset = headerSpacer.offset().top;
-      if (scrollPosition > headerSpacerOffset) {
-        $(".has-sticky").addClass("sticky");
-        console.log("reached");
-      } else {
-        $(".has-sticky").removeClass("sticky");
-        console.log("not reached");
-      }
-    });
-  </script>
+<script>
+
+
+$(window).scroll(function () {
+  var headerSpacer = $(".u4m-anchor-nav .nav-spacer");  // Reference the nav-spacer
+  var scrollPosition = $(window).scrollTop();
+  var headerSpacerOffset = headerSpacer.offset().top;
+
+  // Add sticky class if scroll position passes the nav-spacer
+  if (scrollPosition > headerSpacerOffset) {
+    $(".u4m-anchor-nav").addClass("sticky");  // Make the nav sticky
+    console.log("reached");
+  } else {
+    $(".u4m-anchor-nav").removeClass("sticky");  // Remove sticky class when not scrolled past
+    console.log("not reached");
+  }
+});
+
+
+</script>
 
 {% end_require_js %}
 {% endif %}
 
 {% require_js %}
+<script>
+  $(window).scroll(function(){
+    var scrollPos=$(window).scrollTop();
+    $(".dnd_padd").each(function(){
+      var linkCompare=$(this).attr("id");
+      var realLink="";
+      if(linkCompare!=undefined){
+        realLink=linkCompare;
+        realLink="#"+realLink;
+        if(scrollPos >= $("#"+linkCompare).offset().top && scrollPos<=$("#"+linkCompare).offset().top + $("#"+linkCompare).height()){
+          $('.anchor-nav li').removeClass("selected");
+          $('.anchor-nav li a[href*="'+realLink+'"]').parent().addClass("selected");
+          currentSection = realLink;
+        }
+      }
+    });
+  });
+
+</script>
 
 
 {% end_require_js %}

@@ -26,6 +26,11 @@
       @include midlaptop {
         column-gap: 20px;
       }
+      li {
+        margin: 0;
+        letter-spacing: normal;
+        list-style: none;
+      }
       .single-anchor {
         font-family: "Lexend";
         font-style: normal;

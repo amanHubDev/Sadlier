@@ -11,47 +11,49 @@
     </div>
   
     <div class="table-wrap">
-      <table>
-        <thead>
-        <tr>
-          <th>{{ module.table_content.column1_title }}</th>
-          <th>{{ module.table_content.column2_title }}</th>
-          <th>{{ module.table_content.column3_title }}</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for item in module.table_content.row_items %}
-        <tr>
-          <td>{{ item.row_content.column1_text }}</td>
-          <td>{{ item.row_content.column2_text }}</td>
-          <td>
-            {% if item.row_content.pdf.url.href %}
-            {% set href = item.row_content.pdf.url.href %}
-            {% if item.row_content.pdf.url.type is equalto "EMAIL_ADDRESS" %}
-            {% set href = "mailto:" + href %}
-            {% endif %}
-            <a
-               {% if item.row_content.pdf.url.type is equalto "CALL_TO_ACTION"  %}
-               href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-               {% else %}
-               href="{{ href|escape_url }}"
-               {% endif %}
-               {% if item.row_content.pdf.open_in_new_tab %}
-               target="_blank"
-               {% endif %}
-               {% if item.row_content.pdf.rel %}
-               rel="{{ item.row_content.pdf.rel|escape_attr }}"
-               {% endif %} class="download-pdf {{ module.module_settings.theme }}">
-              {% endif %}
-              {{ item.row_content.column3_text }}
-              {% if item.row_content.pdf.url.href %}
-            </a> 
-            {% endif %}
-          </td>
-        </tr>
-        {% endfor %}
-        </tbody>
-      </table>
+ <div class="table-wrap-inner">
+ <table>
+ <thead>
+ <tr>
+   <th>{{ module.table_content.column1_title }}</th>
+   <th>{{ module.table_content.column2_title }}</th>
+   <th>{{ module.table_content.column3_title }}</th>
+ </tr>
+ </thead>
+ <tbody>
+ {% for item in module.table_content.row_items %}
+ <tr>
+   <td>{{ item.row_content.column1_text }}</td>
+   <td>{{ item.row_content.column2_text }}</td>
+   <td>
+     {% if item.row_content.pdf.url.href %}
+     {% set href = item.row_content.pdf.url.href %}
+     {% if item.row_content.pdf.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a
+        {% if item.row_content.pdf.url.type is equalto "CALL_TO_ACTION"  %}
+        href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+        {% else %}
+        href="{{ href|escape_url }}"
+        {% endif %}
+        {% if item.row_content.pdf.open_in_new_tab %}
+        target="_blank"
+        {% endif %}
+        {% if item.row_content.pdf.rel %}
+        rel="{{ item.row_content.pdf.rel|escape_attr }}"
+        {% endif %} class="download-pdf {{ module.module_settings.theme }}">
+       {% endif %}
+       {{ item.row_content.column3_text }}
+       {% if item.row_content.pdf.url.href %}
+     </a> 
+     {% endif %}
+   </td>
+ </tr>
+ {% endfor %}
+ </tbody>
+</table>
+ </div>
     </div>
   
   </div>
