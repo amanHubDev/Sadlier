@@ -489,7 +489,7 @@
         "reordering_enabled" : true,
         "preset" : null,
         "type" : "choice",
-        "default" : "hs-button"
+        "default" : "arrow-link"
       }, {
         "id" : "a3465576-6048-3eaf-845f-80dedb4e14b1",
         "name" : "button_theme",
@@ -531,7 +531,7 @@
         "allow_new_line" : false,
         "show_emoji_picker" : false,
         "type" : "text",
-        "default" : "Button"
+        "default" : "READ CASE STUDY"
       }, {
         "id" : "7d8a3920-4448-9f02-934d-fbaca4ba0bfa",
         "name" : "link",
@@ -582,9 +582,9 @@
       "type" : "group",
       "default" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -615,9 +615,9 @@
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -643,9 +643,9 @@
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -671,9 +671,9 @@
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -707,9 +707,9 @@
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -735,9 +735,9 @@
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -763,9 +763,9 @@
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -794,9 +794,9 @@
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -822,9 +822,9 @@
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -850,9 +850,9 @@
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -881,9 +881,9 @@
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -909,9 +909,9 @@
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -937,9 +937,9 @@
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
-        "button_style" : "hs-button",
+        "button_style" : "arrow-link",
         "button_theme" : "theme1",
-        "button_text" : "Button",
+        "button_text" : "READ CASE STUDY",
         "link" : {
           "url" : {
             "content_id" : null,
