@@ -1,10 +1,21 @@
 @import "../../css/_module-imports";
 
 .u4m-blog-post-cards {
+  &.reverse-text {
+    .post_title {
+      a {
+        color: $white !important;
+      }
+
+    }
+  }
+
   overflow-x: hidden;
+
   .intro_content {
     max-width: 100%;
     text-align: left;
+
     h2 {
       font-weight: 300;
     }
@@ -13,20 +24,25 @@
   .blog_posts_items {
     margin-left: -26px;
     margin-right: -26px;
+
     .slick-list {
       overflow: visible;
     }
+
     .slick-arrow {
       opacity: 0;
     }
+
     .blog_posts_item {
       padding-left: 26px;
       padding-right: 26px;
+
       &.image_corner_radius {
         .feature_img {
           border-radius: $borderRadius;
         }
       }
+
       .feature_img {
         padding-top: 63.64%;
         background-position: center;
@@ -34,11 +50,13 @@
         background-repeat: no-repeat;
         margin-bottom: 19px;
       }
+
       .post_meta {
         margin-bottom: 14px;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+
         a {
           font-weight: 700;
           font-size: $baseFontSize;
@@ -48,14 +66,17 @@
           color: $eyebrows;
         }
       }
+
       .post_title {
         h4 {
           margin-bottom: 20px;
+
           a {
             color: $dark_text;
           }
         }
       }
+
       .post_description {
         font-style: normal;
         font-weight: 400;
@@ -63,12 +84,14 @@
         line-height: 1.625;
         letter-spacing: 0.03em;
         color: $dark_text;
+
         p.item_descr {
           margin-bottom: 0;
         }
       }
     }
   }
+
   .slider-bottom {
     margin-top: 50px;
     display: flex;
@@ -76,6 +99,7 @@
     column-gap: 30px;
     row-gap: 30px;
     align-items: center;
+
     .blog-listing_link a {
       font-weight: 700;
       font-size: $baseFontSize;
@@ -84,11 +108,13 @@
       letter-spacing: 0.05em;
       color: $sadlier_red;
     }
+
     .btn-wrap {
       display: flex;
       flex-wrap: wrap;
       column-gap: 30px;
       align-items: center;
+
       button {
         background: $Gray1;
         width: 50px;
@@ -100,10 +126,12 @@
         justify-content: center;
         flex-wrap: wrap;
         color: $White;
+
         &.slick-disabled {
           background: $Gray2;
           color: $dark_text;
         }
+
         &.next-btn:before,
         &.prev-btn:before {
           content: "\e5cc";
@@ -121,6 +149,7 @@
           -webkit-font-feature-settings: "liga";
           -webkit-font-smoothing: antialiased;
         }
+
         &.prev-btn:before {
           content: "\e5cb";
         }
@@ -132,6 +161,7 @@
     * {
       color: $White;
     }
+
     .slider-bottom {
       .blog-listing_link {
         a {
@@ -139,6 +169,7 @@
         }
       }
     }
+
     .blog_posts_items {
       .blog_posts_item {
         .post_meta {
