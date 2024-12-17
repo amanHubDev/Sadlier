@@ -187,14 +187,14 @@ section.u4m-filtered-content {
           border: none;
         }
         &.para {
-          border: 2px solid $tone;
+          border: 2px solid $dark_background;
           &:hover {
-            background-color: $tone;
+            background-color: $dark_background;
             color: $White;
           }
         }
         &.active {
-          background-color: $tone;
+          background-color: $dark_background;
           color: $White;
         }
         &.cursor-not-allowed {
