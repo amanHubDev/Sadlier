@@ -1,0 +1,28 @@
+<!--
+templateType: global_partial
+label: Header No Navigation
+-->
+<div class="header-wrapper lp-header">
+  <div class="header-sticky">
+    {% module 'alerts_banner'
+        path="../../modules/u4m-alerts-banner", label="Alerts Banner",
+        offset=0,
+        width=12,
+        button={
+          "select_button_type" : "std",
+          "text_field" : "INSERT CTA"
+        }
+        content=" <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>"
+      %}
+    <div class="header-spacer"></div>
+    <div class="header-main">
+      <div class="row">
+        <div class="logo">
+          {% module "logo" label="Header Logo" path="@hubspot/logo", alt="School logo", link="/", img={src="{{ get_asset_url('../../templates/images/header-logo.png') }}", width=180, override_inherited_src=true} %}       
+        </div>
+        <div class="nav_wrapper"></div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay"></div>
+</div>
