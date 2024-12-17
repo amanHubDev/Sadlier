@@ -395,6 +395,14 @@
     "label" : "Include Border",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media.type",
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : null,
+      "access" : null
+    },
     "display" : "checkbox",
     "type" : "boolean",
     "default" : true
@@ -405,6 +413,14 @@
     "label" : "Include Border Radius",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media.type",
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : null,
+      "access" : null
+    },
     "display" : "checkbox",
     "type" : "boolean",
     "default" : true

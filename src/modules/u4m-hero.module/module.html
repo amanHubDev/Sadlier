@@ -11,10 +11,11 @@
 
 <div class="page-center">
   <div class="btm_wrpp">
-    <div class="flex_row {% if not module.media.image.src %} no-img{% endif %}">
+    <div class="flex_row {% if not module.media.image.src || not module.media.type %} no-img{% endif %}">
       <div class="left_cols">
         {{macros.introGroup(module.left_column_content)}}
       </div>
+      {% if module.media.type %}
       {% if module.media.image.src %}
       <div class="mediaCol {{ module.media.type }}">
         <div class="bdr {{ module.module_settings.theme }}_color" {% if module.media.include_border %} style="border: 5px solid;" {% endif %}>
@@ -33,7 +34,8 @@
           {% endif %}
         </div> 
       </div>
-        {% endif %}
+      {% endif %}
+      {% endif %}
     </div>
   </div>
 </div>

@@ -5,6 +5,8 @@
     &.no-img {
       .left_cols {
         width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
         .intro_content {
           text-align: center;
           .intro_btn_wrap {
