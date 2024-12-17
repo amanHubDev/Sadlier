@@ -19,7 +19,7 @@
   <div class="hubdb_posts_row">
     <div class="hubdb_posts_items">
       {% for item in data %}
-      <div class="hubdb_posts_item title_item">
+      <div class="hubdb_posts_item title_item {% if module.module_settings.image_corner_radius %}image_corner_radius {% endif %}">
         <div class="hubdb_item_inn">
           {% if module.resources.settings.include_featured_image %}
           {% if item.featured_image.url %}
@@ -30,9 +30,9 @@
           <div class="post_body">
             {% if module.resources.settings.include_tag %}
             <div class="post_meta eyebrow_text">
-                {% for topics in topics %}
+                {% for topics in item.content_topic %}
                 <span class="card_tag">
-                  {{ topics.name }}
+                  {{ topics.name }}{% if not loop.last %},&nbsp;{% endif %}
                 </span>
                 {% endfor %}
             </div>
@@ -88,7 +88,7 @@
   <div class="hubdb_posts_row">
     <div class="hubdb_posts_items">
       {% for item in data %}
-      <div class="hubdb_posts_item title_item">
+      <div class="hubdb_posts_item title_item {% if module.module_settings.image_corner_radius %}image_corner_radius {% endif %}">
         <div class="hubdb_item_inn">
           {% if module.resources.settings.include_featured_image %}
           {% if  item.select_resource.columns.featured_image.url %}
@@ -99,10 +99,10 @@
           <div class="post_body">
             {% if module.resources.settings.include_tag %}
             <div class="post_meta eyebrow_text">
-                {% for topics in topics %}
+                {% for topics in item.select_resource.columns.content_topic %}
                 <span class="card_tag">
                   {{ topics.name }}
-                </span>
+                </span>{% if not loop.last %},&nbsp;{% endif %}
                 {% endfor %}
             </div>
             {% endif %}
@@ -185,11 +185,11 @@
   ]
   });
   $(".{{name}} .prev-btn").click(function () {
-    $(".hubdb_posts_items").slick("slickPrev");
+    $(".{{name}} .hubdb_posts_items").slick("slickPrev");
   });
 
   $(".{{name}} .next-btn").click(function () {
-    $(".hubdb_posts_items").slick("slickNext");
+    $(".{{name}} .hubdb_posts_items").slick("slickNext");
   });
   $(".{{name}} .prev-btn").addClass("slick-disabled");
   $(".{{name}} .hubdb_posts_items").on("afterChange", function () {
@@ -211,17 +211,6 @@
 
 {% end_require_js %}
 
-{% require_css %}
-
-<style>
-  {% if module.module_settings.image_corner_radius %}
-  .{{name}} .feature_img{
-    border-radius: 25rem;
-  }
-  {% endif %}
-</style>
-
-{% end_require_css %}
 
 
 

@@ -8,13 +8,16 @@
     .intro_title {
       font-weight: 700;
     }
+    .intro_btn_wrap {
+      justify-content: unset;
+    }
   }
 
   .hubdb_posts_items {
     margin-left: -26px;
     margin-right: -26px;
     .slick-arrow {
-      display: none !important;
+      opacity: 0;
     }
     .slick-list {
       overflow: visible;
@@ -22,8 +25,12 @@
     .hubdb_posts_item {
       padding-left: 26px;
       padding-right: 26px;
+      &.image_corner_radius {
+        .feature_img {
+          border-radius: $borderRadius;
+        }
+      }
       .feature_img {
-        // padding-top: 63.64%;
         min-height: 182px;
         background-position: center;
         background-size: cover;
@@ -34,7 +41,6 @@
         margin-bottom: 14px;
         display: flex;
         align-items: center;
-        column-gap: 10px;
         flex-wrap: wrap;
         .card_tag {
           font-weight: 700;
@@ -48,17 +54,18 @@
       .post_title {
         h4 {
           margin-bottom: 20px;
+          line-height: 1.25;
         }
-        .post_description {
-          font-style: normal;
-          font-weight: 400;
-          font-size: $baseFontSize;
-          line-height: 1.625;
-          letter-spacing: 0.03em;
-          color: $dark_text;
-          p.item_descr {
-            margin-bottom: 0;
-          }
+      }
+      .post_description {
+        font-style: normal;
+        font-weight: 400;
+        font-size: $baseFontSize;
+        line-height: 1.625;
+        letter-spacing: 0.03em;
+        color: $dark_text;
+        p.item_descr {
+          margin-bottom: 0;
         }
       }
     }
