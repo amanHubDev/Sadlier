@@ -1,0 +1,56 @@
+{% set moduleName = 'u4m-page-banner' %}
+{% include "../partials/u4-module-includes.html" %}
+
+
+
+<div class="page-center  {{ module.module_settings.theme }}  {% if not module.right_content.form.form_id && not module.right_content.include_button %} no-right-col {% endif %}">
+
+  <div class="left-content-col">
+    <div class="intro_wrapp">
+      {{macros.introGroup(module.intro_content)}}
+    </div>
+  </div>
+  {% if module.right_content.form.form_id or module.right_content.include_button %}
+  <div class="right-content-col">
+    {% if module.right_content.form.form_id %}
+    <div class="form-col">
+      {% form
+	form_to_use="{{ module.right_content.form.form_id }}"
+	response_response_type="{{ module.right_content.form.response_type }}"
+	response_message="{{ module.right_content.form.message }}"
+	response_redirect_id="{{ module.right_content.form.redirect_id }}"
+	response_redirect_url="{{module.right_content.form.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.right_content.form.gotowebinar_webinar_key }}"
+%}
+    </div>
+    {% endif %}
+    {% if module.right_content.include_button %}
+    <div class="bottom_button">
+      {{macros.buttonGroup(module.right_content.button_group)}}
+    </div>
+    {% endif %}
+  </div>
+{% endif %}
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

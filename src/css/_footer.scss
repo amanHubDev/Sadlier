@@ -3,6 +3,63 @@
   padding-top: 100px;
   padding-bottom: 110px;
   background-color: $basecolor;
+  &.main-footer {
+    .footer-menu {
+      padding: 0 0px 45px;
+      .hs_cos_wrapper_type_menu {
+        max-width: 1082px;
+        margin: 0 auto;
+        display: block;
+        margin-right: 0;
+      }
+      .hs-menu-wrapper > ul {
+        > li {
+          width: 25%;
+          @include tabletmid {
+            width: 50%;
+          }
+          @include tabletvert {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  &.religion-footer {
+    padding-bottom: 100px;
+    .footer-menu {
+      padding: 0 0px 50px;
+      .hs_cos_wrapper_type_menu {
+        max-width: 892px;
+        display: block;
+        margin: 0 auto;
+      }
+      .hs-menu-wrapper > ul {
+        &::after,
+        &::before {
+          content: none;
+        }
+        justify-content: space-between;
+        > li {
+          width: auto;
+          @include tabletmid {
+            width: 50%;
+          }
+          @include tabletvert {
+            width: 100%;
+          }
+        }
+      }
+      .footer-btn {
+        margin-top: 35px;
+        text-align: center;
+      }
+    }
+    @include tabletvert {
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
+  }
   @include tabletvert {
     padding-bottom: 50px;
     padding-top: 50px;
@@ -24,7 +81,6 @@
         content: none;
       }
       > li {
-        margin-bottom: 13px;
         width: 20%;
         padding: 0 5px;
         @include tabletmid {
@@ -32,6 +88,9 @@
         }
         @include tabletvert {
           width: 100%;
+        }
+        > a {
+          margin-bottom: 13px;
         }
       }
       li {
@@ -55,6 +114,10 @@
             margin-bottom: 10px;
             a {
               font-weight: normal;
+              font-size: 14px;
+            }
+            &:last-child {
+              margin-bottom: 0;
             }
           }
         }
@@ -126,6 +189,19 @@
           }
         }
       }
+    }
+  }
+  .footer-btn a {
+    @include secondarybutton;
+    background-color: transparent;
+    border-color: $white;
+    color: $white;
+    transition: 0.2s ease;
+    &:hover,
+    &:focus {
+      border-color: $white;
+      background-color: transparent;
+      color: $white;
     }
   }
 }

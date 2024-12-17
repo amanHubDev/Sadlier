@@ -1,0 +1,203 @@
+@import "../../css/_module-imports";
+
+section.u4m-editorial-pillar-page-side-nav {
+  padding-top: 50px;
+  padding-bottom: 60px;
+  &.reverse-text {
+    .acctitle {
+      color: $white;
+    }
+    .tab-acc-wrap {
+      .accordion-col {
+        border-color: rgba($white, 0.25);
+      }
+      .accordion-col .accordion-item {
+        border-color: rgba($white, 0.25);
+        &.active .accordion_title h6 {
+          color: $white;
+        }
+      }
+      .accordion_title h6 svg path,
+      .accordion_title h6 svg rect {
+        fill: $white;
+      }
+    }
+    .content-item {
+      h3 {
+        color: $white;
+      }
+      .eyebrow_text {
+        color: $white;
+      }
+    }
+  }
+  .desktop_nav_list .accordion-content {
+    display: none;
+  }
+  .content-item {
+    display: none;
+    @include size18;
+    h3 {
+      color: $orange;
+      margin-bottom: 20px;
+    }
+    .eyebrow_text {
+      @include eyebrow;
+      color: $dark_text;
+    }
+    p a {
+      color: $sadlier_blue;
+      text-decoration: underline;
+    }
+  }
+  .intro_content {
+    margin-bottom: 65px;
+  }
+  .tab-acc-wrap {
+    .accordion-col {
+      width: 40%;
+      padding-right: 50px;
+      border-right: 2px solid rgba($tone, 0.25);
+      padding-top: 10px;
+      @include tabletvert {
+        width: 100%;
+        border-right: none;
+        padding-right: 0;
+      }
+      .acctitle {
+        margin-bottom: 24px;
+      }
+      .accordion-item {
+        border-bottom: 2px solid rgba($tone, 0.25);
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &.active {
+          .accordion_title {
+            h6 {
+              padding-bottom: 20px;
+              color: $orange;
+              .minus-icon {
+                display: inline-block;
+                top: -1px;
+                right: -3px;
+                position: relative;
+                @include tabletvert {
+                  top: -3px;
+                }
+              }
+              .plus-icon {
+                display: none;
+              }
+            }
+          }
+        }
+        .accordion-content {
+          .content-items.mobile {
+            display: none;
+            h3 {
+              color: $orange;
+              margin-bottom: 20px;
+            }
+            .eyebrow_text {
+              @include eyebrow;
+              color: $dark_text;
+            }
+            p a {
+              color: $sadlier_blue;
+              text-decoration: underline;
+            }
+            @include tabletvert {
+              display: block;
+            }
+          }
+        }
+
+        @include tabletvertmin {
+          &.active {
+            .accordion-content {
+              display: block;
+            }
+          }
+          // &:not(.active) {
+          //   .accordion-content {
+          //     display: none !important;
+          //   }
+          // }
+        }
+      }
+      .accordion_title {
+        cursor: pointer;
+        position: relative;
+        h6 {
+          padding-bottom: 30px;
+          margin-bottom: 0;
+          transition: all 0.3s ease;
+          padding-right: 30px;
+          @include size16;
+          line-height: normal;
+          .accordion_icon {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            @include tabletvert {
+              top: 0px;
+            }
+            .minus-icon {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .content-column {
+      width: 60%;
+      padding-left: 50px;
+      padding-top: 20px;
+      @include tabletvert {
+        width: 100%;
+        padding-left: 0;
+        display: none;
+      }
+    }
+  }
+
+  .accordion_trigger,
+  .desktop_trigger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: none;
+    @include tabletvertmin {
+      display: block;
+    }
+  }
+
+  .accordion_trigger {
+    @include tabletvert {
+      display: block;
+    }
+  }
+
+  .desktop_nav_list {
+    display: none;
+    @include tabletvertmin {
+      display: block;
+    }
+  }
+
+  .mobile_nav_list {
+    display: none;
+    @include tabletvert {
+      display: block;
+
+      .accordion-content {
+        display: none;
+      }
+    }
+  }
+}

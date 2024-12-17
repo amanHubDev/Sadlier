@@ -301,6 +301,7 @@ section.u4m-blog-post {
       display: flex;
       align-items: center;
       gap: 30px;
+      margin-bottom: 40px;
       @include phone {
         align-items: flex-start;
         gap: 20px;

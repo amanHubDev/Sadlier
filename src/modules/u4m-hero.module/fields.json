@@ -1,377 +1,8 @@
 [ {
-  "id" : "081bfb60-a75d-a475-e7fb-44c8a8969c1a",
-  "name" : "intro_content",
-  "display_width" : null,
-  "label" : "Intro Content",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "c5ccdda8-6960-e255-a51f-c61077a633ca",
-    "name" : "include_eyebrow_text",
-    "display_width" : null,
-    "label" : "Include Eyebrow Text",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "default" : false
-  }, {
-    "id" : "5baff6ad-02e1-6b84-3429-260a0ded7ef6",
-    "name" : "eyebrow_text",
-    "display_width" : null,
-    "label" : "Eyebrow Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_eyebrow_text",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Eyebrow Text"
-  }, {
-    "id" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
-    "name" : "include_heading",
-    "display_width" : null,
-    "label" : "Include Heading",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "default" : false
-  }, {
-    "id" : "aef5e961-e297-2654-68e0-6128687770bf",
-    "name" : "heading_size",
-    "display_width" : null,
-    "label" : "Heading Size",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_heading",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "h1", "Heading 1" ], [ "h2", "Heading 2" ], [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "h2"
-  }, {
-    "id" : "c7aa6b72-58e0-4caa-9b63-4da765e70069",
-    "name" : "heading",
-    "display_width" : null,
-    "label" : "Heading",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
-      "controlling_field_path" : null,
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Intro Heading Add Here"
-  }, {
-    "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
-    "name" : "include_content",
-    "display_width" : null,
-    "label" : "Include Content",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "default" : false
-  }, {
-    "id" : "50e79c36-b6a5-5ab0-1502-e7248fc5b7ed",
-    "name" : "content_style",
-    "display_width" : null,
-    "label" : "Content Style",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_content",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "theme", "Theme" ], [ "cstyle1", "Style 1" ], [ "cstyle2", "Style 2" ], [ "cstyle3", "Style 3" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "theme"
-  }, {
-    "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
-    "name" : "content",
-    "display_width" : null,
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_content",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "type" : "richtext",
-    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>"
-  }, {
-    "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
-    "name" : "include_button",
-    "display_width" : null,
-    "label" : "Include Button",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "default" : false
-  }, {
-    "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
-    "name" : "button_group",
-    "display_width" : null,
-    "label" : "Button Group",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : 2,
-      "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "default" : 2
-    },
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_button",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "children" : [ {
-      "id" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "name" : "button_type",
-      "display_width" : null,
-      "label" : "Button Type",
-      "required" : false,
-      "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "std"
-    }, {
-      "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
-      "name" : "button_style",
-      "display_width" : null,
-      "label" : "Button Style",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "arrow-link", "Arrow Link" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "hs-button"
-    }, {
-      "id" : "819d4b45-006f-1b23-11ba-72b2c39b6f6e",
-      "name" : "button_theme",
-      "display_width" : null,
-      "label" : "Button Theme",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "display" : "select",
-      "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "theme1"
-    }, {
-      "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
-      "name" : "button_text",
-      "display_width" : null,
-      "label" : "Button Text",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "default" : "Button"
-    }, {
-      "id" : "f1ccd7fd-a18d-1262-3c67-476cdf5424cd",
-      "name" : "link",
-      "display_width" : null,
-      "label" : "Link",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
-      "show_advanced_rel_options" : false,
-      "type" : "link",
-      "default" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "id" : "ef46548d-bcc7-841c-4635-d4d035ae7022",
-      "name" : "cta",
-      "display_width" : null,
-      "label" : "CTA",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "cta",
-        "property" : null,
-        "operator" : "EQUAL",
-        "access" : null
-      },
-      "type" : "cta"
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "default" : [ {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "theme1",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "theme1",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ]
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "default" : {
-    "include_eyebrow_text" : false,
-    "eyebrow_text" : "Eyebrow Text",
-    "include_heading" : false,
-    "heading_size" : "h2",
-    "heading" : "Intro Heading Add Here",
-    "include_content" : false,
-    "content_style" : "theme",
-    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>",
-    "include_button" : false,
-    "button_group" : [ {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "theme1",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "theme1",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ]
-  }
-}, {
   "id" : "89a59353-4671-dbce-ed03-432937fc8fee",
   "name" : "left_column_content",
   "display_width" : null,
-  "label" : "Left Column Content",
+  "label" : "Content Column Group",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -403,7 +34,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "Eyebrow Text"
+    "default" : "OPTIONAL EYEBROW TEXT"
   }, {
     "id" : "96162a20-21a8-54c6-1977-6d3ed33a3d61",
     "name" : "include_heading",
@@ -524,7 +155,7 @@
     "locked" : false,
     "occurrence" : {
       "min" : null,
-      "max" : 2,
+      "max" : 3,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
       "default" : 2
     },
@@ -588,12 +219,12 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
+      "choices" : [ [ "theme1", "Sadlier Red" ], [ "theme2", "Sadlier Blue" ], [ "theme3", "Religion Green" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "theme1"
+      "default" : "theme2"
     }, {
       "id" : "e73d58a9-e030-584a-06a2-95d0594b1975",
       "name" : "button_text",
@@ -613,7 +244,7 @@
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
-      "default" : "Button"
+      "default" : "PRIMARY CTA"
     }, {
       "id" : "d83e4e55-02b8-1974-3b9d-d1de6885a8ce",
       "name" : "link",
@@ -665,8 +296,8 @@
     "default" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_theme" : "theme1",
-      "button_text" : "Button",
+      "button_theme" : "theme2",
+      "button_text" : "PRIMARY CTA",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -679,8 +310,8 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_theme" : "theme1",
-      "button_text" : "Button",
+      "button_theme" : "theme2",
+      "button_text" : "PRIMARY CTA",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -698,7 +329,7 @@
   "type" : "group",
   "default" : {
     "include_eyebrow_text" : true,
-    "eyebrow_text" : "Eyebrow Text",
+    "eyebrow_text" : "OPTIONAL EYEBROW TEXT",
     "include_heading" : true,
     "heading_size" : "h2",
     "heading" : "Sadlier School programs designed for today’s teachers.",
@@ -709,8 +340,8 @@
     "button_group" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_theme" : "theme1",
-      "button_text" : "Button",
+      "button_theme" : "theme2",
+      "button_text" : "PRIMARY CTA",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -723,8 +354,8 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_theme" : "theme1",
-      "button_text" : "Button",
+      "button_theme" : "theme2",
+      "button_text" : "PRIMARY CTA",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -764,31 +395,35 @@
     "label" : "Include Border",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media.type",
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : null,
+      "access" : null
+    },
     "display" : "checkbox",
     "type" : "boolean",
     "default" : true
   }, {
-    "id" : "133766f9-cd6b-0c42-7e02-0db1e47c4702",
-    "name" : "border_theme",
+    "id" : "f72e79e8-40a5-3a6d-3424-ddf971c80d9e",
+    "name" : "include_border_radius",
     "display_width" : null,
-    "label" : "Border Theme",
+    "label" : "Include Border Radius",
     "required" : false,
     "locked" : false,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "media.include_border",
-      "controlling_value_regex" : "true",
+      "controlling_field_path" : "media.type",
+      "controlling_value_regex" : null,
       "property" : null,
-      "operator" : "EQUAL",
+      "operator" : null,
       "access" : null
     },
-    "display" : "select",
-    "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "theme1"
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
   }, {
     "id" : "a70fc181-17b7-206c-9dc6-b1cdc9b43351",
     "name" : "image",
@@ -819,56 +454,10 @@
       "max_height" : 418
     }
   }, {
-    "id" : "8eb200da-8d26-802b-27d4-35d8fb19b81e",
-    "name" : "poster_image",
+    "id" : "5a03e336-5753-a6ed-97bb-7f7b5c808c3c",
+    "name" : "video_group",
     "display_width" : null,
-    "label" : "Poster Image",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "media.type",
-      "controlling_value_regex" : "video",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/Mask%20group.png",
-      "alt" : "Mask group",
-      "loading" : "lazy",
-      "width" : 991,
-      "height" : 620,
-      "max_width" : 991,
-      "max_height" : 620
-    }
-  }, {
-    "picker" : "video",
-    "id" : "459b7906-a500-58ff-cbee-f5fa51306c4f",
-    "name" : "video",
-    "display_width" : null,
-    "label" : "Video",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "media.type",
-      "controlling_value_regex" : "video",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "type" : "file"
-  }, {
-    "id" : "182fc8d3-e96a-29f9-e57e-e7b027c5e3b0",
-    "name" : "video_play_icon_group",
-    "display_width" : null,
-    "label" : "Video Icon Group",
+    "label" : "Video Group",
     "required" : false,
     "locked" : false,
     "visibility" : {
@@ -880,187 +469,97 @@
       "access" : null
     },
     "children" : [ {
-      "id" : "f4cabdb9-9063-eed7-b1a7-5256f8497c6f",
-      "name" : "play_icon_group",
+      "id" : "8eb200da-8d26-802b-27d4-35d8fb19b81e",
+      "name" : "poster_image",
       "display_width" : null,
-      "label" : "Play Icon Group",
+      "label" : "Poster Image",
       "required" : false,
       "locked" : false,
-      "children" : [ {
-        "id" : "4778e124-f2cb-8d89-f7e0-b6d4082a0ea6",
-        "name" : "select_icon",
-        "display_width" : null,
-        "label" : "Select Icon",
-        "required" : false,
-        "locked" : false,
-        "display" : "select",
-        "choices" : [ [ "image", "Image " ], [ "material_icon", "Material Icon " ] ],
-        "multiple" : false,
-        "reordering_enabled" : true,
-        "preset" : null,
-        "type" : "choice",
-        "default" : "image"
-      }, {
-        "id" : "137c57dc-a800-3fc7-75bb-04d55bcbbded",
-        "name" : "image_field",
-        "display_width" : null,
-        "label" : "Image",
-        "required" : false,
-        "locked" : false,
-        "visibility" : {
-          "controlling_field" : null,
-          "controlling_field_path" : "media.video_play_icon_group.play_icon_group.select_icon",
-          "controlling_value_regex" : "image",
-          "property" : null,
-          "operator" : "EQUAL",
-          "access" : null
-        },
-        "responsive" : true,
-        "resizable" : false,
-        "show_loading" : false,
-        "type" : "image",
-        "default" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      }, {
-        "id" : "4e7b0155-88c2-0187-31e7-41f8ff45e666",
-        "name" : "custom_icon",
-        "display_width" : null,
-        "label" : "Custom Icon",
-        "required" : false,
-        "locked" : false,
-        "validation_regex" : "",
-        "visibility" : {
-          "controlling_field" : null,
-          "controlling_field_path" : "media.video_play_icon_group.play_icon_group.select_icon",
-          "controlling_value_regex" : "material_icon",
-          "property" : null,
-          "operator" : "EQUAL",
-          "access" : null
-        },
-        "allow_new_line" : false,
-        "show_emoji_picker" : false,
-        "type" : "text"
-      } ],
-      "tab" : "CONTENT",
-      "expanded" : false,
-      "group_occurrence_meta" : null,
-      "type" : "group",
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
       "default" : {
-        "select_icon" : "image",
-        "image_field" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/Mask%20group.png",
+        "alt" : "Mask group",
+        "loading" : "lazy",
+        "width" : 991,
+        "height" : 620,
+        "max_width" : 991,
+        "max_height" : 620
       }
     }, {
-      "id" : "67357192-2998-1b3d-1a01-e18b6cd2d019",
-      "name" : "cross_icon_group_copy",
+      "id" : "3b3fa189-0860-d1ea-5f6e-b475801579f4",
+      "name" : "video_type",
       "display_width" : null,
-      "label" : "Cross Icon Group copy",
+      "label" : "Video Type",
       "required" : false,
       "locked" : false,
-      "children" : [ {
-        "id" : "fed4b92f-edef-bef0-b94d-e1b9ff91cd69",
-        "name" : "select_icon",
-        "display_width" : null,
-        "label" : "Select Icon",
-        "required" : false,
-        "locked" : false,
-        "display" : "select",
-        "choices" : [ [ "image", "Image " ], [ "material_icon", "Material Icon " ] ],
-        "multiple" : false,
-        "reordering_enabled" : true,
-        "preset" : null,
-        "type" : "choice",
-        "default" : "image"
-      }, {
-        "id" : "9bb86221-f835-f04f-efc0-80ec2d067f03",
-        "name" : "image_field",
-        "display_width" : null,
-        "label" : "Image",
-        "required" : false,
-        "locked" : false,
-        "visibility" : {
-          "controlling_field" : null,
-          "controlling_field_path" : "media.video_play_icon_group.play_icon_group.select_icon",
-          "controlling_value_regex" : "image",
-          "property" : null,
-          "operator" : "EQUAL",
-          "access" : null
-        },
-        "responsive" : true,
-        "resizable" : false,
-        "show_loading" : false,
-        "type" : "image",
-        "default" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      }, {
-        "id" : "9c24f08d-971e-a6ee-5e7d-08e76393ec08",
-        "name" : "custom_icon",
-        "display_width" : null,
-        "label" : "Custom Icon",
-        "required" : false,
-        "locked" : false,
-        "validation_regex" : "",
-        "visibility" : {
-          "controlling_field" : null,
-          "controlling_field_path" : "media.video_play_icon_group.play_icon_group.select_icon",
-          "controlling_value_regex" : "material_icon",
-          "property" : null,
-          "operator" : "EQUAL",
-          "access" : null
-        },
-        "allow_new_line" : false,
-        "show_emoji_picker" : false,
-        "type" : "text"
-      } ],
-      "tab" : "CONTENT",
-      "expanded" : false,
-      "group_occurrence_meta" : null,
-      "type" : "group",
-      "default" : {
-        "select_icon" : "image",
-        "image_field" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      }
+      "display" : "select",
+      "choices" : [ [ "file", "File" ], [ "embed", "Embed" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "file"
+    }, {
+      "picker" : "video",
+      "id" : "459b7906-a500-58ff-cbee-f5fa51306c4f",
+      "name" : "video",
+      "display_width" : null,
+      "label" : "Video",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "media.video_group.video_type",
+        "controlling_value_regex" : "file",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "file",
+      "default" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/videos/big_buck_bunny_720p_1mb.mp4"
+    }, {
+      "id" : "c3ee5ea7-e21b-8f3b-296b-44aaae59fc4c",
+      "name" : "embedded_path",
+      "display_width" : null,
+      "label" : "Embedded Path",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "media.video_group.video_type",
+        "controlling_value_regex" : "embed",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "https://www.youtube.com/embed/ScMzIvxBSi4"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
-      "play_icon_group" : {
-        "select_icon" : "image",
-        "image_field" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
+      "poster_image" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/Mask%20group.png",
+        "alt" : "Mask group",
+        "loading" : "lazy",
+        "width" : 991,
+        "height" : 620,
+        "max_width" : 991,
+        "max_height" : 620
       },
-      "cross_icon_group_copy" : {
-        "select_icon" : "image",
-        "image_field" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      }
+      "video_type" : "file",
+      "video" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/videos/big_buck_bunny_720p_1mb.mp4",
+      "embedded_path" : "https://www.youtube.com/embed/ScMzIvxBSi4"
     }
   } ],
   "tab" : "CONTENT",
@@ -1070,7 +569,7 @@
   "default" : {
     "type" : "image",
     "include_border" : true,
-    "border_theme" : "theme1",
+    "include_border_radius" : true,
     "image" : {
       "size_type" : "auto",
       "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/image%20(1).png",
@@ -1081,36 +580,50 @@
       "max_width" : 669,
       "max_height" : 418
     },
-    "poster_image" : {
-      "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/Mask%20group.png",
-      "alt" : "Mask group",
-      "loading" : "lazy",
-      "width" : 991,
-      "height" : 620,
-      "max_width" : 991,
-      "max_height" : 620
-    },
-    "video_play_icon_group" : {
-      "play_icon_group" : {
-        "select_icon" : "image",
-        "image_field" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
+    "video_group" : {
+      "poster_image" : {
+        "size_type" : "auto",
+        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4/images/Mask%20group.png",
+        "alt" : "Mask group",
+        "loading" : "lazy",
+        "width" : 991,
+        "height" : 620,
+        "max_width" : 991,
+        "max_height" : 620
       },
-      "cross_icon_group_copy" : {
-        "select_icon" : "image",
-        "image_field" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      }
+      "video_type" : "file",
+      "video" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/videos/big_buck_bunny_720p_1mb.mp4",
+      "embedded_path" : "https://www.youtube.com/embed/ScMzIvxBSi4"
     }
+  }
+}, {
+  "id" : "597d247c-f3a0-1ead-36ea-502f483104e4",
+  "name" : "module_settings",
+  "display_width" : null,
+  "label" : "Module Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "133766f9-cd6b-0c42-7e02-0db1e47c4702",
+    "name" : "theme",
+    "display_width" : null,
+    "label" : "Theme",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme1", "Sadlier Red" ], [ "theme2", "Sadlier Blue" ], [ "theme3", "Religion Green" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme2"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "theme" : "theme2"
   }
 }, {
   "id" : "module_overrides",
@@ -1478,7 +991,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "sadlierRed_bg", "Sadlier Red" ], [ "sadlierBlue_bg", "Sadlier Blue" ], [ "sadlierGreen_bg", "Sadlier Green" ], [ "sadlierLightGreen_bg", "Sadlier Light Green" ], [ "dark_bg", "Dark Background" ], [ "light_bg", "Light Background" ], [ "light2_bg", "Light Background 2" ], [ "tone_bg", "Tone-on-tone" ], [ "cyan_bg", "Cyan" ], [ "purple_bg", "Purple" ], [ "gold_bg", "Gold" ], [ "orange_bg", "Orange" ], [ "white_bg", "White" ], [ "gray1_bg", "Gray 1" ], [ "gray2_bg", "Gray 2" ] ],
+      "choices" : [ [ "sadlierRed_bg", "Sadlier Red" ], [ "sadlierBlue_bg", "Sadlier Blue" ], [ "sadlierGreen_bg", "Religion Green" ], [ "sadlierLightGreen_bg", "Sadlier Light Green" ], [ "dark_bg", "Dark Background" ], [ "light_bg", "Light Background" ], [ "light2_bg", "Light Background 2" ], [ "tone_bg", "Tone-on-tone" ], [ "cyan_bg", "Cyan" ], [ "purple_bg", "Purple" ], [ "gold_bg", "Gold" ], [ "orange_bg", "Orange" ], [ "white_bg", "White" ], [ "gray1_bg", "Gray 1" ], [ "gray2_bg", "Gray 2" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

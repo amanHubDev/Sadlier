@@ -1,29 +1,52 @@
-
+// Handling click event to open the video popup
 document.querySelectorAll('.cardVideo').forEach(function(cardVideo) {
-	cardVideo.addEventListener('click', function() {
-		var dtPopup = cardVideo.getAttribute('data-popup-id'); 
-		var popupVideoTag = document.getElementById('video-'+dtPopup); 
-		var popupElement = document.getElementById(dtPopup);
-		if (popupElement) {
-			popupElement.style.display = 'flex';
-			popupVideoTag.setAttribute('autoplay',"autoplay");
-			popupVideoTag.play(); 
-		}
-	});
+  cardVideo.addEventListener('click', function() {
+    var dtPopup = cardVideo.getAttribute('data-popup-id');
+    var popupElement = document.getElementById(dtPopup);
+
+    if (popupElement) {
+      // Show the popup
+      popupElement.style.display = 'flex';
+
+      // Find the video element inside the popup
+      var video = popupElement.querySelector('video');
+      var iframe = popupElement.querySelector('iframe');
+
+      // Handle regular video autoplay
+      if (video) {
+        video.setAttribute('autoplay', "autoplay");
+        video.play();
+      }
+
+      // Handle iframe autoplay (YouTube video)
+      if (iframe) {
+        // Set the iframe source to autoplay the YouTube video
+        var iframeSrc = iframe.getAttribute('data-src');
+        iframe.setAttribute('src', iframeSrc + '&autoplay=1');
+      }
+    }
+  });
 });
 
+// Handling close button to stop videos or iframes
 document.querySelectorAll('.cardpopVideo .close').forEach(function(closeButton) {
-	var popVideo = document.querySelectorAll('.cardpopVideo video');
-	closeButton.addEventListener('click', function() {
-		document.querySelectorAll('.cardVideoPopup').forEach(function(cardVideoPopup) {
-			cardVideoPopup.style.display = 'none';
-			popVideo.forEach(function(popVideoo) {
-				popVideoo.setAttribute('autoplay',"");
-				popVideoo.pause(); 
-			});
-		});
-	});
-}); 
+  closeButton.addEventListener('click', function() {
+    document.querySelectorAll('.cardVideoPopup').forEach(function(cardVideoPopup) {
+      cardVideoPopup.style.display = 'none';
 
+      // Find and stop regular video
+      var video = cardVideoPopup.querySelector('video');
+      if (video) {
+        video.setAttribute('autoplay', "");
+        video.pause();
+      }
 
-
+      // Find and stop iframe video (YouTube)
+      var iframe = cardVideoPopup.querySelector('iframe');
+      if (iframe) {
+        // Remove the iframe src to stop the video
+        iframe.setAttribute('src', '');
+      }
+    });
+  });
+});

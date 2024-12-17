@@ -5,6 +5,12 @@
   }
 }
 
+@mixin phoneMin {
+  @media (min-width: 581px) {
+    @content;
+  }
+}
+
 @mixin tabletvertmin {
   @media (min-width: 768px) {
     @content;
@@ -23,6 +29,18 @@
 
 @mixin tabletMin {
   @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin tabletMinlarge {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tabletMinlargeTotabletMin {
+  @media (max-width: 1280px) and (min-width: 1025px) {
     @content;
   }
 }

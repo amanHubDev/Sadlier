@@ -9,11 +9,11 @@
   </div>
 
   <div class="desktop_tabber">
-    <div class="tab_main">
+    <div class="tab_main {{ module.module_overrides.theme }}">
       <div class="tabber_nav">
         {% for item in module.tabber_group %}
-        <div class="tab_nav_item {% if loop.index == 1 %}active animated{% endif %}">
-          <span class="tab_nav" data-nav="{{name}}_tab{{loop.index}}">{{ item.nav_text }}
+        <div class="tab_nav_item  {% if loop.index == 1 %}active animated{% endif %}">
+          <span class="tab_nav {{ module.module_overrides.theme }}" data-nav="{{name}}_tab{{loop.index}}">{{ item.nav_text }}
           </span>
         </div>
         {% endfor %}
@@ -36,6 +36,43 @@
               {% if item.button_group %}
               {{macros.buttonGroup(item.button_group)}}
               {% endif %}
+{% if item.dropdown_item or item.label_text %}
+              <div class="cardBtnContent">
+                <div class="wrapper-dropdown tinynav" id="dropdown">
+                {% if item.label_text %}
+                  <span class="selected-display" id="destination">{{item.label_text}}</span>
+                {% endif %}
+                  <ul class="dropdown">
+                    {% for item2 in item.dropdown_item %}
+                    <li> 
+                      {% set href = item2.link.url.href %}
+                      {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+                      {% set href = "mailto:" + href %}
+                      {% endif %}
+                      <a
+                         {% if item2.link.url.type is equalto "CALL_TO_ACTION"  %}
+                         href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                         {% else %}
+                         href="{{ href|escape_url }}"
+                         {% endif %}
+                         {% if item2.link.open_in_new_tab %}
+                         target="_blank"
+                         {% endif %}
+                         {% if item2.link.rel %}
+                         rel="{{ item2.link.rel|escape_attr }}"
+                         {% endif %}
+                         >
+                        {{ item2.title }}
+                      </a>
+                    </li>
+
+                    {% endfor %}
+                  </ul>
+                </div>
+
+
+              </div>
+                  {% endif %}
             </div>
             <div class="right_col">
               {% if item.image.src %}
@@ -55,7 +92,13 @@
 
 
 </section>
-
+{% require_css %}
+  <style>
+  .cardBtnContent .tinynav{
+  background-image:url({{ get_asset_url('../../templates/images/downArrowWhite.png') }});
+  }
+  </style>
+    {% end_require_css %}
 {% require_js %}
 <script>
   $(".{{name}} .desktop_tabber .tabber_pannel").slick({
@@ -63,11 +106,19 @@
     slidesToScroll: 1,
     arrows: false,
     fade: false,
-    draggable:false,
+    draggable:true,
     asNavFor: ".{{name}} .desktop_tabber .tabber_nav",
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
-    });
+    responsive: [
+    {
+    breakpoint: 767,
+    settings: {
+    dots: true,
+    }
+  }
+  ]
+  });
   $(".{{name}} .desktop_tabber .tabber_nav").slick({
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -78,6 +129,15 @@
     arrows: false,
     });
 
+    document.querySelectorAll('.{{name}} .wrapper-dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('click', function () {
+      this.classList.toggle('active');
+      const childDropdown = this.querySelector('.dropdown');
+      if (childDropdown) {
+        childDropdown.classList.toggle('rotated');
+      }
+    });
+  });
 
 
 

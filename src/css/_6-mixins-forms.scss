@@ -9,13 +9,17 @@
   overflow: auto;
   background-color: $light_background;
   border-radius: $borderRadius;
+
+  @include tablet {
+    padding: 30rem;
+  }
 }
 
 @mixin form {
   @include formWraperStyle;
 
   @include tablet {
-    padding: 20rem;
+    padding: 30rem;
   }
 
   h3 {
@@ -47,7 +51,7 @@
 
       ul.hs-error-msgs {
         animation: fadeIn2 0.5s ease;
-        margin-bottom: 20rem;
+        margin-bottom: 0;
 
         li {
           margin-bottom: 0;
@@ -153,7 +157,7 @@
         padding-left: 0;
         list-style: none;
         text-align: center;
-        margin: 0rem 0 20rem;
+        margin: 0rem 0 0;
         padding: 0;
         animation: fadeIn1 0.3s ease;
 
@@ -170,6 +174,7 @@
           border-radius: 5rem;
           padding: 5rem 8rem;
           line-height: 1.2;
+          margin-bottom: 0;
 
           &:before {
             border-style: solid;
@@ -360,6 +365,69 @@
 
     .hs-button {
       @include button;
+    }
+  }
+}
+
+// subscribe form style
+
+@mixin subscribeForm {
+  form {
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    .hs-form-field {
+      width: calc(100% - 192px);
+      @include phone {
+        width: 100%;
+      }
+      & > label {
+        color: inherit !important;
+        letter-spacing: 0.1em !important;
+      }
+      input.hs-input {
+        background-color: rgba($white, 0.25) !important;
+        color: inherit !important;
+      }
+    }
+    .hs_error_rollup {
+      width: calc(100% - 192px);
+      flex: 0 0 auto !important;
+
+      @include phone {
+        width: 100%;
+        margin-bottom: 20px !important;
+      }
+      label.hs-main-font-element {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+    }
+    .hs_submit {
+      min-width: 192px;
+      text-align: right;
+      @include phone {
+        min-width: 100%;
+        text-align: left;
+      }
+      .hs-button.primary {
+        padding: 10rem 17rem;
+        text-transform: uppercase;
+        top: 30px;
+        position: absolute;
+        right: 0;
+        @include phone {
+          position: static;
+        }
+      }
+    }
+    li {
+      margin-top: 10px;
     }
   }
 }

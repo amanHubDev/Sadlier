@@ -1,0 +1,327 @@
+@import "../../css/_module-imports";
+section.u4m-filtered-content-three {
+  &.reverse-text {
+    .featCardsListWrap {
+      .filterWrap {
+        .filters {
+          .flex_row {
+            .col {
+              .colTtl {
+                color: $White;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .featCardsOuter {
+    .featCards {
+      gap: 50px;
+      .left_Sec {
+        width: 100%;
+        @include tabletvertmin {
+          width: calc(50% - 25px);
+        }
+        @include tabletMin {
+          width: calc(66.66% - 25px);
+        }
+        .flex_row {
+          @include tablet {
+            flex-direction: column-reverse;
+          }
+          @include tabletMin {
+            height: 100%;
+          }
+          border-radius: $borderRadius;
+          overflow: hidden;
+          background: $White;
+          align-items: center;
+          .cardImgSec {
+            @include tabletMin {
+              width: 344px;
+            }
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            .cardImg {
+              @include tabletMin {
+                height: 100%;
+                padding-bottom: 0;
+              }
+              padding-bottom: 56.66%;
+              position: relative;
+              a {
+                background-size: cover;
+                background-position: center;
+                position: absolute;
+                height: 100%;
+                left: 0;
+                top: 0;
+                width: 100%;
+              }
+            }
+          }
+          .cardConSec {
+            > * {
+              width: 100%;
+            }
+            @include tabletMin {
+              width: calc(100% - 344px);
+            }
+            width: 100%;
+            padding: 30px 30px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+            text-align: center;
+            @include tabletMin {
+              padding: 91px 30px;
+              text-align: left;
+            }
+            .content_type {
+              @include eyebrow;
+              margin-bottom: 20px;
+            }
+            .cardContent {
+              margin-bottom: 30px;
+              line-height: 1.625;
+              letter-spacing: 0.03em;
+            }
+            .restitle {
+              @include tabletMinlargeTotabletMin {
+                font-size: 30px;
+              }
+              @include tablet {
+                @include h4;
+              }
+              a {
+                color: inherit;
+              }
+            }
+          }
+        }
+      }
+      .right_Sec {
+        width: 100%;
+        @include tabletvertmin {
+          width: calc(50% - 25px);
+        }
+        @include tabletMin {
+          width: calc(33.33% - 25px);
+        }
+
+        .cardInr {
+          background: $White;
+          border-radius: $borderRadius;
+          overflow: hidden;
+          height: 100%;
+          .cardImg {
+            padding-bottom: 56.66%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            @include tabletmidmin {
+              padding-bottom: 185px;
+            }
+            .absLink {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .cardCont {
+            padding: 30px 30px 50px;
+            text-align: center;
+            .content_type {
+              @include eyebrow;
+              margin-bottom: 15px;
+              a {
+                color: inherit;
+              }
+            }
+            .restitle {
+              a {
+                color: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .divider {
+    hr {
+      margin: 50px 0;
+      border: none;
+      height: 4px;
+      background-color: $Gray2;
+    }
+  }
+  .featCardsListWrap {
+    .filterWrap {
+      padding: 0 0 50px;
+      .filters {
+        .flex_row {
+          gap: 20px;
+          @include tabletMin {
+            gap: 50px;
+          }
+          .col {
+            @include tabletvertmin {
+              width: calc((100% - 40px) / 3);
+            }
+            @include tabletMin {
+              width: calc((100% - 100px) / 3);
+            }
+            width: 100%;
+            padding: 0;
+            .colTtl {
+              @include eyebrow;
+              padding-bottom: 5px;
+            }
+            .resourceInput {
+              padding: 10px 15px;
+              background: $White;
+              border: 1px solid $tone15;
+              border-radius: 5px;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 27px;
+              letter-spacing: 0.03em;
+              outline: none;
+              &::placeholder {
+                color: $tone30;
+              }
+            }
+            .resourceSelect {
+              padding: 10px 15px;
+              background: $White;
+              border: 1px solid $tone15;
+              border-radius: 5px;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 27px;
+              letter-spacing: 0.03em;
+              outline: none;
+              appearance: none;
+              color: $tone50;
+              background-size: 12px;
+              background-repeat: no-repeat;
+              background-position: calc(100% - 16px) center;
+              padding-right: 34px;
+            }
+          }
+        }
+      }
+    }
+
+    .resourceList {
+      gap: 50px;
+      .cardItem {
+        width: 100%;
+        @include tabletvertmin {
+          width: calc((100% - 50px) / 2);
+        }
+        @include tabletmidmin {
+          width: calc((100% - 100px) / 3);
+        }
+
+        .cardInr {
+          padding: 40px 29px;
+          background: $White;
+          border-radius: $borderRadius;
+          overflow: hidden;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          .cardImg {
+            @include phoneMin {
+              height: 230px;
+            }
+            margin-bottom: 15px;
+            a {
+              height: 100%;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              img {
+                height: 100%;
+              }
+            }
+          }
+          .cardCont {
+            text-align: center;
+            .content_type {
+              @include eyebrow;
+              margin-bottom: 15px;
+            }
+            .restitle {
+              a {
+                color: inherit;
+              }
+            }
+          }
+          .cardBtnRow {
+            text-align: center;
+            margin-top: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .pagination {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      button {
+        align-items: center;
+        border-radius: 100%;
+        color: $tone;
+        display: flex;
+        flex-wrap: wrap;
+        font-weight: 700;
+        height: 50px;
+        justify-content: center;
+        padding: 10px;
+        width: 50px;
+        > * {
+          pointer-events: none;
+        }
+        &.prevnext {
+          background-color: $Gray2;
+          border: none;
+        }
+        &.para {
+          border: 2px solid $dark_background;
+          &:hover {
+            background-color: $dark_background;
+            color: $White;
+          }
+        }
+        &.active {
+          background-color: $dark_background;
+          color: $White;
+        }
+        &.cursor-not-allowed {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

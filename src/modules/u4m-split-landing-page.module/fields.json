@@ -215,7 +215,7 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "default" : "theme"
+    "default" : "cstyle1"
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -316,7 +316,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
+      "choices" : [ [ "theme1", "Sadlier Red" ], [ "theme2", "Sadlier Blue" ], [ "theme3", "Religion Green" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -454,7 +454,7 @@
     "heading_size" : "h1",
     "heading" : "Contact Us",
     "include_content" : false,
-    "content_style" : "theme",
+    "content_style" : "cstyle1",
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>",
     "include_button" : false,
     "button_group" : [ {
@@ -559,18 +559,12 @@
     "type" : "choice",
     "default" : "image"
   }, {
-    "id" : "f18c64d0-2138-c912-d5a6-ccc871b33a0d",
-    "name" : "image_group",
+    "id" : "e590e67d-ae63-99e8-03be-72edefbf1b9d",
+    "name" : "image",
     "display_width" : null,
-    "label" : "Image Group",
+    "label" : "Image",
     "required" : false,
     "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : 3,
-      "sorting_label_field" : "e590e67d-ae63-99e8-03be-72edefbf1b9d",
-      "default" : 3
-    },
     "visibility" : {
       "controlling_field" : null,
       "controlling_field_path" : "bottom_content_group.select_media_type",
@@ -579,66 +573,95 @@
       "operator" : "EQUAL",
       "access" : null
     },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/split-form-image.png",
+      "alt" : "split-form-image",
+      "loading" : "lazy",
+      "width" : 555,
+      "height" : 290,
+      "max_width" : 555,
+      "max_height" : 290
+    }
+  }, {
+    "id" : "c48fa2f3-e4b0-b3a2-614b-684e873e7667",
+    "name" : "video_group",
+    "display_width" : null,
+    "label" : "Video Group",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "bottom_content_group.select_media_type",
+      "controlling_value_regex" : "video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "children" : [ {
-      "id" : "e590e67d-ae63-99e8-03be-72edefbf1b9d",
-      "name" : "image",
+      "id" : "692cd565-93f5-2e5c-4ad9-8491d964e031",
+      "name" : "select_video_type",
       "display_width" : null,
-      "label" : "Image",
+      "label" : "Select Video Type",
       "required" : false,
       "locked" : false,
-      "responsive" : true,
-      "resizable" : false,
-      "show_loading" : false,
-      "type" : "image",
-      "default" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
+      "display" : "select",
+      "choices" : [ [ "file", "File" ], [ "embed_path", "Embedded Path" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "file"
+    }, {
+      "picker" : "video",
+      "id" : "5bd2c159-652a-cff9-bb31-620e9fdfc97c",
+      "name" : "video_file",
+      "display_width" : null,
+      "label" : "Video File",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "bottom_content_group.video_group.select_video_type",
+        "controlling_value_regex" : "file",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "file"
+    }, {
+      "id" : "ed0b647c-076d-6b82-af65-0bba63eda6fd",
+      "name" : "embedded_path",
+      "display_width" : null,
+      "label" : "Embedded Path",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "bottom_content_group.video_group.select_video_type",
+        "controlling_value_regex" : "embed_path",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "https://www.youtube.com/embed/EngW7tLk6R8"
     } ],
     "tab" : "CONTENT",
-    "expanded" : false,
+    "expanded" : true,
     "group_occurrence_meta" : null,
     "type" : "group",
-    "default" : [ {
-      "image" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    }, {
-      "image" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    }, {
-      "image" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    } ]
+    "default" : {
+      "select_video_type" : "file",
+      "embedded_path" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    }
   }, {
     "id" : "db02f182-5ec7-c0bc-c230-f30ca4aaa5fc",
     "name" : "bottom_content",
@@ -648,6 +671,45 @@
     "locked" : false,
     "type" : "richtext",
     "default" : "<p>Building Reading Success with Wiley Blevins, a module-based intervention program, provides systematic and explicit instruction with an embedded review and repetition cycle.</p>\n<h2>Meet students' needs with:</h2>\n<ul>\n<li>Flexible implementation models to address various instructional schedules and strategies</li>\n<li>Innovative digital resources that engage students in active learning</li>\n<li>Interactive assessments to determine placement and measure student progress</li>\n<li>A transition Module to preclude decayed learning</li>\n</ul>"
+  }, {
+    "id" : "2e9a2c30-d8c3-5fae-d278-bdb202d9e1bc",
+    "name" : "check_list_style",
+    "display_width" : null,
+    "label" : "Check List Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "95649980-0c2f-6860-030a-35569710f0a9",
+    "name" : "check_list_icon",
+    "display_width" : null,
+    "label" : "Check List Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "bottom_content_group.check_list_style",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Vector.svg",
+      "alt" : "Vector",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -655,41 +717,32 @@
   "type" : "group",
   "default" : {
     "select_media_type" : "image",
-    "image_group" : [ {
-      "image" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    }, {
-      "image" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    }, {
-      "image" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/group-image1.png",
-        "alt" : "group-image1",
-        "loading" : "lazy",
-        "width" : 450,
-        "height" : 357,
-        "max_width" : 450,
-        "max_height" : 357
-      }
-    } ],
-    "bottom_content" : "<p>Building Reading Success with Wiley Blevins, a module-based intervention program, provides systematic and explicit instruction with an embedded review and repetition cycle.</p>\n<h2>Meet students' needs with:</h2>\n<ul>\n<li>Flexible implementation models to address various instructional schedules and strategies</li>\n<li>Innovative digital resources that engage students in active learning</li>\n<li>Interactive assessments to determine placement and measure student progress</li>\n<li>A transition Module to preclude decayed learning</li>\n</ul>"
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/split-form-image.png",
+      "alt" : "split-form-image",
+      "loading" : "lazy",
+      "width" : 555,
+      "height" : 290,
+      "max_width" : 555,
+      "max_height" : 290
+    },
+    "video_group" : {
+      "select_video_type" : "file",
+      "embedded_path" : "https://www.youtube.com/embed/EngW7tLk6R8"
+    },
+    "bottom_content" : "<p>Building Reading Success with Wiley Blevins, a module-based intervention program, provides systematic and explicit instruction with an embedded review and repetition cycle.</p>\n<h2>Meet students' needs with:</h2>\n<ul>\n<li>Flexible implementation models to address various instructional schedules and strategies</li>\n<li>Innovative digital resources that engage students in active learning</li>\n<li>Interactive assessments to determine placement and measure student progress</li>\n<li>A transition Module to preclude decayed learning</li>\n</ul>",
+    "check_list_style" : false,
+    "check_list_icon" : {
+      "size_type" : "auto",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Vector.svg",
+      "alt" : "Vector",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    }
   }
 }, {
   "id" : "module_overrides",
@@ -1057,7 +1110,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "sadlierRed_bg", "Sadlier Red" ], [ "sadlierBlue_bg", "Sadlier Blue" ], [ "sadlierGreen_bg", "Sadlier Green" ], [ "sadlierLightGreen_bg", "Sadlier Light Green" ], [ "dark_bg", "Dark Background" ], [ "light_bg", "Light Background" ], [ "light2_bg", "Light Background 2" ], [ "tone_bg", "Tone-on-tone" ], [ "cyan_bg", "Cyan" ], [ "purple_bg", "Purple" ], [ "gold_bg", "Gold" ], [ "orange_bg", "Orange" ], [ "white_bg", "White" ], [ "gray1_bg", "Gray 1" ], [ "gray2_bg", "Gray 2" ] ],
+      "choices" : [ [ "sadlierRed_bg", "Sadlier Red" ], [ "sadlierBlue_bg", "Sadlier Blue" ], [ "sadlierGreen_bg", "Religion Green" ], [ "sadlierLightGreen_bg", "Sadlier Light Green" ], [ "dark_bg", "Dark Background" ], [ "light_bg", "Light Background" ], [ "light2_bg", "Light Background 2" ], [ "tone_bg", "Tone-on-tone" ], [ "cyan_bg", "Cyan" ], [ "purple_bg", "Purple" ], [ "gold_bg", "Gold" ], [ "orange_bg", "Orange" ], [ "white_bg", "White" ], [ "gray1_bg", "Gray 1" ], [ "gray2_bg", "Gray 2" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -1309,7 +1362,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "sadlierRed_bg", "Sadlier Red" ], [ "sadlierBlue_bg", "Sadlier Blue" ], [ "sadlierGreen_bg", "Sadlier Green" ], [ "sadlierLightGreen_bg", "Sadlier Light Green" ], [ "dark_bg", "Dark Background" ], [ "light_bg", "Light Background" ], [ "light2_bg", "Light Background 2" ], [ "tone_bg", "Tone-on-tone" ], [ "cyan_bg", "Cyan" ], [ "purple_bg", "Purple" ], [ "gold_bg", "Gold" ], [ "orange_bg", "Orange" ], [ "white_bg", "White" ], [ "gray1_bg", "Gray 1" ], [ "gray2_bg", "Gray 2" ] ],
+      "choices" : [ [ "sadlierRed_bg", "Sadlier Red" ], [ "sadlierBlue_bg", "Sadlier Blue" ], [ "sadlierGreen_bg", "Religion Green" ], [ "sadlierLightGreen_bg", "Sadlier Light Green" ], [ "dark_bg", "Dark Background" ], [ "light_bg", "Light Background" ], [ "light2_bg", "Light Background 2" ], [ "tone_bg", "Tone-on-tone" ], [ "cyan_bg", "Cyan" ], [ "purple_bg", "Purple" ], [ "gold_bg", "Gold" ], [ "orange_bg", "Orange" ], [ "white_bg", "White" ], [ "gray1_bg", "Gray 1" ], [ "gray2_bg", "Gray 2" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,

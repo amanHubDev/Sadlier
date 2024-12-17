@@ -1,0 +1,73 @@
+@import "../../css/_module-imports";
+
+section.u4m-card-carousel {
+  .two-col-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .intro_wrapp {
+      width: 30%;
+      padding-right: 35px;
+      @include tabletvert {
+        width: 100%;
+        padding-right: 0;
+      }
+      .intro_title {
+        margin-bottom: 31px;
+      }
+    }
+    .intro_content {
+      margin: 0;
+      text-align: left;
+    }
+    .intro_btn_wrap {
+      justify-content: left;
+    }
+    .slider-column {
+      width: 70%;
+      padding-left: 35px;
+      @include tabletvert {
+        width: 100%;
+        padding-left: 0;
+      }
+      .slider-wrap {
+        margin: 0 -25px;
+        @include tabletvert {
+          margin: 0;
+        }
+      }
+    }
+    .slide-item {
+      width: 50%;
+      padding: 0 25px;
+      @include tabletvert {
+        width: 100%;
+        padding: 0;
+      }
+      .slide-item-inner {
+        overflow: hidden;
+        &.reverse_text * {
+          color: $white;
+        }
+        .img-col img {
+          max-height: 200px;
+          width: 100%;
+          object-fit: cover;
+          @include tabletvert {
+            max-height: 300px;
+          }
+        }
+      }
+      .content-col {
+        padding: 15px 30px;
+        padding-bottom: 35px;
+        h3 {
+          margin-bottom: 20px;
+        }
+        .bottom_button {
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+}

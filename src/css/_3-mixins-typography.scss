@@ -9,9 +9,11 @@
   margin-top: 0;
   letter-spacing: -0.03px;
   color: $headingColor;
+
   @include tablet {
     font-size: 48rem;
   }
+
   @include phone {
     font-size: 38rem;
     margin-bottom: 20rem;
@@ -28,9 +30,11 @@
   margin-top: 0;
   letter-spacing: -0.42px;
   color: $headingColor;
+
   @include tablet {
     font-size: 38rem;
   }
+
   @include phone {
     font-size: 32rem;
     margin-bottom: 20rem;
@@ -47,13 +51,16 @@
   margin-top: 0;
   letter-spacing: -0.48px;
   color: $headingColor;
+
   @include tablet {
     font-size: 28rem;
   }
+
   @include phone {
     margin-bottom: 20rem;
   }
 }
+
 @mixin h4 {
   font-family: $font1;
   font-size: 24rem;
@@ -64,14 +71,17 @@
   margin-top: 0;
   letter-spacing: 0;
   color: $headingColor;
+
   @include tablet {
     font-size: 22rem;
   }
+
   @include phone {
     font-size: 20rem;
     margin-bottom: 20rem;
   }
 }
+
 @mixin h5 {
   font-family: $font1;
   font-size: 22rem;
@@ -82,14 +92,17 @@
   margin-top: 0;
   letter-spacing: 0;
   color: $headingColor;
+
   @include tablet {
     font-size: 18rem;
   }
+
   @include phone {
     font-size: 16rem;
     margin-bottom: 20rem;
   }
 }
+
 @mixin h6 {
   font-family: $font1;
   font-size: 20rem;
@@ -123,10 +136,10 @@
   @include bodyStyle;
   font-size: 20rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.6px;
-
+  letter-spacing: 0.03em;
   @include phone {
     font-size: 18rem;
   }
@@ -135,9 +148,10 @@
 @mixin b2 {
   font-size: 18rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.54px;
+  letter-spacing: 0.03em;
   @include phone {
     font-size: 16rem;
   }
@@ -146,9 +160,10 @@
 @mixin b3 {
   font-size: 14rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.42px;
+  letter-spacing: 0.03em;
   @include phone {
     font-size: 16rem;
   }
@@ -160,26 +175,31 @@
   line-height: 1.6;
   letter-spacing: 0.35rem;
   margin-bottom: 20rem;
+
   @include phone {
     font-size: 14rem;
   }
 }
+
 @mixin b5 {
   font-family: $font1;
   font-size: 13rem;
   line-height: 1.6;
   letter-spacing: 0.35rem;
   margin-bottom: 20rem;
+
   @include phone {
     font-size: 13rem;
   }
 }
+
 @mixin b6 {
   font-family: $font1;
   font-size: 12rem;
   line-height: 1.6;
   letter-spacing: 0.35rem;
   margin-bottom: 10rem;
+
   @include phone {
     font-size: 12rem;
   }
@@ -192,6 +212,7 @@
   line-height: $baseLineHeight;
   font-style: italic;
   letter-spacing: -0.32px;
+
   @include phone {
     font-size: 23rem;
   }
@@ -204,6 +225,7 @@
   line-height: $baseLineHeight;
   font-style: italic;
   letter-spacing: 0.54px;
+
   @include phone {
     font-size: 16rem;
   }
@@ -216,6 +238,7 @@
   line-height: $baseLineHeight;
   text-transform: uppercase;
   color: $eyebrows;
+  letter-spacing: 0.1em;
 }
 
 //
@@ -226,6 +249,7 @@
   @include tablet {
     font-size: 48rem;
   }
+
   @include phone {
     font-size: 38rem;
   }
@@ -237,6 +261,7 @@
   @include tablet {
     font-size: 34rem;
   }
+
   @include phone {
     font-size: 28rem;
   }
@@ -248,6 +273,7 @@
   @include tablet {
     font-size: 24rem;
   }
+
   @include phone {
     font-size: 22rem;
   }
@@ -259,6 +285,7 @@
   @include tablet {
     font-size: 22rem;
   }
+
   @include phone {
     font-size: 20rem;
   }
@@ -299,9 +326,28 @@
 @mixin size12 {
   font-size: 12rem;
 }
+
 @mixin size30 {
   font-size: 30rem;
 }
+
 @mixin size20 {
   font-size: 20rem;
+}
+
+@mixin largeFont {
+  font-family: $font1;
+  font-size: 150rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  margin-bottom: 23rem;
+  margin-top: 0;
+
+  @include tablet {
+    font-size: 50rem;
+  }
+
+  @include phone {
+    font-size: 40rem;
+  }
 }

@@ -1,0 +1,33 @@
+<!--
+templateType: global_partial
+label: Religion Footer
+-->
+
+<div class="footer-wrapper religion-footer">
+  <div class='page-center'>
+    <div class="footer-menu">
+      {% menu "footer-siteMap" id=183846771803, flyouts='false', max_levels='2', label='Footer menu' %}
+      <div class='footer-btn'>
+        {% module "button_school_products" path="@hubspot/button", button_text="School Products", link={ "url": { "type": "EXTERNAL", "href": "", "content_id": null }, "open_in_new_tab": false, "no_follow": false } %}
+      </div>
+      
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-col logo-col">
+        <div class="footer-logo">
+          {% set logo_file =  get_asset_url('../../templates/images/footer-logo.png') %}
+          {% module "footer_logo" path="@hubspot/logo", label="Footer logo",link="/", img={src="{{logo_file}}", alt="Sadlier", width= 150, override_inherited_src= true} %}  
+        </div>   
+        <div class="copyright">
+          {% text "copyright_text" label="Copyright", value="© 2024 William H. Sadlier, Inc." no_wrapper=true %}
+        </div>
+      </div>
+      <div class="footer-bottom-col social-icon-col">
+        {% module "footer_social" path="../../modules/u4m-footer-social-icon", label="Footer social icon" %}
+      </div>
+      <div class="footer-bottom-col privacy-col">
+        {% menu "footer-privacy-menu" id=183795105557, flyouts='false', max_levels='1', label='Privacy menu' %}
+      </div>
+    </div>
+  </div>
+</div>

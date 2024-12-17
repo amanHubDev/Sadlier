@@ -1,0 +1,77 @@
+{% set moduleName = 'u4m-quotes ' %}
+{% include "../partials/u4-module-includes.html" %}
+
+
+
+
+
+<div class="page-center">
+
+
+  <div class="intro_wrapp">
+    {{macros.introGroup(module.intro_content)}}
+  </div>
+
+
+  <div class="quotes_grid_row flex_row">
+    {% for item in module.testimonials_group %}
+    <div class="quotes_item  col4 {{ module.module_settings.select_number_of_column }} {% if module.module_settings.card.reverse_text %} card_reverse_text {% else %} theme_text{% endif %}">
+      <div class="quotes_item_inn {{ module.module_settings.card.select_background_color }}">
+        {% if item.image_field.src %}
+        <div class="quotes_img">
+          <div class="quotes_img_inn">
+            {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }}>
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="quotes_content">
+          <div class="quotes_content_inn">  
+            {% if item.quote %}
+            <div class="member_quotes">
+              "{{ item.quote }}"
+            </div>
+            {% endif %}   
+            {% if item.member_name %}
+            <div class="member_name eyebrow_text">
+              {{ item.member_name }}
+            </div>
+            {% endif %}    
+            {% if item.member_position %}
+            <div class="member_position eyebrow_text">
+              {{ item.member_position }}
+            </div>
+            {% endif %} 
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    {% endfor %}
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+

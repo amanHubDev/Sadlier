@@ -118,7 +118,7 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "default" : "theme"
+    "default" : "cstyle1"
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -219,7 +219,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
+      "choices" : [ [ "theme1", "Sadlier Red" ], [ "theme2", "Sadlier Blue" ], [ "theme3", "Religion Green" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -334,7 +334,7 @@
     "heading_size" : "h2",
     "heading" : "How X Subject Supports The Persona/User",
     "include_content" : true,
-    "content_style" : "theme",
+    "content_style" : "cstyle1",
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
     "include_button" : false,
     "button_group" : [ {
@@ -443,17 +443,9 @@
     "locked" : false,
     "occurrence" : {
       "min" : null,
-      "max" : 2,
+      "max" : null,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
       "default" : 1
-    },
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "intro_content.include_button",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
     },
     "children" : [ {
       "id" : "e24a98cd-6322-6ff8-b603-4a1d45b7813f",
@@ -490,7 +482,7 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "hs-button"
+      "default" : "arrow-link"
     }, {
       "id" : "277541ef-8c23-1638-edb3-007312ada1ab",
       "name" : "button_theme",
@@ -507,12 +499,12 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
+      "choices" : [ [ "theme1", "Sadlier Red" ], [ "theme2", "Sadlier Blue" ], [ "theme3", "Religion Green" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : ""
+      "default" : "theme1"
     }, {
       "id" : "913a6c1c-8b4b-4d16-418a-b385e0161318",
       "name" : "button_text",
@@ -532,7 +524,7 @@
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
-      "default" : "READ CASE STUDY  >"
+      "default" : "READ CASE STUDY"
     }, {
       "id" : "f10b8c1e-ff91-936d-1610-a25d8cb435d8",
       "name" : "link",
@@ -583,9 +575,104 @@
     "type" : "group",
     "default" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "",
-      "button_text" : "READ CASE STUDY  >",
+      "button_style" : "arrow-link",
+      "button_theme" : "theme1",
+      "button_text" : "READ CASE STUDY",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
+  }, {
+    "id" : "f8acef27-7542-2b6d-5538-68a72bb5b9b4",
+    "name" : "label_text",
+    "display_width" : null,
+    "label" : "Label Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Select Grade / Level"
+  }, {
+    "id" : "c2d714d5-0158-4b41-8af2-e8cd8b410afb",
+    "name" : "dropdown_item",
+    "display_width" : null,
+    "label" : "Dropdown Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "1220798a-014c-6bcc-cf97-594b5cf81862",
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "1220798a-014c-6bcc-cf97-594b5cf81862",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Title 1"
+    }, {
+      "id" : "539d7209-6e32-ad72-c834-b80ed10c2e29",
+      "name" : "link",
+      "display_width" : null,
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "title" : "Title 1",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -617,9 +704,9 @@
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
     "button_group" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "",
-      "button_text" : "READ CASE STUDY  >",
+      "button_style" : "arrow-link",
+      "button_theme" : "theme1",
+      "button_text" : "READ CASE STUDY",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -629,6 +716,44 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
+    } ],
+    "label_text" : "Select Grade / Level",
+    "dropdown_item" : [ {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
+    }, {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
+    }, {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
     } ]
   }, {
     "image" : {
@@ -646,9 +771,9 @@
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
     "button_group" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "",
-      "button_text" : "READ CASE STUDY  >",
+      "button_style" : "arrow-link",
+      "button_theme" : "theme1",
+      "button_text" : "READ CASE STUDY",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -658,6 +783,44 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
+    } ],
+    "label_text" : "Select Grade / Level",
+    "dropdown_item" : [ {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
+    }, {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
+    }, {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
     } ]
   }, {
     "image" : {
@@ -675,9 +838,9 @@
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
     "button_group" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "",
-      "button_text" : "READ CASE STUDY  >",
+      "button_style" : "arrow-link",
+      "button_theme" : "theme1",
+      "button_text" : "READ CASE STUDY",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -687,6 +850,44 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
+    } ],
+    "label_text" : "Select Grade / Level",
+    "dropdown_item" : [ {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
+    }, {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
+    }, {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
     } ]
   }, {
     "image" : {
@@ -704,9 +905,9 @@
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
     "button_group" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "",
-      "button_text" : "READ CASE STUDY  >",
+      "button_style" : "arrow-link",
+      "button_theme" : "theme1",
+      "button_text" : "READ CASE STUDY",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -716,6 +917,44 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
+    } ],
+    "label_text" : "Select Grade / Level",
+    "dropdown_item" : [ {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
+    }, {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
+    }, {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
     } ]
   }, {
     "image" : {
@@ -733,9 +972,9 @@
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven iam, quis nostrud incididunt exercitation ullamco labor.</p>",
     "button_group" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_theme" : "",
-      "button_text" : "READ CASE STUDY  >",
+      "button_style" : "arrow-link",
+      "button_theme" : "theme1",
+      "button_text" : "READ CASE STUDY",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -745,6 +984,44 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
+    } ],
+    "label_text" : "Select Grade / Level",
+    "dropdown_item" : [ {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
+    }, {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
+    }, {
+      "title" : "Title 1",
+      "link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "label_text" : "Select Grade / Level"
     } ]
   } ]
 }, {
@@ -1044,6 +1321,20 @@
     "type" : "boolean",
     "default" : false
   }, {
+    "id" : "d0bc1244-e420-0a7e-499b-3b87a3da71d6",
+    "name" : "theme",
+    "display_width" : null,
+    "label" : "Theme",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme1_color", "Sadlier Red" ], [ "theme2_color", "Sadlier Blue" ], [ "theme3_color", "Religion Green" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme1_color"
+  }, {
     "id" : "94e04306-ecc1-4735-09fd-9b66482a8101",
     "name" : "background_settings",
     "display_width" : null,
@@ -1113,7 +1404,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "sadlierRed_bg", "Sadlier Red" ], [ "sadlierBlue_bg", "Sadlier Blue" ], [ "sadlierGreen_bg", "Sadlier Green" ], [ "sadlierLightGreen_bg", "Sadlier Light Green" ], [ "dark_bg", "Dark Background" ], [ "light_bg", "Light Background" ], [ "light2_bg", "Light Background 2" ], [ "tone_bg", "Tone-on-tone" ], [ "cyan_bg", "Cyan" ], [ "purple_bg", "Purple" ], [ "gold_bg", "Gold" ], [ "orange_bg", "Orange" ], [ "white_bg", "White" ], [ "gray1_bg", "Gray 1" ], [ "gray2_bg", "Gray 2" ] ],
+      "choices" : [ [ "sadlierRed_bg", "Sadlier Red" ], [ "sadlierBlue_bg", "Sadlier Blue" ], [ "sadlierGreen_bg", "Religion Green" ], [ "sadlierLightGreen_bg", "Sadlier Light Green" ], [ "dark_bg", "Dark Background" ], [ "light_bg", "Light Background" ], [ "light2_bg", "Light Background 2" ], [ "tone_bg", "Tone-on-tone" ], [ "cyan_bg", "Cyan" ], [ "purple_bg", "Purple" ], [ "gold_bg", "Gold" ], [ "orange_bg", "Orange" ], [ "white_bg", "White" ], [ "gray1_bg", "Gray 1" ], [ "gray2_bg", "Gray 2" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -1357,6 +1648,7 @@
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
     "reverse_text" : false,
+    "theme" : "theme1_color",
     "background_settings" : {
       "background_type" : "color",
       "background_image" : {

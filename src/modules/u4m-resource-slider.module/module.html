@@ -1,0 +1,233 @@
+{% set moduleName = 'u4m-resource-slider' %}
+{% include "../partials/u4-module-includes.html" %}
+
+{% set table = module.resources.resource_table %}
+{% set count = module.resources.count %}
+{% set recent_query = 'orderBy=hs_created_at&limit=' ~ count %}
+{% if module.resources.resource_type == "recent" %}
+{% set data = hubdb_table_rows(table,recent_query) %}
+{% endif %}
+
+{% set topics = hubdb_table_column(table,"content_topic").options %}
+
+<div class="page-center  {{ module.module_settings.theme }}">
+  <div class="intro_wrapp">
+    {{macros.introGroup(module.intro_content)}}
+  </div>
+
+  {% if module.resources.resource_type == "recent" %}
+  <div class="hubdb_posts_row">
+    <div class="hubdb_posts_items">
+      {% for item in data %}
+      <div class="hubdb_posts_item title_item {% if module.module_settings.image_corner_radius %}image_corner_radius {% endif %}">
+        <div class="hubdb_item_inn">
+          {% if module.resources.settings.include_featured_image %}
+          {% if item.featured_image.url %}
+          <div class="feature_img" style="background-image: url({{ item.featured_image.url }});">
+          </div>
+          {% endif %}
+          {% endif %}
+          <div class="post_body">
+            {% if module.resources.settings.include_tag %}
+            <div class="post_meta eyebrow_text">
+                {% for topics in item.content_topic %}
+                <span class="card_tag">
+                  {{ topics.name }}{% if not loop.last %},&nbsp;{% endif %}
+                </span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div class="post_title">
+              <h4>
+                {{ item.title }}
+              </h4>
+            </div>
+            {% if module.resources.settings.include_description %}
+            <div class="post_description">
+              <p class="item_descr">{{ item.description|striptags|truncatehtml(120, '')}}</p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="slider-bottom custom-arrow">
+      <div class="btn-wrap">
+        <button class="prev-btn"></button>
+        <button class="next-btn"></button>
+      </div>
+      <div class="hubdb-listing_link">
+          {% set href = module.resources.button_link.url.href %}
+          {% if module.resources.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a class="{{ module.resources.button_style }} {{ module.resources.button_theme }}" 
+             {% if module.resources.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+             href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+             {% else %}
+             href="{{ href|escape_url }}"
+             {% endif %}
+             {% if module.resources.button_link.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             {% if module.resources.button_link.rel %}
+             rel="{{ module.resources.button_link.rel|escape_attr }}"
+             {% endif %}
+             >
+          <span>{{ module.resources.hubdb_listing_button_text }}</span>
+            {% if module.resources.button_style == "arrow-link" %}
+            >
+            {% endif %}
+        </a>
+      </div>
+    </div>
+
+  </div>
+  {% endif %}
+
+  {% if module.resources.resource_type == "custom" %}
+  {% set data = module.resources.resources_by_title %}
+  <div class="hubdb_posts_row">
+    <div class="hubdb_posts_items">
+      {% for item in data %}
+      <div class="hubdb_posts_item title_item {% if module.module_settings.image_corner_radius %}image_corner_radius {% endif %}">
+        <div class="hubdb_item_inn">
+          {% if module.resources.settings.include_featured_image %}
+          {% if  item.select_resource.columns.featured_image.url %}
+          <div class="feature_img" style="background-image: url({{  item.select_resource.columns.featured_image.url }});">
+          </div>
+          {% endif %}
+          {% endif %}
+          <div class="post_body">
+            {% if module.resources.settings.include_tag %}
+            <div class="post_meta eyebrow_text">
+                {% for topics in item.select_resource.columns.content_topic %}
+                <span class="card_tag">
+                  {{ topics.name }}
+                </span>{% if not loop.last %},&nbsp;{% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div class="post_title">
+              <h4>
+                {{  item.select_resource.columns.title }}
+              </h4>
+            </div>
+            {% if module.resources.settings.include_description %}
+            <div class="post_description">
+              <p class="item_descr">{{  item.select_resource.columns.description|striptags|truncatehtml(120, '')}}</p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="slider-bottom custom-arrow">
+      <div class="btn-wrap">
+        <button class="prev-btn"></button>
+        <button class="next-btn"></button>
+      </div>
+      <div class="hubdb-listing_link">
+          {% set href = module.resources.button_link.url.href %}
+          {% if module.resources.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a class="{{ module.resources.button_style }} {{ module.resources.button_theme }}" 
+             {% if module.resources.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+             href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+             {% else %}
+             href="{{ href|escape_url }}"
+             {% endif %}
+             {% if module.resources.button_link.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             {% if module.resources.button_link.rel %}
+             rel="{{ module.resources.button_link.rel|escape_attr }}"
+             {% endif %}
+             >
+          <span>{{ module.resources.hubdb_listing_button_text }}</span>
+            {% if module.resources.button_style == "arrow-link" %}
+            >
+            {% endif %}
+        </a>
+      </div>
+    </div>
+
+  </div>
+  {% endif %}
+
+</div>
+
+
+</section>
+
+{% require_js %}
+
+<script>
+  $(document).ready(function () {
+    $('.{{name}} .hubdb_posts_items').slick({
+      dots: false,
+      infinite: false,
+      arrows: true,
+      slidesToShow: {{module.module_settings.slider_options.slides_per_view}},
+      slidesToScroll: {{module.module_settings.slider_options.slides_per_scroll}},
+      responsive: [
+      {
+      breakpoint: 1024,
+      settings: {
+      slidesToShow: 3,
+      slidesToScroll: 3
+      }
+                    },
+                    {
+                    breakpoint: 767,
+                    settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                    }
+  }
+  ]
+  });
+  $(".{{name}} .prev-btn").click(function () {
+    $(".{{name}} .hubdb_posts_items").slick("slickPrev");
+  });
+
+  $(".{{name}} .next-btn").click(function () {
+    $(".{{name}} .hubdb_posts_items").slick("slickNext");
+  });
+  $(".{{name}} .prev-btn").addClass("slick-disabled");
+  $(".{{name}} .hubdb_posts_items").on("afterChange", function () {
+    if ($(".{{name}} .slick-prev").hasClass("slick-disabled")) {
+      $(".{{name}} .prev-btn").addClass("slick-disabled");
+    } else {
+      $(".{{name}} .prev-btn").removeClass("slick-disabled");
+    }
+    if ($(".{{name}} .slick-next").hasClass("slick-disabled")) {
+      $(".{{name}} .next-btn").addClass("slick-disabled");
+    } else {
+      $(".{{name}} .next-btn").removeClass("slick-disabled");
+    }
+  });
+  });
+
+
+</script>
+
+{% end_require_js %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

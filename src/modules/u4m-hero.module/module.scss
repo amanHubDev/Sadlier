@@ -2,6 +2,19 @@
 
 .u4m-hero {
   .flex_row {
+    &.no-img {
+      .left_cols {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        .intro_content {
+          text-align: center;
+          .intro_btn_wrap {
+            justify-content: center;
+          }
+        }
+      }
+    }
     gap: 64px;
 
     .left_cols {
@@ -44,11 +57,22 @@
     }
 
     .bdr {
-      border-radius: 25px;
       overflow: hidden;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       max-height: 413px;
       height: 100%;
+
+      &.theme1_color {
+        border-color: $sadlier_red !important;
+      }
+
+      &.theme2_color {
+        border-color: $sadlier_blue !important;
+      }
+
+      &.theme3_color {
+        border-color: $religion_green !important;
+      }
 
       .mediaItem {
         background-repeat: no-repeat;
@@ -60,118 +84,183 @@
 
     @include tabletmid {
       gap: 40px;
-
-      @include tabletvert {
-        gap: 30px;
-      }
-    }
-  }
-
-  .cardVideo {
-    width: 100%;
-    height: 100%;
-  }
-
-  .cardVideoPoster {
-    cursor: pointer;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-bottom: 59.8%;
-    height: 100%;
-
-    .playIcon {
-      opacity: .9;
-      position: absolute;
-      z-index: 99;
-      width: 80px;
-      height: 80px;
-      margin: auto;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s all ease;
-      width: 106px;
-      height: 106px;
-
-      i {
-        font-size: 50px;
-        margin-left: 10px;
-      }
     }
 
-    &:hover {
-      .playIcon {
-        opacity: 1;
-        transform: scale(1.1);
-      }
-    }
-
-    img {
-      height: 100%;
-      object-fit: cover;
-      width: 100%;
-    }
-  }
-
-  .cardVideoPopup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 99999;
-    height: 100%;
-    overflow-y: auto;
-
-    .small_container {
-      position: relative;
-      padding: 100px 20px;
-      margin: auto;
-      height: auto;
-      display: flex;
-      align-items: center;
-    }
-
-    video {
-      display: block;
-      width: 100%;
-      outline: none;
-    }
-
-    .cardpopVideo {
-      margin: auto;
-      padding: 35px 0;
-      position: relative;
-
-      .close {
-        align-items: center;
-        border-radius: 100%;
-        cursor: pointer;
-        display: flex;
-        height: 40px;
-        justify-content: flex-end;
-        position: absolute;
-        right: 0px;
-        top: -10px;
-        width: 40px;
-        z-index: 99;
-
-        i {
-          font-size: 30px;
-        }
-      }
+    @include tabletvert {
+      gap: 30px;
     }
   }
 
   .intro_btn_wrap {
     justify-content: flex-start;
     gap: 20px 24px;
+  }
+}
+
+.cardVideo {
+  width: 100%;
+  height: 100%;
+}
+
+.video_container {
+}
+
+.cardVideoPoster {
+  cursor: pointer;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 59.8%;
+  height: 100%;
+
+  .playIcon {
+    opacity: 1;
+    position: absolute;
+    z-index: 99;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all ease;
+    width: 111rem;
+    height: 111rem;
+
+    svg {
+      fill: $white;
+
+      @include tabletmid {
+        width: 35px;
+        height: 35px;
+      }
+
+      @include tabletvert {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @include tabletmid {
+      width: 80rem;
+      height: 80rem;
+    }
+
+    @include tabletvert {
+      width: 70rem;
+      height: 70rem;
+    }
+  }
+
+  &:hover {
+    .playIcon {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.cardVideoPopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  height: auto;
+  overflow-y: auto;
+  background-color: $tone50;
+
+  .small_container {
+    position: relative;
+    padding: 100px 20px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+  }
+
+  video {
+    display: block;
+    width: 100%;
+    outline: none;
+  }
+
+  .videowrap {
+    padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .cardVideoPopup .videowrap * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border: 0;
+  }
+
+  .cardpopVideo {
+    margin: auto;
+    padding: 35px 0;
+    position: relative;
+    margin: 0;
+    width: 100%;
+
+    .close {
+      align-items: center;
+      border-radius: 100%;
+      cursor: pointer;
+      display: flex;
+      height: 40px;
+      justify-content: space-around;
+      position: absolute;
+      right: 0px;
+      top: -10px;
+      width: 40px;
+      z-index: 99;
+
+      &.theme1_color {
+        background-color: $sadlier_red !important;
+      }
+
+      &.theme2_color {
+        background-color: $sadlier_blue !important;
+      }
+
+      &.theme3_color {
+        background-color: $religion_green !important;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: $white;
+      }
+    }
   }
 }

@@ -1,15 +1,141 @@
 {% set moduleName = 'u4m-anchor-nav' %}
-{% if module.make_sticky %} 
-  {% set moduleName = 'u4m-anchor-nav has-sticky' %}
+{% if module.make_sticky %}
+{% set moduleName = 'u4m-anchor-nav has-sticky' %}
 {% endif %}
 {% set imageMax = 300 %}
-
 {% include "../partials/u4-module-includes.html" %}
-    <div class="wrapper">
-      <div class="anchor-nav">
+<div class="nav-spacer"></div>
+<div class="anchor-nav-inner">
+  <div class="page-center  {{ module.module_settings.theme }}">
+    <div class="anchor-nav">
+
       {% for item in module.anchor_link %}
-        <a class="single-anchor hs-skip-lang-url-rewrite" href="#{{ item.anchor_link|replace('#', '') }}">{{ item.text }}</a>
+      <li>
+        {% set href = item.anchor_link.url.href %}
+        {% if item.anchor_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        {% if item.anchor_link.url.type is equalto "CONTENT" %}
+        {% if item.bookmark_id %}
+        {% set newId = item.bookmark_id|replace(' ','-')|replace(',','')|replace('_','-')|replace('&','')%}
+        {% set href = href + '#'+ newId %}
+        {% else %}
+        {% set href = item.anchor_link.url.href %}
+        {% endif %}
+        {% endif %}
+
+        <a class="single-anchor" 
+           {% if item.anchor_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}"
+           {% else %}
+           href="{{ href|escape_url }}"
+           {% endif %}
+           
+           {% if item.anchor_link.open_in_new_tab %}
+           target="_blank"
+           {% endif %}
+           {% if item.anchor_link.rel %}
+           rel="{{ item.anchor_link.rel|escape_attr }}"
+           {% endif %}
+           >{{ item.text }}</a>
+      </li>
       {% endfor %}
-      </div>
     </div>
+    <hr class="nav-border">
+  </div>
+</div>
+
 </section>
+
+
+
+
+{% if module.make_sticky %} 
+{% require_js %}
+
+<script>
+
+function setSectionHeight(classNm) {
+var section = document.querySelector(classNm);
+if (section) {
+  var sectionHeight = section.offsetHeight;
+  section.parentElement.style.minHeight = sectionHeight + 'px';
+}
+}
+
+window.addEventListener('resize', function() {
+setTimeout(function() {
+  setSectionHeight('.{{name}}.u4m-anchor-nav');
+              }, 100);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+
+setSectionHeight('.{{name}}.u4m-anchor-nav');
+
+                 var headerStickySection = document.querySelector('.header-main');
+  var bodyStickySection = document.querySelector('body');
+var navbarSection = document.querySelector('.{{name}}.u4m-anchor-nav');
+
+                             if (headerStickySection && navbarSection) {      
+  var navbarOffset = navbarSection.offsetTop;
+
+  window.addEventListener('scroll', function() {
+    var topOffset = parseInt(navbarOffset);
+    if (bodyStickySection.classList.contains('darkHeader')) {
+    var headerHeight = headerStickySection.offsetHeight;
+    topOffset = parseInt(navbarOffset - headerHeight);
+  }
+
+  if (document.body.scrollTop >= topOffset || document.documentElement.scrollTop >= topOffset) {
+  navbarSection.classList.add('sticky');
+  if (bodyStickySection.classList.contains('darkHeader')) {
+    navbarSection.style.top = headerStickySection.offsetHeight + 'px';
+  }
+} else {
+  navbarSection.classList.remove('sticky');
+  if (bodyStickySection.classList.contains('darkHeader')) {
+    navbarSection.style.top = '0px';
+  } else {
+     navbarSection.style.top = '0px';
+  }
+}
+  });
+}
+});
+
+</script>
+
+{% end_require_js %}
+{% endif %}
+
+{% require_js %}
+<script>
+  $(window).scroll(function(){
+    var scrollPos=$(window).scrollTop();
+    $(".dnd_padd").each(function(){
+      var linkCompare=$(this).attr("id");
+      var realLink="";
+      if(linkCompare!=undefined){
+        realLink=linkCompare;
+        realLink="#"+realLink;
+        if(scrollPos >= $("#"+linkCompare).offset().top && scrollPos<=$("#"+linkCompare).offset().top + $("#"+linkCompare).height()){
+          $('.anchor-nav li').removeClass("selected");
+          $('.anchor-nav li a[href*="'+realLink+'"]').parent().addClass("selected");
+          currentSection = realLink;
+        }
+      }
+    });
+  });
+
+</script>
+
+
+{% end_require_js %}
+
+
+
+
+
+
+

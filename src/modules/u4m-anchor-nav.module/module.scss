@@ -1,82 +1,112 @@
 @import "../../css/module-imports";
 
 .u4m-anchor-nav {
+  padding-top: 37px;
+  padding-bottom: 37px;
+  z-index: 9999;
   position: relative;
-  z-index: 100;
-  background-color: $black;
-
-  .wrapper {
-    @include centerSmall;
-    padding: 25rem 0;
-    border: 0;
-    position: relative;
-
-    .anchor-nav {
-      position: absolute;
-      transition: opacity $animation1;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: none;
-      letter-spacing: 1rem;
-
-      a {
-        color: $white;
-        padding: 0 25rem;
-        height: 100%;
-        font-weight: bold;
-        font-size: 14rem;
-        display: flex;
-        align-items: center;
-        top: -100rem;
-
-        @include phone {
-          padding: 0 8rem;
-          font-size: 12rem;
-        }
-      }
-    }
+  @include navbreak {
+    top: 0 !important;
+    position: relative !important;
   }
-
   &.sticky {
-    .wrapper {
-      .anchor-nav {
-        background-color: $black;
-        position: fixed;
+    background-color: $black;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+  }
 
-        a {
-          &.active-anchor {
-            color: $white;
-            background-color: $action1;
-          }
+  .anchor-nav-inner {
+    position: relative;
+    z-index: 9;
+    .theme1_color {
+      .selected {
+        .single-anchor::after {
+          background-color: $sadlier_red;
+        }
+      }
+      .single-anchor {
+        &:hover::after {
+          background-color: $sadlier_red;
         }
       }
     }
-  }
-
-  &.bottom {
-    .wrapper {
-      .anchor-nav {
-        //position: absolute;
-        opacity: 0;
-        transition: $animation1;
-        pointer-events: none;
-      }
-    }
-  }
-
-  &.non-sticky {
-    .wrapper {
-      .anchor-nav {
-        a {
-          color: $white;
+    .theme2_color {
+      .selected {
+        .single-anchor::after {
+          background-color: $sadlier_blue;
         }
       }
+      .single-anchor {
+        &:hover::after {
+          background-color: $sadlier_blue;
+        }
+      }
+    }
+    .theme3_color {
+      .selected {
+        .single-anchor::after {
+          background-color: $religion_green;
+        }
+      }
+      .single-anchor {
+        &:hover::after {
+          background-color: $religion_green;
+        }
+      }
+    }
+    .anchor-nav {
+      display: flex;
+      justify-content: center;
+      column-gap: 72px;
+      row-gap: 20px;
+      flex-wrap: wrap;
+      @include midlaptop {
+        column-gap: 20px;
+      }
+      li {
+        margin: 0;
+        letter-spacing: normal;
+        list-style: none;
+      }
+      .single-anchor {
+        font-family: "Lexend";
+        font-style: normal;
+        font-weight: 700;
+        font-size: $baseFontSize;
+        line-height: $baseLineHeight;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $Gray2;
+        position: relative;
+        text-align: center;
+        &:after {
+          background-color: transparent;
+          height: 4px;
+          content: "";
+          width: 100%;
+          display: inline-block;
+          position: absolute;
+          bottom: -13px;
+          left: 0;
+        }
+        &.active-anchor {
+          color: $White;
+        }
+        &:hover {
+          color: $White;
+        }
+      }
+    }
+    .nav-border {
+      height: 4px;
+      background: $White;
+      opacity: 0.15;
+      margin: 0;
+      margin-top: 9px;
+      border: none;
     }
   }
 }

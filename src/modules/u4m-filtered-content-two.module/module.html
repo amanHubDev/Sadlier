@@ -1,0 +1,104 @@
+{% set moduleName = 'u4m-filtered-content-two' %}
+{% include "../partials/u4-module-includes.html" %}
+
+{% set table =  module.filtered_content.select_hubdb_table  %}
+{% set query = '-hs_created_at' %}
+{% set resouces = hubdb_table_rows(table,query) %}
+
+
+<div class="page-center  {{ module.module_settings.theme }}">
+
+  <div class="intro_wrapp">
+    {{macros.introGroup(module.intro_content)}}
+  </div>
+
+  <div class="featCardsListWrap">
+    <div class="filterWrap">
+      <div class="filters">
+        <div id="filters" class="flex_row"> 
+          <div class="col selctArrow">   
+            <div class="colTtl">SELECT A STATE</div>
+            <select name="type" id="type" class="resourceSelect" style="background-image: url({{ get_asset_url('../../templates/images/Downarrow.png') }});">
+              <option value="" selected>Select a State</option> 
+              {% for state in hubdb_table_column(table, 'state').options %}
+              <option value="{{ state.name|lower|replace(' ','-') }}">{{ state.name }}</option>
+              {% endfor %}
+            </select> 
+          </div>   
+          <div class="col selctArrow">  
+            <div class="colTtl">SELECT A PRODUCT</div> 
+            <select name="topic" id="topic" class="topicSelect resourceSelect" style="background-image: url({{ get_asset_url('../../templates/images/Downarrow.png') }});">
+              <option value="" selected>Select a Product</option> 
+              {% for subject in hubdb_table_column(table, 'subject').options %}
+              <option value="{{ subject.name|lower|replace(' ','-') }}">{{ subject.name }}</option>
+              {% endfor %}
+            </select> 
+          </div>  
+
+        </div> 
+      </div>	
+    </div>
+
+
+    <div class="cardSctn row-fluid">
+      <div class="flex_row resourceList"> 
+
+        {% for row in resouces %}
+
+
+        <div class="resourceCard cardItem {{ row.state.name|lower|replace(' ','-') }} {{ row.subject.name|lower|replace(' ','-') }}">
+
+          <div class="cardInr">  
+            <div class="cardLocation">{{ row.state.name }}</div> 
+            <div class="cardInrwrap"> 
+              <div class="cardCont"> 
+                {% if row.subject.name %}
+                <div class="content_type"> 
+                  <span class="text">{{ row.subject.name }}</span>
+                </div>
+                {% endif %}
+                <h4 class="restitle">{{ row.name }}</h4> 
+              </div>
+
+              <div class="cardBtnContent">
+                <div class="wrapper-dropdown tinynav" id="dropdown">
+                  <span class="selected-display" id="destination">Select Grade / Level</span>
+                  <ul class="dropdown">
+                    {{ row.rich }}
+                  </ul>
+                </div>
+               
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %} 
+      </div> 
+    </div>   
+
+    <ul id="pagination{{ name|replace('widget_','')|replace('module_','') }}" class="pagination"></ul> 
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+</section>
+
+
+
+{% require_css %}
+<style>
+.cardBtnContent .tinynav{
+background-image:url({{ get_asset_url('../../templates/images/downArrowWhite.png') }});
+}
+</style>
+  {% end_require_css %}

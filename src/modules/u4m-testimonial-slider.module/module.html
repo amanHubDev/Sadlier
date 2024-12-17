@@ -1,0 +1,122 @@
+{% set moduleName = 'u4m-testimonial-slider' %}
+{% include "../partials/u4-module-includes.html" %}
+<div class="top-cntnt-wrap">
+  <div class="page-center">
+    <div class="intro_wrapp">
+      {{macros.introGroup(module.intro_content)}}
+    </div>
+    {% if module.include_button %}
+    <div class="bottom_button">
+      {{macros.buttonGroup(module.button_group)}}
+    </div>
+    {% endif %}
+  </div>
+</div>
+<div class="testimonial-slider-wrapper {{ module.module_settings.theme }}">
+  <div class="page-center">
+
+    <div class="slider_tab_wrapper">
+      <ul class="tab_sec">
+        {% for item in module.tabber_items %}
+        {% if item.tab_title %}
+        <li class="{% if loop.first %}active{% endif %}">
+          <a href="javascript:void(0);" dataId="tab{{ loop.index }}">{{ item.tab_title }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="tab_content_wrapper">
+      {% for item in module.tabber_items %}
+      <div class="tab_content {% if loop.first %}active{% endif %}" contentId="tab{{ loop.index }}">
+        <div class="tab_sldier_wrapper">
+          {% for item2 in item.slider_items %}
+          <div class="tab_sldier_item">
+            <div class="tab_sldier_inner">
+              <div class="row">
+                <div class="img_section {% if module.module_settings.image_border_radius %}bdr-radius{% endif %}">
+                  {% if item2.image_field.src %}
+                  {% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}"' %}
+                  {% if item2.image_field.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item2.image_field.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item2.image_field.max_width|escape_attr }}" height="{{ item2.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                  {% set loadingAttr = item2.image_field.loading != 'disabled' ? 'loading="{{ item2.image_field.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item2.image_field.src|escape_url }}" alt="{{ item2.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+                </div>
+                <div class="bio">
+                  <div class="bio_inner">
+                    {{ item2.content }}
+                    <p>
+                      {{ item2.author_name }}
+                    </p>
+                    {{macros.singleButtonGroup(item2.button_group)}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</section>
+
+{% require_js %}
+<script>
+  $('.u4m-testimonial-slider .slider_tab_wrapper .tab_sec li a').click(function() {
+    var tabId = $(this).attr('dataid');
+
+    // Toggle active class for the clicked tab and remove from others
+    $(this).parent().toggleClass('active').siblings().removeClass('active');
+
+    // Iterate through tab content and display the one matching the tabId
+    $('.tab_content_wrapper .tab_content').each(function() {
+      var contentId = $(this).attr('contentid');
+      if (tabId === contentId) {
+        $(this).addClass('active').siblings().removeClass('active');
+      }
+    });
+
+    // Reset slider after tab change
+    var slider = $('.{{ name }} .tab_sldier_wrapper');
+
+                   // Destroy the slider and reinitialize it to reset
+                   slider.slick('unslick'); // Destroy the existing slider instance
+    slider.slick({ // Reinitialize the slider
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow:"<div class='slick-prev pull-left'><</div>",
+      nextArrow:"<div class='slick-next pull-right'>></div>"
+    });
+  });
+
+  // Initialize the slider on page load if necessary
+  $('.{{ name }} .tab_sldier_wrapper').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow:"<div class='slick-prev pull-left'><</div>",
+    nextArrow:"<div class='slick-next pull-right'>></div>"
+    });
+
+</script>
+
+{% end_require_js %}
+
+
+
+
+
+
+

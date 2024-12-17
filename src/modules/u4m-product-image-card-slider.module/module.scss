@@ -1,0 +1,186 @@
+@import "../../css/_module-imports";
+
+.u4m-product-image-card-slider {
+  overflow-x: hidden;
+  .intro_content {
+    margin-bottom: 70px;
+    .intro_title {
+      font-weight: 700;
+    }
+  }
+
+  .hubdb_posts_items {
+    margin-left: -26px;
+    margin-right: -26px;
+    .slick-track {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .slick-arrow {
+      opacity: 0;
+    }
+    .hubdb_posts_item {
+      padding-left: 26px;
+      padding-right: 26px;
+      height: auto;
+      .hubdb_item_inn {
+        height: 100%;
+        border-radius: $borderRadius;
+        overflow: hidden;
+        &.theme {
+          .post_body * {
+            color: $dark_text;
+          }
+          .post_meta {
+            .card_tag {
+              color: $eyebrows;
+            }
+          }
+        }
+      }
+      .post_body {
+        padding: 30px;
+        padding-bottom: 50px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .reverse_text {
+        .post_body * {
+          color: $White;
+        }
+        .post_meta {
+          .card_tag {
+            color: $White;
+          }
+        }
+      }
+      .feature_img {
+        min-height: 200px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: -30px;
+        margin-bottom: 25px;
+      }
+
+      .post_meta {
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .card_tag {
+          font-weight: 700;
+          font-size: $baseFontSize;
+          line-height: $baseLineHeight;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: $eyebrows;
+        }
+      }
+      .post_title {
+        h3 {
+          em {
+            font-style: normal;
+          }
+          margin-bottom: 18px;
+        }
+      }
+      .post_description {
+        font-style: normal;
+        font-weight: 400;
+        font-size: $baseFontSize;
+        line-height: 1.625;
+        letter-spacing: 0.03em;
+        color: $dark_text;
+        margin-bottom: 41px;
+        p.item_descr {
+          margin-bottom: 0;
+        }
+      }
+      .post_link {
+        line-height: 1;
+        margin-top: auto;
+      }
+    }
+  }
+  .slider-bottom {
+    margin-top: 53px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+    align-items: center;
+    .hubdb-listing_link a {
+      font-weight: 700;
+      font-size: $baseFontSize;
+      line-height: 1;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+    .btn-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 30px;
+      align-items: center;
+      button {
+        background: $Gray1;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        color: $White;
+        &.slick-disabled {
+          background: $Gray2;
+          color: $dark_text;
+        }
+        &.next-btn:before,
+        &.prev-btn:before {
+          content: "\e5cc";
+          font-family: "Material Symbols Outlined";
+          font-weight: normal;
+          font-style: normal;
+          font-size: 24px;
+          line-height: 1;
+          letter-spacing: normal;
+          text-transform: none;
+          display: inline-block;
+          white-space: nowrap;
+          word-wrap: normal;
+          direction: ltr;
+          -webkit-font-feature-settings: "liga";
+          -webkit-font-smoothing: antialiased;
+        }
+        &.prev-btn:before {
+          content: "\e5cb";
+        }
+      }
+    }
+  }
+
+  &.reverse-text {
+    * {
+      color: $White;
+    }
+    .slider-bottom {
+      .hubdb-listing_link {
+        a {
+          color: $White;
+        }
+      }
+    }
+    .hubdb_posts_items {
+      .hubdb_posts_item {
+        .post_meta {
+          .card_tag {
+            color: $White;
+          }
+        }
+      }
+    }
+  }
+}

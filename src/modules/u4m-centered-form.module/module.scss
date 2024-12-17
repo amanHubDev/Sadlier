@@ -1,0 +1,14 @@
+@import "../../css/_module-imports";
+
+.u4m-centerd-form {
+  .form_box {
+    @include formWraperStyle;
+    form {
+      background-color: transparent;
+      padding: 0;
+      border-radius: 0;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}

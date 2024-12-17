@@ -1,44 +1,229 @@
 {% set moduleName = 'u4m-blog-post-cards' %}
-  {% set imageMax = 1000 %}
-  {% set bgImageMax = 1920 %}
-  
-  {% include "../partials/u4-module-includes.html" %}
-  
-    <div class="top-wrapper">
-      {% if module.include_heading %}
-      <h2 class="heading {% unless module.include_all_posts_link %} no-link {% endunless %}">{{ module.cards_heading }}</h2>
-      {% endif %}
-      {% if module.include_all_posts_link %}
-      <a class="link" href="{{ module.blog_link.url.href }}">{{ module.blog_link_text }}</a>
+{% include "../partials/u4-module-includes.html" %}
+<div class="page-center  {{ module.module_settings.theme }}">
+  <div class="intro_wrapp">
+    {{macros.introGroup(module.intro_content)}}
+  </div>
+
+  {% set max_posts = module.blog_feed.number_of_posts %}
+  {% set rec_posts = [] %}
+
+  {% if module.blog_feed.blog_post_type != "title" %}
+
+  {% if  module.blog_feed.blog_post_type == "recent" %}
+  {% set rec_posts = rec_posts + blog_recent_posts(module.blog_feed.select_blog , max_posts) %}
+  {% endif %}
+
+  {% if module.blog_feed.blog_post_type == "tag" %}
+  {% if content.tag_list and not is_listing_view %} {# for post page - skipping active post #}
+  {% set rec_posts = blog_recent_tag_posts(module.blog_feed.select_blog, module.blog_feed.select_tag, max_posts + 1) %}
+  {% else %}
+  {% set rec_posts = blog_recent_tag_posts(module.blog_feed.select_blog, module.blog_feed.select_tag, max_posts) %}
+  {% endif %}
+  {% endif %}
+  <div class="blog_posts_row">
+    <div class="blog_posts_items">
+      {% set checkCount = rec_posts|length%}
+      {% set i = 0 %}
+
+      {% for post in rec_posts %}
+      {% set postURL = post.absolute_url %}
+      <div class="blog_posts_item {% if module.module_settings.image_corner_radius %} image_corner_radius {% endif %}">
+        <div class="blog_item_inn">
+          <div class="feature_img" style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});">
+          </div>
+          <div class="post_body">
+            <div class="post_meta eyebrow_text">
+              {% for tag in post.tag_list %}
+              <a href="{{ blog_tag_url(module.blog_feed.select_blog, tag.slug) }}">
+                {{tag.name}}</a>{% if not loop.last %},&nbsp;{% endif %}
+              {% endfor %}
+            </div>
+            <div class="post_title">
+              <h4>
+                <a href="{{ postURL }}">{{ post.name}}</a>
+              </h4>
+            </div>
+            <div class="post_description">
+              <p class="item_descr">{{ post.post_list_content|striptags|truncatehtml(120, '' , false)|safe }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="slider-bottom  custom-arrow">
+      <div class="btn-wrap">
+        <button class="prev-btn"></button>
+        <button class="next-btn"></button>
+      </div>
+      {% if module.blog_feed.include_all_posts_link %}
+      <div class="blog-listing_link">
+        {% set href = module.blog_feed.blog_link.url.href %}
+        {% if module.blog_feed.blog_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        <a class="{{ module.blog_feed.button_style }} {{ module.blog_feed.button_theme }}" 
+           {% if module.blog_feed.blog_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+           {% else %}
+           href="{{ href|escape_url }}"
+           {% endif %}
+           {% if module.blog_feed.blog_link.open_in_new_tab %}
+           target="_blank"
+           {% endif %}
+           {% if module.blog_feed.blog_link.rel %}
+           rel="{{ module.blog_feed.blog_link.rel|escape_attr }}"
+           {% endif %}
+           >
+          <span>{{ module.blog_feed.blog_link_text }}</span>
+          {% if module.blog_feed.button_style == "arrow-link" %}
+          >
+          {% endif %}
+        </a>
+      </div>
       {% endif %}
     </div>
-  
-    <div class="wrapper">
-      {% if module.post_feed_type == "related" %}
-      {% macro related_blog_post_formatter(post, index, count) %}
-      {% include "/Sadlier/modules/partials/u4-blog-cards.html" %}
-      {% endmacro %}
-      {% related_blog_posts blog_ids="{{ module.blog_field }}", limit=3, post_formatter="related_blog_post_formatter",  no_wrapper=true %}
-      {% endif %}
-  
-      {# RECENT POSTS SYNTAX #}
-      {% if module.post_feed_type == "recent" %}
-      {% set blogID = blog_recent_posts(module.blog_field, limit=3)  %}
-      {% for post in blogID %}
-      {% if loop.index < 4 %}
-      {% include "../modules/partials/u4-blog-cards.html" %}
-      {% endif %}
+  </div>
+  {% endif %}
+
+  {% if module.blog_feed.blog_post_type == "title" %}
+  <div class="blog_posts_row">
+    <div class="blog_posts_items">
+      {% set checkCount = module.blog_feed.post_items|length %}
+      {% for item in module.blog_feed.post_items %}
+      {% set postURL = post.absolute_url %}
+      {% set post = content_by_id(item.select_post) %}
+        <div class="blog_posts_item title_item {% if module.module_settings.image_corner_radius %} image_corner_radius {% endif %}">
+        <div class="blog_item_inn">
+          {% if post.post_list_summary_featured_image %}
+          <div class="feature_img" style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});">
+          </div>
+          {% endif %}
+          <div class="post_body">
+            {% if post.tag_list %}
+            <div class="post_meta eyebrow_text">
+              {% for tag in post.tag_list %}
+              <a href="{{ blog_tag_url(post.content_group_id, tag.slug) }}">
+                {{tag.name}}</a>{% if not loop.last %},&nbsp;{% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
+            {% if post.name %}
+            <div class="post_title">
+              <h4>
+                <a href="{{ postURL }}">{{ post.name}}</a>
+              </h4>
+            </div>
+            {% endif %}
+            {% if post.post_list_content %}
+            <div class="post_description">
+              <p class="item_descr">{{ post.post_list_content|striptags|truncatehtml(120, '' , false)|safe }}</p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
       {% endfor %}
+    </div>
+    <div class="slider-bottom custom-arrow">
+      <div class="btn-wrap">
+        <button class="prev-btn"></button>
+        <button class="next-btn"></button>
+      </div>
+      {% if module.blog_feed.include_all_posts_link %}
+      <div class="blog-listing_link">
+        {% set href = module.blog_feed.blog_link.url.href %}
+        {% if module.blog_feed.blog_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        <a
+           {% if module.blog_feed.blog_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+           {% else %}
+           href="{{ href|escape_url }}"
+           {% endif %}
+           {% if module.blog_feed.blog_link.open_in_new_tab %}
+           target="_blank"
+           {% endif %}
+           {% if module.blog_feed.blog_link.rel %}
+           rel="{{ module.blog_feed.blog_link.rel|escape_attr }}"
+           {% endif %}
+           >
+          {{ module.blog_feed.blog_link_text }}
+        </a>
+      </div>
       {% endif %}
-    
-      {# MANUAL POSTS SYNTAX #}
-      {% if module.post_feed_type == "manual" %}    
-      {% set post = content_by_id(module.blog_post_one) %}
-      {% include "../modules/partials/u4-blog-cards.html" %}
-      {% set post = content_by_id(module.blog_post_two) %}
-      {% include "../modules/partials/u4-blog-cards.html" %}
-      {% set post = content_by_id(module.blog_post_three) %}
-      {% include "../modules/partials/u4-blog-cards.html" %}
-      {% endif %}     
-    </div>  
-  </section>
+    </div>
+
+  </div>
+  {% endif %}
+
+</div>
+</section>
+
+{% require_js %}
+
+<script>
+  $(document).ready(function () {
+    $('.{{name}} .blog_posts_items').slick({
+      dots: false,
+      infinite: false,
+      arrows: true,
+      slidesToShow: {{module.module_settings.slider_options.slides_per_view}},
+      slidesToScroll: {{module.module_settings.slider_options.slides_per_scroll}},
+      responsive: [
+      {
+      breakpoint: 1024,
+      settings: {
+      slidesToShow: 3,
+      slidesToScroll: 3
+      }
+                    },
+                    {
+                    breakpoint: 767,
+                    settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                    }
+  }
+  ]
+  });
+  $(".{{name}} .prev-btn").click(function () {
+    $(".{{name}} .blog_posts_items").slick("slickPrev");
+  });
+
+  $(".{{name}} .next-btn").click(function () {
+    $(".{{name}} .blog_posts_items").slick("slickNext");
+  });
+  $(".{{name}} .prev-btn").addClass("slick-disabled");
+  $(".{{name}} .blog_posts_items").on("afterChange", function () {
+    if ($(".{{name}} .slick-prev").hasClass("slick-disabled")) {
+      $(".{{name}} .prev-btn").addClass("slick-disabled");
+    } else {
+      $(".{{name}} .prev-btn").removeClass("slick-disabled");
+    }
+    if ($(".{{name}} .slick-next").hasClass("slick-disabled")) {
+      $(".{{name}} .next-btn").addClass("slick-disabled");
+    } else {
+      $(".{{name}} .next-btn").removeClass("slick-disabled");
+    }
+  });
+  });
+
+
+</script>
+
+{% end_require_js %}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+{% set moduleName = 'u4m-icon-cards' %}
+{% include "../partials/u4-module-includes.html" %}
+
+<div class="page-center  {{ module.module_settings.theme }}">
+  <div class="intro_wrapp">
+    {{macros.introGroup(module.intro_content)}}
+  </div>
+  <div class="btm_Cnt">
+    <div class="item_inrCnt flex_row">
+      {% for item in module.items_group %}
+      <div class="items {{ module.module_settings.column_count }}">
+        <div class="top_img">
+          {% if  item.top_icon_group.select_icon == 'image'%}
+          <div class="img">
+            {% if item.top_icon_group.image_field.src %}
+            {% set sizeAttrs = 'width="{{ item.top_icon_group.image_field.width|escape_attr }}" height="{{ item.top_icon_group.image_field.height|escape_attr }}"' %}
+            {% if item.top_icon_group.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.top_icon_group.image_field.width|escape_attr }}" height="{{ item.top_icon_group.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.top_icon_group.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.top_icon_group.image_field.max_width|escape_attr }}" height="{{ item.top_icon_group.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.top_icon_group.image_field.loading != 'disabled' ? 'loading="{{ item.top_icon_group.image_field.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.top_icon_group.image_field.src|escape_url }}" alt="{{ item.top_icon_group.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+          {% elif  item.top_icon_group.select_icon == 'material_icon'%}
+          <div class="custom  {{ item.top_icon_group.select_color }} 	{{ item.top_icon_group.select_icon_color }}">
+            {{ item.top_icon_group.custom_icon }}
+          </div>
+          {% elif  item.top_icon_group.select_icon == 'icon'%}
+          <div class="icon  {{ item.top_icon_group.select_color }} 	{{ item.top_icon_group.select_icon_color }}">
+            {% icon
+		name="{{ item.top_icon_group.icon.name }}"
+		style="{{ item.top_icon_group.icon.type }}"
+		unicode="{{ item.top_icon_group.icon.unicode }}"
+		icon_set="{{ item.top_icon_group.icon.icon_set }}"
+	%}
+          </div>
+          {% endif %}
+        </div>
+        <div class="btm_cnt">
+          <div class="top_title">
+            <{{ item.heading_size }}>{{ item.heading }}</{{ item.heading_size }}>
+          </div>
+            <div class="intro_desc   {{ item.content_style }}">
+             {{ item.content }}
+            </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    </section>
+ 
