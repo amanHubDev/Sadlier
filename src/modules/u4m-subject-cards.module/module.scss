@@ -1,185 +1,178 @@
 @import "../../css/_module-imports";
 
-
 .u4m-subject-cards {
-    overflow: hidden;
+  overflow: hidden;
 
-    .item_inrCnt.flex_row {
-        margin: 0 -25px;
-        row-gap: 50px;
+  .item_inrCnt.flex_row {
+    margin: 0 -25px;
+    row-gap: 50px;
 
-        .items {
-            padding: 0 25px;
+    .items {
+      padding: 0 25px;
 
-            .items_inr {
-                width: 100%;
-                padding: 0 30px 38px 30px;
-                border-radius: 25px;
-                display: flex;
-                flex-direction: column;
-                height: 100%;
+      .items_inr {
+        width: 100%;
+        padding: 0 30px 38px 30px;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
 
-                &.reverse_text {
-                    .eyebrow_text {
-                        color: $white;
-                    }
+        &.reverse_text {
+          .eyebrow_text {
+            color: $white;
+          }
 
-                    .title {
-                        * {
-                            color: $white;
-                        }
-                    }
-
-                    .btm_cnt {
-                        .inner_wrp {
-                            .intro_desc {
-                                color: $white;
-                            }
-
-                        }
-                    }
-
-                }
-
-                &.reverse_text:not(.arrownotStyle) {
-                    .btm_cnt {
-                        .inner_wrp {
-                            .arrow-link {
-                                color: $white;
-                            }
-                        }
-                    }
-
-                }
-
-                .top_img {
-                    position: relative;
-                    top: -21px;
-                    width: 174px;
-                    margin-left: auto;
-                    margin-right: auto;
-                    height: 220px;
-                    margin-bottom: 0;
-
-                    .img {
-                        img {
-                            object-fit: cover;
-                            height: inherit !important;
-                        }
-
-                        height: 100%;
-                        width: 100%;
-                    }
-                }
-
-                .eyebrow_text {
-                    margin-bottom: 17px;
-                    color: $eyebrows;
-                }
-
-                .title {
-                    * {
-                        margin-bottom: 18px;
-                        color: $dark_text;
-                    }
-                }
-
-                .btm_cnt.intro_content {
-                    max-width: 100%;
-                    margin: 0;
-                    display: flex;
-                    flex-direction: column;
-                    height: 100%;
-
-                    .intro_btn_wrap {
-                        margin-top: auto;
-                    }
-                }
-
-                .btm_cnt {
-                    .inner_wrp {
-                        height: 100%;
-                        display: flex;
-                        flex-direction: column;
-
-                        .intro_desc {
-                            margin-bottom: 30px;
-                            color: $dark_text;
-                            line-height: 1.6875;
-                        }
-
-                        .arrow-link {
-                            @include arrow-link;
-
-                            &.theme2 {
-                                color: $sadlier_blue;
-
-                                &:hover,
-                                &:focus {
-                                    color: $dark_text;
-                                }
-                            }
-
-                            &.theme3 {
-                                color: $religion_green;
-
-                                &:hover,
-                                &:focus {
-                                    color: $dark_text;
-                                }
-                            }
-                        }
-                    }
-                }
+          .title {
+            * {
+              color: $white;
             }
+          }
 
-            @include midlaptop {
-                &.col3 {
-                    width: 33.3%;
-                }
+          .btm_cnt {
+            .inner_wrp {
+              .intro_desc {
+                color: $white;
+              }
             }
-
-            @include tabletmid {
-                &.col3 {
-                    width: 50%;
-                }
-
-                &.col4 {
-                    width: 50%;
-                }
-
-                &.col6 {
-                    width: 50%;
-                }
-            }
-
-            @include tabletvert {
-                &.col3 {
-                    width: 100%;
-                    text-align: center;
-                }
-
-                &.col4 {
-                    width: 100%;
-                    text-align: center;
-                }
-
-                &.col6 {
-                    width: 100%;
-                    text-align: center;
-                }
-            }
-
-
-            @include tabletvert {
-                padding: 0;
-
-            }
+          }
         }
 
-        @include tabletvert {
-            margin: 0;
-
+        &.reverse_text:not(.arrownotStyle) {
+          .btm_cnt {
+            .inner_wrp {
+              .arrow-link {
+                color: $white;
+              }
+            }
+          }
         }
+
+        .top_img {
+          position: relative;
+          top: -21px;
+          width: 174px;
+          margin-left: auto;
+          margin-right: auto;
+          height: 220px;
+          margin-bottom: 0;
+
+          .img {
+            img {
+              object-fit: cover;
+              height: inherit !important;
+            }
+
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        .eyebrow_text {
+          margin-bottom: 10px;
+          color: $eyebrows;
+        }
+
+        .title {
+          * {
+            margin-bottom: 12px;
+            color: $dark_text;
+          }
+        }
+
+        .btm_cnt.intro_content {
+          max-width: 100%;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          margin-top: -4px;
+          .intro_btn_wrap {
+            margin-top: auto;
+          }
+        }
+
+        .btm_cnt {
+          .inner_wrp {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .intro_desc {
+              margin-bottom: 30px;
+              color: $dark_text;
+              line-height: 1.6875;
+            }
+
+            .arrow-link {
+              @include arrow-link;
+
+              &.theme2 {
+                color: $sadlier_blue;
+
+                &:hover,
+                &:focus {
+                  color: $dark_text;
+                }
+              }
+
+              &.theme3 {
+                color: $religion_green;
+
+                &:hover,
+                &:focus {
+                  color: $dark_text;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @include midlaptop {
+        &.col3 {
+          width: 33.3%;
+        }
+      }
+
+      @include tabletmid {
+        &.col3 {
+          width: 50%;
+        }
+
+        &.col4 {
+          width: 50%;
+        }
+
+        &.col6 {
+          width: 50%;
+        }
+      }
+
+      @include tabletvert {
+        &.col3 {
+          width: 100%;
+          text-align: center;
+        }
+
+        &.col4 {
+          width: 100%;
+          text-align: center;
+        }
+
+        &.col6 {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      @include tabletvert {
+        padding: 0;
+      }
     }
+
+    @include tabletvert {
+      margin: 0;
+    }
+  }
 }

@@ -38,6 +38,8 @@
       svg {
         * {
           stroke: $White;
+          opacity: 0.6;
+          stroke-width: 0;
         }
       }
     }
@@ -50,7 +52,7 @@
     }
     .btn-wrap {
       a.hs-button {
-        padding: 12.5px 20px;
+        padding: 10px 20px;
       }
     }
   }

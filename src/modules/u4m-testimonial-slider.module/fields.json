@@ -118,7 +118,7 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "default" : "theme"
+    "default" : "cstyle1"
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -334,7 +334,7 @@
     "heading_size" : "h2",
     "heading" : "Testimonial module headline.",
     "include_content" : true,
-    "content_style" : "theme",
+    "content_style" : "cstyle1",
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
     "include_button" : false,
     "button_group" : [ {
@@ -434,7 +434,7 @@
       "required" : false,
       "locked" : false,
       "type" : "richtext",
-      "default" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>"
+      "default" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>"
     }, {
       "id" : "c492bebe-c54d-6baf-fcc4-49ca9410310a",
       "name" : "author_name",
@@ -611,7 +611,7 @@
         "max_width" : 943,
         "max_height" : 708
       },
-      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
@@ -639,7 +639,7 @@
         "max_width" : 943,
         "max_height" : 708
       },
-      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
@@ -667,7 +667,7 @@
         "max_width" : 943,
         "max_height" : 708
       },
-      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
@@ -703,7 +703,7 @@
         "max_width" : 943,
         "max_height" : 708
       },
-      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
@@ -731,7 +731,7 @@
         "max_width" : 943,
         "max_height" : 708
       },
-      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
@@ -759,7 +759,7 @@
         "max_width" : 943,
         "max_height" : 708
       },
-      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
@@ -790,7 +790,7 @@
         "max_width" : 943,
         "max_height" : 708
       },
-      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
@@ -818,7 +818,7 @@
         "max_width" : 943,
         "max_height" : 708
       },
-      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
@@ -846,7 +846,7 @@
         "max_width" : 943,
         "max_height" : 708
       },
-      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
@@ -877,7 +877,7 @@
         "max_width" : 943,
         "max_height" : 708
       },
-      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
@@ -905,7 +905,7 @@
         "max_width" : 943,
         "max_height" : 708
       },
-      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",
@@ -933,7 +933,7 @@
         "max_width" : 943,
         "max_height" : 708
       },
-      "content" : "<h3>“Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus”</h3>",
+      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
       "author_name" : "— Dennis Smith, Title Goes Here",
       "button_group" : {
         "button_type" : "std",

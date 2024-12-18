@@ -162,6 +162,8 @@
       p {
         text-align: right;
         margin: 0;
+        font-size: 20px;
+        line-height: 1.5;
       }
     }
     .intro_btn_wrap {
@@ -181,6 +183,10 @@
   .bio_inner {
     h3 {
       font-weight: 400;
+      sup {
+        font-size: inherit;
+        top: -3px;
+      }
     }
   }
   .tab_sldier_inner {

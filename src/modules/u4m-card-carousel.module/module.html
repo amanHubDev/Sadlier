@@ -18,11 +18,12 @@
             </div>
             {% endif %}
             <div class="content-col">
-              <h3>
-                {{ item.heading }}
-              </h3>
-              {{ item.content }}
-
+              <div class="content_inner">
+                  <h3>
+                    {{ item.heading }}
+                  </h3>
+                  {{ item.content }}
+              </div>
               <div class="bottom_button">
                 {{macros.buttonGroup(item.button_group)}}
               </div>

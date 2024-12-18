@@ -7,7 +7,7 @@
   }
   .header-top {
     background: $sadlier_blue;
-    padding: 11px 50px;
+    padding: 8px 50px;
     .row {
       display: flex;
       justify-content: space-between;
@@ -28,6 +28,8 @@
           cursor: pointer;
           max-width: unset;
           overflow: visible;
+          font-size: 14px;
+          font-weight: 700;
         }
       }
       &:after {
@@ -46,7 +48,7 @@
       .hdr-btn {
         padding-left: 30px;
         a.hs-button {
-          padding: 12px 24px;
+          padding: 10px 24px;
           background: transparent;
           border-color: $dark_text;
           color: $dark_text;
@@ -87,6 +89,9 @@
             color: $dark_text;
             display: inline-block;
             transition: all 0.3s;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.1;
             &:hover {
               color: $sadlier_blue;
             }
