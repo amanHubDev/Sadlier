@@ -20,7 +20,7 @@
         {% for item in module.tabber_items %}
         {% if item.tab_title %}
         <li>
-          <a href="javascript:void(0);" dataId="tab{{ loop.index0 }}">{{ item.tab_title }}</a>
+          <a href="javascript:void(0);" data-slide="{{ loop.index0 }}">{{ item.tab_title }}</a>
         </li>
         {% endif %}
         {% endfor %}
@@ -28,7 +28,7 @@
     </div>
     <div class="tab_content_wrapper">
       {% for item in module.tabber_items %}
-      <div class="tab_content" dataId="tab{{ loop.index0 }}">
+      <div class="tab_content">
         <div class="tab_sldier_wrapper">
           <div class="tab_sldier_item">
             <div class="tab_sldier_inner">
@@ -70,19 +70,27 @@
   
 
   // Initialize the slider on page load if necessary
-window.onload=function(){
-$slideshow = $('.{{ name }} .tab_content_wrapper').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    fade: true,
-    prevArrow:"<div class='slick-prev pull-left'><</div>",
-    nextArrow:"<div class='slick-next pull-right'>></div>"
-  });
-  $('.{{ name }} .slidernavfor a[dataId]').click(function(){
-  $slideshow.slick('slickGoTo', parseInt($slideshow.slick('slickCurrentSlide'))+1);
-  });
-  };
+  $(document).ready(function () {
+$('.{{ name }} .tab_content_wrapper').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: true,
+  prevArrow:"<div class='slick-prev pull-left'><</div>",
+  nextArrow:"<div class='slick-next pull-right'>></div>"
+});
+$('.{{ name }} .slidernavfor a').click(function(){
+const slideIndex = $(this).data('slide'); // Get the slide index from button
+  $('.{{ name }} .tab_content_wrapper').slick('slickGoTo', slideIndex);
+});
+$('.{{ name }} .tab_content_wrapper').on('afterChange', function (event, slick, currentSlide) {
+$('.{{ name }} .slidernavfor a').parent().removeClass('slick-current'); // Remove active class from all
+$(`.{{ name }} .slidernavfor a[data-slide="${currentSlide}"]`).parent().addClass('slick-current'); // Add active class to current tab
+});
+
+// Optionally set the first tab as active initially
+$('.{{ name }} .slidernavfor a[data-slide="0"]').parent().addClass('slick-current');
+});
 
 </script>
 
