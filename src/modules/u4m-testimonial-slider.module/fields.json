@@ -375,8 +375,8 @@
   "required" : false,
   "locked" : false,
   "occurrence" : {
-    "min" : null,
-    "max" : null,
+    "min" : 3,
+    "max" : 5,
     "sorting_label_field" : "df14176d-a485-f1c4-a4c4-fdb5d3ab1bef",
     "default" : 3
   },
@@ -396,15 +396,9 @@
     "id" : "218f9bda-fe44-1fee-17f5-b7db06069186",
     "name" : "slider_items",
     "display_width" : null,
-    "label" : "Slider Items",
+    "label" : "Card Item",
     "required" : false,
     "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : "a4ffbd83-db8a-a7d2-8179-41dd11b2836e",
-      "default" : 3
-    },
     "children" : [ {
       "id" : "42293396-c343-9db7-2b85-390153af5e64",
       "name" : "image_field",
@@ -600,7 +594,7 @@
     "expanded" : false,
     "group_occurrence_meta" : null,
     "type" : "group",
-    "default" : [ {
+    "default" : {
       "image_field" : {
         "size_type" : "auto",
         "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
@@ -628,63 +622,7 @@
           "no_follow" : false
         }
       }
-    }, {
-      "image_field" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
-        "alt" : "Company Quote",
-        "loading" : "lazy",
-        "width" : 943,
-        "height" : 708,
-        "max_width" : 943,
-        "max_height" : 708
-      },
-      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
-      "author_name" : "— Dennis Smith, Title Goes Here",
-      "button_group" : {
-        "button_type" : "std",
-        "button_style" : "arrow-link",
-        "button_theme" : "theme1",
-        "button_text" : "READ CASE STUDY",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      }
-    }, {
-      "image_field" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
-        "alt" : "Company Quote",
-        "loading" : "lazy",
-        "width" : 943,
-        "height" : 708,
-        "max_width" : 943,
-        "max_height" : 708
-      },
-      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
-      "author_name" : "— Dennis Smith, Title Goes Here",
-      "button_group" : {
-        "button_type" : "std",
-        "button_style" : "arrow-link",
-        "button_theme" : "theme1",
-        "button_text" : "READ CASE STUDY",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      }
-    } ]
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -692,7 +630,7 @@
   "type" : "group",
   "default" : [ {
     "tab_title" : "NAME OF COMPANY",
-    "slider_items" : [ {
+    "slider_items" : {
       "image_field" : {
         "size_type" : "auto",
         "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
@@ -720,66 +658,10 @@
           "no_follow" : false
         }
       }
-    }, {
-      "image_field" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
-        "alt" : "Company Quote",
-        "loading" : "lazy",
-        "width" : 943,
-        "height" : 708,
-        "max_width" : 943,
-        "max_height" : 708
-      },
-      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
-      "author_name" : "— Dennis Smith, Title Goes Here",
-      "button_group" : {
-        "button_type" : "std",
-        "button_style" : "arrow-link",
-        "button_theme" : "theme1",
-        "button_text" : "READ CASE STUDY",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      }
-    }, {
-      "image_field" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
-        "alt" : "Company Quote",
-        "loading" : "lazy",
-        "width" : 943,
-        "height" : 708,
-        "max_width" : 943,
-        "max_height" : 708
-      },
-      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
-      "author_name" : "— Dennis Smith, Title Goes Here",
-      "button_group" : {
-        "button_type" : "std",
-        "button_style" : "arrow-link",
-        "button_theme" : "theme1",
-        "button_text" : "READ CASE STUDY",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      }
-    } ]
+    }
   }, {
     "tab_title" : "NAME OF COMPANY",
-    "slider_items" : [ {
+    "slider_items" : {
       "image_field" : {
         "size_type" : "auto",
         "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
@@ -807,66 +689,10 @@
           "no_follow" : false
         }
       }
-    }, {
-      "image_field" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
-        "alt" : "Company Quote",
-        "loading" : "lazy",
-        "width" : 943,
-        "height" : 708,
-        "max_width" : 943,
-        "max_height" : 708
-      },
-      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
-      "author_name" : "— Dennis Smith, Title Goes Here",
-      "button_group" : {
-        "button_type" : "std",
-        "button_style" : "arrow-link",
-        "button_theme" : "theme1",
-        "button_text" : "READ CASE STUDY",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      }
-    }, {
-      "image_field" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
-        "alt" : "Company Quote",
-        "loading" : "lazy",
-        "width" : 943,
-        "height" : 708,
-        "max_width" : 943,
-        "max_height" : 708
-      },
-      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
-      "author_name" : "— Dennis Smith, Title Goes Here",
-      "button_group" : {
-        "button_type" : "std",
-        "button_style" : "arrow-link",
-        "button_theme" : "theme1",
-        "button_text" : "READ CASE STUDY",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      }
-    } ]
+    }
   }, {
     "tab_title" : "NAME OF COMPANY",
-    "slider_items" : [ {
+    "slider_items" : {
       "image_field" : {
         "size_type" : "auto",
         "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
@@ -894,63 +720,7 @@
           "no_follow" : false
         }
       }
-    }, {
-      "image_field" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
-        "alt" : "Company Quote",
-        "loading" : "lazy",
-        "width" : 943,
-        "height" : 708,
-        "max_width" : 943,
-        "max_height" : 708
-      },
-      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
-      "author_name" : "— Dennis Smith, Title Goes Here",
-      "button_group" : {
-        "button_type" : "std",
-        "button_style" : "arrow-link",
-        "button_theme" : "theme1",
-        "button_text" : "READ CASE STUDY",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      }
-    }, {
-      "image_field" : {
-        "size_type" : "auto",
-        "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/company-quote-image.png",
-        "alt" : "Company Quote",
-        "loading" : "lazy",
-        "width" : 943,
-        "height" : 708,
-        "max_width" : 943,
-        "max_height" : 708
-      },
-      "content" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>",
-      "author_name" : "— Dennis Smith, Title Goes Here",
-      "button_group" : {
-        "button_type" : "std",
-        "button_style" : "arrow-link",
-        "button_theme" : "theme1",
-        "button_text" : "READ CASE STUDY",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      }
-    } ]
+    }
   } ]
 }, {
   "id" : "d8c99c2f-bcd0-e80c-33f1-6dbe3ca7bf8b",

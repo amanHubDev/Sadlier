@@ -5,7 +5,7 @@
     .testimonial-slider-wrapper {
       ul.tab_sec {
         li {
-          &.active {
+          &.slick-current {
             a {
               color: $White;
               opacity: 1;
@@ -35,7 +35,7 @@
   .testimonial-slider-wrapper {
     &.theme1_color {
       ul.tab_sec {
-        li.active {
+        li.slick-current {
           a {
             &:after {
               background: $sadlier_red;
@@ -46,7 +46,7 @@
     }
     &.theme2_color {
       ul.tab_sec {
-        li.active {
+        li.slick-current {
           a {
             &:after {
               background: $sadlier_blue;
@@ -57,7 +57,7 @@
     }
     &.theme3_color {
       ul.tab_sec {
-        li.active {
+        li.slick-current {
           a {
             &:after {
               background: $religion_green;
@@ -86,7 +86,7 @@
           font-weight: 700;
         }
       }
-      li.active {
+      li.slick-current {
         a {
           &:after {
             content: "";
@@ -99,9 +99,22 @@
           color: $tone;
         }
       }
+      .slick-list {
+        overflow: visible;
+      }
     }
     .slider_tab_wrapper {
-      border-bottom: 4px solid rgba(0, 66, 89, 0.1);
+      &:after {
+        content: "";
+        border-bottom: 4px solid rgba(0, 66, 89, 0.1);
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+      }
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 4px;
     }
   }
   .testimonial-slider-wrapper {
@@ -122,12 +135,6 @@
     }
   }
   .tab_content_wrapper {
-    .tab_content {
-      display: none;
-    }
-    .tab_content.active {
-      display: block;
-    }
     .row {
       display: flex;
       gap: 15px;
