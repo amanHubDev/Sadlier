@@ -118,7 +118,7 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "default" : "theme"
+    "default" : "cstyle1"
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -334,7 +334,7 @@
     "heading_size" : "h2",
     "heading" : "What makes Sadlier different?",
     "include_content" : true,
-    "content_style" : "theme",
+    "content_style" : "cstyle1",
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
     "include_button" : false,
     "button_group" : [ {

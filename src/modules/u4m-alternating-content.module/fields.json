@@ -118,7 +118,7 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "default" : "theme"
+    "default" : "cstyle2"
   }, {
     "id" : "a938ab5b-6da8-4e1c-4bed-6d97a4c3cb4d",
     "name" : "content",

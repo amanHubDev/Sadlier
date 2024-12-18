@@ -16,11 +16,11 @@
   <div class="page-center">
 
     <div class="slider_tab_wrapper">
-      <ul class="tab_sec">
+      <ul class="tab_sec slidernavfor">
         {% for item in module.tabber_items %}
         {% if item.tab_title %}
-        <li class="{% if loop.first %}active{% endif %}">
-          <a href="javascript:void(0);" dataId="tab{{ loop.index }}">{{ item.tab_title }}</a>
+        <li>
+          <a href="javascript:void(0);" data-slide="{{ loop.index0 }}">{{ item.tab_title }}</a>
         </li>
         {% endif %}
         {% endfor %}
@@ -28,37 +28,35 @@
     </div>
     <div class="tab_content_wrapper">
       {% for item in module.tabber_items %}
-      <div class="tab_content {% if loop.first %}active{% endif %}" contentId="tab{{ loop.index }}">
+      <div class="tab_content">
         <div class="tab_sldier_wrapper">
-          {% for item2 in item.slider_items %}
           <div class="tab_sldier_item">
             <div class="tab_sldier_inner">
               <div class="row">
                 <div class="img_section {% if module.module_settings.image_border_radius %}bdr-radius{% endif %}">
-                  {% if item2.image_field.src %}
-                  {% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}"' %}
-                  {% if item2.image_field.size_type == 'auto' %}
-                  {% set sizeAttrs = 'width="{{ item2.image_field.width|escape_attr }}" height="{{ item2.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-                  {% elif item2.image_field.size_type == 'auto_custom_max' %}
-                  {% set sizeAttrs = 'width="{{ item2.image_field.max_width|escape_attr }}" height="{{ item2.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% if item.slider_items.image_field.src %}
+                  {% set sizeAttrs = 'width="{{ item.slider_items.image_field.width|escape_attr }}" height="{{ item.slider_items.image_field.height|escape_attr }}"' %}
+                  {% if item.slider_items.image_field.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.slider_items.image_field.width|escape_attr }}" height="{{ item.slider_items.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.slider_items.image_field.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.slider_items.image_field.max_width|escape_attr }}" height="{{ item.slider_items.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
                   {% endif %}
-                  {% set loadingAttr = item2.image_field.loading != 'disabled' ? 'loading="{{ item2.image_field.loading|escape_attr }}"' : '' %}
-                  <img src="{{ item2.image_field.src|escape_url }}" alt="{{ item2.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% set loadingAttr = item.slider_items.image_field.loading != 'disabled' ? 'loading="{{ item.slider_items.image_field.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item.slider_items.image_field.src|escape_url }}" alt="{{ item.slider_items.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
                   {% endif %}
                 </div>
                 <div class="bio">
                   <div class="bio_inner">
-                    {{ item2.content }}
+                    {{ item.slider_items.content }}
                     <p>
-                      {{ item2.author_name }}
+                      {{ item.slider_items.author_name }}
                     </p>
-                    {{macros.singleButtonGroup(item2.button_group)}}
+                    {{macros.singleButtonGroup(item.slider_items.button_group)}}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          {% endfor %}
         </div>
       </div>
       {% endfor %}
@@ -69,46 +67,30 @@
 
 {% require_js %}
 <script>
-  $('.u4m-testimonial-slider .slider_tab_wrapper .tab_sec li a').click(function() {
-    var tabId = $(this).attr('dataid');
-
-    // Toggle active class for the clicked tab and remove from others
-    $(this).parent().toggleClass('active').siblings().removeClass('active');
-
-    // Iterate through tab content and display the one matching the tabId
-    $('.tab_content_wrapper .tab_content').each(function() {
-      var contentId = $(this).attr('contentid');
-      if (tabId === contentId) {
-        $(this).addClass('active').siblings().removeClass('active');
-      }
-    });
-
-    // Reset slider after tab change
-    var slider = $('.{{ name }} .tab_sldier_wrapper');
-
-                   // Destroy the slider and reinitialize it to reset
-                   slider.slick('unslick'); // Destroy the existing slider instance
-    slider.slick({ // Reinitialize the slider
-      dots: false,
-      infinite: true,
-      speed: 300,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      prevArrow:"<div class='slick-prev pull-left'><</div>",
-      nextArrow:"<div class='slick-next pull-right'>></div>"
-    });
-  });
+  
 
   // Initialize the slider on page load if necessary
-  $('.{{ name }} .tab_sldier_wrapper').slick({
-    dots: false,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow:"<div class='slick-prev pull-left'><</div>",
-    nextArrow:"<div class='slick-next pull-right'>></div>"
-    });
+  $(document).ready(function () {
+$('.{{ name }} .tab_content_wrapper').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: true,
+  prevArrow:"<div class='slick-prev pull-left'><</div>",
+  nextArrow:"<div class='slick-next pull-right'>></div>"
+});
+$('.{{ name }} .slidernavfor a').click(function(){
+const slideIndex = $(this).data('slide'); // Get the slide index from button
+  $('.{{ name }} .tab_content_wrapper').slick('slickGoTo', slideIndex);
+});
+$('.{{ name }} .tab_content_wrapper').on('afterChange', function (event, slick, currentSlide) {
+$('.{{ name }} .slidernavfor a').parent().removeClass('slick-current'); // Remove active class from all
+$(`.{{ name }} .slidernavfor a[data-slide="${currentSlide}"]`).parent().addClass('slick-current'); // Add active class to current tab
+});
+
+// Optionally set the first tab as active initially
+$('.{{ name }} .slidernavfor a[data-slide="0"]').parent().addClass('slick-current');
+});
 
 </script>
 
