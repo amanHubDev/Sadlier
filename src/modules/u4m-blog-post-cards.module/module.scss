@@ -37,6 +37,7 @@
     .blog_posts_item {
       padding-left: 26px;
       padding-right: 26px;
+      max-width: 372px;
 
       &.image_corner_radius {
         .feature_img {
@@ -50,6 +51,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         margin-bottom: 19px;
+        display: block;
       }
 
       .post_meta {

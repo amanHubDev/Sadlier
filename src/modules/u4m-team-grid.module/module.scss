@@ -35,50 +35,74 @@
         border-radius: 25px;
         padding: 30px;
         height: 100%;
-        .team_img_inn {
-          max-width: 150px;
-          width: 100%;
-          max-height: 150px;
-          overflow: hidden;
-          border-radius: 50%;
-          margin-bottom: 19px;
-        }
-        .member_name {
-          margin-bottom: 23px;
-        }
-        .member_position {
-          font-weight: 700;
-          font-size: $baseFontSize;
-          line-height: $baseLineHeight;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          margin-bottom: 20px;
-        }
-        .member_bio {
-          font-weight: 400;
-          font-size: $baseFontSize;
-          line-height: 1.625;
-          letter-spacing: 0.03em;
-          color: $dark_text;
-          margin-bottom: 39px;
-          p {
-            &:last-child {
-              margin-bottom: 0;
+        padding-bottom: 45px;
+        .team_content {
+          height: 100%;
+        .team_content_inn {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          .team_img_inn {
+            max-width: 150px;
+            width: 100%;
+            max-height: 150px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin-bottom: 19px;
+          }
+          .member_name {
+            margin-bottom: 23px;
+          }
+          .member_position {
+            font-weight: 700;
+            font-size: $baseFontSize;
+            line-height: $baseLineHeight;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+          }
+          .member_bio {
+            font-weight: 400;
+            font-size: $baseFontSize;
+            line-height: 1.625;
+            letter-spacing: 0.03em;
+            color: $dark_text;
+            margin-bottom: 28px;
+            p {
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+          .member_btm {
+
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+            .bio_popup_text {
+              display: inline-block;
+              .bio_popup {
+                font-weight: 700;
+                font-size: $baseFontSize;
+                line-height: 1;
+                letter-spacing: 0.05em;
+                color: $sadlier_red;
+              }
+            }
+            .member_share {
+              ul {
+                li {
+                  a {
+                    display: block;
+                    line-height: 1;
+                }
+                }
+              }
             }
           }
         }
-        .member_btm {
-          .bio_popup_text {
-            display: inline-block;
-            .bio_popup {
-              font-weight: 700;
-              font-size: $baseFontSize;
-              line-height: 1;
-              letter-spacing: 0.05em;
-              color: $sadlier_red;
-            }
-          }
-        }
+      }
       }
       &.card_reverse_text {
         * {
@@ -206,8 +230,8 @@
         }
         .popup_close {
           position: absolute;
-          width: 40px;
-          height: 40px;
+          width: 33px;
+          height: 33px;
           right: 26px;
           top: 30px;
           cursor: pointer;

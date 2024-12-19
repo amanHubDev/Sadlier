@@ -163,7 +163,7 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "default" : "h1"
+    "default" : "h2"
   }, {
     "id" : "c7aa6b72-58e0-4caa-9b63-4da765e70069",
     "name" : "heading",
@@ -702,7 +702,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Vector.svg",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/list-icon.svg",
       "alt" : "Vector",
       "loading" : "lazy",
       "width" : 24,

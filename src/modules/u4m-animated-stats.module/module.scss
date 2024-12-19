@@ -44,6 +44,9 @@
 
         &.large_font {
           @include largeFont;
+          @include tablet {
+            font-size: 80rem;
+          }
           line-height: 1;
         }
 

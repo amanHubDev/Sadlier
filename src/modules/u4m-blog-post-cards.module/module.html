@@ -30,13 +30,15 @@
       {% set postURL = post.absolute_url %}
       <div class="blog_posts_item {% if module.module_settings.image_corner_radius %} image_corner_radius {% endif %}">
         <div class="blog_item_inn">
-          <div class="feature_img" style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});">
-          </div>
+          <a href="{{ postURL }}" class="feature_img" style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});">
+          </a>
           <div class="post_body">
             <div class="post_meta eyebrow_text">
               {% for tag in post.tag_list %}
+                {% if loop.first %}
               <a href="{{ blog_tag_url(module.blog_feed.select_blog, tag.slug) }}">
-                {{tag.name}}</a>{% if not loop.last %},&nbsp;{% endif %}
+                {{tag.name}}</a>
+              {% endif %}
               {% endfor %}
             </div>
             <div class="post_title">
@@ -97,15 +99,17 @@
         <div class="blog_posts_item title_item {% if module.module_settings.image_corner_radius %} image_corner_radius {% endif %}">
         <div class="blog_item_inn">
           {% if post.post_list_summary_featured_image %}
-          <div class="feature_img" style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});">
-          </div>
+            <a href="{{ postURL }}" class="feature_img" style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});">
+          </a>
           {% endif %}
           <div class="post_body">
             {% if post.tag_list %}
             <div class="post_meta eyebrow_text">
               {% for tag in post.tag_list %}
-              <a href="{{ blog_tag_url(post.content_group_id, tag.slug) }}">
-                {{tag.name}}</a>{% if not loop.last %},&nbsp;{% endif %}
+              {% if loop.first %}
+            <a href="{{ blog_tag_url(post.content_group_id, tag.slug) }}">
+              {{tag.name}}</a>
+              {% endif %}
               {% endfor %}
             </div>
             {% endif %}

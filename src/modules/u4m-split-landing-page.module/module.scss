@@ -95,6 +95,14 @@
 
     .form_bottom_text {
       padding-top: 62px;
+      ul {
+        @include b2;
+      }
+      &.checkListStyle {
+        ul {
+          @include b1;
+        }
+      }
     }
 
     .image_grid + .form_bottom_text {

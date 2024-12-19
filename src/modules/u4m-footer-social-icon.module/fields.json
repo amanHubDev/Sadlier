@@ -66,8 +66,8 @@
     }
   }, {
     "social_iocn" : {
-      "name" : "Facebook",
-      "unicode" : "f09a",
+      "name" : "Instagram",
+      "unicode" : "f16d",
       "type" : "REGULAR"
     },
     "social_link" : {
@@ -81,8 +81,8 @@
     }
   }, {
     "social_iocn" : {
-      "name" : "Facebook",
-      "unicode" : "f09a",
+      "name" : "X Twitter",
+      "unicode" : "e61b",
       "type" : "REGULAR"
     },
     "social_link" : {
@@ -96,8 +96,8 @@
     }
   }, {
     "social_iocn" : {
-      "name" : "Facebook",
-      "unicode" : "f09a",
+      "name" : "LinkedIn",
+      "unicode" : "f08c",
       "type" : "REGULAR"
     },
     "social_link" : {
@@ -111,8 +111,8 @@
     }
   }, {
     "social_iocn" : {
-      "name" : "Facebook",
-      "unicode" : "f09a",
+      "name" : "YouTube",
+      "unicode" : "f167",
       "type" : "REGULAR"
     },
     "social_link" : {

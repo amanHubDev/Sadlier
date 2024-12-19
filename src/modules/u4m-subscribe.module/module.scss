@@ -1,5 +1,9 @@
 @import "../../css/_module-imports";
 .u4m-subscribe.dnd_padd {
+  .submitted-message {
+    text-align: center;
+    padding-top: 30px;
+  }
   @include center;
   border-radius: $borderRadius;
   padding: 70rem 100rem;

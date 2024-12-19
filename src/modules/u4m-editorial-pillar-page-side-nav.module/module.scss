@@ -6,6 +6,7 @@ section.u4m-editorial-pillar-page-side-nav {
   &.reverse-text {
     .acctitle {
       color: $white;
+      
     }
     .tab-acc-wrap {
       .accordion-col {
@@ -66,6 +67,9 @@ section.u4m-editorial-pillar-page-side-nav {
       }
       .acctitle {
         margin-bottom: 24px;
+        @include tabletvert {
+          text-align: center;
+        }
       }
       .accordion-item {
         border-bottom: 2px solid rgba($tone, 0.25);
@@ -137,6 +141,10 @@ section.u4m-editorial-pillar-page-side-nav {
           padding-right: 30px;
           @include size16;
           line-height: normal;
+          @include tabletvert {
+            text-align: center;
+            padding-left: 30px;
+          }
           .accordion_icon {
             position: absolute;
             top: 3px;
