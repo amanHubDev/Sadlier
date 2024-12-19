@@ -39,7 +39,7 @@ section.u4m-filtered-content {
               padding-bottom: 5px;
             }
             .resourceInput {
-              padding: 10px 15px;
+              padding: 5.5px 15px;
               background: $White;
               border: 1px solid $tone15;
               border-radius: 5px;
@@ -53,7 +53,7 @@ section.u4m-filtered-content {
               }
             }
             .resourceSelect {
-              padding: 10px 15px;
+              padding: 5.5px 15px;
               background: $White;
               border: 1px solid $tone15;
               border-radius: 5px;
@@ -99,8 +99,11 @@ section.u4m-filtered-content {
             align-items: center;
             gap: 5px;
             margin-bottom: 24px;
+            text-transform: uppercase;
+            font-weight: bold;
             span {
               color: $sadlier_red;
+              font-size: 26px;
             }
           }
 

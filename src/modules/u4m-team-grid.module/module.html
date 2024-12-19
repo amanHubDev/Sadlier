@@ -17,17 +17,18 @@
     {% for item in module.member_group %}
     <div class="team_item {{ module.module_settings.select_number_of_column }} {% if module.module_settings.card.reverse_text %} card_reverse_text {% else %} theme_text{% endif %}">
       <div class="team_item_inn {{ module.module_settings.card.select_background_color }}">
-        {% if item.image_field.src %}
-        <div class="team_img">
-          <div class="team_img_inn">
-            {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
-            <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }}>
-          </div>
-        </div>
-        {% endif %}
+    
 
         <div class="team_content">
           <div class="team_content_inn">
+          {% if item.image_field.src %}
+            <div class="team_img">
+              <div class="team_img_inn">
+                {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }}>
+              </div>
+            </div>
+            {% endif %}
             {% if item.member_name %}
             <h3 class="member_name">
               {{ item.member_name }}

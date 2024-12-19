@@ -19,6 +19,9 @@
 
       .top_img {
         margin-bottom: 10px;
+        @include tabletvert {
+          padding: 0 10px;
+        }
       }
 
       img {
@@ -41,6 +44,9 @@
 
     .intro_desc {
       text-align: center;
+      @include tabletvert {
+        padding: 0 10px;
+      }
     }
 
   }

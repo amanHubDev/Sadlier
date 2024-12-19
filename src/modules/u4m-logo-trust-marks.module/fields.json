@@ -118,7 +118,7 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "default" : "theme"
+    "default" : "cstyle1"
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -422,7 +422,7 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "default" : "theme"
+    "default" : "cstyle3"
   }, {
     "id" : "73a0707b-cb76-0429-6de1-4aab1ecfd6f5",
     "name" : "content",

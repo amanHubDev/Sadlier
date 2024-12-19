@@ -76,6 +76,11 @@
           letter-spacing: 0.03em;
           color: $dark_text;
           margin-bottom: 34px;
+          sup {
+          font: inherit;
+          top: -4px;
+          color: $purple;
+          }
         }
       }
       &.card_reverse_text {

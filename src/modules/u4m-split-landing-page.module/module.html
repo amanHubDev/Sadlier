@@ -145,7 +145,7 @@
 
         {# video group #}
 
-        <div class="form_bottom_text {% if module.bottom_content_group.check_list_style %}checkListStyle{% endif %}">
+        <div class="form_bottom_text cstyle1 {% if module.bottom_content_group.check_list_style %}checkListStyle{% endif %}">
           {{ module.bottom_content_group.bottom_content }}
         </div>
       </div>
@@ -190,7 +190,7 @@
     margin: 0;
     padding-left: 30px;   
     margin-bottom: 20px;
-    padding-left: 36px;
+    padding-left: 40px;
 
   }
 
@@ -205,7 +205,8 @@
     width: 24px;
     height: 24px;
     left: 0;
-    top: 4px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
 

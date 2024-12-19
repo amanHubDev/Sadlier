@@ -3,18 +3,19 @@
   padding-top: 100px;
   padding-bottom: 110px;
   background-color: $basecolor;
+  position: relative;
+  z-index: 2;
   &.main-footer {
     .footer-menu {
       padding: 0 0px 45px;
       .hs_cos_wrapper_type_menu {
-        max-width: 1082px;
+        max-width: 1140px;
         margin: 0 auto;
         display: block;
-        margin-right: 0;
       }
       .hs-menu-wrapper > ul {
         > li {
-          width: 25%;
+          // width: 25%;
           @include tabletmid {
             width: 50%;
           }
@@ -68,23 +69,30 @@
     padding: 0 50px 45px;
     border-bottom: 1px solid rgba($footerBorderColor, 0.25);
     margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
     @include tabletmid {
       padding: 0 0px 30px;
     }
     .hs-menu-wrapper > ul {
       margin: 0;
       display: flex;
-      flex-wrap: wrap;
+      justify-content: center;
       row-gap: 20px;
+      @include midlaptop {
+        flex-wrap: wrap;
+      }
       ::after,
       ::before {
         content: none;
       }
       > li {
-        width: 20%;
+        width: auto;
+        min-width: 230px;
         padding: 0 5px;
         @include tabletmid {
           width: 33.333%;
+          min-width: auto;
         }
         @include tabletvert {
           width: 100%;
@@ -115,6 +123,9 @@
             a {
               font-weight: normal;
               font-size: 14px;
+              &:hover {
+                text-decoration: underline;
+              }
             }
             &:last-child {
               margin-bottom: 0;
@@ -142,11 +153,13 @@
         row-gap: 10px;
         @include tabletvert {
           justify-content: center;
+          order: 3;
         }
         .copyright {
           color: $white;
           font-size: 14px;
           font-weight: 400;
+          line-height: 1;
         }
       }
       &.social-icon-col {
@@ -185,6 +198,10 @@
               width: 100% !important;
               color: $white;
               font-weight: 400;
+              @include size14;
+              &:hover {
+                text-decoration: underline;
+              }
             }
           }
         }

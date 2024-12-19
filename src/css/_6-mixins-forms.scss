@@ -136,7 +136,7 @@
 
       select {
         appearance: none;
-        background: url("//cdn2.hubspot.net/hubfs/302335/select-arrow.png")
+        background: url("//95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/select-arrow.png")
           no-repeat;
         background-size: 13rem 8rem;
         background-position: 97% 51%;
@@ -148,6 +148,7 @@
         background-color: $white;
         padding: 12rem 16rem;
         line-height: 1;
+        color: $Gray1;
         // Note anything below 16rem will trigger the zoom feature on iOS
       }
 

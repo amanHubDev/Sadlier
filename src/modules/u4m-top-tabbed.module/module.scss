@@ -120,12 +120,16 @@ section.u4m-top-tabbed {
         padding: 0 0px 15px;
         position: relative;
         text-align: center;
+        transition: all .4s ease-in-out;
       }
     }
   }
   .tabber_pannel {
     max-width: 1100px;
     margin: 0 auto;
+    @include tabletvert {
+      padding-bottom: 20px;
+    }
     .cardBtnContent {
       margin-top: 20px;
       .tinynav {

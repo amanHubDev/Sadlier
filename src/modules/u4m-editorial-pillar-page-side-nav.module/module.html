@@ -188,13 +188,13 @@
 
 
     $('.mobile_nav_list .accordion-item:first-child').addClass('active');
-    $('.mobile_nav_list .accordion-item:first-child').children('.accordion-content').slideDown(250);
+    $('.mobile_nav_list .accordion-item:first-child').children('.accordion-content').slideDown();
 
     $('.mobile_nav_list .accordion_title').click(function(){
       $(this).parent('.accordion-item').siblings().removeClass('active');
-      $(this).parent().siblings('.accordion-item').children('.accordion-content').slideUp(250);
+      $(this).parent().siblings('.accordion-item').children('.accordion-content').slideUp();
       $(this).parent('.accordion-item').toggleClass('active');
-      $(this).next('.accordion-content').slideToggle(250);
+      $(this).next('.accordion-content').slideToggle();
     });
 
   });
