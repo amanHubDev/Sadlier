@@ -428,7 +428,7 @@
       "required" : false,
       "locked" : false,
       "type" : "richtext",
-      "default" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.   Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>"
+      "default" : "<h3><sup>“</sup>Lorem ipsum dolor sit amet,  consectetur adipiscing elit dolor.  Integer nec odio. Praesent dolor   libero. Sed cursus ante dapibus<sup>”</sup></h3>"
     }, {
       "id" : "c492bebe-c54d-6baf-fcc4-49ca9410310a",
       "name" : "author_name",

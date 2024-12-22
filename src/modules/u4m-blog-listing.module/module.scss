@@ -162,10 +162,6 @@ input[type="search"] {
   }
 }
 
-.hs-blog-listing .header-wrapper {
-  display: none;
-}
-
 .blogListing {
   background-color: $light_background;
   padding: 0;
@@ -266,7 +262,7 @@ input[type="search"] {
             background: none;
             display: unset;
             .hs-search-field__input {
-              padding: 10px 15px;
+              padding: 4.5px 15px;
               background: $White;
               border: 2px solid $tone15;
               border-radius: 5px;
@@ -283,7 +279,7 @@ input[type="search"] {
         }
         &.blogTags {
           select {
-            padding: 10px 15px;
+            padding: 4.5px 15px;
             background: $White;
             border: 2px solid $tone15;
             border-radius: 5px;
@@ -340,15 +336,16 @@ input[type="search"] {
               }
             }
             .cardCont {
-              padding: 30px 30px 50px;
+              padding: 29px 30px 50px;
               .topicTagwrap {
                 @include eyebrow;
-                margin-bottom: 15px;
+                margin-bottom: 17px;
                 a {
                   color: inherit;
                 }
               }
               .restitle {
+                min-height: 90px;
                 a {
                   color: inherit;
                 }

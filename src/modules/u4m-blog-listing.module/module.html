@@ -27,32 +27,7 @@
 				{% endif %}
 				<div class="featright">  
 					<div class="cardCont">
-						<div class="topicTagwrap"> 
-							{% if row.tag_list %}
-							{% for tag in row.tag_list %}
-							{% if tag.name=="Featured" %}
-							{% else %}
-							{% if loop.first %}
-							<a class="topicTag" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>
-							{% endif %}
-							{% endif %}
-							{% endfor %}{% endif %}
-							 | {{ row.publish_date_local_time.strftime('%B') }}
-							 {% set day = row.publish_date_local_time.strftime('%e') %}
-								{% if day >= 4 and day <= 20 %}
-								 {% set day = day + "th" %}
-								{% elif day >= 24 and day <= 30 %}
-								 {% set day = day + "th" %}
-								{% elif day == 1 or day == 21 or day == 31 %}
-								 {% set day = day + "st" %}
-								{% elif day == 2 or day == 22 %}
-								 {% set day = day + "nd" %}
-								{% elif day == 3 or day == 23 %}
-								 {% set day = day + "rd" %}
-								{% endif %}
-								{{ day }},
-								{{ row.publish_date_local_time.strftime('%Y') }}
-						</div>
+						
 						<h2 class="restitle"><a href="{{ row.absolute_url }}">{{ row.name|striptags}}</a></h2>  
 						<div class="desc">{{ row.post_list_content|striptags|safe|truncatehtml(165, '.' , false) }}</div>  
 						<div class="readMore"><a href="{{ row.absolute_url }}" class="arrow-link theme2">READ MORE  ></a></div>  
