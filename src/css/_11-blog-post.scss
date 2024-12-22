@@ -250,13 +250,15 @@ section.u4m-blog-post {
   flex-wrap: wrap;
   gap: 67px;
   justify-content: center;
-  @include tabletvert {
+
+  @include tablet {
     gap: 0;
     justify-content: flex-start;
   }
+
   .post_left {
     width: calc(100% - 360px);
-    @include tabletvert {
+    @include tablet {
       width: 100%;
       margin-bottom: 40px;
     }
@@ -265,8 +267,16 @@ section.u4m-blog-post {
       border-radius: 19px;
       overflow: hidden;
       img {
-        width: 100%;
+        width: 895px;
         display: block;
+        max-width: 100%;
+        height: 450px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 19px;
+        @include tablet {
+          height: auto;
+        }
       }
     }
     .post_body {
@@ -305,7 +315,7 @@ section.u4m-blog-post {
       @include phone {
         align-items: flex-start;
         gap: 20px;
-        padding: 20px;
+        padding: 30px;
         flex-direction: column;
       }
       .avatar {
@@ -318,6 +328,7 @@ section.u4m-blog-post {
 
       .at_bio {
         & > p {
+          @include b3;
           letter-spacing: 0.03em;
         }
         .name {
@@ -351,7 +362,7 @@ section.u4m-blog-post {
   }
   .post_right {
     width: 292px;
-    @include tabletvert {
+    @include tablet {
       width: 100%;
     }
     .post_side {
