@@ -375,6 +375,9 @@
     }
     .top-menu {
       padding-left: 20px;
+      @include tabletvert {
+        display: none;
+      }
     }
     .header-top {
       ul {

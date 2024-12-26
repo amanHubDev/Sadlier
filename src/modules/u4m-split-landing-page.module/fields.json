@@ -451,7 +451,7 @@
     "include_eyebrow_text" : true,
     "eyebrow_text" : "OPTIONAL EYEBROW TEXT",
     "include_heading" : true,
-    "heading_size" : "h1",
+    "heading_size" : "h2",
     "heading" : "Contact Us",
     "include_content" : false,
     "content_style" : "cstyle1",
@@ -520,6 +520,20 @@
     "locked" : false,
     "type" : "richtext",
     "default" : "<h3>Form Heading</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid unt ut labore et dolore magnans.</p>"
+  }, {
+    "id" : "5e701a79-2213-ba31-bba6-7f401328e7bc",
+    "name" : "form_top_overlapping",
+    "display_width" : null,
+    "label" : "Form Top Overlapping",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "lg", "Larger" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "small"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -535,7 +549,8 @@
       "webinar_source" : null,
       "form_type" : "HUBSPOT"
     },
-    "form_content" : "<h3>Form Heading</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid unt ut labore et dolore magnans.</p>"
+    "form_content" : "<h3>Form Heading</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid unt ut labore et dolore magnans.</p>",
+    "form_top_overlapping" : "small"
   }
 }, {
   "id" : "2735bb80-7cc6-a787-6426-394dfed8bf92",
@@ -735,7 +750,7 @@
     "check_list_style" : false,
     "check_list_icon" : {
       "size_type" : "auto",
-      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/Vector.svg",
+      "src" : "https://95641.fs1.hubspotusercontent-na1.net/hubfs/95641/Sadlier-u4m/images/list-icon.svg",
       "alt" : "Vector",
       "loading" : "lazy",
       "width" : 24,

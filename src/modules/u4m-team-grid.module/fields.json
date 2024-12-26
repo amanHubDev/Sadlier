@@ -850,6 +850,28 @@
       "select_background_color" : "light_bg",
       "reverse_text" : false
     }
+  }, {
+    "id" : "22e19508-30d7-53ec-716e-55147abd2499",
+    "name" : "popup_button_theme",
+    "display_width" : null,
+    "label" : "Popup Button Theme",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.button_group.button_type",
+      "controlling_value_regex" : "std",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "theme1", "Theme 1" ], [ "theme2", "Theme 2" ], [ "theme3", "Theme 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme1"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -860,7 +882,8 @@
     "card" : {
       "select_background_color" : "light_bg",
       "reverse_text" : false
-    }
+    },
+    "popup_button_theme" : "theme1"
   }
 }, {
   "id" : "module_overrides",
