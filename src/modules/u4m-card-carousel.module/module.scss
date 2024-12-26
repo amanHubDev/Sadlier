@@ -1,6 +1,7 @@
 @import "../../css/_module-imports";
 
 section.u4m-card-carousel {
+  overflow: hidden;
   .two-col-wrap {
     display: flex;
     flex-wrap: wrap;

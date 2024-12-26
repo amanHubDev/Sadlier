@@ -212,9 +212,48 @@
   .slick-next.pull-right.slick-arrow {
     right: -18px;
   }
+
+  .mobileAcc {
+    .accItemttl {
+      font-weight: 700;
+      @include size16;
+      color: $Gray1;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+
+      &:after {
+        content: "+";
+        font-size: 16px;
+      }
+    }
+    .accItemcon {
+      display: none;
+    }
+    .accOpen {
+      .accItemttl {
+        color: $eyebrows;
+        &:after {
+          content: "-";
+        }
+      }
+    }
+  }
+  @include tabletvertmin {
+    .mobileAcc.deskHide {
+      display: none;
+    }
+  }
 }
+
 @include tabletvert {
   .u4m-testimonial-slider {
+    .mobileHide {
+      display: none !important;
+    }
+
     .tab_sldier_inner {
       padding: 0 18px;
     }

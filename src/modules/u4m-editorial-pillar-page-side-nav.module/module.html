@@ -1,3 +1,17 @@
+{% macro tabContent() %}
+<h3>
+  {{loop.index}}- {{ item.content_title }}
+</h3>
+{% if item.eyebrow_text %}
+<div class="eyebrow_text">
+  {{ item.eyebrow_text }}
+</div>
+{% endif %}
+{% if item.content %}
+{{ item.content }}
+{% endif %}
+{% endmacro %}
+
 {% set moduleName = 'u4m-editorial-pillar-page-side-nav' %}
 {% include "../partials/u4-module-includes.html" %}
 
@@ -18,8 +32,8 @@
 
           <div class="desktop_nav_list">
             {% for item in module.accordion_items %}
-            <div class="accordion-item {{loop.first ? 'active': ''}}"  data-pillar-id="side{{name}}_{{loop.index}}">
-              <div class="accordion_title" dataSet="#tab{{loop.index}}">
+            <div class="accordion-item tab {{loop.first ? 'active': ''}}"  data-pillar-id="side{{name}}_{{loop.index}}">
+              <div class="accordion_title tab-click" dataSet="#tab{{loop.index}}">
 
                 <h6>
                   {{ item.title }}
@@ -80,24 +94,9 @@
                 </p>
                 {% endif %}
                 <div class='content-items mobile'>
-                  <h3>
-                    {{ item.content_title }}
-                  </h3>
-                  {% if item.eyebrow_text %}
-                  <div class="eyebrow_text">
-                    {{ item.eyebrow_text }}
-                  </div>
-                  {% endif %}
-                  {% if item.content %}
-                  {{ item.content }}
-                  {% endif %}
+                  {{ tabContent ()}}
                 </div>
               </div>
-
-
-
-
-
             </div>
             {% endfor %}
           </div>
@@ -106,18 +105,8 @@
     </div>
     <div class="content-column desktop">
       {% for item in module.accordion_items %}
-      <div class='content-item' id="tab{{loop.index}}" data-content-id="side{{name}}_{{loop.index}}" style="display: block">
-        <h3>
-          {{loop.index}}- {{ item.content_title }}
-        </h3>
-        {% if item.eyebrow_text %}
-        <div class="eyebrow_text">
-          {{ item.eyebrow_text }}
-        </div>
-        {% endif %}
-        {% if item.content %}
-        {{ item.content }}
-        {% endif %}
+      <div class='content-item tab-content' id="tab{{loop.index}}" data-content-id="side{{name}}_{{loop.index}}" style="display: block">
+        {{ tabContent ()}}
       </div>
       {% endfor %}
     </div>
@@ -140,20 +129,36 @@
 {% require_js %}
 <script>
 
+  var menu = document.querySelector(".u4mAnchorNavWrap"); 
+  if(menu ){ 
+    $('.u4mAnchorNavWrap').parents('body').addClass('navSec')
+  }
+
   $(function() {
 
     var link = $('.desktop_nav_list .accordion_title ');
+    var linkContent = $('.desktop_nav_list .accordion-content ');
     link.on('click', function(e) {
       $(this).parent().siblings().removeClass("active");
-
+      {# $(this).parent().siblings('.accordion-item').children('.accordion-content').slideUp(); #}
       $(this).parent().addClass("active");
-
+      {# $(this).next('.accordion-content').slideDown(); #}
 
       var getId = $(this).parent().attr("data-pillar-id");
 
       var getSection = $('[data-content-id="' + getId + '"]');
+      if(menu ){ 
+      var getSectionOffset = $(getSection).offset().top - 190;
+      $('html, body').animate({
+      scrollTop: getSectionOffset
+    }, 600);
+      }
+      else{
       var getSectionOffset = $(getSection).offset().top - 80;
-
+      $('html, body').animate({
+      scrollTop: getSectionOffset
+    }, 600);
+    }
       $('html, body').animate({
         scrollTop: getSectionOffset
       }, 600);
@@ -161,7 +166,7 @@
     });
 
 
-    $(window).on('scroll', function() {
+    {# $(window).on('scroll', function() {
       scrFn();
     });
 
@@ -183,7 +188,7 @@
         } 
       });
     }
-    scrFn();
+    scrFn(); #}
 
 
 
@@ -201,8 +206,6 @@
 
 </script>
 {% end_require_js %}
-
-
 
 
 

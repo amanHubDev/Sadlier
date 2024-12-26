@@ -6,7 +6,6 @@ section.u4m-editorial-pillar-page-side-nav {
   &.reverse-text {
     .acctitle {
       color: $white;
-      
     }
     .tab-acc-wrap {
       .accordion-col {
@@ -80,7 +79,7 @@ section.u4m-editorial-pillar-page-side-nav {
         &.active {
           .accordion_title {
             h6 {
-              padding-bottom: 20px;
+              // padding-bottom: 20px;
               color: $orange;
               .minus-icon {
                 display: inline-block;
@@ -121,7 +120,7 @@ section.u4m-editorial-pillar-page-side-nav {
         @include tabletvertmin {
           &.active {
             .accordion-content {
-              display: block;
+              display: block !important;
             }
           }
           // &:not(.active) {
@@ -137,7 +136,7 @@ section.u4m-editorial-pillar-page-side-nav {
         h6 {
           padding-bottom: 30px;
           margin-bottom: 0;
-          transition: all 0.3s ease;
+          // transition: all 0.3s ease;
           padding-right: 30px;
           @include size16;
           line-height: normal;
@@ -207,5 +206,11 @@ section.u4m-editorial-pillar-page-side-nav {
         display: none;
       }
     }
+  }
+}
+
+.navSec {
+  .accordion-col_inner {
+    top: 200px;
   }
 }
