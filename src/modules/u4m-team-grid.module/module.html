@@ -48,7 +48,7 @@
             <div class="member_btm">
               {% if item.popup_button_text %}
               <div class="bio_popup_text">
-                <a class="bio_popup" href="javascript:void(0);"  data_index="data{{loop.index}}">
+                <a class="bio_popup arrow-link {{ module.module_settings.popup_button_theme }}" href="javascript:void(0);"  data_index="data{{loop.index}}">
                   {{ item.popup_button_text }}
                 </a>
               </div>
