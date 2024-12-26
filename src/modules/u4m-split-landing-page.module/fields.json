@@ -528,7 +528,7 @@
     "required" : false,
     "locked" : false,
     "display" : "select",
-    "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "lg", "Larger" ] ],
+    "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "lg", "Large" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,

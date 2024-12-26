@@ -165,7 +165,7 @@ function setHTML(items) {
     startIndex,
     endIndex,
     pages,
-  } = calculatePagination(items.length, currPage, 9, 6);
+  } = calculatePagination(items.length, currPage, 9, 4);
 
   const nav = document.createElement("nav");
   nav.classList.add(
