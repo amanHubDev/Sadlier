@@ -24,41 +24,38 @@
     top: 100px;
     width: 100%;
   }
+  &:not(.fixed) {
+    top: 0 !important;
+  }
 
   .anchor-nav-inner {
     position: relative;
     z-index: 9;
     .theme1_color {
-      .selected {
-        .single-anchor::after {
+      .single-anchor {
+        &.active::after {
           background-color: $sadlier_red;
         }
-      }
-      .single-anchor {
         &:hover::after {
           background-color: $sadlier_red;
         }
       }
     }
     .theme2_color {
-      .selected {
-        .single-anchor::after {
+      .single-anchor {
+        &.active::after {
           background-color: $sadlier_blue;
         }
-      }
-      .single-anchor {
         &:hover::after {
           background-color: $sadlier_blue;
         }
       }
     }
     .theme3_color {
-      .selected {
-        .single-anchor::after {
+      .single-anchor {
+        &.active::after {
           background-color: $religion_green;
         }
-      }
-      .single-anchor {
         &:hover::after {
           background-color: $religion_green;
         }

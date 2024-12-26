@@ -1,18 +1,16 @@
 <div class="u4mAnchorNavWrap">
 
-{% set moduleName = 'u4m-anchor-nav' %}
-{% if module.make_sticky %}
-{% set moduleName = 'u4m-anchor-nav has-sticky' %}
-{% endif %}
-{% set imageMax = 300 %}
-{% include "../partials/u4-module-includes.html" %}
-<div class="nav-spacer"></div>
-<div class="anchor-nav-inner">
-  <div class="page-center  {{ module.module_settings.theme }}">
-    <div class="anchor-nav">
-
-      {% for item in module.anchor_link %}
-      <li>
+  {% set moduleName = 'u4m-anchor-nav' %}
+  {% if module.make_sticky %}
+  {% set moduleName = 'u4m-anchor-nav has-sticky' %}
+  {% endif %}
+  {% set imageMax = 300 %}
+  {% include "../partials/u4-module-includes.html" %}
+  <div class="nav-spacer"></div>
+  <div class="anchor-nav-inner">
+    <div class="page-center  {{ module.module_settings.theme }}">
+      <div class="anchor-nav">
+        {% for item in module.anchor_link %}
         {% set href = item.anchor_link.url.href %}
         {% if item.anchor_link.url.type is equalto "EMAIL_ADDRESS" %}
         {% set href = "mailto:" + href %}
@@ -26,28 +24,27 @@
         {% endif %}
         {% endif %}
 
-        <a class="single-anchor" 
+        <a class="cm_btn single-anchor" 
            {% if item.anchor_link.url.type is equalto "CALL_TO_ACTION"  %}
            href="{{ href }}"
            {% else %}
            href="{{ href|escape_url }}"
            {% endif %}
-           
+
            {% if item.anchor_link.open_in_new_tab %}
            target="_blank"
            {% endif %}
            {% if item.anchor_link.rel %}
            rel="{{ item.anchor_link.rel|escape_attr }}"
            {% endif %}
-           >{{ item.text }}</a>
-      </li>
-      {% endfor %}
+           data-scroll="{{ newId }}">{{ item.text }}</a>
+        {% endfor %}
+      </div>
+      <hr class="nav-border">
     </div>
-    <hr class="nav-border">
   </div>
-</div>
 
-</section>
+  </section>
 </div>
 
 
@@ -146,7 +143,8 @@ var navbarSection = document.querySelector('.{{name}}.u4m-anchor-nav');
     $(window).scroll(function(){
       var navHeight = $('.u4m-anchor-nav').outerHeight()
       $('.u4mAnchorNavWrap').css('min-height', navHeight);
-      var addHeaderHeight = $('.header-main').height() + 65;
+
+      var addHeaderHeight = $('.header-main').outerHeight();
       var elm = $('.u4mAnchorNavWrap').offset().top - addHeaderHeight;
       var scrollAmt = $(this).scrollTop();
       if(scrollAmt > elm) {
@@ -154,6 +152,7 @@ var navbarSection = document.querySelector('.{{name}}.u4m-anchor-nav');
       } else {
         $('.u4m-anchor-nav').removeClass('fixed');
       }
+      $('.u4m-anchor-nav.fixed').css('top', navHeight + 10);
     });
 
     var buttonsHeight  ;
@@ -172,7 +171,7 @@ var navbarSection = document.querySelector('.{{name}}.u4m-anchor-nav');
       }
     })
 
-    var link = $('.anchor-nav a.single-anchor');
+    var link = $('.anchor-nav .cm_btn');
 
     // Move to specific section when click on menu link
     link.on('click', function(e) {
