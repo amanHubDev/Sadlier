@@ -9,7 +9,7 @@
   <div class="nav-spacer"></div>
   <div class="anchor-nav-inner">
     <div class="page-center  {{ module.module_settings.theme }}">
-      <div class="anchor-nav">
+      <div class="anchor-nav btns_nav_inr">
         {% for item in module.anchor_link %}
         {% set href = item.anchor_link.url.href %}
         {% if item.anchor_link.url.type is equalto "EMAIL_ADDRESS" %}
@@ -37,7 +37,7 @@
            {% if item.anchor_link.rel %}
            rel="{{ item.anchor_link.rel|escape_attr }}"
            {% endif %}
-           data-scroll="{{ newId }}">{{ item.text }}</a>
+           data-scroll="{{item.bookmark_id|replace('#','')}}">{{ item.text }}</a>
         {% endfor %}
       </div>
       <hr class="nav-border">
@@ -48,102 +48,14 @@
 </div>
 
 
-
-{% if module.make_sticky %} 
-{# {% require_js %}
-
-<script>
-
-function setSectionHeight(classNm) {
-var section = document.querySelector(classNm);
-if (section) {
-  var sectionHeight = section.offsetHeight;
-  section.parentElement.style.minHeight = sectionHeight + 'px';
-}
-}
-
-window.addEventListener('resize', function() {
-setTimeout(function() {
-  setSectionHeight('.{{name}}.u4m-anchor-nav');
-              }, 100);
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-
-setSectionHeight('.{{name}}.u4m-anchor-nav');
-
-                 var headerStickySection = document.querySelector('.header-main');
-  var bodyStickySection = document.querySelector('body');
-var navbarSection = document.querySelector('.{{name}}.u4m-anchor-nav');
-
-                             if (headerStickySection && navbarSection) {      
-  var navbarOffset = navbarSection.offsetTop;
-
-  window.addEventListener('scroll', function() {
-    var topOffset = parseInt(navbarOffset);
-    if (bodyStickySection.classList.contains('darkHeader')) {
-    var headerHeight = headerStickySection.offsetHeight;
-    topOffset = parseInt(navbarOffset - headerHeight);
-  }
-
-  if (document.body.scrollTop >= topOffset || document.documentElement.scrollTop >= topOffset) {
-  navbarSection.classList.add('sticky');
-  if (bodyStickySection.classList.contains('darkHeader')) {
-    navbarSection.style.top = headerStickySection.offsetHeight + 'px';
-  }
-} else {
-  navbarSection.classList.remove('sticky');
-  if (bodyStickySection.classList.contains('darkHeader')) {
-    navbarSection.style.top = '0px';
-  } else {
-     navbarSection.style.top = '0px';
-  }
-}
-  });
-}
-});
-
-</script>
-
-{% end_require_js %} #}
-{% endif %}
-
-{# {% require_js %}
-<script>
-  $(window).scroll(function(){
-    var scrollPos=$(window).scrollTop();
-    $(".dnd_padd").each(function(){
-      var linkCompare=$(this).attr("id");
-      var realLink="";
-      if(linkCompare!=undefined){
-        realLink=linkCompare;
-        realLink="#"+realLink;
-        if(scrollPos >= $("#"+linkCompare).offset().top && scrollPos<=$("#"+linkCompare).offset().top + $("#"+linkCompare).height()){
-          $('.anchor-nav li').removeClass("selected");
-          $('.anchor-nav li a[href*="'+realLink+'"]').parent().addClass("selected");
-          currentSection = realLink;
-        }
-      }
-    });
-  });
-
-</script>
-
-
-{% end_require_js %} #}
-
-
-
-
 {% require_js %}
 
 <script>
   $(function() {
 
     $(window).scroll(function(){
-      var navHeight = $('.u4m-anchor-nav').outerHeight()
+      var navHeight = $('.btns_nav').height()
       $('.u4mAnchorNavWrap').css('min-height', navHeight);
-
       var addHeaderHeight = $('.header-main').outerHeight();
       var elm = $('.u4mAnchorNavWrap').offset().top - addHeaderHeight;
       var scrollAmt = $(this).scrollTop();
@@ -152,7 +64,6 @@ var navbarSection = document.querySelector('.{{name}}.u4m-anchor-nav');
       } else {
         $('.u4m-anchor-nav').removeClass('fixed');
       }
-      $('.u4m-anchor-nav.fixed').css('top', navHeight + 10);
     });
 
     var buttonsHeight  ;
@@ -171,7 +82,7 @@ var navbarSection = document.querySelector('.{{name}}.u4m-anchor-nav');
       }
     })
 
-    var link = $('.anchor-nav .cm_btn');
+    var link = $('.btns_nav_inr a.cm_btn');
 
     // Move to specific section when click on menu link
     link.on('click', function(e) {
@@ -179,7 +90,7 @@ var navbarSection = document.querySelector('.{{name}}.u4m-anchor-nav');
       var headerHeight  = $('.header-main').outerHeight() ;
       var getgap = headerHeight + buttonsHeight - 2
 
-      //        var addHeight =  $('.anchor-nav-inner').height();
+      //        var addHeight =  $('.u4m-anchor-nav').height();
       if(target){
         var getOffset = target.offset().top - getgap ; 
         $('html, body').animate({
@@ -197,8 +108,8 @@ var navbarSection = document.querySelector('.{{name}}.u4m-anchor-nav');
 
     function scrFn() {
       var sTop = $(window).scrollTop();
-      var headerHeight = $('.header-main').height() + buttonsHeight;
-      $('.dnd_padd').each(function() {
+      var headerHeight = $('.header-main').outerHeight() + buttonsHeight;
+      $('.x').each(function() {
         var id = $(this).attr('id'),
             offset = $(this).offset().top,
             //             offset =  offset_top ,
@@ -212,7 +123,7 @@ var navbarSection = document.querySelector('.{{name}}.u4m-anchor-nav');
 
         if (sTop >= offseGap && sTop < offset + height) {
           link.removeClass('active');
-          $('.anchor-nav').find('[data-scroll="' + id + '"]').addClass('active');
+          $('.btns_nav_inr').find('[data-scroll="' + id + '"]').addClass('active');
         }
       });
     }
@@ -223,6 +134,9 @@ var navbarSection = document.querySelector('.{{name}}.u4m-anchor-nav');
 </script>
 
 {% end_require_js %}
+
+
+
 
 
 
