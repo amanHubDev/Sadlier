@@ -39,6 +39,11 @@
           {% endif %}
         </div>
         <div class="btm_cnt">
+          {% if item.include_eyebrow_text %}
+          <div class="eyebrow_text">
+            {{ item.eyebrow_text }}
+          </div>
+          {% endif %}
           <div class="top_title">
             <{{ item.heading_size }}>{{ item.heading }}</{{ item.heading_size }}>
           </div>
