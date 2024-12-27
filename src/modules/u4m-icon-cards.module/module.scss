@@ -49,7 +49,10 @@
                     justify-content: center;
                 }
             }
-
+            .eyebrow_text {
+                @include eyebrow;
+                margin-bottom: 11rem;
+            }
             .top_title {
                 * {
                     margin-bottom: 24px;

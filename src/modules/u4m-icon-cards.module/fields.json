@@ -543,6 +543,36 @@
       }
     }
   }, {
+    "id" : "30de6a38-00a9-c2c1-f7e6-cb931eb79437",
+    "name" : "include_eyebrow_text",
+    "display_width" : null,
+    "label" : "Include Eyebrow Text",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "b015200a-c7d7-74d8-864f-5375c4dcb8f5",
+    "name" : "eyebrow_text",
+    "display_width" : null,
+    "label" : "Eyebrow Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items_group.include_eyebrow_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "OPTIONAL EYEBROW TEXT"
+  }, {
     "id" : "31650c9a-b4bb-b013-e736-7ecccae3b8b7",
     "name" : "heading_size",
     "display_width" : null,
@@ -618,6 +648,8 @@
         "type" : "SOLID"
       }
     },
+    "include_eyebrow_text" : false,
+    "eyebrow_text" : "OPTIONAL EYEBROW TEXT",
     "heading_size" : "h3",
     "heading" : "Differentiator headline here",
     "content_style" : "theme",
@@ -644,6 +676,8 @@
         "type" : "SOLID"
       }
     },
+    "include_eyebrow_text" : false,
+    "eyebrow_text" : "OPTIONAL EYEBROW TEXT",
     "heading_size" : "h3",
     "heading" : "Differentiator headline here",
     "content_style" : "theme",
@@ -670,6 +704,8 @@
         "type" : "SOLID"
       }
     },
+    "include_eyebrow_text" : false,
+    "eyebrow_text" : "OPTIONAL EYEBROW TEXT",
     "heading_size" : "h3",
     "heading" : "Differentiator headline here",
     "content_style" : "theme",
@@ -696,6 +732,8 @@
         "type" : "SOLID"
       }
     },
+    "include_eyebrow_text" : false,
+    "eyebrow_text" : "OPTIONAL EYEBROW TEXT",
     "heading_size" : "h3",
     "heading" : "Differentiator headline here",
     "content_style" : "theme",
